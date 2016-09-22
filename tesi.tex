@@ -1,9 +1,10 @@
 \documentclass{article}
 
+\usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
-\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+\usepackage[backend=bibtex,style=verbose-trad2,maxcitenames=0]{biblatex}
 
 \renewcommand\contentsname{Indice}
 \renewcommand\figurename{Fig.}
@@ -16,144 +17,31 @@
 \bibliography{bibliografia}
 
 \begin{document}
-  \pagenumbering{gobble}
-  \maketitle
-  \newpage
-  \pagenumbering{arabic}
-  \tableofcontents
-  \newpage
+
+  \include{frontespizio}
   
-  \section*{Intro}
-  \newpage
-  \section{Situazione esistente}
-
-  \subsection{App Economy}
+  \include{indice}
   
-  App econom, bla bla
+  \include{intro}
   
-  \begin{figure}[h!]
-    \includegraphics[width=\linewidth]{images/The-App-Economy.jpg}
-    \caption{App Economy}
-    \label{fig:appEconomy1}
-  \end{figure}
-
-  \subsection{Ecosistema MyGelato}
-
-  \subsection{Stato dell’Arte dell’Applicazione Android}
-  \newpage
-  \section{Specifiche di Progetto}
-
-  \subsection{Rifare app uguale}
-
-  \subsection{temi con flavors}
-
-  \subsection{risorse da adattare}
-
-  \subsection{parallelismo con iOS}
-
-  \subsection{multilingua, login facebook, ecc...}
-  \newpage
-  \section{Scelte di Progetto}
-  \paragraph{}
-Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli strumenti di sviluppo da utilizzare durante lo svolgimento della tesi: come parametri si é tenuto conto di tempistiche di aggiornamento, adeguamento alle linee guida del sistema operativo in oggetto, documentazione disponibile e modernità delle tecnlogie utilizzate.
-
-Si sono inoltre adottate alcune strategie implementative, come la creazione di custom view, per poter meglio strutturare il progetto favorendone anche, in futuro, eventuali modifiche o ampliamenti.
-
-\subsection{Strumenti di Sviluppo}
-  \paragraph{}
-Poichè l'applicazione mobile, oggetto di tesi, era da sviluppare in ambito Android, si è scelto di utilizzare come principale strumento di sviluppo Android Studio.
-In questo modo si è potuto programmare nativamente limitando la portabilità del codice su altre piattaforme ma sfruttando pienamente l'architettura del sistema operativo sottostante.
-Come sistema di versioning si è utilizzato 
-
-
-\subsubsection{Android Studio}
-  \paragraph{}
-Android Studio \autocite[1]{HTMLIT:1} è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
-Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato progettato specificamente per lo sviluppo di Android.[4] È disponibile il download su Windows, Mac OS X e Linux,[5][6] e sostituisce gli Android Development Tools (ADT) di Eclipse, diventando l' IDE primario di Google per lo sviluppo nativo di applicazioni Android.
-Permette di creare un progetto gradle, apk, github, 
-
-\subsection{Programmazione Nativa}
-  \paragraph{}
-Nativo sì, nativo no. Qual è l’approccio migliore? Sicuramente entrambi hanno i loro pro e contro. Mentre da un lato il nativo offre la possibilità di una gestione totale del dispositivo senza la paura di trovare limiti, d’altra parte richiede spesso una programmazione molto professionale e si concentra esclusivamente su una piattaforma impedendo un’agile riciclo dei propri sforzi su altri mercati del mobile.
-
-Il non-nativo – anche se è impossibile generalizzare data la diversità degli ambienti appena citati – offre vantaggi vari, ascrivibili a volte ad una minore necessità di programmare e molto spesso alla possibilità di creare applicazioni cross-platform distribuibili su sistemi operativi diversi.
-
-\subsubsection{Java + XML}
-
-\subsection{Database}
-
-\subsubsection{Realm}
-
-\subsection{Chiamate Server}
-
-\subsubsection{OkHttp}
-
-\subsubsection{API REST}
-
-\subsection{Gestore di Eventi}
-
-\subsubsection{EventBus}
-
-\subsection{Notifiche Push}
-
-\subsubsection{Geofencing}
-
-\subsubsection{Firebase}
-
-\subsection{E-Commerce}
-
-\subsubsection{Stripe}
-
-\subsection{Librerie Minori}
-
-\subsection{Scelte progettuali strane e che non so come chiamare}
-
-\subsubsection{Flavors’ Custom View}
-
-  \newpage
-\section{Implementazione}
-
-\subsection{Shop}
-
-\subsubsection{Ricerca}
-
-\subsubsection{Preferiti}
-
-\subsection{Carte gelato}
-
-\subsubsection{Gelato Master}
-
-\subsubsection{Notifiche Push}
-
-\subsection{Coupon}
-
-\subsubsection{Acquisto}
-
-\subsubsection{Regalo}
-
-\subsubsection{Utilizzo e Validazione}
-
-  \newpage
-\section{Performance e Supporto}
-
-\subsection{Profiling}
-
-\subsection{Supporto vecchi device}
-
-  \newpage
-\section{Conclusioni}
-
-\newpage
-\printbibliography[title=Bibliografia]
-
-  \newpage
-  \listoffigures
-
-  \newpage
-\section{Codice}
-
-  \newpage
-\section{Ringraziamenti}
-
+  \include{situazione_esistente}
+  
+  \include{specifiche_di_progetto}
+  
+  \include{scelte_di_progetto}
+  
+  \include{implementazione}
+  
+  \include{prestazioni_e_supporto}
+  
+  \include{conclusioni}
+  
+  \include{bibliografia}
+  
+  \include{figure}
+  
+  \include{codice}
+  
+  \include{ringraziamenti}
 
 \end{document}
