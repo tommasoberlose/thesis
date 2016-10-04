@@ -45,7 +45,11 @@ Il non-nativo, invece, offre diversi vantaggi ascrivibili ad una minore necessit
 
 Non avendo quindi necessità di mantenere alta la portabilità del codice su altre piattaforme, si è preferito sviluppare tramite programmazione natuva; potendo quindi sfruttare pienamente l'architettura del sistema operativo sottostante.
 
-\subsubsection{Java + XML}
+\subsubsection{Java}
+
+
+\subsubsection{XML}
+
 
 \subsection{Database}
 
@@ -53,55 +57,83 @@ Non avendo quindi necessità di mantenere alta la portabilità del codice su alt
 \subsubsection{Realm}
 
 \subsection{Chiamate Server}
-Attualmente ogni tipo di software che voglia permettere al proprio utente di accedere da remoto, e da qualsiasi dispositivo, alle proprie informazioni deve basarsi su un server di beckend che mantenga e restituisca le informazioni necessarie a far funzionare il sistema.
-Allo stesso modo la piattaforma MyGelato è formata da un applicativo server che mantiene ogni informazione di utenti, shop e cards e alcune applicazioni mobile e web che permettono di accedere e modificare queste informazioni.
+Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente di accedere da remoto, e quindi da qualsiasi dispositivo, alle proprie informazioni ha come parte fondamentale lo sviluppo e il mantenimento di un server di beckend (quindi nascosto nelle funzionalità alla vista dell'utente) che mantenga, gestisca e restituisca i dati necessari alle funzioni degli applicativi.
+Nello stesso modo la piattaforma MyGelato si basa su un server che mantiene ogni informazione riguardante utenti, shop e cards fornendo delle API REST che vengono sfruttate dalle applicazioni mobile e web per poter fornire i propri servizi.
 
-Per poter far dialogare due applicativi su due piattaforme diverse sono utilizzate delle connessioni internet di diverso tipo, dipendemente dalla direzione della comunicazione, dalle tempistiche necessarie e da altri fattori.
-In questo caso si sono utilizzat le chiamate server da parte dell'app per poter accedere e modificare i dati dell'utente presenti sul server: nome, mail, coupon, ecc...
-Anche in questo caso si è deciso di utilizzare una libreria per migliorare e accelerare lo sviluppo: OkHttp, di Square Open Source.
-
+Il passaggio di informazioni tra i due applicativi avviene tramite chiamate internet con protocollo http protette grazie ad una connessione criptata dal Transport Layer Security (TLS) o dal suo predecessore, Secure Sockets Layer (SSL).
+Grazie alla API REST è possibile sviluppare in maniera strutturata e di seguire alcuni pattern delle tecnologie che permettono di valutare ogni possibile errore delle connessioni: errori nei dati, nell connessione, ecc...
+In Java le chiamate http sono abbastanza difficili da gestire poichè non sono automatizzate e son stati effettuati dei cambiamenti tra le ultime versioni che non permettono di lavorare correttamente su tutti i dispositivi Android.
+Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata da Square, che permette di automatizzare le chiamate http sfruttando anche una notevole semplificazione del codice utilizzato per programmare. \autocite{SQUARE:OKHTTP}
 
 \subsubsection{OkHttp}
+La liberia OkHttp nasce dal fatto che il protocollo http è l'attuale mezzo di comunicazione per ogni applicativo moderno.
+Per questo si pone l'obiettivo di semplificarne l'utilizzo in più di una tecnologia migliorandone le prestazioni e fornendo allo sviluppatore alcuni automatismi comodi durante lo sviluppo e la programmazione.
+
+Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching, la riconnessione, l'utilizzo di protocolli sicuri come TLS, l'utilizzo di indirizzi IP multipli ed è molto semplice da integrare e utilizzare all'interno del proprio software.
+Grazie ad un'interfaccia molto semplice permette di automatizzare le chiamate http utilizzando dei Builder che lasciano specificare solo i parametri necessari e restituiscono un unico oggetto da cui si ottiene la risposta, positiva o negativa, della richiesta.
+
+\begin{lstlisting}
+OkHttpClient client = new OkHttpClient();
+Request request = new Request.Builder()
+           .url(endpoint)
+           .addHeader("Accept","application/json")
+           .build();
+
+Response response = client.newCall(request).execute();
+\end{lstlisting}
+
+Inizializzato il client OkHttp basta creare un oggetto request a cui vanno passati i parametri necessari; basta poi eseguire la chiamata per ottenere un oggetto response all'interno del quale sono presenti i dati scaricati, il codice di risposta della chiamata e anche eventuali errori.
 
 \subsubsection{API REST}
 
+
 \subsection{Gestore di Eventi}
 Un passaggio fondamentale durante lo sviluppo di un software è l'aggiornamento delle view a seguito di un cambiamento nello stato dell'applicazione.
-In Android è necessario intervenire direttamente sugli elementi dell'interfaccia modificando ogni oggetto in base alle specifiche.
-Una forte limitazione del sistema operativo è che l'unico thread che ha il permesso di accedere e di modificare l'interfaccia utente è il Main Thread; questo complica l'interazione con eventuali sistemi multithreading anche se ovviamente fa parte delle specifiche di sistema così da evitare conflitti.
+In Android è necessario intervenire direttamente sugli elementi dell'interfaccia modificando ogni oggetto in base alle specifiche richieste senza poter sfruttare veri e propri automatismi.
+Una forte limitazione del sistema operativo è dovuta, per esempio, al fatto che l'unico thread che ha il permesso di accedere e di modificare l'interfaccia utente è il Main Thread; questo complica l'interazione con eventuali sistemi multithreading anche se, ovviamente, fa parte delle specifiche di sistema utili a limitare i conflitti sull'accesso alle risorse condivise (in questo caso le view).
 
-Questo problema necessita di ampia valutazione durante lo sviluppo e anche in questo caso si è dovuto strutturare l'applicazione così che non incorresse in errori di inconsistenza tra le view a cui il programma voleva accedere e le view realmente visualizzate al momento.
-Nel caso si utilizzino script asincroni è molto facile tentare di accedere ad elementi, o anche intere activity, non più presenti nell'interfaccia utente.
-Per questo motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot \autocite{GITHUB:EVENTBUS} e pensata esattamente per risolvere questo tipo di errori.
+Questo problema necessita di ampia valutazione durante lo sviluppo e anche in questo caso si è dovuto strutturare l'applicazione in modo che non incorresse in errori di inconsistenza tra le view a cui il programma voleva accedere e le view realmente visualizzate al momento.
+Nel caso si utilizzino script asincroni è molto facile tentare di accedere ad elementi, o anche intere activity, non più presenti nell'interfaccia utente; per questo motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot \autocite{GITHUB:EVENTBUS} e pensata esattamente per risolvere questo tipo di errori.
 
 \subsubsection{EventBus}
 EventBus è una libreria open-source per Android che utilizza il pattern publish/subscribe per far dialogare tutti i componenti di un'applicazione.
 Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce in maniera centralizzata monitorando le performance e gestendo gli errori che potrebbero essere sollevati da uno sviluppo multithreading.\autocite{GREENROBOT:EVENTBUS}
 
-I principali benefici che si riscontrano tramite l'utilizzo di questa libreria sono la semplificazione tra componenti, il disaccoppiamento tra mittenti e riceventi degli eventi, miglioramenti nelle perfomance, facile sviluppo e integrazione ed infine anche caratteristiche avanzate come priorità e indirizzamento a thread specifici.
+I principali benefici che si riscontrano tramite l'utilizzo di questa libreria sono la semplificazione delle comunicazioni tra componenti, il disaccoppiamento tra mittenti e riceventi degli eventi, miglioramenti nelle perfomance, facile integrazione dei metodi da utilizzare ed infine anche caratteristiche avanzate come priorità e indirizzamento a thread specifici.
 
-Nel caso di questa tesi è stato necessario creare un insieme di eventi, specifici per ogni update da invare all'UI, che avessero come metodi necessari il costruttore ed eventuali attributi da poter passare tra mittente e ricevente.
+Durante lo svolgimento di questa tesi si è definita una struttura abbastanza comune formata da:
+- AsyncTask, oggetto che permette di elaborare una serie di informazioni in background, utilizzato per eseguire il download delle informazioni dal server;
+- View specifica dell'activity con determinati componenti da aggiornare in base allo stato dell'applicazione;
+- Metodo updateUI() che preso in gresso i dati scaricati doveva aggiornare le view rispetto allo stato.
 
+Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare il lavoro di thread in background senza limitare l'utente nell'attesa di un determinato evento.
+Si procedeva quindi crendo un evento specifico per l'interazione da dover gestire di cui qui viene riportato un esempio:
 
 \begin{lstlisting}
-public static class UpdateCouponUiEvent {
+public static class UpdateCouponUiEvent<T> {
+	public T data;
 	public UpdateCouponUiEvent() {
+	}
+	public UpdateCouponUiEvent(T data) {
+		this.data = data;
 	}
 }
 \end{lstlisting}
 
-Grazie a questi eventi era possibile aggiornare l'interfaccia utente ad ogni modifica dello stato dell'applicazione sollevando l'invio di un evento specifico, gestito poi da EventBus, che contenesse le informazioni necessarie all'update (anche da thread diversi).
-Ogni evento aveva collegati dei metodi dell'activity che avevano effettuato il subscribe ad un evento in particolare, così da essere scatenati solo in cui fosse sollevato quel particolare evento.
+EventBus permette di registrare dei metodi eseguendo una subscribe ad un determinato evento: ogni qual volta un evento di quel tipo viene sollevato, il metodo viene eseguito.
+La subscribe deve essere definita nel codice nel seguente modo:
 
-Esempio di subscribe:
 \begin{lstlisting}
 @Subscribe
 public void updateUI(UpdateCouponUiEvent event) {
-	// update UI
+	// update UI with event.data
 }
 \end{lstlisting}
 
-Esempio di publish:
+Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei dati tramite l'evento che viene lanciato, nel codice messo ad esempio si tratta della variable data, definito di tipo generico.
+
+Infine all'interno del AsyncTask, a conclusione del download delle informazioni e dell'aggiornamento dello stato, era sollevato un evento grazie ad una publish:
+
 \begin{lstlisting}
 EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end{lstlisting}
