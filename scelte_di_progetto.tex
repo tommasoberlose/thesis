@@ -1,81 +1,110 @@
 \section{Scelte di Progetto}
-\paragraph{}
+
 Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli strumenti di sviluppo da utilizzare durante lo svolgimento della tesi: come parametri si é tenuto conto di tempistiche di aggiornamento, adeguamento alle linee guida del sistema operativo in oggetto, documentazione disponibile e modernità delle tecnlogie utilizzate.
 
-
-\paragraph{}
 Durante la prima fase di sviluppo strutturale si è dovuto valutare la tecnologia da utilizzare in modo da tenere il passo con le ultime specifiche di Android e tenendo conto che, anche secondo gli ultimi report pubblicati da Google, rimane una forte frammentazione della distribuzione del sistema operativo, dovuta ai molteplici produttori di hardware. \autocite{ANDROIDSTUDIO:DASHBOARD}
 
-Era quindi da tenere in considerazione la retrocompatibilità delle librerie utilizzate, avendo scelto di supportare fino alla versione 16 del SDK (Android 4.1 Jelly Bean) e la possibilità di utilizzare l'applicazione anche su device con schermi e hardware differenti.
+Era quindi da tenere in considerazione la retrocompatibilità delle librerie utilizzate, avendo scelto di supportare fino alla versione 16 del SDK (Android 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione anche su device con schermi e hardware differenti.
 
-\paragraph{}
 Si sono inoltre adottate alcune strategie implementative, come la creazione di custom view, per poter meglio strutturare il progetto favorendone anche eventuali modifiche o ampliamenti.
 
 \subsection{Strumenti di Sviluppo}
-\paragraph{}
 Considerato che l'applicazione mobile, oggetto di tesi, era destinata a lavorare unicamente sulla piattaforma Android, si è scelto di utilizzare come principale strumento di sviluppo \textbf{Android Studio}, software dedicato alla programmazione nativa del suddetto sistema operativo. \autocite{ANDROIDDEVELOPERS:FIRSTAPP}
 
-\paragraph{}
 Durante lo sviluppo del progetto si è utilizzato come sistema di versioning il software \textbf{Git}, così da poter mantenere uno storico del lavoro svolto e ottenendo tutti i vantaggi del'utilizzo di un Sistema per il Controllo di Versione (\textit{Version Control System - VCS}).
 
-\paragraph{}
 Sono inoltre da citare alcuni software utilizzati durante il lavoro di tesi che, anche se di minore impatto, sono serviti a testare e sviluppare alcune parti fondamentali di codice.
-Primo fra tanti la web application Postman \autocite{POSTMAN} che permette di testare e sviluppare le APIs con cui due applicativi possono dialogare, in maniera semplice ed intuitiva. Molto utile per valutare le chiamate al server e per verificare le risposte ottenute.
+Primo fra tanti la web application Postman \autocite{POSTMAN} che permette di testare e sviluppare le APIs con cui due applicativi possono dialogare, in maniera semplice ed intuitiva. Utile per valutare le chiamate al server e per verificare le risposte ottenute.
 \textbf{Altri da citare???}
 
 \subsubsection{Android Studio}
-\paragraph{}
-
 Android Studio \autocite{WIKIPEDIA:ANDROIDSTUDIO} è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
 Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato progettato specificamente per lo sviluppo di Android.[4] È disponibile il download su Windows, Mac OS X e Linux,[5][6] e sostituisce gli Android Development Tools (ADT) di Eclipse, diventando l' IDE primario di Google per lo sviluppo nativo di applicazioni Android.
 Permette di creare un progetto gradle, apk, github, 
 
 
 \subsubsection{Git}
-\paragraph{}
 Git è un software di controllo versione distribuito (\textit{Distributed Version Control Systems - DVCS}) utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds nel 2005. \autocite{WIKIPEDIA:GIT}
 Nacque per essere un semplice strumento per facilitare lo sviluppo del kernel Linux ed è diventato uno degli strumenti di controllo versione più diffusi.
 
-\paragraph{}
 Per quanto riguarda qualsiasi tipo di progetto di IT (\textit{Information Technology}), specialmente se si tratta di un lavoro da dover svolgere in team, Git da la possibilità di mantenere in memoria tutte le versioni del proprio lavoro (sia in locale che online).
 Questo permette a più persone di poter accedere alla cronologia del lavoro condiviso, avendo anche la possibilità di verificare la presenza di errori e di eliminarli tornando ad una versione precedente del progetto.
 Git sfrutta alcuni algoritmi avanzati per calcolare le differenze riga per riga tra i file di diverse versioni così da verificare la presenza di errori o conflitti.
 
-Git è fortemente infatti direzionato verso uno sviluppo progettuale non lineare. Supporta diramazione e fusione (\textit{branching and merging}) rapide e comode, e comprende strumenti specifici per visualizzare e navigare l'intero storico delle versioni anche se proposte da sistemi differenti.
+Git è fortemente direzionato verso uno sviluppo progettuale non lineare. Supporta diramazione e fusione (\textit{branching and merging}) rapide e comode, e comprende strumenti specifici per visualizzare e navigare l'intero storico delle versioni anche se proposte da sistemi differenti.
 È veloce e scalabile nella gestione di grandi progetti ed è molto utile nello sviluppo in team, specialmente se affiancato dal modello GitFlow che permette di gestire rami specifici per il developing o per le release.
 
-\paragraph{}
 Infine grazie all'utilizzo di piccoli accorgimenti come il file .gitignore (che permette di non salvare anche i file temporanei e non importanti del progetto) e soluzioni online come GitHub o BitBucket (quest'ultimo utilizzato durante lo sviluppo di questa tesi) il processo di sviluppo software viene drasticamente avvantaggiato.
 
 \subsection{Programmazione Nativa}
-\paragraph{}
+Questa tesi si inserisce all'interno del lavoro di modifica e miglioramento delle applicazioni mobile dell'ecosistema MyGelato, il quale includeva un progetto sia per piattaforma Android sia per piattaforma iOS.
+Essendosi creati due differenti progetti, durante la prima fase di progettazione, si è potuto valutare in maniera più libera l'utilizzo o meno della programmazione nativa.
 
-Questa tesi si inserisce all'interno del lavoro di modifica delle applicazioni mobile dell'ecosistema MyGelato, il quale includeva un progetto sia per piattaforma Android sia per piattaforma iOS.
-Si sono sviluppati quindi due differenti progetti che hanno permesso, durante la prima fase di progettazione, di scegliere di lavorare tramite programmazione nativa.
-In questo modo si è limitata la portabilità del codice su altre piattaforme ma si è potuto sfruttare pienamente l'architettura del sistema operativo sottostante.  
+Sicuramente lavorare in questo modo o meno ha i propri pro e contro. Mentre da un lato il nativo offre la possibilità di una gestione totale del dispositivo senza la paura di trovare limiti, d’altra parte richiede spesso una programmazione molto professionale e si concentra esclusivamente su una piattaforma impedendo un’agile riciclo dei propri sforzi su altri mercati del mobile. 
+Il non-nativo, invece, offre diversi vantaggi ascrivibili ad una minore necessità di programmare e molto spesso alla possibilità di creare applicazioni cross-platform distribuibili su sistemi operativi diversi.\autocite{HTMLIT:PROG_NATIVA}
 
-\paragraph{}
-Si è dovuto valutare quale se fosse preferibile lavorare in maniera nativa o meno.
-Sicuramente entrambi hanno i loro pro e contro. Mentre da un lato il nativo offre la possibilità di una gestione totale del dispositivo senza la paura di trovare limiti, d’altra parte richiede spesso una programmazione molto professionale e si concentra esclusivamente su una piattaforma impedendo un’agile riciclo dei propri sforzi su altri mercati del mobile. \autocite{HTMLIT:PROG_NATIVA} 
-
-
-Il non-nativo, anche se è impossibile generalizzare data la diversità degli ambienti di sviluppo disponibili – offre diversi vantaggi, ascrivibili a volte ad una minore necessità di programmare e molto spesso alla possibilità di creare applicazioni cross-platform distribuibili su sistemi operativi diversi.
+Non avendo quindi necessità di mantenere alta la portabilità del codice su altre piattaforme, si è preferito sviluppare tramite programmazione natuva; potendo quindi sfruttare pienamente l'architettura del sistema operativo sottostante.
 
 \subsubsection{Java + XML}
 
 \subsection{Database}
 
+
 \subsubsection{Realm}
 
 \subsection{Chiamate Server}
+Attualmente ogni tipo di software che voglia permettere al proprio utente di accedere da remoto, e da qualsiasi dispositivo, alle proprie informazioni deve basarsi su un server di beckend che mantenga e restituisca le informazioni necessarie a far funzionare il sistema.
+Allo stesso modo la piattaforma MyGelato è formata da un applicativo server che mantiene ogni informazione di utenti, shop e cards e alcune applicazioni mobile e web che permettono di accedere e modificare queste informazioni.
+
+Per poter far dialogare due applicativi su due piattaforme diverse sono utilizzate delle connessioni internet di diverso tipo, dipendemente dalla direzione della comunicazione, dalle tempistiche necessarie e da altri fattori.
+In questo caso si sono utilizzat le chiamate server da parte dell'app per poter accedere e modificare i dati dell'utente presenti sul server: nome, mail, coupon, ecc...
+Anche in questo caso si è deciso di utilizzare una libreria per migliorare e accelerare lo sviluppo: OkHttp, di Square Open Source.
+
 
 \subsubsection{OkHttp}
 
 \subsubsection{API REST}
 
 \subsection{Gestore di Eventi}
+Un passaggio fondamentale durante lo sviluppo di un software è l'aggiornamento delle view a seguito di un cambiamento nello stato dell'applicazione.
+In Android è necessario intervenire direttamente sugli elementi dell'interfaccia modificando ogni oggetto in base alle specifiche.
+Una forte limitazione del sistema operativo è che l'unico thread che ha il permesso di accedere e di modificare l'interfaccia utente è il Main Thread; questo complica l'interazione con eventuali sistemi multithreading anche se ovviamente fa parte delle specifiche di sistema così da evitare conflitti.
+
+Questo problema necessita di ampia valutazione durante lo sviluppo e anche in questo caso si è dovuto strutturare l'applicazione così che non incorresse in errori di inconsistenza tra le view a cui il programma voleva accedere e le view realmente visualizzate al momento.
+Nel caso si utilizzino script asincroni è molto facile tentare di accedere ad elementi, o anche intere activity, non più presenti nell'interfaccia utente.
+Per questo motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot \autocite{GITHUB:EVENTBUS} e pensata esattamente per risolvere questo tipo di errori.
 
 \subsubsection{EventBus}
+EventBus è una libreria open-source per Android che utilizza il pattern publish/subscribe per far dialogare tutti i componenti di un'applicazione.
+Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce in maniera centralizzata monitorando le performance e gestendo gli errori che potrebbero essere sollevati da uno sviluppo multithreading.\autocite{GREENROBOT:EVENTBUS}
+
+I principali benefici che si riscontrano tramite l'utilizzo di questa libreria sono la semplificazione tra componenti, il disaccoppiamento tra mittenti e riceventi degli eventi, miglioramenti nelle perfomance, facile sviluppo e integrazione ed infine anche caratteristiche avanzate come priorità e indirizzamento a thread specifici.
+
+Nel caso di questa tesi è stato necessario creare un insieme di eventi, specifici per ogni update da invare all'UI, che avessero come metodi necessari il costruttore ed eventuali attributi da poter passare tra mittente e ricevente.
+
+
+\begin{lstlisting}
+public static class UpdateCouponUiEvent {
+	public UpdateCouponUiEvent() {
+	}
+}
+\end{lstlisting}
+
+Grazie a questi eventi era possibile aggiornare l'interfaccia utente ad ogni modifica dello stato dell'applicazione sollevando l'invio di un evento specifico, gestito poi da EventBus, che contenesse le informazioni necessarie all'update (anche da thread diversi).
+Ogni evento aveva collegati dei metodi dell'activity che avevano effettuato il subscribe ad un evento in particolare, così da essere scatenati solo in cui fosse sollevato quel particolare evento.
+
+Esempio di subscribe:
+\begin{lstlisting}
+@Subscribe
+public void updateUI(UpdateCouponUiEvent event) {
+	// update UI
+}
+\end{lstlisting}
+
+Esempio di publish:
+\begin{lstlisting}
+EventBus.getDefault().post(new UpdateCouponUiEvent());
+\end{lstlisting}
 
 \subsection{Notifiche Push}
 

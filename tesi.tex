@@ -1,14 +1,73 @@
-\documentclass{article}
+\documentclass[14pt, twoside, openright, cleardoublepage=empty]{extreport}
 
+\usepackage[a4paper, hmarginratio=3:2, vmarginratio=1:1]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
 \usepackage{hyperref}
-\usepackage{url}
+\usepackage{indentfirst}
+\usepackage[signatures, norules, nouppercase]{frontespizio}
+\usepackage{hyperref}
+\usepackage{emptypage}
+\usepackage{float}
+\usepackage{epigraph}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{comment}
 \usepackage{graphicx}
-\usepackage[backend=bibtex,style=verbose-trad2,maxcitenames=0]{biblatex}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[backend=bibtex,style=verbose-trad2,maxcitenames=1]{biblatex}
+
+\definecolor{mygreen}{HTML}{63a35c}
+\definecolor{mygray}{HTML}{ededed}
+\definecolor{mymauve}{HTML}{a71d5d}
+\definecolor{myblue}{HTML}{4078c0}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{myblue},       % keyword style
+  language=Java,                 % the language of the code
+  otherkeywords={*,...},           % if you want to add more keywords to the set
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+}
+
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \renewcommand\contentsname{Indice}
 \renewcommand\figurename{Fig.}
 \renewcommand\listfigurename{Figure}
+\graphicspath{ {images/} }
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
 
 \title{Progettazione e Sviluppo di un'Applicazione Mobile di Marketing ed E-Commerce}
 \date{2016-11}
