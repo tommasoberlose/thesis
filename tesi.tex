@@ -77,27 +77,26 @@
 
 \begin{document}
 
-  \include{frontespizio}
+  \pagenumbering{gobble}
+  \maketitle
+  \newpage
+  \pagenumbering{arabic}
   
   \include{indice}
   
-  \include{intro}
+  \include{chapters/intro}
   
-  \include{situazione_esistente}
+  \include{chapters/chapter_01}
+  \include{chapters/chapter_02}
+  \include{chapters/chapter_03}  
+  \include{chapters/chapter_04}
   
-  \include{specifiche_di_progetto}
-  
-  \include{scelte_di_progetto}
-  
-  \include{implementazione}
-  
-  \include{prestazioni_e_supporto}
-  
-  \include{conclusioni}
+  \include{chapters/conclusioni}
   
   \include{bibliografia}
   
-  \include{figure}
+  \listoffigures
+  \newpage
   
   \include{codice}
   
