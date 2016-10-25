@@ -1,50 +1,58 @@
 \section{Specifiche Progettuali}
 
-
-
-L'ecosistema MyGelato si fonda fisicamente su una piattaforma formata da un’applicazione basata sul framework Ruby on Rails che implementa le funzionalità di creazione, gestione e fruizione di contenuti multimediali affiancate da un sistema e-commerce per la compravendita di coupon digitali.
+L'ecosistema MyGelato è un progetto ampio che si basa sulla cooperazione tra più elementi fondamentali: un’applicazione basata sul framework Ruby on Rails che implementa le funzionalità di creazione, gestione e fruizione di contenuti multimediali affiancate da un sistema e-commerce per la compravendita di coupon digitali.
 Per poter usufruire di tali servizi è necessario l'utilizzo di un'applicazione mobile, chiamata MyGelato, disponibile per iOS e Android; quest'ultima argomento di questa tesi.
 
+Essendo l'applicazione Android solo una compenente di un più ampio progetto è essenziale fin dalla prima fase di sviluppo valutare correttamente e nella loro completezza tutte le specifiche date dall'azienda che ha commissionato il lavoro e date dalla necessità di far cooperare l'applicazione con altri componenti.
+Si valutano inizialmente le specifiche strutturali e logiche che determinano le interazioni principali dell'utente con l'applicativo: navigazione, design e flussi logici.
+Questi macro argomenti permeano ogni singolo componente del sistema e per questo devono essere valutati prima di iniziare qualsiasi tipo di sviluppo poichè serve considerare le interazioni tra i flussi logici e il design da dover mantenere coerente all'interno di tutta interfaccia utente.
 
-L'ecosistema MyGelato è un progetto ampio che si basa sulla cooperazione tra più elementi fondamentali - applicazione mobile, piattaforma di backend, sistema di comunicazione, sistema di e-commerce, ecc... - la maggior parte dei quali sviluppati da persone diverse con tempistiche differenti.
-Alle specifiche tecniche richieste dall'azienda durante la progettazione dell'ecosistema MyGelato, si sono quindi aggiunte alcune limitazioni legate alle scelte effettuate da altre persone durante lo sviluppo del loro applicativo.
+Prima di tutto si studia come implementare in maniera semplice e intuitiva il design richiesto che comprende la possibilità di modificare il tema principale dell'applicazione in base a \textit{gusti} differenti.
+Sono state consegnate insieme alle specifiche anche le risorse da utilizzare per personalizzare ogni singolo elemento grafico dell'interfaccia in modo da diversificarla rispetto al design suggerito da Google e che standardizza la maggior parte delle app Android.
 
-Durante lo studio iniziale si è dovuto tener conto delle specifiche legate alle features richieste e delle specifiche progettuali già implementate cercando di ottenere uno sviluppo lineare e il più semplice possibile.
+Fatte queste considerazioni si valuta come implementare una navigazione semplice ed intuiva per favorire l'utente nella scelta delle principali funzioni disponibili all'interno dell'applicazione: \textit{Acquisto/Utilizzo Coupon}, \textit{Lista Gelaterie Preferite}, \textit{Mappa per la Ricerca}, \textit{Mastro Gelatiere} e \textit{Cambio Tema}.
+Ogni sezione fa parte dei due principali flussi logici presenti all'interno dell'applicativo: quello di marketing digitale che permette l'esplorazione da parte dell'utente delle gelaterie in una determinata zona e delle relative promozioni; e quello di e-commerce che permette l'acquisto online, il controllo, il regalo e l'utilizzo dei coupon gelato resi disponibili dalle gelaterie del circuito MyGelato.
 
-Le scelte legate alle richieste da parte dell'azienda che ha commissionato il progetto riguardano principalmente le scelte strutturali dell'applicativo come la navigazione, il design e i flussi logici presenti.
-Aggiungendo alcune richieste tecnologiche come la possibilità di avere un'applicazione multilingua, con autenticazione tramite social network e compatibile con la maggior parte dei device android attualmente sul mercato.
+Infine si valutano le specifiche tecnologiche richieste sia dall'azienda che dalla necessaria cooperazione con gli altri elementi del progetto.
+Vi deve essere la possibilità di avere un'applicazione multilingua, con autenticazione tramite social network e compatibile con la maggior parte dei device android attualmente sul mercato.
+Sono di forte impatto anche alcune scelte a livello di comunicazione con il backend che indirizza lo sviluppo in una comunicazione bidirezionale tra applicazione e backend tramite API REST e notifiche push.
+Essenziale oltretutto mantenere la coerenza tra le due applicazioni mobile sviluppate per le piattaforme iOS e Android, rispettando in ognuna i propri pattern tipici; insieme al sistema gestionale online presente per gli amministratori del sistema.
 
-Le specifiche dettate dalla cooperazione tra le varie componenti del sistema, invece, hanno avuto un impatto molto maggiore sulle tecnologie scelte e utilizzate per lo sviluppo.
-In particolar modo sono state di forte impatto alcune scelte a livello di comunicazione con il backend che ha indirizzato lo sviluppo in una comunicazione bidirezionale tra applicazione e backend tramite API REST e notifiche push.
-Essenziale anche mantenere la coerenza tra le due applicazioni mobile sviluppate per le piattaforme iOS e Android; come anche per la piattaforma gestionale presente per gli amministratori del sistema.
+\subsection{Design}
 
-Le specifiche progettuali di questo taglio prettamente tecnologico saranno trattate nel dettaglio all'interno delle scelte progettuali mentre quelle legate ai flussi logici dell'applicazione sono descritte nei seguenti capitoli.
 
 \subsection{Ricerca}
-L'elemento fondamentale di tutto l'applicativo, tema di questo elaborato, è la possibilità di effettuare una ricerca delle gelaterie, facenti parte del sistema MyGelato.
-Questa funzionalità è, infatti, l'elemento cardine che lega ogni possibile azione dell'utente all'interno dell'applicazione: risulta infatti essere essenziale sia per il sistema di marketing che di e-commerce.
-Ogni utente, anche se non registrato, deve poter accedere ad una mappa che visualizzi tutti gli shop, sia sotto forma di marker visibili in base al luogo di ricerca sia sotto forma di lista ordinata in base alla distanza dall'utente.
+L'elemento centrale di tutto l'applicazione è la possibilità di effettuare una ricerca delle gelaterie, iscritte al circuito MyGelato, presenti in una determinata zona così da ottenere alcune informazioni essenziali sull'esercizio e le relative promozioni disponibili.
+Questa funzionalità è, infatti, l'elemento cardine che lega ogni possibile azione dell'utente all'interno dell'applicazione: è essenziale sia per il sistema di marketing che per il sistema di e-commerce.
+
+Ogni utente, anche se non registrato, deve poter accedere ad una mappa che visualizzi tutti gli shop disponibili, sia sotto forma di marker visibili in base al luogo di ricerca sia sotto forma di lista ordinata in base alla distanza dall'utente.
 Ogni elemento, scaricato e aggiornato in base alle ultime informazioni presenti sul server, permette di ottenere il nome della gelateria, l'indirizzo ed un eventuale recapito telefonico.
 
-Questo tipo di ricerca permette all'utente di esplorare la zona attorno al luogo in cui trova, o anche ad un luogo di suo interesse, così da ottenere informazioni riguardo agli esercizi presenti in maniera molto diretta.
-Il consumatore ottiene informazioni dettagliate e mirate rispetto ad una qualsiasi ricerca online che porterebbe anche una serie di informazioni aggiuntive molte volte non pertinenti.
+Questo tipo di ricerca permette all'utente di esplorare la zona attorno al luogo in cui trova, o anche ad un luogo di suo interesse, così da ottenere informazioni, sia di carattere commerciale sia pubblicitario, riguardo agli esercizi presenti in maniera molto diretta; permettendo anche di salvare lo shop all'interno della lista preferiti.
+Nel frattempo ogni gelateria presente all'interno del sistema ottiene la possibilità di essere trovata anche da utenti nuovi che non conoscono la zona e di pubblicizzarsi tramite una strategia di marketing unificata e standardizzata: le carte promozionali.
 
-Nel frattempo ogni gelateria presente all'interno del sistema ottiene la possibilità di essere trovati anche da utenti nuovi che non conoscono la zona e di invogliarli tramite una strategia di marketing unificata e standardizzata: le carte promozionali.
+Oltre al sistema di marketing la ricerca delle gelaterie è essenziale per il sistema di e-commerce poichè la mappa viene utilizzata per la scelta da parte dell'utente della gelateria per la quale vuole acquistare un determinato coupon.
+La ricerca è quindi presente sia nel sistema di navigazione principale dell'applicazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente.
 
-Oltre al sistema di marketing la ricerca delle gelaterie è essenziale per il sistema di e-commerce, poichè ogni coupon acquistabile sulla piattaforma è legato ad un singolo esercizio che deve essere specificato una volta deciso il proprio acquisto.
+Come si può vedere in figura l'abbozzo della mappa permette di capire la necessità di avere un'implementazione semplice e facilmente utilizzabile da qualsiasi utente, dove sia possibile passare dalla visualizzazione a mappa a quella a lista e dove siano già visibili le principali informazioni riguardo ad ogni gelateria.
 
-La ricerca deve quindi essere presente sia nel sistema di navigazione principale dell'applicazione che raggiungibile all'interno di ogni flusso logico scelto dall'utente.
+
+FIGGGGGGGGGGGGGGGGGG MAPPA
+
 
 \subsection{Marketing Digitale}
 Uno dei due flussi logici principali presenti all'interno dell'applicazione riguarda il marketing digitale che viene svolto per le gelaterie legate all'ecosistema MyGelato.
-Il sistema di marketing ha lo scopo di rendere più semplice la ricerca delle gelaterie vicino all'utente, sponsorizzarne eventuali promozioni e permettere all'utente di salvare gli esercizi preferiti così da rimanere aggiornato su eventuali nuove sponsorizzazioni.
+Il sistema di marketing ha lo scopo di rendere più semplice la ricerca delle gelaterie vicino all'utente, sponsorizzarne eventuali promozioni e permettere all'utente di salvare gli esercizi preferiti così da rimanere aggiornato sulle nuove sponsorizzazioni.
 Queste funzionalità, disponibili in buona parte per qualsiasi utente anche non registrato, seguono un flusso logico che parte dalla ricerca degli shop e trova effetto principale nella scoperta e nell'utilizzo delle carte promozionali, della singola gelateria e del Mastro Gelatiere.
 
 \subsubsection{Carte Promozionali}
 Le carte promozionali sono il principale mezzo di advertising all'interno dell'applicazione: sono dei volantini digitali formati da un'immagine, un titolo, un testo descrittivo, un eventuale recapito telefonico e un eventuale link per avere maggiori informazioni.
 Ci sono due tipologia di carte: le carte specifiche di ogni esercizio che sono i volantini informativi della singola gelateria e le carte del mastro gelatiere che invece si rifanno alle promozioni generiche proposte per l'intero sistema.
 
-Le carte promozionali sono il componente fondamentale del sistema di marketing digitale dell'applicativo, poichè 
+$ DA QUI  $
+
+
+
 
 Sono inoltre visualizzabili le Carte dello shop che altro non sono che le ultime promozioni legate all'attività: sconti, novità, messaggi promozionali.
 Grazie a queste informazioni l'utente può ottenere oltre le informazioni genericamente trovabili online, anche delle informazioni pubblicitarie.
@@ -73,7 +81,5 @@ L'utente così rimane informato costantemente delle ultime promozioni disponibil
 \subsubsection{Acquisto Coupon}
 
 \subsubsection{Utilizzo Coupon}
-
-\subsection{Design}
 
 \newpage
