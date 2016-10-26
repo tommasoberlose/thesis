@@ -3,9 +3,9 @@
 L'ecosistema MyGelato è un progetto ampio che si basa sulla cooperazione tra più elementi fondamentali: un’applicazione basata sul framework Ruby on Rails che implementa le funzionalità di creazione, gestione e fruizione di contenuti multimediali affiancate da un sistema e-commerce per la compravendita di coupon digitali.
 Per poter usufruire di tali servizi è necessario l'utilizzo di un'applicazione mobile, chiamata MyGelato, disponibile per iOS e Android; quest'ultima argomento di questa tesi.
 
-Essendo l'applicazione Android solo una compenente di un più ampio progetto è essenziale fin dalla prima fase di sviluppo valutare correttamente e nella loro completezza tutte le specifiche date dall'azienda che ha commissionato il lavoro e date dalla necessità di far cooperare l'applicazione con altri componenti.
+Essendo l'applicazione Android solo una compenente di un più ampio progetto è essenziale fin dalla prima fase di sviluppo valutare correttamente e nella loro completezza tutte le specifiche date dall'azienda che ha commissionato il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazione con altri componenti.
 Si valutano inizialmente le specifiche strutturali e logiche che determinano le interazioni principali dell'utente con l'applicativo: navigazione, design e flussi logici.
-Questi macro argomenti permeano ogni singolo componente del sistema e per questo devono essere valutati prima di iniziare qualsiasi tipo di sviluppo poichè serve considerare le interazioni tra i flussi logici e il design da dover mantenere coerente all'interno di tutta interfaccia utente.
+Questi macro argomenti permeano ogni singolo componente del sistema e per questo devono essere valutati prima di iniziare qualsiasi tipo di sviluppo: serve considerare le interazioni tra i flussi logici e valutare come mantenere coerente il design all'interno di tutta l'interfaccia utente.
 
 Prima di tutto si studia come implementare in maniera semplice e intuitiva il design richiesto che comprende la possibilità di modificare il tema principale dell'applicazione in base a \textit{gusti} differenti.
 Sono state consegnate insieme alle specifiche anche le risorse da utilizzare per personalizzare ogni singolo elemento grafico dell'interfaccia in modo da diversificarla rispetto al design suggerito da Google e che standardizza la maggior parte delle app Android.
@@ -13,12 +13,28 @@ Sono state consegnate insieme alle specifiche anche le risorse da utilizzare per
 Fatte queste considerazioni si valuta come implementare una navigazione semplice ed intuiva per favorire l'utente nella scelta delle principali funzioni disponibili all'interno dell'applicazione: \textit{Acquisto/Utilizzo Coupon}, \textit{Lista Gelaterie Preferite}, \textit{Mappa per la Ricerca}, \textit{Mastro Gelatiere} e \textit{Cambio Tema}.
 Ogni sezione fa parte dei due principali flussi logici presenti all'interno dell'applicativo: quello di marketing digitale che permette l'esplorazione da parte dell'utente delle gelaterie in una determinata zona e delle relative promozioni; e quello di e-commerce che permette l'acquisto online, il controllo, il regalo e l'utilizzo dei coupon gelato resi disponibili dalle gelaterie del circuito MyGelato.
 
-Infine si valutano le specifiche tecnologiche richieste sia dall'azienda che dalla necessaria cooperazione con gli altri elementi del progetto.
+Si valutano poi le specifiche tecnologiche richieste sia dall'azienda che dalla necessaria cooperazione con gli altri elementi del progetto.
 Vi deve essere la possibilità di avere un'applicazione multilingua, con autenticazione tramite social network e compatibile con la maggior parte dei device android attualmente sul mercato.
 Sono di forte impatto anche alcune scelte a livello di comunicazione con il backend che indirizza lo sviluppo in una comunicazione bidirezionale tra applicazione e backend tramite API REST e notifiche push.
-Essenziale oltretutto mantenere la coerenza tra le due applicazioni mobile sviluppate per le piattaforme iOS e Android, rispettando in ognuna i propri pattern tipici; insieme al sistema gestionale online presente per gli amministratori del sistema.
+Essenziale infine mantenere la coerenza tra le due applicazioni mobile sviluppate per le piattaforme iOS e Android, rispettando in ognuna i propri pattern tipici, insieme al sistema gestionale online presente per gli amministratori del sistema.
 
 \subsection{Design}
+Il design dell'applicazione è uno degli elementi più particolari dell'applicazione: sviluppato fin nel dettaglio permette di personalizzare in maniera coerente anche i componenti più basilari dell'interfaccia utente.
+Sono presenti tre font custom che devono essere utilizzati in situazioni e contesti differenti in modo che l'utente fin dal primo colpo d'occhio capisca quali siano i messaggi informativi e quali siano quelli di contorno.
+
+Le risorse grafiche rese disponibili all'interno delle specifiche richieste servono a rendere coerente l'interfaccia utente in ogni suo elemento: fin dall'icona per chiudere un'Activity a concludere con ogni elemento della navigazione principale.
+Il fatto di avere un'insieme di risorse ben organizzate è necessario per rendere la programmazione più semplice, così da includere di volta in volta in maniera dinamica immagini in base alla lingua dell'applicazione o in base al tema chiaro/scuro.
+
+In figura è possibile vedere alcune delle immagini presentate per la navigazione principale, in tutte le loro versioni.
+
+FIGGG
+
+Altro elemento fondamentale presente in quasi ogni Activity dell'applicativo è il tema dell'applicazione.
+I temi sono principalmente delle colorazioni differenti che devono caratterizzare e modificare il main color della UI cambiando anche i testi e le icone in base al fatto di essere temi chiari o scuri.
+Ogni tema, che deve essere modificabile a piacimento dall'utente direttamente da una funzione raggiungibile dalla navigazione principale, ha come nome un gusto differente di gelato e un proprio set di risorse.
+
+Sarà importante capire come implementare un sistema che implementi i temi in ogni componente della UI senza rendere lo sviluppo dell'applicazione in questo senso un collo di bottiglia.
+
 
 
 \subsection{Ricerca}
@@ -42,27 +58,28 @@ FIGGGGGGGGGGGGGGGGGG MAPPA
 
 \subsection{Marketing Digitale}
 Uno dei due flussi logici principali presenti all'interno dell'applicazione riguarda il marketing digitale che viene svolto per le gelaterie legate all'ecosistema MyGelato.
-Il sistema di marketing ha lo scopo di rendere più semplice la ricerca delle gelaterie vicino all'utente, sponsorizzarne eventuali promozioni e permettere all'utente di salvare gli esercizi preferiti così da rimanere aggiornato sulle nuove sponsorizzazioni.
+Ha lo scopo di rendere più semplice la ricerca delle gelaterie vicino all'utente, sponsorizzarne eventuali promozioni e permettere all'utente di salvare gli esercizi preferiti così da rimanere aggiornato sulle nuove promozioni disponibili.
 Queste funzionalità, disponibili in buona parte per qualsiasi utente anche non registrato, seguono un flusso logico che parte dalla ricerca degli shop e trova effetto principale nella scoperta e nell'utilizzo delle carte promozionali, della singola gelateria e del Mastro Gelatiere.
 
 \subsubsection{Carte Promozionali}
-Le carte promozionali sono il principale mezzo di advertising all'interno dell'applicazione: sono dei volantini digitali formati da un'immagine, un titolo, un testo descrittivo, un eventuale recapito telefonico e un eventuale link per avere maggiori informazioni.
+Le carte promozionali sono il principale mezzo di advertising all'interno dell'applicazione: sono dei volantini digitali formati da un'immagine/video, un titolo, un testo descrittivo, un eventuale recapito telefonico e un eventuale link per avere maggiori informazioni.
 Ci sono due tipologia di carte: le carte specifiche di ogni esercizio che sono i volantini informativi della singola gelateria e le carte del mastro gelatiere che invece si rifanno alle promozioni generiche proposte per l'intero sistema.
 
-$ DA QUI  $
+Le Carte del singolo esercizio altro non sono che le ultime promozioni legate all'attività: sconti, novità, messaggi promozionali.
+L'utente in questo modo può facilmente reperire le informazioni pubblicitarie di una determinata gelateria online e in mobilità; considerando che difficilmente in questo campo vi è già una diffusa pubblicizzazione sui social network o sui sistemi di advertising.
+Le gelaterie quindi hanno la possibilità di ottenere una maggior copertura pubblicitaria tramite l'utilizzo di un sistema centralizzato e standardizzato.
 
+Le carte di uno stesso esercizio devono essere raggruppate in modo che l'utente possa scorrerle e visualizzare tutte le promozioni o informazioni disponibili insieme.
+L'activity per questa visualizzazione deve essere raggiungibile ogni volta che sono mostrate le informazioni della gelateria: sia internamente alla ricerca che internamente alla lista dei preferiti dell'utente.
 
-
-
-Sono inoltre visualizzabili le Carte dello shop che altro non sono che le ultime promozioni legate all'attività: sconti, novità, messaggi promozionali.
-Grazie a queste informazioni l'utente può ottenere oltre le informazioni genericamente trovabili online, anche delle informazioni pubblicitarie.
-Dall'altra parte del sistema la gelaterie ha la possibilità di ottenere una maggior copertura pubblicitaria tramite l'utilizzo di un sistema centralizzato e slegato da sistemi di advertising.
+Oltre alle singole gelaterie l'ecosistema MyGelato prevede anche le carte del Mastro Gelaterie che comprendono promozioni, informazioni e novità pubblicate genericamente dagli amministratori del sistema e che sono valide per tutti gli esercizi facenti parte del circuito.
+Essendo un insieme di carte totalmente generiche e di fondamentale importanta per il sistema di advertising creato, questa sezione deve essere inserita all'interno della navigazione principale del sistema.
+Inoltre, come avverrà poi con il sistema di gelaterie preferite, ogni utente registrato verrà notificato di eventuali nuove promozioni nel momento stesso in cui diventeranno disponibili.
 
 \subsubsection{Preferiti}
-Elemento molto importante, presente all'interno della navigazione principale dell'applicazione, è la gestione delle proprie gelaterie preferite.
-Questo sistema permette ad ogni utente, registrato o meno, di salvare offline sul proprio dispositivo gli esercizi di maggiore interesse.
+La gestione delle proprie gelaterie preferite è uno degli presenti all'interno della navigazione principale dell'applicazione, accessibile da qualsiasi utente anche non registrato: permette di salvare offline sul proprio dispositivo gli esercizi di maggiore interesse.
 
-Questo dà modo all'utente di poter accedere in ogni momento, specialmente in mobilità, alle informazioni che più gli interessavano di ogni gelateria: indirizzo, recapito telefonico ed eventuali promozioni.
+Questo dà modo all'utente di poter accedere in ogni momento, specialmente in mobilità, alle informazioni che più gli interessano di ogni gelateria: indirizzo, recapito telefonico ed eventuali promozioni.
 La ricerca in questo caso è molto semplicificata poichè viene presentata una sezione a parte con una lista degli shops preferiti, senza dover obbligare l'utente ad effettuare una nuova ricerca all'interno della mappa.
 
 Il salvataggio all'interno dei preferiti avviene direttamente all'interno della ricerca, sia tramite la mappa che tramite la lista ordinata in base ala distanza dall'utente grazie ad un'icona esemplificativa.
@@ -70,16 +87,21 @@ Il salvataggio all'interno dei preferiti avviene direttamente all'interno della 
 Questa funzionalità è pensata principalmente per fidelizzare il consumatore: ogni utente avendo la possibilità di salvare una gelateria ha anche la possibilità di ottenere velocemente informazioni su nuove promozioni, ottenere velocemente i contatti dell'esercizio come se li avesse salvati in rubrica e valuatare ogni volta la distanza tra se e lo shop.
 
 Il passo successivo in questo senso è dato dal rendere bidirezionale questo collegamento, rendendo in alcuni casi non necessaria la ricerca da parte dell'utente di nuove informazioni dandogliele invece ad ogni aggiornamento.
-Per fare questo, solo nel caso di utenti registrati, l'aggiunta di uno shop ai preferiti include alcune funzionalità di maggiore visibilità: geofencing e notifiche push.
+Per fare questo, solo nel caso di utenti registrati, l'aggiunta di uno shop ai preferiti include le funzionalità di geofencing e notifiche push, quest'ultima presente anche per le carte promozionali del mastro gelatiere.
+
 Il geofencing permette di ricevere una notifica ogni qualvolta l'utente si trovi a meno di 5 km da una delle proprie gelaterie, così da essere informato di essere vicino in termini di localizzazione.
 Le notifiche push invece sono attivate per avvertire un utente che una delle proprie gelaterie ha pubblicato una nuova promozione tramite l'aggiunta una carta sul sistema MyGelato.
+
 L'utente così rimane informato costantemente delle ultime promozioni disponibili e il propietario di una gelateria ha la certezza di effettuare pubblicità diretta tra se e i suoi clienti più affezzionati.
 
 
 \subsection{E-Commerce}
 
-\subsubsection{Acquisto Coupon}
 
-\subsubsection{Utilizzo Coupon}
+\subsubsection{Acquisto}
+
+\subsubsection{Regalo e Riscatto}
+
+\subsubsection{Utilizzo e Validazione}
 
 \newpage
