@@ -94,14 +94,73 @@ Le notifiche push invece sono attivate per avvertire un utente che una delle pro
 
 L'utente così rimane informato costantemente delle ultime promozioni disponibili e il propietario di una gelateria ha la certezza di effettuare pubblicità diretta tra se e i suoi clienti più affezzionati.
 
-
 \subsection{E-Commerce}
+Il secondo flusso logico presente all'interno dell'applicazione riguarda l'acquisto e l'utilizzo di coupon gelato in completa mobilità e online.
+Questo sistema già più che diffuso in tantissimi altri ambiti del reseller online è uno dei cardini su cui maggiormente si vuole puntare sia per funzionalità sia per innovazione.
 
+I Coupon gelato sono buoni acquisto che si possono acquistare dirattemente tramite l'applicazione e permettono, a chiunque ne sia virtualmente in possesso, di utilizzarli nelle gelaterie che li hanno rilasciati tramite validazione.
+L'acquisto dei buoni deve poter essere fatto online e in mobilità utilizzando le ultime tecnologie disponibili per i pagamenti online; essenziale mantenere un occhio di riguardo alla sicurezza di questo tipo di transizioni.
+
+Tra le specifiche risulta essere presente anche il concetto di condivisione dei coupon tramite un sistema di share/redeem: un utente che ha acquistato un coupon ha la possibilità di condividerlo con un altro utente registrato che può riscuotere poi il buono. La condivisione deve avvenire tramite applicazioni e canali di comunicazioni facilmente utilizzabili all'interno di uno smartphone in modo da rendere l'interno procedimento il più facile ed intuitivo possibile.
+
+Infine vi deve essere ovviamente la possibilità di validare un coupon una volta che si decide di utilizzarlo all'interno della gelateria che lo ha rilasciato online tramite il circuito MyGelato. Questo procedimento prevede due entità in gioco, colui che possiede il coupon e il geleatio che deve poterlo validare; in entrambi i casi le funzionalità da implementare dovranno essere presenti all'interno dell'applicazione in base al tipo di account utilizzato così da mantenere coerenza negli strumenti utilizzati per collegarsi alla piattaforma.
+
+\subsubsection{Coupon}
+I Coupon sono buoni per l'acquisto di un bene materiale, normalmente gelati, che si può ritirare in qualsiasi momento in sede all'esercizio che ha effettuato la vendita.
+Hanno un nome ed un valore, il prezzo, scelti durante l'inserimento tramite il sistema amministrativo gestionale che può inserire anche informazioni aggiuntive come la scadenza, il circuito di vendita e la valuta.
+Sono generici per tutto l'ecosistema e sono quindi disponibili per ogni gelateria che li rende disponibili anche se all'acquisto sarà necessario specificare l'esercizio nel quale si desidereranno poi utilizzare.
+
+All'interno della navigazione principale dell'applicazione sarà necessario avere una sezione apposita per poter gestire tutti i propri coupon: una lista di quelli utilizzati, quelli regalati ad altri utenti e quelli che si ponno ancora utilizzare personalmente.
+Questa sezione sarà disponibile offline ma dovrà ogni volta essere sincronizzata con il server in modo da avere coerenza anche utilizzando la stessa applicazione con lo stesso account da dispositivi differenti.
+
+Oltre alla possibilità di acquistare coupon si dovrà poter accedere direttamente alle funzioni di condivisione, riscatto e utilizzo così da avere una gestione centralizzata di tutto il flusso logico legato all'e-commerce.
 
 \subsubsection{Acquisto}
+L'acquisto di un coupon è permesso a qualsiasi utente che si sia registrato, tramite mail o social network, al circuito MyGelato.
+Questa funzionalità è raggiungibile direttamente tramite parte della navigazione principale dell'applicazione, anche se deve essere disponibile solo nel caso in cui l'utente abbia eseguito il login, altrimenti dovranno essere richieste le credenziali di accesso.
 
-\subsubsection{Regalo e Riscatto}
+Le operazioni richieste per l'acquisto di un coupon dovranno tutte essere racchiuse all'interno di una stessa activity in cui l'utente verrà guidato attraverso le varie fasi fino all'avvenuta transizione.
+Il primo passo da svolgere è la scelta della gelateria su cui eseguire l'acquisto, come spiegato precedentemente si andrà a sfruttare anche in questo caso la mappa e la lista per la ricerca degli shop già utilizzata all'interno di altre funzionalità.
+In questo caso però verranno visualizzati solo le gelaterie che permettono l'acquisto di coupon e quando verranno selezionati i marker non si otterenno tutte le informazioni sull'esercizio ma sarà presente un icona per selezionare lo shop.
+
+Una volta selezionata la gelateria dovranno essere scaricati dal server i coupon disponibili e nel frattempo verrà resa disponibile la scelta del metodo di pagamento che si appoggerà al sistema di pagamento online Stripe.
+Si potrà scegliere tramite una lista di metodi di pagamento quello che si preferirà usare che sarà successivamente impostato come predefinito.
+
+Scelto il metodo di pagamento, scorrendo la lista dei coupon disponibili ed effettuando la scelta si potrà infine scegliere di completare l'acquisto che in caso di successo dovrà poi riportare l'utente sulla sezione di gestione dei coupon e altrimenti presntare un messaggio di errore.
+
+\subsubsection{Condivisione e Riscatto}
 
 \subsubsection{Utilizzo e Validazione}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \newpage
