@@ -35,8 +35,6 @@ Ogni tema, che deve essere modificabile a piacimento dall'utente direttamente da
 
 Sarà importante capire come implementare un sistema che implementi i temi in ogni componente della UI senza rendere lo sviluppo dell'applicazione in questo senso un collo di bottiglia.
 
-
-
 \subsection{Ricerca}
 L'elemento centrale di tutto l'applicazione è la possibilità di effettuare una ricerca delle gelaterie, iscritte al circuito MyGelato, presenti in una determinata zona così da ottenere alcune informazioni essenziali sull'esercizio e le relative promozioni disponibili.
 Questa funzionalità è, infatti, l'elemento cardine che lega ogni possibile azione dell'utente all'interno dell'applicazione: è essenziale sia per il sistema di marketing che per il sistema di e-commerce.
@@ -55,6 +53,19 @@ Come si può vedere in figura l'abbozzo della mappa permette di capire la necess
 
 FIGGGGGGGGGGGGGGGGGG MAPPA
 
+\subsection{Utente}
+La piattaforma MyGelato per poter offrire alcune funzionalità personalizzate al singolo utente implementa un semplice sistema di registrazione e di autenticazione.
+Questa scelta progettuale è ovviamente fondamentale da considerare durante lo sviluppo dell'applicazione mobile poichè si deve considerare un'intera sezione che dia la possibilità all'utente di registrarsi, modificare parte delle proprie informazioni ed eseguire il login sulla piattaforma.
+
+Sarà necessario poter accedere direttamente dalla navigazione principale alle informazioni riguardanti il proprio stato di accesso alla piattaforma, verificando in maniera semplice se si è già autenticati o meno.
+Le funzionalità che devono essere più facilmente accessibili sono quelli di login e di logout, in modo che l'utente in pochi passaggi possa accedere o rimuovere i propri dati dal device utilizzato.
+
+I nuovi utenti potranno utilizzare un form per iscriversi alla piattaforma MyGelato inserendo solo alcune informazioni essenziali come nome, cognome, email e password.
+Le funzionalità di registrazione si basano principalmente sull'inserimento manuale di un indirizzo di posta elettronica come metodo identificativo dell'utente, ma deve essere possibile anche eseguire la registrazione al servizio tramite social network.
+Il sistema prenderà in automatico i dati di cui necessità per inserire l'utente all'interno del proprio database e ogni volta il login per accedere all'applicazione sarà legato al login sul social network.
+
+All'interno dell'activity di login, nel caso vi sia stata una registrazione manuale, deve essere possibile accedere ad una sezione che permetta di ricevere nuovamente la password legata all'account sulla email inserita durante la registrazione.
+Infine i dati inseriti che non vengono utilizzati per identificare l'utente potranno essere modificati una volta effettuato l'accesso direttamente dalla sezione utente.
 
 \subsection{Marketing Digitale}
 Uno dei due flussi logici principali presenti all'interno dell'applicazione riguarda il marketing digitale che viene svolto per le gelaterie legate all'ecosistema MyGelato.
@@ -126,12 +137,32 @@ In questo caso però verranno visualizzati solo le gelaterie che permettono l'ac
 Una volta selezionata la gelateria dovranno essere scaricati dal server i coupon disponibili e nel frattempo verrà resa disponibile la scelta del metodo di pagamento che si appoggerà al sistema di pagamento online Stripe.
 Si potrà scegliere tramite una lista di metodi di pagamento quello che si preferirà usare che sarà successivamente impostato come predefinito.
 
-Scelto il metodo di pagamento, scorrendo la lista dei coupon disponibili ed effettuando la scelta si potrà infine scegliere di completare l'acquisto che in caso di successo dovrà poi riportare l'utente sulla sezione di gestione dei coupon e altrimenti presntare un messaggio di errore.
+Scelto il metodo di pagamento, scorrendo la lista dei coupon disponibili ed decidendo il valore che si vuole acquistare si potrà infine scegliere di completare l'acquisto che in caso di successo dovrà poi riportare l'utente sulla sezione di gestione dei coupon e altrimenti presntare un messaggio di errore.
 
 \subsubsection{Condivisione e Riscatto}
+Le funzionalità di share/redeem che si vogliono implementare all'interno dell'applicazione rendono importante capire come far dialogare due dispositivi differenti in modo che abbiano informazioni coerenti uno con l'altro e in modo che sia semplice che siano utilizzate anche da utenti non esperti.
+Per rendere questa funzionalità accessibile da chiunque si dovrà legare ogni coupon grazie ad un codice alfanumerico di sei cifre detto PNR (Passenger Name Record) che potrà quindi essere condiviso tramite qualsiasi mezzo disponibile.
+
+L'uso di un codice inviabile facilmente come teso permette di sfrutare altri applicativi presenti sul device dell'utente per la condivisione tra persone differenti.
+Scegliendo il coupon da regalare si dovrà quindi chiedere all'utente tramite quale canale di comunicazione preferisce inviare il codice PNR per poi inserire il codice in un testo promozionale legato ad un link di reindirizzamento ad una pagina web della piattaforma MyGelato.
+
+L'inserimento del link ad una pagina web della piattaforma accessibile online da qualsiasi dispositivo è una funzionalità di grande potenza: nel caso in cui la pagina web sia raggiunta da un device che ha installata sopra l'applicazione MyGelato aprirà direttamente l'applicativo stesso gestendo internamente il codice presente; altrimenti verrà presentata una pagina web che suggerisce all'utente di scaricare l'applicazione dai principali store mobile.
+
+Valutato come scegliere di condividere un coupon è necessario inserire una funzione all'interno dell'applicazione che ne permetta il riscatto tramite il solo inserimento del codice PNR.
+Raggiungibile dalla navigazione principale vi sarà una sezione che permetta di eseguire questa operazione in maniera molto semplice e che, nel caso venga avviata l'applicazione tramite la gestione del link web di cui si è parlato precedentemente sarà compilata in automatico.
+
+Tramite un semplice controllo sul server verrà quindi controllato se l'utente può riscattare il codice e le informazioni saranno aggiornate per entrambi gli utenti: chi ha regalato il coupon e chi invece può utilizzarlo.
 
 \subsubsection{Utilizzo e Validazione}
+L'ultimo passo all'interno del flusso logico di questo sistema di e-commerce è ovviamente l'utilizzo e la validazione di un coupon per acquistare un bene materiale direttamente in sede all'esercizio che ha venduto il buono.
+Per semplificare l'utilizzo della piattaforma MyGelato ci si è rifatti nuovamente al fatto che gli smartphone siano diventati quasi dei beni di uso comune e che quindi anche i propetari delle gelaterie possano utilizzare l'applicazione MyGelato come mezzo per la validazione dei coupon.
 
+Come per le funzionalità di share e redeem si è scelto di utilizzare i codici PNR dei coupon come mezzo per far dialogare i due dispositivi di chi vuole utilizzare un buono e di chi deve verificare che sia valido.
+Rispetto ad un sistema di condivisione che prevede la presenza di un canale di comunicazione personale tra i due utenti si dovrà valutare l'utilizzo di mezzi più semplici e slegati.
+
+Si è quindi proposto di generare un QR Code a partire dal codice PNR di ogni coupon, raggiungibile direttamente cliccando sul buono presente nella lista di gestione interna all'applicazione.
+Il consumatore dovrà quindi mostrare il Qr Code al propietario dell'esercizio che, utilizzando la stessa applicazione MyGelato con un account di tipo gelatiere, utilizzerà una funzione di validazione tramite lettura del codice mostrato.
+Sarà infine necessaria una connessione al server da parte di entrambi i dispositivi per verificare l'avvenuta validazione del coupon così da procedere all'acquisto materiale del bene rappresentato dal buono.
 
 
 
