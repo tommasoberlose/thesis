@@ -1,4 +1,20 @@
 \section{Implementazione}
+A seguito della fase di progettazione si è scelto di suddivedere lo sviluppo dell'applicazione in alcune fasi principali che seguono logicamente i flussi presentati nel dettaglio all'interno del capitolo 2.
+Questo ha permesso di dedicare maggiore attenzione ad ogni componente fino ad un alto livello di dettaglio; in modo da poter anche ottenere una buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
+
+Per poter ottenere uno sviluppo abbastanza lineare è stato necessario considerare che alcune specifiche richieste permeavano tutto il sistema e che quindi non potevano essere sviluppate a se stante dagli altri componenti.
+Prima tra tutto il design richiesto doveva essere presente in ogni singola view e per questo si è deciso di implementare fin da subito le interfaccie utenti per non dover replicare ad ogni passaggio le stesse operazioni di personalizzazioni della UI.
+
+Strutturato il metodo di sviluppo per la grafica dell'applicazione si è passati a gestire la navigazione principale scegliendo di utilizzare alcuni dei principali pattern Android: il \textit{NavigationDrawer} e le \textit{RecyclerView}.
+Il menù iniziale è servito a separare anche concettualmente le principali funzioni da dover sviluppare così da poter procedere successivamente con l'impletazione di ogni componente potendovi accedere anche se altre parti dell'applicazione non erano ancora disponibili.
+
+Ragionando ulteriormente dal generale al dettaglio si è scelto di sviluppare la mappa di ricerca degli shop poichè presente in entrambi i flussi logici principali e quindi nodo cardine dell'applicazione, specialmente in termini di prestazioni.
+La fase successiva ha fornito l'intera gestione della registrazione e dell'autenticazione di un utente poichè facente parte sia del sistema di marketing sia di quello di e-commerce, ultimi componenti implementati durante la fase di sviluppo.
+
+A conclusione dell'implementazione si sono effettuati dei test per valutare le prestazioni dell'applicazione in modo particolare su quelle funzioni nodi centrali che avrebbero potuto inficiare l'esperienza utente se con basse prestazioni.
+
+
+\subsection{Design}
 
 \subsection{Ricerca}
 
@@ -13,6 +29,8 @@
 Geofencing e notifiche push
 
 \subsection{E-Commerce}
+
+\subsubsection{Coupon}
 
 \subsubsection{Acquisto}
 
