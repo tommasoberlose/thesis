@@ -1,0 +1,814 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/tommaso/Documents/Tesi/thesis/chapters/
+\textclass extreport
+\options openright,cleardoublepage=empty
+\use_default_options false
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding utf8
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\pdf_quoted_options "colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+
+\lang italian
+Progettazione
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli strumenti di sviluppo da utilizzare durante lo svolgimento della tesi: come parametri si é tenuto conto di tempistiche di aggiornamento, adeguamento alle linee guida del sistema operativo in oggetto, documentazione disponibile e modernità delle tecnlogie utilizzate.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Durante la prima fase di sviluppo strutturale si è dovuto valutare la tecnologia da utilizzare in modo da tenere il passo con le ultime specifiche di Android e tenendo conto che, anche secondo gli ultimi report pubblicati da Google, rimane una forte frammentazione della distribuzione del sistema operativo, dovuta ai molteplici produttori di hardware. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ANDROIDSTUDIO:DASHBOARD
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Era quindi da tenere in considerazione la retrocompatibilità delle librerie utilizzate, avendo scelto di supportare fino alla versione 16 del SDK (Android 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione anche su device con schermi e hardware differenti.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Si sono inoltre adottate alcune strategie implementative, come la creazione di custom view, per poter meglio strutturare il progetto favorendone anche eventuali modifiche o ampliamenti.
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+Strumenti di Sviluppo
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Considerato che l'applicazione mobile, oggetto di tesi, era destinata a lavorare unicamente sulla piattaforma Android, si è scelto di utilizzare come principale strumento di sviluppo 
+\series bold
+Android Studio
+\series default
+, software dedicato alla programmazione nativa del suddetto sistema operativo. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ANDROIDDEVELOPERS:FIRSTAPP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Durante lo sviluppo del progetto si è utilizzato come sistema di versioning il software 
+\series bold
+Git
+\series default
+, così da poter mantenere uno storico del lavoro svolto e ottenendo tutti i vantaggi del'utilizzo di un Sistema per il Controllo di Versione (
+\shape italic
+Version Control System - VCS
+\shape default
+).
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Sono inoltre da citare alcuni software utilizzati durante il lavoro di tesi che, anche se di minore impatto, sono serviti a testare e sviluppare alcune parti fondamentali di codice. Primo fra tanti la web application Postman 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+POSTMAN
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ che permette di testare e sviluppare le APIs con cui due applicativi possono dialogare, in maniera semplice ed intuitiva. Utile per valutare le chiamate al server e per verificare le risposte ottenute. 
+\series bold
+Altri da citare???
+\series default
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+Android Studio
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Android Studio 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+WIKIPEDIA:ANDROIDSTUDIO
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O e la prima build stabile fu rilasciata nel dicembre del 2014. Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato progettato specificamente per lo sviluppo di Android.[4] È disponibile il download su Windows, Mac OS X e Linux,[5][6] e sostituisce gli Android Development Tools (ADT) di Eclipse, diventando l' IDE primario di Google per lo sviluppo nativo di applicazioni Android. Permette di creare un progetto gradle, apk, github,
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+Git
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Git è un software di controllo versione distribuito (
+\shape italic
+Distributed Version Control Systems - DVCS
+\shape default
+) utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds nel 2005. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+WIKIPEDIA:GIT
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Nacque per essere un semplice strumento per facilitare lo sviluppo del kernel Linux ed è diventato uno degli strumenti di controllo versione più diffusi.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Per quanto riguarda qualsiasi tipo di progetto di IT (
+\shape italic
+Information Technology
+\shape default
+), specialmente se si tratta di un lavoro da dover svolgere in team, Git da la possibilità di mantenere in memoria tutte le versioni del proprio lavoro (sia in locale che online). Questo permette a più persone di poter accedere alla cronologia del lavoro condiviso, avendo anche la possibilità di verificare la presenza di errori e di eliminarli tornando ad una versione precedente del progetto. Git sfrutta alcuni algoritmi avanzati per calcolare le differenze riga per riga tra i file di diverse versioni così da verificare la presenza di errori o conflitti.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Git è fortemente direzionato verso uno sviluppo progettuale non lineare. Supporta diramazione e fusione (
+\shape italic
+branching and merging
+\shape default
+) rapide e comode, e comprende strumenti specifici per visualizzare e navigare l'intero storico delle versioni anche se proposte da sistemi differenti. È veloce e scalabile nella gestione di grandi progetti ed è molto utile nello sviluppo in team, specialmente se affiancato dal modello GitFlow che permette di gestire rami specifici per il developing o per le release.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Infine grazie all'utilizzo di piccoli accorgimenti come il file .gitignore (che permette di non salvare anche i file temporanei e non importanti del progetto) e soluzioni online come GitHub o BitBucket (quest'ultimo utilizzato durante lo sviluppo di questa tesi) il processo di sviluppo software viene drasticamente avvantaggiato.
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+Programmazione Nativa
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Questa tesi si inserisce all'interno del lavoro di modifica e miglioramento delle applicazioni mobile dell'ecosistema MyGelato, il quale includeva un progetto sia per piattaforma Android sia per piattaforma iOS. Essendosi creati due differenti progetti, durante la prima fase di progettazione, si è potuto valutare in maniera più libera l'utilizzo o meno della programmazione nativa.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Sicuramente lavorare in questo modo o meno ha i propri pro e contro. Mentre da un lato il nativo offre la possibilità di una gestione totale del dispositivo senza la paura di trovare limiti, d’altra parte richiede spesso una programmazione molto professionale e si concentra esclusivamente su una piattaforma impedendo un’agile riciclo dei propri sforzi su altri mercati del mobile. Il non-nativo, invece, offre diversi vantaggi ascrivibili ad una minore necessità di programmare e molto spesso alla possibilità di creare applicazioni cross-platform distribuibili su sistemi operativi diversi.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+HTMLIT:PROGNATIVA
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Non avendo quindi necessità di mantenere alta la portabilità del codice su altre piattaforme, si è preferito sviluppare tramite programmazione natuva; potendo quindi sfruttare pienamente l'architettura del sistema operativo sottostante.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+Java
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+XML
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+Database
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+Realm
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+Chiamate Server
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente di accedere da remoto, e quindi da qualsiasi dispositivo, alle proprie informazioni ha come parte fondamentale lo sviluppo e il mantenimento di un server di beckend (quindi nascosto nelle funzionalità alla vista dell'utente) che mantenga, gestisca e restituisca i dati necessari alle funzioni degli applicativi. Nello stesso modo la piattaforma MyGelato si basa su un server che mantiene ogni informazione riguardante utenti, shop e cards fornendo delle API REST che vengono sfruttate dalle applicazioni mobile e web per poter fornire i propri servizi.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Il passaggio di informazioni tra i due applicativi avviene tramite chiamate internet con protocollo http protette grazie ad una connessione criptata dal Transport Layer Security (TLS) o dal suo predecessore, Secure Sockets Layer (SSL). Grazie alla API REST è possibile sviluppare in maniera strutturata e di seguire alcuni pattern delle tecnologie che permettono di valutare ogni possibile errore delle connessioni: errori nei dati, nell connessione, ecc... In Java le chiamate http sono abbastanza difficili da gestire poichè non sono automatizzate e son stati effettuati dei cambiamenti tra le ultime versioni che non permettono di lavorare correttamente su tutti i dispositivi Android. Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata da Square, che permette di automatizzare le chiamate http sfruttando anche una notevole semplificazione del codice utilizzato per programmare. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+SQUARE:OKHTTP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+OkHttp
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+La liberia OkHttp nasce dal fatto che il protocollo http è l'attuale mezzo di comunicazione per ogni applicativo moderno. Per questo si pone l'obiettivo di semplificarne l'utilizzo in più di una tecnologia migliorandone le prestazioni e fornendo allo sviluppatore alcuni automatismi comodi durante lo sviluppo e la programmazione.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching, la riconnessione, l'utilizzo di protocolli sicuri come TLS, l'utilizzo di indirizzi IP multipli ed è molto semplice da integrare e utilizzare all'interno del proprio software. Grazie ad un'interfaccia molto semplice permette di automatizzare le chiamate http utilizzando dei Builder che lasciano specificare solo i parametri necessari e restituiscono un unico oggetto da cui si ottiene la risposta, positiva o negativa, della richiesta.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+
+\begin_inset listings
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+OkHttpClient client = new OkHttpClient();
+\end_layout
+
+\begin_layout Plain Layout
+Request request = new Request.Builder()
+\end_layout
+
+\begin_layout Plain Layout
+           .url(endpoint)
+\end_layout
+
+\begin_layout Plain Layout
+           .addHeader("Accept","application/json")
+\end_layout
+
+\begin_layout Plain Layout
+           .build();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Response response = client.newCall(request).execute();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Inizializzato il client OkHttp basta creare un oggetto request a cui vanno passati i parametri necessari; basta poi eseguire la chiamata per ottenere un oggetto response all'interno del quale sono presenti i dati scaricati, il codice di risposta della chiamata e anche eventuali errori.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+API REST
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+Gestore di Eventi
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Un passaggio fondamentale durante lo sviluppo di un software è l'aggiornamento delle view a seguito di un cambiamento nello stato dell'applicazione. In Android è necessario intervenire direttamente sugli elementi dell'interfaccia modificando ogni oggetto in base alle specifiche richieste senza poter sfruttare veri e propri automatismi. Una forte limitazione del sistema operativo è dovuta, per esempio, al fatto che l'unico thread che ha il permesso di accedere e di modificare l'interfaccia utente è il Main Thread; questo complica l'interazione con eventuali sistemi multithreading anche se, ovviamente, fa parte delle specifiche di sistema utili a limitare i conflitti sull'accesso alle risorse condivise (in questo caso le view).
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Questo problema necessita di ampia valutazione durante lo sviluppo e anche in questo caso si è dovuto strutturare l'applicazione in modo che non incorresse in errori di inconsistenza tra le view a cui il programma voleva accedere e le view realmente visualizzate al momento. Nel caso si utilizzino script asincroni è molto facile tentare di accedere ad elementi, o anche intere activity, non più presenti nell'interfaccia utente; per questo motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+GITHUB:EVENTBUS
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ e pensata esattamente per risolvere questo tipo di errori.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+EventBus
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+EventBus è una libreria open-source per Android che utilizza il pattern publish/subscribe per far dialogare tutti i componenti di un'applicazione. Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce in maniera centralizzata monitorando le performance e gestendo gli errori che potrebbero essere sollevati da uno sviluppo multithreading.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+GREENROBOT:EVENTBUS
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+I principali benefici che si riscontrano tramite l'utilizzo di questa libreria sono la semplificazione delle comunicazioni tra componenti, il disaccoppiamento tra mittenti e riceventi degli eventi, miglioramenti nelle perfomance, facile integrazione dei metodi da utilizzare ed infine anche caratteristiche avanzate come priorità e indirizzamento a thread specifici.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Durante lo svolgimento di questa tesi si è definita una struttura abbastanza comune formata da: - AsyncTask, oggetto che permette di elaborare una serie di informazioni in background, utilizzato per eseguire il download delle informazioni dal server; - View specifica dell'activity con determinati componenti da aggiornare in base allo stato dell'applicazione; - Metodo updateUI() che preso in gresso i dati scaricati doveva aggiornare le view rispetto allo stato.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare il lavoro di thread in background senza limitare l'utente nell'attesa di un determinato evento. Si procedeva quindi crendo un evento specifico per l'interazione da dover gestire di cui qui viene riportato un esempio:
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+
+\begin_inset listings
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+public static class UpdateCouponUiEvent<T> {
+\end_layout
+
+\begin_layout Plain Layout
+	public T data;
+\end_layout
+
+\begin_layout Plain Layout
+	public UpdateCouponUiEvent() {
+\end_layout
+
+\begin_layout Plain Layout
+	}
+\end_layout
+
+\begin_layout Plain Layout
+	public UpdateCouponUiEvent(T data) {
+\end_layout
+
+\begin_layout Plain Layout
+		this.data = data;
+\end_layout
+
+\begin_layout Plain Layout
+	}
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+EventBus permette di registrare dei metodi eseguendo una subscribe ad un determinato evento: ogni qual volta un evento di quel tipo viene sollevato, il metodo viene eseguito. La subscribe deve essere definita nel codice nel seguente modo:
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+
+\begin_inset listings
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+@Subscribe
+\end_layout
+
+\begin_layout Plain Layout
+public void updateUI(UpdateCouponUiEvent event) {
+\end_layout
+
+\begin_layout Plain Layout
+	// update UI with event.data
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei dati tramite l'evento che viene lanciato, nel codice messo ad esempio si tratta della variable data, definito di tipo generico.
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+Infine all'interno del AsyncTask, a conclusione del download delle informazioni e dell'aggiornamento dello stato, era sollevato un evento grazie ad una publish:
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+
+\begin_inset listings
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+EventBus.getDefault().post(new UpdateCouponUiEvent());
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\lang italian
+E-Commerce
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang italian
+Stripe
+\end_layout
+
+\begin_layout Standard
+
+\lang italian
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
