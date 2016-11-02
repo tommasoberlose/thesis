@@ -90,11 +90,10 @@ Contesto e Finalità
 Per comprendere nella sua complessità il progetto elaborato in questa tesi
  è necessario tenere conto, prima di tutto, del contesto in cui viene sviluppato
  e delle finalità implicite ed esplicite che si vogliono raggiungere.
- In questo caso si tratta di descrivere lo sviluppo di un applicativo mobile
- fortemente legato ai sistemi di marketing e alle nuove strategie di business
- di aziende leader all'interno dei propri mercati, in molti casi saturi
- o fortemente instabili, scossi dalle innovazioni tecnologiche di questi
- decenni.
+ Si tratta di descrivere lo sviluppo di un applicativo mobile fortemente
+ legato ai sistemi di marketing e alle nuove strategie di business di aziende
+ leader all'interno dei propri mercati, in molti casi saturi o fortemente
+ instabili, scossi dalle innovazioni tecnologiche di questi decenni.
 \end_layout
 
 \begin_layout Standard
@@ -111,18 +110,16 @@ Questo elaborato rientra nel concetto di
 \shape italic
 Application Economy
 \shape default
-, che descrive perfettamente il trend degli ultimi anni: il cambiamento
- dei metodi con cui le masse ottengono informazioni e si lasciano influenzare
- hanno portato ad un sostanziale sconvolgimento del sistema di marketing
- e delle strategie commerciali anche di aziende multinazionali spostando
- l'interesse sulla ricerca nel campo delle applicazioni mobile.
+, che descrive perfettamente il trend degli ultimi anni.
+ Il cambiamento dei metodi con cui le masse ottengono informazioni e si
+ lasciano influenzare hanno portato a un sostanziale sconvolgimento del
+ sistema di marketing e delle strategie commerciali anche di aziende multinazion
+ali, spostando l'interesse sulla ricerca nel campo delle applicazioni mobile.
  Proprio in questo contesto è necessario inquadrare le motivazioni che hanno
- portato l'azienda Carpigiani a dare vita all'ecosistema MyGelato, di cui
- questa tesi sviluppa solo una componente, così da realizzare quanto progetti
- di questo tipo siano fondamentali in questo momento storico.
- Si tratta di uno studio con finalità esplicite in ambito pubblicitario
- e con finalità implicite legate, invece, all'ambito commerciale e produttivo
- dell'azienda.
+ portato Carpigiani, azienda leader nel settore della produzione di macchine
+ per il gelato, a dare vita all'ecosistema MyGelato, di cui questa tesi
+ sviluppa solo una componente, valutando sia le finalità in ambito di marketing
+ sia in ambito commerciale e produttivo.
 \end_layout
 
 \begin_layout Section
@@ -147,7 +144,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Applications Economy
+Application Economy
 \end_layout
 
 \end_inset
@@ -176,7 +173,7 @@ Era dell'Informazione
 \shape default
 .
  La rivoluzione tecnologica che sta avvenendo in questi anni, specialmente
- a partire dagli anni Novanta, ha portato la connessione globale a internet
+ a partire dagli anni Novanta, ha portato la connessione globale a Internet
  ad assumere un ruolo essenziale in ogni aspetto della società moderna e
  della nostra vita.
 \end_layout
@@ -239,7 +236,7 @@ marketing digitale
  anche di cultura, età e ambienti sociali diversi.
  L'utente medio, per esempio, viene ormai maggiormente raggiunto e conivolto
  tramite email pubblicitarie o advertising online rispetto a meccanismi
- ormai meno incisivi di marketing non digitale.
+ tradizionali ormai meno incisivi di marketing non digitale.
 \end_layout
 
 \begin_layout Standard
@@ -250,8 +247,8 @@ marketing digitale
 \end_layout
 
 \begin_layout Standard
-Legato alla diffusione sempre crescente di smartphone, che sono diventati
- molte volte l'accesso principale degl utenti a internet, nasce quindi l'
+Legato alla diffusione sempre crescente di smartphone, che sono di fatto
+ diventati l'accesso principale degl utenti a Internet, nasce quindi l'
 \shape italic
 Application Economy
 \shape default
@@ -283,10 +280,10 @@ Se questa strategia può essere applicata, per esempio, in ambito marketing
 
 \begin_layout Standard
 Tutti questi concetti sono ormai più che affermati in ambiti come la vendita
- di prodotti di abbigliamento o tecnologici ma l'azienda Carpigiani ha scelto
- di portare questi nuovi meccanismi anche all'interno del proprio campo,
- quello della vendita di Gelati, in modo innovativo e fortemente avanti
- nei tempi grazie al progetto 
+ di prodotti di abbigliamento o tecnologici, ma l'azienda Carpigiani ha
+ scelto di portare questi nuovi meccanismi anche all'interno della vendita
+ di Gelati, in modo innovativo e fortemente avanti nei tempi grazie al progetto
+ 
 \emph on
 MyGelato
 \emph default

@@ -90,11 +90,10 @@ Contesto e Finalità
 Per comprendere nella sua complessità il progetto elaborato in questa tesi
  è necessario tenere conto, prima di tutto, del contesto in cui viene sviluppato
  e delle finalità implicite ed esplicite che si vogliono raggiungere.
- In questo caso si tratta di descrivere lo sviluppo di un applicativo mobile
- fortemente legato ai sistemi di marketing e alle nuove strategie di business
- di aziende leader all'interno dei propri mercati, in molti casi saturi
- o fortemente instabili, scossi dalle innovazioni tecnologiche di questi
- decenni.
+ Si tratta di descrivere lo sviluppo di un applicativo mobile fortemente
+ legato ai sistemi di marketing e alle nuove strategie di business di aziende
+ leader all'interno dei propri mercati, in molti casi saturi o fortemente
+ instabili, scossi dalle innovazioni tecnologiche di questi decenni.
 \end_layout
 
 \begin_layout Standard
@@ -111,18 +110,16 @@ Questo elaborato rientra nel concetto di
 \shape italic
 Application Economy
 \shape default
-, che descrive perfettamente il trend degli ultimi anni: il cambiamento
- dei metodi con cui le masse ottengono informazioni e si lasciano influenzare
- hanno portato ad un sostanziale sconvolgimento del sistema di marketing
- e delle strategie commerciali anche di aziende multinazionali spostando
- l'interesse sulla ricerca nel campo delle applicazioni mobile.
+, che descrive perfettamente il trend degli ultimi anni.
+ Il cambiamento dei metodi con cui le masse ottengono informazioni e si
+ lasciano influenzare hanno portato a un sostanziale sconvolgimento del
+ sistema di marketing e delle strategie commerciali anche di aziende multinazion
+ali, spostando l'interesse sulla ricerca nel campo delle applicazioni mobile.
  Proprio in questo contesto è necessario inquadrare le motivazioni che hanno
- portato l'azienda Carpigiani a dare vita all'ecosistema MyGelato, di cui
- questa tesi sviluppa solo una componente, così da realizzare quanto progetti
- di questo tipo siano fondamentali in questo momento storico.
- Si tratta di uno studio con finalità esplicite in ambito pubblicitario
- e con finalità implicite legate, invece, all'ambito commerciale e produttivo
- dell'azienda.
+ portato Carpigiani, azienda leader nel settore della produzione di macchine
+ per il gelato, a dare vita all'ecosistema MyGelato, di cui questa tesi
+ sviluppa solo una componente, valutando sia le finalità in ambito di marketing
+ sia in ambito commerciale e produttivo.
 \end_layout
 
 \begin_layout Section
@@ -147,7 +144,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Applications Economy
+Application Economy
 \end_layout
 
 \end_inset
@@ -176,7 +173,7 @@ Era dell'Informazione
 \shape default
 .
  La rivoluzione tecnologica che sta avvenendo in questi anni, specialmente
- a partire dagli anni Novanta, ha portato la connessione globale a internet
+ a partire dagli anni Novanta, ha portato la connessione globale a Internet
  ad assumere un ruolo essenziale in ogni aspetto della società moderna e
  della nostra vita.
 \end_layout
@@ -239,7 +236,7 @@ marketing digitale
  anche di cultura, età e ambienti sociali diversi.
  L'utente medio, per esempio, viene ormai maggiormente raggiunto e conivolto
  tramite email pubblicitarie o advertising online rispetto a meccanismi
- ormai meno incisivi di marketing non digitale.
+ tradizionali ormai meno incisivi di marketing non digitale.
 \end_layout
 
 \begin_layout Standard
@@ -250,8 +247,8 @@ marketing digitale
 \end_layout
 
 \begin_layout Standard
-Legato alla diffusione sempre crescente di smartphone, che sono diventati
- molte volte l'accesso principale degl utenti a internet, nasce quindi l'
+Legato alla diffusione sempre crescente di smartphone, che sono di fatto
+ diventati l'accesso principale degl utenti a Internet, nasce quindi l'
 \shape italic
 Application Economy
 \shape default
@@ -283,10 +280,10 @@ Se questa strategia può essere applicata, per esempio, in ambito marketing
 
 \begin_layout Standard
 Tutti questi concetti sono ormai più che affermati in ambiti come la vendita
- di prodotti di abbigliamento o tecnologici ma l'azienda Carpigiani ha scelto
- di portare questi nuovi meccanismi anche all'interno del proprio campo,
- quello della vendita di Gelati, in modo innovativo e fortemente avanti
- nei tempi grazie al progetto 
+ di prodotti di abbigliamento o tecnologici, ma l'azienda Carpigiani ha
+ scelto di portare questi nuovi meccanismi anche all'interno della vendita
+ di Gelati, in modo innovativo e fortemente avanti nei tempi grazie al progetto
+ 
 \emph on
 MyGelato
 \emph default
@@ -300,13 +297,10 @@ Ecosistema MyGelato
 \begin_layout Standard
 L'ecosistema MyGelato si pone all'interno del contesto descritto nel capitolo
  precedente, a unire le strategie di marketing dell'azienda produttrice
- Carpigiani e delle singole gelaterie convenzionate; insieme alla possibilità
- di comprare, regalare e utilizzare online dei coupon che permettono l'acquisto
- di gelati.
- È un progetto di piattaforma web e mobile che si rivolge al pubblico dei
- gelatieri e dei consumatori di gelato.
+ Carpigiani e delle singole gelaterie convenzionate: una piattaforma web
+ e mobile che si rivolge ai gelatieri e ai consumatori di gelato.
  Gli obiettivi commerciali sono diversi, primi tra i quali quello di incentivare
- la compravendita di gelati tramite il sistema di coupon digitali e quello
+ la compravendita di gelati tramite un sistema di coupon digitali e quello
  di promuovere il consumo di gelato tramite offerte, fornendo anche ai gelatieri
  un sistema semplice ed efficace per pubblicizzare il proprio negozio.
 \begin_inset VSpace bigskip
@@ -320,16 +314,12 @@ Attraverso l'applicativo, l'utente può informarsi sulle gelaterie presenti
  in zona verificando anche quali facciano parte del circuito MyGelato: insieme
  delle gelaterie convenzionate alla vendita e alla validazione dei coupon
  online.
- È possibile selezionare ogni gelateria così da avere alcune informazioni
- utili, come indirizzo e numero di telefono, salvarle nei preferiti e verificare
- se vi sono promozioni attive.
- Nel momento in cui l'utente aggiunge ai preferiti una gelateria, verrà
- informato tramite notifica push di eventuali nuove promozioni attive e
- sarà notificato anche nel caso in cui si avvicini a una gelateria di proprio
- interesse.
- Queste strategie sono ovviamente di carattere pubblicitario e permettono
- anche a gelaterie minori, facenti però parte del circuito, di essere pubblicizz
-ate agli utenti che utilizzano la piattaforma.
+ È possibile ottenere alcune informazioni utili, come indirizzo e numero
+ di telefono, salvarle nei preferiti e verificare se vi sono promozioni
+ attive.
+ Sono strategie ovviamente di carattere pubblicitario e permettono anche
+ a gelaterie minori, facenti però parte del circuito, di essere pubblicizzate
+ agli utenti che utilizzano la piattaforma.
 \end_layout
 
 \begin_layout Standard
@@ -346,11 +336,11 @@ Questo sistema permette all'azienda Carpigiani di avere un controllo maggiore
 \begin_layout Standard
 Seconda feature fondamentale dell'applicazione, che riguarda in questo caso
  solo gli utenti iscritti al sistema, è la possibilità di comprare online
- dei coupon digitali che permettono l'acquisto, tramite validazione, di
- un gelato presso una determinata gelateria.
+ dei coupon digitali che permettono l'acquisto di un gelato presso una determina
+ta gelateria.
  Questi coupon sono visualizzabili in ogni momento e possono essere regalati
- anche ad altri utenti tramite un semplice metodo di condivisione/riscatto
- che permette al destinatario di usufruire dell'oggetto comprato.
+ anche ad altri utenti tramite un semplice metodo di condivisione che permette
+ al destinatario di usufruire dell'oggetto comprato.
  Ogni gelateria che supporta questo sistema sarà provvista della stessa
  applicazione con un account specifico per il gelatiere che permetterà di
  validare i coupon utilizzati e ricevere il proprio compenso tramite il
@@ -359,11 +349,11 @@ Seconda feature fondamentale dell'applicazione, che riguarda in questo caso
 
 \begin_layout Standard
 Questo sistema di e-commerce sposta la vendita di un prodotto molto semplice
- come i gelati, online; È infatti possibile comprarli tramite carta di credito
- e l'azienda Carpigiani, nel frattempo, si può inserire in costesto legato
- a delle realtà locali sul quale altrimenti non riuscirebbe ad avere informazion
-i dettagliate.
- Questo sistema, per quanto diffuso in altri mercati come il reseller online
+ come i gelati, online.
+ È infatti possibile comprarli tramite carta di credito e l'azienda Carpigiani,
+ nel frattempo, si inserisce in un meccanismo legato a delle realtà locali
+ sul quale altrimenti non riuscirebbe ad avere informazioni.
+ Questo sistema, per quanto diffuso in altri mercati come il reselling online
  di oggettistica è fortemente innovativo in questo campo e rende l'ecosistema
  MyGelato uno dei primi nel suo settore.
 \end_layout

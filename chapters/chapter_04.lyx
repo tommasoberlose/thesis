@@ -88,7 +88,7 @@ Implementazione
 
 \begin_layout Standard
 A seguito della fase di progettazione si è scelto di suddivedere lo sviluppo
- dell'applicazione in alcune fasi principali che seguono logicamente i flussi
+ dell'applicazione in alcune fasi principali che seguono logicamente i workflow
  presentati nel dettaglio all'interno del capitolo 2.
  Questo ha permesso di dedicare maggiore attenzione ad ogni componente fino
  ad un alto livello di dettaglio; in modo da poter anche ottenere una buona
@@ -97,9 +97,9 @@ A seguito della fase di progettazione si è scelto di suddivedere lo sviluppo
 
 \begin_layout Standard
 Per poter ottenere uno sviluppo abbastanza lineare è stato necessario considerar
-e che alcune specifiche richieste permeavano tutto il sistema e che quindi
- non potevano essere sviluppate a se stante dagli altri componenti.
- Prima tra tutto il design richiesto doveva essere presente in ogni singola
+e che alcune specifiche richieste erano presenti in tutto il sistema e che
+ quindi non potevano essere sviluppate a se stante dagli altri componenti.
+ Prima di tutto il design richiesto doveva essere presente in ogni singola
  view e per questo si è deciso di implementare fin da subito le interfaccie
  utenti per non dover replicare ad ogni passaggio le stesse operazioni di
  personalizzazioni della UI.
@@ -136,13 +136,277 @@ nticazione di un utente poichè facente parte sia del sistema di marketing
 
 \begin_layout Standard
 A conclusione dell'implementazione si sono effettuati dei test per valutare
- le prestazioni dell'applicazione in modo particolare su quelle funzioni
- nodi centrali che avrebbero potuto inficiare l'esperienza utente se con
- basse prestazioni.
+ le prestazioni dell'applicazione, in particolar modo sui nodi centrali
+ che avrebbero potuto inficiare l'esperienza utente se con basse prestazioni,
+ come ad esempio la mappa di ricerca.
 \end_layout
 
 \begin_layout Section
 Design
+\end_layout
+
+\begin_layout Standard
+Il Design è stato il primo concetto sviluppato poichè avrebbe rappresentato
+ una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
+ In figura sono visualizzati rispettivamente la scelta di due temi differenti,
+ uno chiaro ed uno scuro e a fianco è mostarto come cambia l'interfaccia
+ di navigazione in base al tema selezionato.
+ Tutti i componenti sono personalizzati implementando i tre font differenti,
+ utilizzando le risorse messe a disposizione sia per le icone che per le
+ azioni di navigazione.
+\end_layout
+
+\begin_layout Standard
+Ad ogni inizializzazione e a ogni cambio di tema vi sono elementi dell'UI
+ che sono da aggiornare, in special modo tutte le ImageView e le TextView
+ che rappresentano rispettivamente ogni immagine e ogni testo presenti sulla
+ schermata.
+ Per automatizzare la gestione di questi componenti si è scelto di implementare
+ un'interfaccia comune ai due oggetti chiamata 
+\emph on
+FlavorObject
+\emph default
+ che dichiarava un nuovo metodo chiamato updateFlavor() da richiamare ad
+ ogni aggiornamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public interface FlavorObject {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void updateFlavor(Flavors flavor);
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void updateFlavor(Context context, String taste);
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da quest'interfaccia si sono ereditate le tre view principali che sono state
+ utilizzate durante tutto lo sviluppo di questa tesi e che hanno permesso
+ di richiamare in metodo ricorsivo su tutti i componenti lo stesso metodo,
+ in modo da aggiornare la schermata senza dover conoscere esattamente come
+ ogni singolo elemento andava modificato.
+ Ogni custom view ha quindi implementato il metodo dell'interfaccia così
+ da gestire in maniera automatica i temi chiari/scuri e il cambio ad ogni
+ aggiornamento.
+\end_layout
+
+\begin_layout Standard
+Per la gestione dei font dei testi si è sfruttato il fatto di aver implementato
+ una versione personalizzata della textView così da implementare un nuovo
+ elemento all'interno del componente scritto in xml.
+ In questo modo si è potuto rendere il codice molto più pulito indicando
+ il font per ogni testo direttamente nella definizione della view senza
+ dover gestire ogni elemento tramite java alla creazione della schermata.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<com.carpigiani.mygelato.custom.CustomTextView             
+\end_layout
+
+\begin_layout Plain Layout
+
+	android:layout_width="wrap_content"
+\end_layout
+
+\begin_layout Plain Layout
+
+	android:layout_height="wrap_content"
+\end_layout
+
+\begin_layout Plain Layout
+
+	...
+\end_layout
+
+\begin_layout Plain Layout
+
+	app:typefaceAsset="fonts/Pacifico.ttf"/>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Per eseguire l'aggiornamento automatico di tutte le view si è scelto di
+ creare una custom Activity, che rappresenta il componente di una schermata
+ dell'interfaccia utente, così da implementare anche in questo caso un metodo
+ che venisse richiamato ogni volta che vi erano elementi da modificare.
+\end_layout
+
+\begin_layout Standard
+Questa 
+\emph on
+FlavorActivity
+\emph default
+ incapsula la gestione stessa del tema attuale aggiornando in maniera automatica
+ oltre agli elementi dichiarati anche la toolbar e la statusbar visibili
+ come componenti di sistema di Android.
+ L'oggetto Flavors rappresenta il tema attuale dell'applicazione e contiene
+ tutti i dati utili a personalizzare i componenti dell'interfaccia come
+ ad esempio il 
+\emph on
+main
+\emph default
+ e il 
+\emph on
+secondary color
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class FlavorActivity extends AppCompatActivity {
+\end_layout
+
+\begin_layout Plain Layout
+
+    private Flavors flavors;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    @Override     
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void onResume() {
+\end_layout
+
+\begin_layout Plain Layout
+
+        super.onResume();
+\end_layout
+
+\begin_layout Plain Layout
+
+        applyFlavor();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public void applyFlavor() {
+\end_layout
+
+\begin_layout Plain Layout
+
+        this.flavors = new Flavors(this);
+\end_layout
+
+\begin_layout Plain Layout
+
+        updateBar();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Concluso lo sviluppo di ogni componente si è inserita all'interno della
+ navigazione principale la possibilità di accedere alla sezione per la scelta
+ del tema da parte dell'utente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement bh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/temi.jpg
+	lyxscale 20
+	scale 6
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Temi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -153,8 +417,65 @@ Ricerca
 Utente
 \end_layout
 
+\begin_layout Standard
+La gestione dell'utente è una sezione a parte raggiungibile unicamente tramite
+ la navigazione principale e permette di verificare se si è effettuato o
+ meno l'accesso all'applicazione.
+ Si è inserito un header all'interno del menù laterale in cui sono visibili
+ un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
+ il login.
+ Una volta che l'utente avrà effettuato l'accesso saranno invece visibili
+ l'avatar, il nome, un'icona per accedere alla schermata di modifica dell'accoun
+t e il bottone per eseguire il logout.
+\end_layout
+
+\begin_layout Standard
+Si è poi implementata un'unica schermata dalla quale si può accedere al
+ login tramite credenziali, al login tramite social network, alla registrazione
+ di un nuovo account.
+ Si verrà reindirizzati a questa sezione ogni volta che l'utente tenterà
+ di eseguire delle azioni in cui è necessario aver eseguito l'accesso senza
+ invece essersi loggati.
+\end_layout
+
+\begin_layout Standard
+Ogni azione che si vuole compiere, come per esempio l'accesso tramite credenzial
+i, deve essere gestito all'interno dell'applicazione in modo molto accurato.
+ Ogni campo di input è stato gestito in modo da attuare una validazione
+ anche lato client informando in maniera diretta l'utente nel caso in cui
+ i dati inseriti non siano corretti.
+ A seguito dell'invio di ogni form viene eseguita una chiamata alle API
+ del backend tramite l'interfaccia di supporto 
+\emph on
+Network
+\emph default
+ implementata in modo che ritorni eventuali messaggi di errore in maniera
+ standardizzata.
+\end_layout
+
+\begin_layout Standard
+Nel momento in cui l'utente esegue il login vengono aggiornate sul device
+ le informazioni legate all'account, creando un oggetto Realm che incapsula
+ ogni informazione salvata all'interno del server in modo che ogni sezione
+ dell'applicativo possa accedervi localmente.
+ L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
+ che altrimenti non si potrebbero visualizzare poichè ogni chiamata alle
+ API deve essere corredata delle informazioni legate all'utente che esegue
+ una determinata azione.
+\end_layout
+
+\begin_layout Standard
+Infine anche le funzioni di logout sono gestite all'interno di un helper
+ che incapsula tutte le operazioni necessarie per far si he nessun dato
+ sensibile rimanga salvato in locale a seguite della disconessione dell'account.
+\end_layout
+
 \begin_layout Section
 Marketing Digitale
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
