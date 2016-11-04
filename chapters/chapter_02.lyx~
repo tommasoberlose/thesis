@@ -191,7 +191,7 @@ UI
 \emph default
 ) come icone, testi e bottoni.
  Sono presenti tre font custom che devono essere utilizzati in situazioni
- e contesti differenti in modo chesi capisca fin dal primo colpo d'occhio
+ e contesti differenti in modo che possa capire fin dal primo colpo d'occhio
  quali siano i messaggi informativi e quali siano quelli di contorno.
 \begin_inset VSpace bigskip
 \end_inset
@@ -229,8 +229,16 @@ Le risorse grafiche rese disponibili all'interno delle specifiche richieste
 \end_layout
 
 \begin_layout Standard
-In figura è possibile vedere alcune delle immagini presentate per la navigazione
- principale, in tutte le versioni disponibili.
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Risorse-Design"
+
+\end_inset
+
+ è possibile vedere alcune delle immagini presentate per la navigazione
+ principale e alcune icone in tutte le versioni disponibili rispettivamente
+ per un tema chiaro ed uno scuro.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -239,19 +247,41 @@ In figura è possibile vedere alcune delle immagini presentate per la navigazion
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mockup Mappa
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Risorse-Design"
+
+\end_inset
+
+Risorse Design
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -328,6 +358,18 @@ icazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente
  da qualsiasi utente, dove sia possibile passare dalla visualizzazione a
  mappa a quella a lista e dove siano già visibili le principali informazioni
  riguardo a ogni gelateria.
+\end_layout
+
+\begin_layout Standard
+È possibile osservare in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mockup-Mappa"
+
+\end_inset
+
+ un mockup esplicativo per la schermata della ricerca tramite mappa con
+ dettaglio sulla selezione di un marker informativo.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -335,7 +377,48 @@ icazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente
 \end_layout
 
 \begin_layout Standard
-FIGGGGGGGGGGGGGGGGGG MAPPA
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mockup-Mappa"
+
+\end_inset
+
+Mockup Mappa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
