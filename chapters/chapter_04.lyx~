@@ -487,13 +487,13 @@ Temi
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Network
 \end_layout
 
 \begin_layout Section
@@ -518,9 +518,9 @@ User
 \end_layout
 
 \begin_layout Standard
-La sezione er la gestione del proprio account e delle funzioni di autenticazione
- sono inserite in una parte del menù laterale della pagina principale dell'appli
-cazione, permette di verificare se si è effettuato o meno l'accesso rapidamente
+La sezione per la gestione del proprio account e delle funzioni di autenticazion
+e sono inserite in una parte del menù laterale della pagina principale dell'appl
+icazione, permette di verificare se si è effettuato o meno l'accesso rapidamente
  potendo eseguire anche le azioni di login e logout.
  Si è inserito un header all'interno del menù laterale in cui sono visibili
  un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
@@ -573,7 +573,60 @@ Infine anche le funzioni di logout sono gestite all'interno di un helper
 \end_layout
 
 \begin_layout Section
+Shop
+\end_layout
+
+\begin_layout Section
 Marketing Digitale
+\end_layout
+
+\begin_layout Standard
+Il primo flusso logico principale ad essere stato implementato è stato quello
+ di marketing digitale poichè legato solo in parte alla presenza di un utente
+ registrato e autenticato all'applicazione; sono quindi presenti alcune
+ operazioni comunque dispobili anche senza aver eseguito il login.
+\end_layout
+
+\begin_layout Standard
+La prima sezione ad essere implementata è stata quella legata alla visualizzazio
+ni delle carte del Mastro Gelatiere poichè il numero delle promozioni disponibil
+i era da visualizzare anche all'interno della navigazione principale e quindi
+ la richiesta per scaricarele carte disponibili doveva essere presente anche
+ all'interno della schermata principale dell'applicazione.
+\end_layout
+
+\begin_layout Standard
+Per ottenere un maggiore riutilizzo del codice si è scelto di utilizzare
+ la stessa schermata per visualizzare sia le carte del mastro gelatiere
+ sia quelle delle singole gelaterie ottenendo una visualizzazione differente
+ in base al collegamento che avrebbe portato l'utente all'interno della
+ sezione.
+ Allo stesso modo si è utilizzato uno stesso modello per entrambe le carte
+ definendo un elemento Realm di nome 
+\emph on
+Card
+\emph default
+ che incapsula i dati necessari all'utilizzo delle carte nel sistema.
+\end_layout
+
+\begin_layout Standard
+Avendo quindi già implementato la visualizzazione delle carte è stato semplice
+ eseguire il passaggio successivo che dalla singola gelateria portava alle
+ proprie carte promozionali.
+ A fianco dell'icona che funge da collegamento alle carte, scaricate tramite
+ chiamata API, è stato successivamente inserita l'icona per aggiungere ai
+ preferiti il singolo esercizio.
+ 
+\end_layout
+
+\begin_layout Standard
+Si è dovuto creare un secondo modello all'interno del database che semplicemente
+ identifica gli esercizi salvati tra i preferiti in modo che queste informazioni
+ rimangano salvate in locale sul dispositivo.
+ L'inserimento di un flag all'interno del modello delle carte non avrebbe
+ funzionato poichè sarebbe stato sovrascritto ad ogni aggiornamento dei
+ preferiti durante il download e l'aggiornamento con le informazioni sul
+ server.
 \end_layout
 
 \begin_layout Subsection
@@ -592,8 +645,120 @@ Geofencing e notifiche push
 E-Commerce
 \end_layout
 
+\begin_layout Standard
+Il sistema di e-commerce è stato l'ultimo tassello dell'applicazione che
+ ha concluso il lavoro di sviluppo diretto di questo elaborato.
+ Si è trattato di unificare parte delle componenti già implementate creando
+ un workflow che permetta all'utente di comprare e utilizzare i coupon digitali
+ in sicurezza e con facilità.
+\end_layout
+
+\begin_layout Standard
+La prima fase è stata legata alla rappresentazione formale dei buoni salvati
+ sul server legati ad un determinato account e dei buoni disponibili all'acquist
+o legati invece ad una determinata gelateria, in particolare è stato importante
+ valutare quali informazioni mantenere sempre in locale per non inficiare
+ la consistenza dei dati presenti sul dispositivo rispetto a quelli online.
+\end_layout
+
+\begin_layout Standard
+Definita la struttura degli elementi che si sarebbero andati ad utilizzare
+ si è creata la sezione dedicata alla gestione dei coupon personali disponibili
+ ad ogni utente, ovviamente legado ogni funzione alla necessaria autenticazione
+ tramite account iscritto all'applicazione MyGelato.
+ Questa sezione permette di avere una visione completa delle proprie informazion
+i aggiornate poichè vi è un forte legame con i dati presenti sul server
+ online, infatti molte delle funzioni legate al sistema di e-commerce comprendon
+o l'utilizzo di account e dispositivi diversi che interagiscono e che non
+ devono assolutamente creare casi di incosistenza.
+\end_layout
+
+\begin_layout Standard
+Per rendere accessibile all'utente l'accesso alle funzioni di acquisto e
+ di riscatto di un buono in maniera diretta si sono inseriti all'interno
+ della navigazione principale dell'applicazione i collegamenti a queste
+ sezioni insieme ad un bottone flottante che riporta alla gestione dei coupon;
+ nel caso si sia effettuato l'accesso con un account di tipo gelatiere si
+ verrà riportati invece alla sezione per la validazione dei buoni.
+\end_layout
+
 \begin_layout Subsection
 Coupon
+\end_layout
+
+\begin_layout Standard
+Per formalizzare il concetto di coupon personale di ogni utente si è scelto
+ di creare una classe 
+\emph on
+Coupon
+\emph default
+, estensione di un modello Realm, che incapsula tutte le informazioni disponibil
+i: identificativo, nome, gelateria di riferimento, acquirente, ecc...
+ Sfruttando Realm le operazioni di gestione e salvataggio sul database sono
+ particolamente semplificate ed è essenziale che venga assicurata un'alta
+ sicurezza nella gestione.
+\end_layout
+
+\begin_layout Standard
+Ogni coupon è unico grazie a un identificativo personale, possiede alcune
+ informazioni importanti come l'acquirente e l'attuale propietario, la data
+ di vendita e anche alcune informazioni non direttamente utili all'utilizzo
+ tramite applicativo.
+ Ogni dato viene salvato sul server e richiesto tramite una chiamata alle
+ API quando si utilizza la sezione per la gestione dei buoni.
+ 
+\end_layout
+
+\begin_layout Standard
+Dentro questa sezione sono presenti tre elenchi in cui sono visibili i coupon
+ validi (utilizzabili e condivisibili), ricevuti da altri utenti, e la lista
+ completa di tutti buoni legati all'utente.
+ Come si può vedere in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Coupon"
+
+\end_inset
+
+, ogni coupon visualizza alcune informazioni di base e sono presenti i collegame
+nti diretti per l'utilizzo e lo share tramite altri canali di comunicazioni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Coupon"
+
+\end_inset
+
+Coupon
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -604,8 +769,213 @@ Acquisto
 Condivisione e Riscatto
 \end_layout
 
+\begin_layout Standard
+Il meccanismo di condivisione e riscatto ha coinvolto funzioni complementari
+ che dovevano sfruttare anche componenti a livello di sistema operativo.
+ Per permettere il dialogo tra due dispositivi differenti si è scelto di
+ sfruttare i canali di comunicazioni più comuni e diffusi anche tra gli
+ utenti medi in modo che il sistema di share sia il più facile possibile
+ e del tutto conforme al sistema di condivisione standard della piattaforma.
+\end_layout
+
+\begin_layout Standard
+Dalla lista di coupon disponibili l'utente ha la possibilità di cliccare
+ sull'icona per la condivisone e verrà inviata una richiesta - 
+\emph on
+Intent
+\emph default
+ - a livello di sistema in broadcast per poter selezionare il metodo che
+ si preferisce per inviare un testo precompilato insieme ad un link.
+ Il testo presenta brevemente l'oggetto della condivisione e invita ad utilizzar
+e il link per riscattare il coupon specificato.
+\end_layout
+
+\begin_layout Standard
+Il link riporta a una pagina resa disponibile dal backend che riconosce
+ il sistema operativo dal quale ci sis sta collegando per effettuare un
+ redirect ad un link particolare che verrà gestito in automatico dal device
+ con cui si sta visualizzando il sito.
+ Nel caso in cui vi sia installata sul device l'applicazione MyGelato allorà
+ verrà avviata la schermata di riscatto precompilata con i dati necessari,
+ altrimenti si verrà reindirizzati agli store principali per consigliare
+ il download dell'applicazione.
+\end_layout
+
+\begin_layout Standard
+Il mezzo per permettere l'identificazione del coupon da condividere è un
+ codice alfanumerico a sei cifre, il PNR, che viene condiviso in automatico
+ insieme al resto delle informazioni.
+ All'interno della schermata di riscatto di un buono, raggiungibile dirattamente
+ dalla navigazione princiapale dell'app è necessario inserire il codice
+ del buono che si vuole riscattare.
+ Come detto nel caso si arrivi sulla schermata tramite il link condiviso
+ allora il campo di input del codice sarà precompilato.
+\end_layout
+
+\begin_layout Standard
+Una volta inserito il codice, che verrà validato al momento con dei controlli
+ basilari, sarà effettuata una richiesta al server tramite chiamata API
+ che attuerà lo spostamento del buono da un utente all'altro.
+ Per entrambi gli account vi sarà quindi l'aggiormento delle informazioni
+ sul proprio dispositivo la prima volta che verranno richiesti i coupon
+ disponibili.
+\end_layout
+
+\begin_layout Standard
+L'utente che ha effettuato il riscatto verrà immediatamente reindirizzato
+ sulla schermata di lista dei coupon nel caso in cui il processo sia andato
+ a buon fine, altrimenti verrà notificato con un messaggio di errore.
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Condivisione-e-Riscatto"
+
+\end_inset
+
+ mostra tutti i passaggi principali per la condivisione e il riscatto di
+ un buono.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Condivisione-e-Riscatto"
+
+\end_inset
+
+Condivisione e Riscatto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Utilizzo e Validazione
+\end_layout
+
+\begin_layout Standard
+L'ultimo passaggio del workflow di e-commerce è l'utilizzo dei coupon che
+ si sono acquistati o che si hanno riscattato perchè condivisi da altri
+ utenti.
+ In questo processo entrato in gioco due entità che sono utenti che spesso
+ non entrano in contatto se non solo per i pochi momenti che servono all'acquist
+o materiale del valore del buono utilizzato.
+ Questa situazione pone alcune limitazioni negli strumenti utilizzati per
+ la comunicazione tra i due dispositivi che devono collaborare mantenendo
+ uno stato costantemente consistente sia sui device fisici che sul server.
+\end_layout
+
+\begin_layout Standard
+Per superare questo ostacolo si è scelto uno strumento molto diffuso che
+ è l'utilizzo di QR code che permette di generare un'immagine a partire
+ da un testo, in questo caso il PNR code lagato al coupon che si vuole utilizzar
+e, leggibile ed interpretabile da un qualsiasi cellulare con un fotocamera.
+ Chiunque abbia effettuato l'accesso all'applicazione con account di tipo
+ gelatiere potrà validare il coupon direttamente tramite l'applicazione
+ MyGelato grazie a una chiamata API al backend che confermerà o meno l'avvenuta
+ conclusione del processo senza problemi.
+\end_layout
+
+\begin_layout Standard
+La sezione per generare e visualizzare il codice QR da mostrare in gelateria
+ è raggungibile cliccando sul singolo coupon all'interno della gestione
+ dei propri buoni.
+ Non essendo presente in questo caso una connessione bidirezionale con il
+ backend, per aggiornare la schermata una volta concluso il processo di
+ utilizzo l'applicazione effettua un polling al server ogni cinque secondi
+ per verificare se il coupon sia stato utilizzato o meno.
+\end_layout
+
+\begin_layout Standard
+Chiunque possieda un account di tipo gelatiere avrà nella navigazione principale
+ dell'applicativo il collegamento alla sezione per la convalida.
+ Verrà avviata immediatamente la fotocamera che, tramite una libreria esterna,
+ verificherà la presenza o meno di codici QR leggendoli.
+ Dopo una validazione semplice si effettettuerà la chiamata al server dando
+ poi la possibilità di convalidare altri coupon senza dover ritornare ogni
+ volta alla schermata iniziale.
+ Nel caso in cui la fotocamera sia già occupata da altri processi attivi
+ sul dispositivo o nel caso in cui l'utente abbia rimosso alcuni permessi
+ all'applicativo verrà visualizzato un messaggio di errore che comunicherà
+ al proprietario del device cosa fare per risolvere il problema.
+\end_layout
+
+\begin_layout Standard
+A conclusione del processo di validazione di un coupon entrambi i dispositivi
+ verranno aggiornati per mantenere coerenza tra i dati presenti sul sistema
+ risolvendo così in maniera semplice il problema principale del dialogo
+ tra due dispositivi rendendo l'utilizzo di un buono molto semplice sempre
+ basandosi sul fatto che ormai uno smartphone sia diventato un bene comune.
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Acquisto"
+
+\end_inset
+
+ permette di visualizzare i passaggi fondamentali per l'utilizzo e la validazion
+e di un buono.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Acquisto"
+
+\end_inset
+
+Acquisto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
