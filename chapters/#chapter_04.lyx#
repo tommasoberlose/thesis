@@ -91,8 +91,8 @@ A seguito della fase di progettazione si è scelto di suddivedere lo sviluppo
  dell'applicazione in alcune fasi principali che seguono logicamente i workflow
  presentati nel dettaglio all'interno del capitolo 2.
  Questo ha permesso di dedicare maggiore attenzione ad ogni componente fino
- ad un alto livello di dettaglio; in modo da poter anche ottenere una buona
- valutazione sulle prestazioni dei nodi più critici dell'applicativo.
+ ad un livello di dettaglio molto alto, in modo da poter anche ottenere
+ una buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
 \end_layout
 
 \begin_layout Standard
@@ -102,7 +102,7 @@ e che alcune specifiche richieste erano presenti in tutto il sistema e che
  Prima di tutto il design richiesto doveva essere presente in ogni singola
  view e per questo si è deciso di implementare fin da subito le interfaccie
  utenti per non dover replicare ad ogni passaggio le stesse operazioni di
- personalizzazioni della UI.
+ personalizzazione della UI.
 \end_layout
 
 \begin_layout Standard
@@ -148,12 +148,91 @@ Design
 \begin_layout Standard
 Il Design è stato il primo concetto sviluppato poichè avrebbe rappresentato
  una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
- In figura sono visualizzati rispettivamente la scelta di due temi differenti,
- uno chiaro ed uno scuro e a fianco è mostarto come cambia l'interfaccia
- di navigazione in base al tema selezionato.
+ In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Temi"
+
+\end_inset
+
+ sono visualizzati rispettivamente la scelta di due temi differenti, uno
+ chiaro ed uno scuro e a fianco è mostarto come cambia l'interfaccia di
+ navigazione in base al tema selezionato.
  Tutti i componenti sono personalizzati implementando i tre font differenti,
  utilizzando le risorse messe a disposizione sia per le icone che per le
  azioni di navigazione.
+\end_layout
+
+\begin_layout Standard
+Per incapsulare tutte le funzioni rigurdanti i temi all'interno di un unico
+ oggetto si è creata la classe 
+\emph on
+Flavors 
+\emph default
+che rappresenta il tema attuale, recuperandolo dalle preferenze dell'applicazion
+e, e contiene tutti i dati utili a personalizzare i componenti dell'interfaccia
+ come ad esempio il 
+\emph on
+main
+\emph default
+ e il 
+\emph on
+secondary color
+\emph default
+.
+ Questo oggetto viene automaticamente generato unicamente a partire da un
+ contesto di una scherata senza dover eseguire nessa operazione di inizializzazi
+one.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class Flavors {
+\end_layout
+
+\begin_layout Plain Layout
+
+    Context mContext;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    public int getPrimaryColor();
+\end_layout
+
+\begin_layout Plain Layout
+
+    public int getStatusBarColor();
+\end_layout
+
+\begin_layout Plain Layout
+
+    public int getPrimaryTextColor();
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -166,8 +245,11 @@ Ad ogni inizializzazione e a ogni cambio di tema vi sono elementi dell'UI
 \emph on
 FlavorObject
 \emph default
- che dichiarava un nuovo metodo chiamato updateFlavor() da richiamare ad
- ogni aggiornamento.
+ che dichiarava un nuovo metodo chiamato 
+\emph on
+updateFlavor()
+\emph default
+ da richiamare ad ogni aggiornamento e che modifica gli elementi necessari.
 \end_layout
 
 \begin_layout Standard
@@ -267,20 +349,10 @@ Questa
 \emph on
 FlavorActivity
 \emph default
- incapsula la gestione stessa del tema attuale aggiornando in maniera automatica
- oltre agli elementi dichiarati anche la toolbar e la statusbar visibili
- come componenti di sistema di Android.
- L'oggetto Flavors rappresenta il tema attuale dell'applicazione e contiene
- tutti i dati utili a personalizzare i componenti dell'interfaccia come
- ad esempio il 
-\emph on
-main
-\emph default
- e il 
-\emph on
-secondary color
-\emph default
-.
+ incapsula la gestione stessa del tema attuale, grazie ad una variabile
+ Flavors, aggiornando in maniera automatica oltre agli elementi dichiarati
+ anche la toolbar e la statusbar visibili come componenti di sistema di
+ Android.
 \end_layout
 
 \begin_layout Standard
@@ -370,7 +442,16 @@ public class FlavorActivity extends AppCompatActivity {
 \begin_layout Standard
 Concluso lo sviluppo di ogni componente si è inserita all'interno della
  navigazione principale la possibilità di accedere alla sezione per la scelta
- del tema da parte dell'utente.
+ del tema da parte dell'utente che elenca ogni tema identificandolo con
+ un nome di gelato e alcune immagini personalizzate come si può notare in
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Temi"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -392,6 +473,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Temi"
+
+\end_inset
+
 Temi
 \end_layout
 
@@ -418,24 +505,37 @@ Utente
 \end_layout
 
 \begin_layout Standard
-La gestione dell'utente è una sezione a parte raggiungibile unicamente tramite
- la navigazione principale e permette di verificare se si è effettuato o
- meno l'accesso all'applicazione.
+Il primo passaggio effettuato durante lo sviluppo della sezione legata all'utent
+e è stato quello di realizzare un modello, definito all'interno della classe
+ 
+\emph on
+User
+\emph default
+, che racchiude tutte le informazioni legate ad un account.
+ Utilizzando Realm è stato possibile definire un oggetto che lo rappresenta,
+ mantiene in locale sul dispositivo tutti i dati inseriti e mette a disposizione
+ un insieme di funzioni utili per la gestione del database.
+\end_layout
+
+\begin_layout Standard
+La sezione per la gestione del proprio account e delle funzioni di autenticazion
+e sono inserite in una parte del menù laterale della pagina principale dell'appl
+icazione, permette di verificare se si è effettuato o meno l'accesso rapidamente
+ potendo eseguire anche le azioni di login e logout.
  Si è inserito un header all'interno del menù laterale in cui sono visibili
  un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
- il login.
- Una volta che l'utente avrà effettuato l'accesso saranno invece visibili
- l'avatar, il nome, un'icona per accedere alla schermata di modifica dell'accoun
-t e il bottone per eseguire il logout.
+ l'accesso.
+ Una volta che l'utente sarà autenticato saranno invece visibili l'avatar,
+ il nome, un'icona per accedere alla schermata di modifica dell'account
+ e il bottone per eseguire il logout.
 \end_layout
 
 \begin_layout Standard
 Si è poi implementata un'unica schermata dalla quale si può accedere al
  login tramite credenziali, al login tramite social network, alla registrazione
- di un nuovo account.
- Si verrà reindirizzati a questa sezione ogni volta che l'utente tenterà
- di eseguire delle azioni in cui è necessario aver eseguito l'accesso senza
- invece essersi loggati.
+ di un nuovo account e si verrà reindirizzati a questa sezione ogni volta
+ che l'utente tenterà di eseguire delle azioni in cui è necessario aver
+ eseguito l'accesso senza essere autenticato.
 \end_layout
 
 \begin_layout Standard
@@ -455,9 +555,9 @@ Network
 
 \begin_layout Standard
 Nel momento in cui l'utente esegue il login vengono aggiornate sul device
- le informazioni legate all'account, creando un oggetto Realm che incapsula
- ogni informazione salvata all'interno del server in modo che ogni sezione
- dell'applicativo possa accedervi localmente.
+ le informazioni legate all'account, creando un oggetto Realm partendo dal
+ modello, incapsulando ogni informazione scaricata dal server in modo che
+ ogni sezione dell'applicativo possa accedervi localmente.
  L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
  che altrimenti non si potrebbero visualizzare poichè ogni chiamata alle
  API deve essere corredata delle informazioni legate all'utente che esegue
@@ -466,16 +566,14 @@ Nel momento in cui l'utente esegue il login vengono aggiornate sul device
 
 \begin_layout Standard
 Infine anche le funzioni di logout sono gestite all'interno di un helper
- che incapsula tutte le operazioni necessarie per far si he nessun dato
- sensibile rimanga salvato in locale a seguite della disconessione dell'account.
+ che incapsula tutte le operazioni necessarie per far si che nessun dato
+ sensibile rimanga salvato in locale a seguite della disconessione dell'account
+ e non vi siano casi di incosistenza tra le informazioni presenti in locale
+ e sul server.
 \end_layout
 
 \begin_layout Section
 Marketing Digitale
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Subsection
@@ -494,8 +592,67 @@ Geofencing e notifiche push
 E-Commerce
 \end_layout
 
+\begin_layout Standard
+Il sistema di e-commerce è stato l'ultimo tassello dell'applicazione che
+ ha concluso il lavoro di sviluppo diretto di questo elaborato.
+ Si è trattato di unificare parte delle componenti già implementate creando
+ un workflow che permetta all'utente di comprare e utilizzare i coupon digitali
+ in sicurezza e con facilità.
+\end_layout
+
+\begin_layout Standard
+La prima fase è stata legata alla rappresentazione formale dei buoni salvati
+ sul server legati ad un determinato account e dei buoni disponibili all'acquist
+o legati invece ad una determinata gelateria, in particolare è stato importante
+ valutare quali informazioni mantenere sempre in locale per non inficiare
+ la consistenza dei dati presenti sul dispositivo rispetto a quelli online.
+\end_layout
+
+\begin_layout Standard
+Definita la struttura degli elementi che si sarebbero andati ad utilizzare
+ si è creata la sezione dedicata alla gestione dei coupon personali disponibili
+ ad ogni utente, ovviamente legado ogni funzione alla necessaria autenticazione
+ tramite account iscritto all'applicazione MyGelato.
+ Questa sezione permette di avere una visione completa delle proprie informazion
+i aggiornate poichè vi è un forte legame con i dati presenti sul server
+ online, infatti molte delle funzioni legate al sistema di e-commerce comprendon
+o l'utilizzo di account e dispositivi diversi che interagiscono e che non
+ devono assolutamente creare casi di incosistenza.
+\end_layout
+
+\begin_layout Standard
+Per rendere accessibile all'utente l'accesso alle funzioni di acquisto e
+ di riscatto di un buono in maniera diretta si sono inseriti all'interno
+ della navigazione principale dell'applicazione i collegamenti a queste
+ sezioni insieme ad un bottone flottante che riporta alla gestione dei coupon;
+ nel caso si sia effettuato l'accesso con un account di tipo gelatiere si
+ verrà riportati invece alla sezione per la validazione dei buoni.
+\end_layout
+
 \begin_layout Subsection
 Coupon
+\end_layout
+
+\begin_layout Standard
+Per formalizzare il concetto di coupon personale di ogni utente si è scelto
+ di creare una classe 
+\emph on
+Coupon
+\emph default
+, estensione di un modello Realm, che incapsula tutte le informazioni disponibil
+i: identificativo, nome, gelateria di riferimento, acquirente, ecc...
+ Sfruttando Realm le operazioni di gestione e salvataggio sul database sono
+ particolamente semplificate ed è essenziale che venga assicurata un'alta
+ sicurezza nella gestione di questi oggetti.
+\end_layout
+
+\begin_layout Standard
+Ogni coupon è unico grazie a un identificativo personale, possiede alcune
+ informazioni importanti come l'acquirente e l'attuale propietario, la data
+ di vendita e anche alcune informazioni non direttamente utili all'utilizzo
+ tramite applicativo.
+ Ogni dato viene salvato sul server e richiesto tramite una chiamata alle
+ API
 \end_layout
 
 \begin_layout Subsection
