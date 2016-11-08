@@ -487,8 +487,81 @@ Temi
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Network
+\end_layout
+
+\begin_layout Standard
+Tutte le funzionalità di collegamento al backend tramite API Rest sono state
+ raccolte e incapsulate all'interno di un unico componente utilizzato ad
+ ogni chiamata server in maniera standardizzata.
+ Sfruttando la libreria OkHttp si è potuto semplificare la gestione delle
+ chiamate http potendo incapsulare il risultato in un classe 
+\emph on
+Result
+\emph default
+ contenente i dati sia in caso di errore sia in caso di successo.
+\end_layout
+
+\begin_layout Standard
+La possibilità di utilizzare il 
+\emph on
+Diamond Operator
+\emph default
+ ha permesso di utilizzare lo stesso oggetto anche con risultato di tipo
+ differente, come per esempio i dati relativi ad un utente o ad una carta
+ promozionale.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
 \begin_layout Plain Layout
 
+public class Result<T, E> {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public T result = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public E error = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public Result(T result, E error) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        this.result = result;
+\end_layout
+
+\begin_layout Plain Layout
+
+        this.error = error;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -496,8 +569,22 @@ Temi
 
 \end_layout
 
-\begin_layout Section
-Ricerca
+\begin_layout Standard
+Le API Rest rese disponibili dal backend hanno permesso di standardizzare
+ le chiamate richiedendo ad ogni chiamata l'inserimento solo del metodo,
+ dei parametri da inviare e dell'eventuale payload.
+ Anche la gestione degli errori grazie ai codici identificativi Http hanno
+ reso la gestione di tutti gli errori semplificata così da poter visualizzare
+ un messaggio di errore il più specifico possibile e localizzato in base
+ alla lingua utilizzata sul device.
+\end_layout
+
+\begin_layout Standard
+L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
+ ha permesso anche di inserire alcuni controlli su ogni tipo di richiesta,
+ per esempio la possibilità di verificare che le chiamate autenticate non
+ dessero come risultato il codice 401 in caso di utente non autorizzato;
+ situazione che doveva invocare il logout dell'attuale utente dall'applicazione.
 \end_layout
 
 \begin_layout Section
@@ -573,6 +660,46 @@ Infine anche le funzioni di logout sono gestite all'interno di un helper
 \end_layout
 
 \begin_layout Section
+Shop
+\end_layout
+
+\begin_layout Standard
+Ogni esercizio inserito all'interno del circutio MyGelato è formalizzato
+ concettualmente come un oggetto 
+\emph on
+Shop
+\emph default
+ che incapsula tutte le informazioni che il server rende disponibili al
+ download di volta in volta: identificativo, nome, indirizzo, recapito telefonic
+o, ecc...
+\end_layout
+
+\begin_layout Standard
+La gestione degli Shop all'interno dell'applicazione è stato necessario
+ poichè la visualizzazione delle informazioni necessarie in più di un nodo
+ fondamentale dell'applicazione avrebbe reso impossibile la richiesta dei
+ dati necessari solo in caso di necessità.
+ Il download sul device delle informazioni dei device avviene all'interno
+ della schermata della Ricerca in maniera asincrona, a causa della grossa
+ mole di dati da dover scaricare, e permette all'utente di avere anche offline
+ le informazioni legate agli shop già visualizzati.
+\end_layout
+
+\begin_layout Standard
+È stato quindi creato un modello per l'oggetto Shop sempre derivante da
+ un oggetto Realm così da sfruttare tutta la potenza della libreria per
+ il salvataggio e la gestione dei dati in database.
+ Ad ogni ricerca le gelaterie vengono nuovamente scaricate così da avere
+ sempre tutte le informazioni aggiornate, creando però un collo di bottiglia
+ in termini di prestazioni che verrà spiegato nel dettaglio nel capitolo
+ successivo.
+\end_layout
+
+\begin_layout Section
+Ricerca
+\end_layout
+
+\begin_layout Section
 Marketing Digitale
 \end_layout
 
@@ -580,15 +707,15 @@ Marketing Digitale
 Il primo flusso logico principale ad essere stato implementato è stato quello
  di marketing digitale poichè legato solo in parte alla presenza di un utente
  registrato e autenticato all'applicazione; sono quindi presenti alcune
- operazioni comunque dispobili anche senza aver eseguito il login.
+ operazioni comunque disponibili anche senza aver eseguito il login.
 \end_layout
 
 \begin_layout Standard
 La prima sezione ad essere implementata è stata quella legata alla visualizzazio
 ni delle carte del Mastro Gelatiere poichè il numero delle promozioni disponibil
 i era da visualizzare anche all'interno della navigazione principale e quindi
- la richiesta per scaricarele carte disponibili doveva essere presente anche
- all'interno della schermata principale dell'applicazione.
+ la richiesta per scaricarle doveva essere presente anche all'interno della
+ schermata principale dell'applicazione.
 \end_layout
 
 \begin_layout Standard
@@ -602,26 +729,77 @@ Per ottenere un maggiore riutilizzo del codice si è scelto di utilizzare
 \emph on
 Card
 \emph default
- che incapsula i dati necessari all'utilizzo delle carte nel sistema.
+ che incapsula i dati necessari all'utilizzo delle carte nel sistema differenzia
+ndole grazie ad un flag.
 \end_layout
 
 \begin_layout Standard
-Avendo quindi già implementato la visualizzazione delle carte è stato semplice
- eseguire il passaggio successivo che dalla singola gelateria portava alle
- proprie carte promozionali.
- A fianco dell'icona che funge da collegamento alle carte, scaricate tramite
- chiamata API, è stato successivamente inserita l'icona per aggiungere ai
- preferiti il singolo esercizio.
+Avendo quindi già implementato la visualizzazione delle carte, scaricate
+ tramite chiamata alle API, è stato semplice eseguire il passaggio successivo
+ che dalla singola gelateria portava alle proprie carte promozionali.
+ A fianco dell'icona che funge da collegamento alle carte è stato successivament
+e inserita l'icona per aggiungere ai preferiti il singolo esercizio.
  
 \end_layout
 
 \begin_layout Standard
-Si è dovuto creare un secondo modello all'interno del database che semplice
- identifica gl
+Si è dovuto creare un secondo modello all'interno del database che semplicemente
+ identifica gli esercizi salvati tra i preferiti in modo che queste informazioni
+ rimangano salvate in locale sul dispositivo anche senza un utente che si
+ sia loggato.
+ L'inserimento di un flag all'interno del modello degli shop non avrebbe
+ funzionato poichè sarebbe stato sovrascritto ad ogni aggiornamento degli
+ shop durante il download e l'aggiornamento con le informazioni sul server.
+\end_layout
+
+\begin_layout Standard
+Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
+ si sia autenticato verrà eseguita una chiamata al server che attiverà la
+ ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
+ per il geofencing sul dispositivo.
 \end_layout
 
 \begin_layout Subsection
 Carte Promozionali
+\end_layout
+
+\begin_layout Standard
+L'implementazione delle carte promozionali ha seguito uno sviluppo volto
+ ad utilizzare lo stesso codice e le stesse visualizzazioni sia per la la
+ presentazione delle carte legate al singolo esercizio sia per quelle del
+ mastro gelataio.
+ Prima di tutto si è quindi realizzato il modello in Realm contenente le
+ principali informazioni legate alla carta: identfiicativo, titolo, immagine,
+ descrizione, eventuale link e recapito teleofonico.
+\end_layout
+
+\begin_layout Standard
+È stata creata una schermata unica per la visualizzazione delle carte affiancate
+ con un layout abbastanza grafico dove ogni carta mostra la propria immagine
+ e al click su un'icona ruota su se stessa per permettere di leggere la
+ descrizione ed eventualmente ottenere nuove informazioni tramite i l link
+ proposto.
+ 
+\end_layout
+
+\begin_layout Standard
+Il download delle informazioni deve avvenire all'apertura della schermata
+ grazie ad una richiesta alle API in background così da non bloccare il
+ dispositivo dell'utente.
+ Tutti i dati scaricati vengono salvati in locale così da essere disponibili
+ anche offline e nel caso di modifiche saranno aggiornati eliminando anche
+ le promozioni non più disponbili perchè scadute.
+\end_layout
+
+\begin_layout Standard
+Lo stesso procedimento, nel caso delle carte del mastro gelatiere però deve
+ essere eseguito anche all'interno della schermata principale poichè il
+ numero delle carte è da visualizzare all'interno dell'immagine che rimanda
+ alla sezione del mastro gelatiere.
+ Il collegamento a questa sezione rimane valido comunque da qualsiasi parte
+ dell'applicazione poichè in ogni caso tutti dati vengono anche aggiornati
+ al momento, permettendo così di inserire il collegamento ogni volta che
+ vengono presentate le informazioni legato ad uno shop.
 \end_layout
 
 \begin_layout Subsection
@@ -629,7 +807,142 @@ Preferiti
 \end_layout
 
 \begin_layout Standard
-Geofencing e notifiche push
+Il primo sviluppo legato alla sezione dei preferiti è stata quella della
+ gestione dell'aggiunta e della rimozione all'interno della visualizzazione
+ della ricerca in cui tramite un'icona l'utente può salvare localmente le
+ sue preferenze.
+ Successivamente si è implementata la sezione dell'applicazione che permette
+ la visualizzazione della lista degli esercizi preferiti con la conseguente
+ gestione, direttamente raggiungibile dalla navigazione principale.
+\end_layout
+
+\begin_layout Standard
+Infine avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad
+ un sistema centralizzato che racchiudeva tutte le operazioni necessarie
+ è stato abbastanza intuitivo poter inserire un middleware che gestisse
+ l'aggiunta e la rimozione di una gelateria dai preferiti anche per quanto
+ riguardava l'iscrizione alle notifiche push da parte del server e del geofencin
+g da parte del dispositivo.
+\end_layout
+
+\begin_layout Standard
+Per l'implementazione della funzinalità di notifiche push si è scelto di
+ utilizzare i servizi resi disponibili da Google stessa utilizzando inizialmente
+ 
+\emph on
+Google Cloud Messaging
+\emph default
+ per poi passare ad utilizzare Firebase, nuovo applicativo appena reso disponbil
+e e sicuramente più innovativo e aggiornato.
+ Per far dialogare in maniera bidirezionale l'applicativo e il server ogni
+ volta che un utente esegue il login ad una applicazione viene attivato
+ firebase richiedendo al server un token che verrà poi passato al sistema
+ di gestione delle notifiche che si metterà in ascolto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+FirebaseApp.initializeApp(this,
+\end_layout
+
+\begin_layout Plain Layout
+
+	FirebaseOptions.fromResource(this));
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
+ eseguita una chiamata al backend con lo scopo di informarlo dell'aggiunto
+ dello shop a quelli di interesse, in questo modo nel momento in cui sarà
+ disponibile una nuova carta promozionale per quello schop verrà visualizzata
+ una notifica sul device che permetterà all'utente di accedere direttamente
+ alla sezione delle carte promozionali specifiche per quell'esercizio.
+\end_layout
+
+\begin_layout Standard
+Allo stesso tempo, solo a livello applicativo verrà inoltre sottoscritto
+ al sistema una richiesta di geofencing che produrrà un intent ogni qual
+ volta l'utente rimarrà entro l'area di 5 kilometri dalla gelateria per
+ almeno un cinque minuti, il quale verrà gestito per mostrare anche in questo
+ caso una notifica che permetterà di accedere invece alle informazioni della
+ gelateria all'interno dellalista dei preferiti.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mGeofenceList.add(new
+\end_layout
+
+\begin_layout Plain Layout
+
+    Geofence.Builder()  
+\end_layout
+
+\begin_layout Plain Layout
+
+      .setCircularRegion(                                             
+\end_layout
+
+\begin_layout Plain Layout
+
+         shop.latitude,                                             
+\end_layout
+
+\begin_layout Plain Layout
+
+         shop.longitude,                                             
+\end_layout
+
+\begin_layout Plain Layout
+
+         GEOFENCE_RADIUS_IN_METERS                                     
+\end_layout
+
+\begin_layout Plain Layout
+
+      )                                     
+\end_layout
+
+\begin_layout Plain Layout
+
+      .setLoiteringDelay(2 * 60 * 1000)                                 
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+      .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL)            
+                         
+\end_layout
+
+\begin_layout Plain Layout
+
+      .build()
+\end_layout
+
+\begin_layout Plain Layout
+
+);
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

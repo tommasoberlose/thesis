@@ -629,6 +629,13 @@ Si è dovuto creare un secondo modello all'interno del database che semplicement
  server.
 \end_layout
 
+\begin_layout Standard
+Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
+ si sia autenticato verrà eseguita una chiamata al server che attiverà la
+ ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
+ per il geofencing sul dispositivo.
+\end_layout
+
 \begin_layout Subsection
 Carte Promozionali
 \end_layout
