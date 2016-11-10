@@ -100,15 +100,15 @@ Per poter ottenere uno sviluppo abbastanza lineare è stato necessario considera
 e che alcune specifiche richieste erano presenti in tutto il sistema e che
  quindi non potevano essere sviluppate a se stante dagli altri componenti.
  Prima di tutto il design richiesto doveva essere presente in ogni singola
- view e per questo si è deciso di implementare fin da subito le interfaccie
- utenti per non dover replicare ad ogni passaggio le stesse operazioni di
- personalizzazione della UI.
+ view e per questo si è deciso di implementare fin da subito l'interfaccia
+ utente dell'intera applicazione per non dover replicare ad ogni passaggio
+ le stesse operazioni di personalizzazione.
 \end_layout
 
 \begin_layout Standard
-Strutturato il metodo di sviluppo per la grafica dell'applicazione si è
- passati a gestire la navigazione principale scegliendo di utilizzare alcuni
- dei principali pattern Android: il 
+Strutturato il metodo di sviluppo per la grafica si è passati a gestire
+ la navigazione principale scegliendo di utilizzare alcuni dei principali
+ pattern Android: il 
 \shape italic
 NavigationDrawer
 \shape default
@@ -146,7 +146,7 @@ Design
 \end_layout
 
 \begin_layout Standard
-Il Design è stato il primo concetto sviluppato poichè avrebbe rappresentato
+Il Design è stata la prima specifica sviluppata poichè avrebbe rappresentato
  una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
  In figura 
 \begin_inset CommandInset ref
@@ -156,8 +156,8 @@ reference "fig:Temi"
 \end_inset
 
  sono visualizzati rispettivamente la scelta di due temi differenti, uno
- chiaro ed uno scuro e a fianco è mostarto come cambia l'interfaccia di
- navigazione in base al tema selezionato.
+ chiaro e uno scuro con a fianco mostrate le differenze dell'interfaccia
+ di navigazione in base al tema selezionato.
  Tutti i componenti sono personalizzati implementando i tre font differenti,
  utilizzando le risorse messe a disposizione sia per le icone che per le
  azioni di navigazione.
@@ -181,8 +181,8 @@ secondary color
 \emph default
 .
  Questo oggetto viene automaticamente generato unicamente a partire da un
- contesto di una scherata senza dover eseguire nessa operazione di inizializzazi
-one.
+ contesto di una scherata senza dover eseguire nessuna operazione di inizializza
+zione.
 \end_layout
 
 \begin_layout Standard
@@ -236,10 +236,9 @@ public class Flavors {
 \end_layout
 
 \begin_layout Standard
-Ad ogni inizializzazione e a ogni cambio di tema vi sono elementi dell'UI
- che sono da aggiornare, in special modo tutte le ImageView e le TextView
- che rappresentano rispettivamente ogni immagine e ogni testo presenti sulla
- schermata.
+Ad ogni cambio di tema vi sono elementi dell'UI da aggiornare, in special
+ modo tutte le ImageView e le TextView che rappresentano rispettivamente
+ ogni immagine e ogni testo presenti sulla schermata.
  Per automatizzare la gestione di questi componenti si è scelto di implementare
  un'interfaccia comune ai due oggetti chiamata 
 \emph on
@@ -249,7 +248,8 @@ FlavorObject
 \emph on
 updateFlavor()
 \emph default
- da richiamare ad ogni aggiornamento e che modifica gli elementi necessari.
+ da richiamare ad ogni aggiornamento e che modifica le proprietà necessarie
+ come sfondo, colore e immagini visualizzate.
 \end_layout
 
 \begin_layout Standard
@@ -283,11 +283,22 @@ public interface FlavorObject {
 \end_layout
 
 \begin_layout Standard
-Da quest'interfaccia si sono ereditate le tre view principali che sono state
- utilizzate durante tutto lo sviluppo di questa tesi e che hanno permesso
- di richiamare in metodo ricorsivo su tutti i componenti lo stesso metodo,
- in modo da aggiornare la schermata senza dover conoscere esattamente come
- ogni singolo elemento andava modificato.
+Da quest'interfaccia si sono ereditate le tre view principali (
+\emph on
+CustomImageView, CustomTextView 
+\emph default
+e
+\emph on
+ CustomEditTextView
+\emph default
+) che sono state utilizzate durante tutto lo sviluppo di questa tesi e che
+ hanno permesso di richiamare in metodo ricorsivo su tutti i componenti
+ lo stesso metodo - 
+\emph on
+updateFlavor
+\emph default
+() - in modo da aggiornare la schermata senza dover conoscere esattamente
+ come ogni singolo elemento andava modificato.
  Ogni custom view ha quindi implementato il metodo dell'interfaccia così
  da gestire in maniera automatica i temi chiari/scuri e il cambio ad ogni
  aggiornamento.
@@ -295,11 +306,15 @@ Da quest'interfaccia si sono ereditate le tre view principali che sono state
 
 \begin_layout Standard
 Per la gestione dei font dei testi si è sfruttato il fatto di aver implementato
- una versione personalizzata della textView così da implementare un nuovo
+ una versione personalizzata della TextView così da implementare un nuovo
  elemento all'interno del componente scritto in xml.
- In questo modo si è potuto rendere il codice molto più pulito indicando
- il font per ogni testo direttamente nella definizione della view senza
- dover gestire ogni elemento tramite java alla creazione della schermata.
+ Così si è potuto rendere il codice Java molto più pulito indicando il font
+ per ogni testo direttamente nella definizione della view all'interno della
+ risorsa di tipo 
+\emph on
+layout
+\emph default
+ senza dover gestire ogni elemento alla creazione della schermata.
 \end_layout
 
 \begin_layout Standard
@@ -338,21 +353,22 @@ status open
 \end_layout
 
 \begin_layout Standard
-Per eseguire l'aggiornamento automatico di tutte le view si è scelto di
- creare una custom Activity, che rappresenta il componente di una schermata
- dell'interfaccia utente, così da implementare anche in questo caso un metodo
- che venisse richiamato ogni volta che vi erano elementi da modificare.
-\end_layout
-
-\begin_layout Standard
-Questa 
+Per eseguire l'aggiornamento automatico di tutte le view di una schermata
+ si è scelto di creare una custom Activity, che rappresenta il componente
+ di una schermata dell'interfaccia utente, così da implementare anche in
+ questo caso un metodo che venisse richiamato ogni volta che vi erano elementi
+ da modificare.
+ Questa 
 \emph on
 FlavorActivity
 \emph default
  incapsula la gestione stessa del tema attuale, grazie ad una variabile
- Flavors, aggiornando in maniera automatica oltre agli elementi dichiarati
- anche la toolbar e la statusbar visibili come componenti di sistema di
- Android.
+ 
+\emph on
+Flavors
+\emph default
+, aggiornando in maniera automatica oltre agli elementi dichiarati anche
+ la toolbar e la statusbar visibili come componenti di sistema di Android.
 \end_layout
 
 \begin_layout Standard
@@ -442,9 +458,9 @@ public class FlavorActivity extends AppCompatActivity {
 \begin_layout Standard
 Concluso lo sviluppo di ogni componente si è inserita all'interno della
  navigazione principale la possibilità di accedere alla sezione per la scelta
- del tema da parte dell'utente che elenca ogni tema identificandolo con
- un nome di gelato e alcune immagini personalizzate come si può notare in
- figura 
+ del tema da parte dell'utente, schermata che elenca ogni tema identificandolo
+ con un nome di gelato e alcune immagini personalizzate come si può notare
+ in figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Temi"
@@ -501,7 +517,8 @@ Tutte le funzionalità di collegamento al backend tramite API Rest sono state
  raccolte e incapsulate all'interno di un unico componente utilizzato ad
  ogni chiamata server in maniera standardizzata.
  Sfruttando la libreria OkHttp si è potuto semplificare la gestione delle
- chiamate http potendo incapsulare il risultato in un classe 
+ chiamate con protocollo Http potendo incapsulare il risultato in un classe
+ 
 \emph on
 Result
 \emph default
@@ -509,14 +526,24 @@ Result
 \end_layout
 
 \begin_layout Standard
-La possibilità di utilizzare il 
+Le API Rest rese disponibili dal backend hanno permesso di standardizzare
+ le chiamate richiedendo ad ogni chiamata l'inserimento solo del metodo,
+ dei parametri da inviare e dell'eventuale payload.
+ Anche la gestione degli errori grazie ai codici identificativi Http hanno
+ reso la gestione di tutti gli errori semplificata così da poter visualizzare
+ un messaggio di errore il più specifico possibile e localizzato in base
+ alla lingua utilizzata sul device.
+\end_layout
+
+\begin_layout Standard
+Per la gestione della risposta di una richiesta al server la possibilità
+ di utilizzare il 
 \emph on
 Diamond Operator
 \emph default
- ha permesso di utilizzare lo stesso oggetto anche con risultato di tipo
- differente, come per esempio i dati relativi ad un utente o ad una carta
- promozionale.
- 
+ ha permesso di utilizzare lo stesso oggetto di tipo Result anche con risultato
+ di tipo differente, come per esempio i dati relativi ad un utente o ad
+ una carta promozionale.
 \end_layout
 
 \begin_layout Standard
@@ -570,16 +597,6 @@ public class Result<T, E> {
 \end_layout
 
 \begin_layout Standard
-Le API Rest rese disponibili dal backend hanno permesso di standardizzare
- le chiamate richiedendo ad ogni chiamata l'inserimento solo del metodo,
- dei parametri da inviare e dell'eventuale payload.
- Anche la gestione degli errori grazie ai codici identificativi Http hanno
- reso la gestione di tutti gli errori semplificata così da poter visualizzare
- un messaggio di errore il più specifico possibile e localizzato in base
- alla lingua utilizzata sul device.
-\end_layout
-
-\begin_layout Standard
 L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
  ha permesso anche di inserire alcuni controlli su ogni tipo di richiesta,
  per esempio la possibilità di verificare che le chiamate autenticate non
@@ -587,14 +604,24 @@ L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
  situazione che doveva invocare il logout dell'attuale utente dall'applicazione.
 \end_layout
 
+\begin_layout Standard
+L'utilizzo dell'oggetto Network, che esponeva i metodi statici necessari
+ all'utilizzo delle sue funzionalità in ogni punto dell'applicazione, è
+ stato ogni volta inserito all'interno di un componente 
+\emph on
+AsyncTask
+\emph default
+ che permette l'esecuzione di un blocco di codice in maniera asincrona dal
+ processo principale, migliorando di gran lunga le performance dell'applicazione.
+\end_layout
+
 \begin_layout Section
 Utente
 \end_layout
 
 \begin_layout Standard
-Il primo passaggio effettuato durante lo sviluppo della sezione legata all'utent
-e è stato quello di realizzare un modello, definito all'interno della classe
- 
+Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
+ di un modello, definito all'interno della classe 
 \emph on
 User
 \emph default
@@ -607,8 +634,8 @@ User
 \begin_layout Standard
 La sezione per la gestione del proprio account e delle funzioni di autenticazion
 e sono inserite in una parte del menù laterale della pagina principale dell'appl
-icazione, permette di verificare se si è effettuato o meno l'accesso rapidamente
- potendo eseguire anche le azioni di login e logout.
+icazione, permettendo di verificare se si è effettuato o meno l'accesso
+ rapidamente.
  Si è inserito un header all'interno del menù laterale in cui sono visibili
  un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
  l'accesso.
@@ -619,10 +646,10 @@ icazione, permette di verificare se si è effettuato o meno l'accesso rapidament
 
 \begin_layout Standard
 Si è poi implementata un'unica schermata dalla quale si può accedere al
- login tramite credenziali, al login tramite social network, alla registrazione
- di un nuovo account e si verrà reindirizzati a questa sezione ogni volta
- che l'utente tenterà di eseguire delle azioni in cui è necessario aver
- eseguito l'accesso senza essere autenticato.
+ login tramite credenziali personali, al login tramite social network, alla
+ registrazione di un nuovo account e si verrà reindirizzati a questa sezione
+ ogni volta che l'utente tenterà di eseguire delle azioni in cui è necessario
+ aver eseguito l'accesso senza essere autenticato.
 \end_layout
 
 \begin_layout Standard
@@ -643,8 +670,8 @@ Network
 \begin_layout Standard
 Nel momento in cui l'utente esegue il login vengono aggiornate sul device
  le informazioni legate all'account, creando un oggetto Realm partendo dal
- modello, incapsulando ogni informazione scaricata dal server in modo che
- ogni sezione dell'applicativo possa accedervi localmente.
+ modello, incapsulando ogni informazione scaricata dal server così che ogni
+ sezione dell'applicativo possa accedervi localmente.
  L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
  che altrimenti non si potrebbero visualizzare poichè ogni chiamata alle
  API deve essere corredata delle informazioni legate all'utente che esegue
@@ -875,7 +902,9 @@ Allo stesso tempo, solo a livello applicativo verrà inoltre sottoscritto
  volta l'utente rimarrà entro l'area di 5 kilometri dalla gelateria per
  almeno un cinque minuti, il quale verrà gestito per mostrare anche in questo
  caso una notifica che permetterà di accedere invece alle informazioni della
- gelateria all'interno dellalista dei preferiti.
+ gelateria all'interno della lista dei preferiti.
+ Ovviamente per i dispositivi con le ultime versioni di Android sarà necessario
+ richiedere anche in questo caso la possibilità di accedere alla localizzazione.
 \end_layout
 
 \begin_layout Standard
