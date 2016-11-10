@@ -691,25 +691,24 @@ Shop
 \end_layout
 
 \begin_layout Standard
-Ogni esercizio inserito all'interno del circutio MyGelato è formalizzato
+Ogni gelateria inserita all'interno del circutio MyGelato è formalizzata
  concettualmente come un oggetto 
 \emph on
 Shop
 \emph default
- che incapsula tutte le informazioni che il server rende disponibili al
+ che incapsula tutte le informazioni che il server rende leggibili per il
  download di volta in volta: identificativo, nome, indirizzo, recapito telefonic
-o, ecc...
+o e ogni dato disponibile.
 \end_layout
 
 \begin_layout Standard
-La gestione degli Shop all'interno dell'applicazione è stato necessario
- poichè la visualizzazione delle informazioni necessarie in più di un nodo
- fondamentale dell'applicazione avrebbe reso impossibile la richiesta dei
- dati necessari solo in caso di necessità.
- Il download sul device delle informazioni dei device avviene all'interno
- della schermata della Ricerca in maniera asincrona, a causa della grossa
- mole di dati da dover scaricare, e permette all'utente di avere anche offline
- le informazioni legate agli shop già visualizzati.
+La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
+ è stato necessario poichè in molti casi dati devono poter essere accessibili
+ anche offline per quanto riguarda le operazioni che non richiedono un collegame
+nto istantaneo con il backend, come per esempio la visualizzazione dei preferiti.
+ Il download delle informazioni sul device avviene all'interno della schermata
+ della Ricerca e avviene in background poichè avviata in maniera asincrona,
+ a causa della grossa mole di dati da dover scaricare.
 \end_layout
 
 \begin_layout Standard
@@ -718,8 +717,8 @@ La gestione degli Shop all'interno dell'applicazione è stato necessario
  il salvataggio e la gestione dei dati in database.
  Ad ogni ricerca le gelaterie vengono nuovamente scaricate così da avere
  sempre tutte le informazioni aggiornate, creando però un collo di bottiglia
- in termini di prestazioni che verrà spiegato nel dettaglio nel capitolo
- successivo.
+ in termini di prestazioni che verrà spiegato e gestito nel dettaglio nel
+ capitolo successivo.
 \end_layout
 
 \begin_layout Section
@@ -732,9 +731,9 @@ Marketing Digitale
 
 \begin_layout Standard
 Il primo flusso logico principale ad essere stato implementato è stato quello
- di marketing digitale poichè legato solo in parte alla presenza di un utente
- registrato e autenticato all'applicazione; sono quindi presenti alcune
- operazioni comunque disponibili anche senza aver eseguito il login.
+ del marketing digitale poichè legato solo in parte alla presenza di un
+ utente registrato e autenticato all'applicazione; sono quindi presenti
+ alcune operazioni comunque disponibili anche senza aver eseguito il login.
 \end_layout
 
 \begin_layout Standard
@@ -742,48 +741,57 @@ La prima sezione ad essere implementata è stata quella legata alla visualizzazi
 ni delle carte del Mastro Gelatiere poichè il numero delle promozioni disponibil
 i era da visualizzare anche all'interno della navigazione principale e quindi
  la richiesta per scaricarle doveva essere presente anche all'interno della
- schermata principale dell'applicazione.
+ schermata iniziale dell'applicazione.
 \end_layout
 
 \begin_layout Standard
-Per ottenere un maggiore riutilizzo del codice si è scelto di utilizzare
- la stessa schermata per visualizzare sia le carte del mastro gelatiere
- sia quelle delle singole gelaterie ottenendo una visualizzazione differente
- in base al collegamento che avrebbe portato l'utente all'interno della
- sezione.
+Per ottenere un maggiore riutilizzo del codice si è scelto di creare una
+ stessa sezione per visualizzare sia le carte del mastro gelatiere sia quelle
+ delle singole gelaterie ottenendo una visualizzazione differente in base
+ al collegamento (
+\emph on
+Intent
+\emph default
+) che avrebbe portato l'utente all'interno della sezione.
  Allo stesso modo si è utilizzato uno stesso modello per entrambe le carte
  definendo un elemento Realm di nome 
 \emph on
 Card
 \emph default
  che incapsula i dati necessari all'utilizzo delle carte nel sistema differenzia
-ndole grazie ad un flag.
+ndole grazie ad un flag presente anche nel modello fornito dal backend.
 \end_layout
 
 \begin_layout Standard
-Avendo quindi già implementato la visualizzazione delle carte, scaricate
- tramite chiamata alle API, è stato semplice eseguire il passaggio successivo
- che dalla singola gelateria portava alle proprie carte promozionali.
- A fianco dell'icona che funge da collegamento alle carte è stato successivament
-e inserita l'icona per aggiungere ai preferiti il singolo esercizio.
- 
+Avendo quindi implementato la visualizzazione delle carte scaricate tramite
+ chiamata alle API, nella schermata appena descritta, è stato semplice eseguire
+ il passaggio successivo che dalla visualizzazione della singola gelateria
+ portava alle proprie carte promozionali: all'interno della finestra informativa
+ con i dati dello shop all'interno della ricerca si sono inserite un'icona
+ che funge da collegamento alle carte un'icona per aggiungere ai preferiti
+ il singolo esercizio.
 \end_layout
 
 \begin_layout Standard
-Si è dovuto creare un secondo modello all'interno del database che semplicemente
- identifica gli esercizi salvati tra i preferiti in modo che queste informazioni
- rimangano salvate in locale sul dispositivo anche senza un utente che si
- sia loggato.
+Per il salvataggio offline dei preferiti si è però dovuto creare un secondo
+ modello all'interno del database 
+\emph on
+Favorite
+\emph default
+ che semplicemente identifica gli esercizi salvati tra i preferiti in modo
+ che queste informazioni rimangano salvate in locale sul dispositivo anche
+ senza che un utente che si sia loggato.
  L'inserimento di un flag all'interno del modello degli shop non avrebbe
  funzionato poichè sarebbe stato sovrascritto ad ogni aggiornamento degli
- shop durante il download e l'aggiornamento con le informazioni sul server.
+ shop durante il download e la modifica con le informazioni sul server.
 \end_layout
 
 \begin_layout Standard
 Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
  si sia autenticato verrà eseguita una chiamata al server che attiverà la
  ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
- per il geofencing sul dispositivo.
+ per il geofencing sul dispositivo, entrambe le funzioni sono spiegate nel
+ dettaglio nel capitolo 4.6.2.
 \end_layout
 
 \begin_layout Subsection
@@ -795,18 +803,26 @@ L'implementazione delle carte promozionali ha seguito uno sviluppo volto
  ad utilizzare lo stesso codice e le stesse visualizzazioni sia per la la
  presentazione delle carte legate al singolo esercizio sia per quelle del
  mastro gelataio.
- Prima di tutto si è quindi realizzato il modello in Realm contenente le
- principali informazioni legate alla carta: identfiicativo, titolo, immagine,
- descrizione, eventuale link e recapito teleofonico.
+ Prima di tutto si è quindi realizzato il modello in Realm chiamato 
+\emph on
+Card
+\emph default
+ contenente le principali informazioni legate alla carta: identfiicativo,
+ titolo, immagine, descrizione, eventuale link e recapito teleofonico.
 \end_layout
 
 \begin_layout Standard
 È stata creata una schermata unica per la visualizzazione delle carte affiancate
- con un layout abbastanza grafico dove ogni carta mostra la propria immagine
- e al click su un'icona ruota su se stessa per permettere di leggere la
- descrizione ed eventualmente ottenere nuove informazioni tramite i l link
- proposto.
- 
+, grazie all'utilizzo di un 
+\emph on
+ViewPager
+\emph default
+, con un layout elaborato dove ogni carta mostra la propria immagine e al
+ click su un'icona in basso a destra ruota su se stessa per permettere di
+ leggere la descrizione ed eventualmente ottenere nuove informazioni tramite
+ il link proposto.
+ Nel caso vi sia la presenza di un video il tap sull'immagine porterà alla
+ visualizzazione online della risorsa resa disponibile tramite url.
 \end_layout
 
 \begin_layout Standard
@@ -819,14 +835,13 @@ Il download delle informazioni deve avvenire all'apertura della schermata
 \end_layout
 
 \begin_layout Standard
-Lo stesso procedimento, nel caso delle carte del mastro gelatiere però deve
- essere eseguito anche all'interno della schermata principale poichè il
- numero delle carte è da visualizzare all'interno dell'immagine che rimanda
- alla sezione del mastro gelatiere.
- Il collegamento a questa sezione rimane valido comunque da qualsiasi parte
- dell'applicazione poichè in ogni caso tutti dati vengono anche aggiornati
- al momento, permettendo così di inserire il collegamento ogni volta che
- vengono presentate le informazioni legato ad uno shop.
+Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
+ dati deve essere eseguito anche all'interno della schermata principale
+ poichè il numero delle carte è da visualizzare all'interno dell'immagine
+ del menù che rimanda alla sezione del mastro gelatiere.
+ Inoltre nel caso di un utente con autenticazione effettuata verrà registrato
+ il dispositivo sul server per la ricezione di una notifica push ogni volta
+ che 
 \end_layout
 
 \begin_layout Subsection
@@ -839,17 +854,24 @@ Il primo sviluppo legato alla sezione dei preferiti è stata quella della
  della ricerca in cui tramite un'icona l'utente può salvare localmente le
  sue preferenze.
  Successivamente si è implementata la sezione dell'applicazione che permette
- la visualizzazione della lista degli esercizi preferiti con la conseguente
- gestione, direttamente raggiungibile dalla navigazione principale.
+ la visualizzazione e la gestione della lista degli esercizi preferiti,
+ direttamente raggiungibile dalla navigazione principale.
 \end_layout
 
 \begin_layout Standard
-Infine avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad
- un sistema centralizzato che racchiudeva tutte le operazioni necessarie
- è stato abbastanza intuitivo poter inserire un middleware che gestisse
- l'aggiunta e la rimozione di una gelateria dai preferiti anche per quanto
- riguardava l'iscrizione alle notifiche push da parte del server e del geofencin
-g da parte del dispositivo.
+Avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad un sistema
+ centralizzato che racchiudeva tutte le operazioni necessarie è stato abbastanza
+ intuitivo poter inserire un middleware che gestisse l'aggiunta e la rimozione
+ delle funzionalità riguardanti l'iscrizione alle notifiche push ricevute
+ del server e del geofencing gestito dal dispositivo.
+\end_layout
+
+\begin_layout Standard
+L'utente può aggiungere una gelateria ai preferiti cliccando sull'icona
+ della stella presente nella finestra di informazioni visualizzata all'interno
+ della ricerca degli shop una volta selezionatone uno.
+ L'aggiunta, come anche la rimozione, aggiorna immediatamente sia la mappa
+ modificando il marker mostrato a video e anche la lista dei preferiti.
 \end_layout
 
 \begin_layout Standard
@@ -859,11 +881,15 @@ Per l'implementazione della funzinalità di notifiche push si è scelto di
 \emph on
 Google Cloud Messaging
 \emph default
- per poi passare ad utilizzare Firebase, nuovo applicativo appena reso disponbil
-e e sicuramente più innovativo e aggiornato.
- Per far dialogare in maniera bidirezionale l'applicativo e il server ogni
- volta che un utente esegue il login ad una applicazione viene attivato
- firebase richiedendo al server un token che verrà poi passato al sistema
+ per poi passare ad utilizzare il servizio 
+\emph on
+Firebase
+\emph default
+, nuovo applicativo appena reso disponbile e sicuramente più innovativo
+ e aggiornato.
+ Per far dialogare in maniera bidirezionale l'applicativo e il server nel
+ momento in cui un utente esegue il login all'applicazione viene attivato
+ Firebase richiedendo al server un token che verrà poi passato al sistema
  di gestione delle notifiche che si metterà in ascolto.
 \end_layout
 
@@ -874,12 +900,22 @@ status open
 
 \begin_layout Plain Layout
 
-FirebaseApp.initializeApp(this,
+FirebaseApp.initializeApp(
 \end_layout
 
 \begin_layout Plain Layout
 
-	FirebaseOptions.fromResource(this));
+    this,
+\end_layout
+
+\begin_layout Plain Layout
+
+    FirebaseOptions.fromResource(this)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
 \end_layout
 
 \end_inset
@@ -889,11 +925,12 @@ FirebaseApp.initializeApp(this,
 
 \begin_layout Standard
 Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
- eseguita una chiamata al backend con lo scopo di informarlo dell'aggiunto
- dello shop a quelli di interesse, in questo modo nel momento in cui sarà
- disponibile una nuova carta promozionale per quello schop verrà visualizzata
- una notifica sul device che permetterà all'utente di accedere direttamente
- alla sezione delle carte promozionali specifiche per quell'esercizio.
+ eseguita una chiamata al backend con lo scopo di informarlo della modifca
+ attivando o disattivando rispettivamente la ricezione delle notifiche push.
+ In questo modo nel momento in cui sarà disponibile una nuova carta promozionale
+ per quello schop verrà visualizzata una notifica sul device che permetterà
+ all'utente di accedere direttamente alla sezione delle carte promozionali
+ specifiche per quell'esercizio.
 \end_layout
 
 \begin_layout Standard

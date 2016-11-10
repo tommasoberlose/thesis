@@ -100,15 +100,15 @@ Per poter ottenere uno sviluppo abbastanza lineare è stato necessario considera
 e che alcune specifiche richieste erano presenti in tutto il sistema e che
  quindi non potevano essere sviluppate a se stante dagli altri componenti.
  Prima di tutto il design richiesto doveva essere presente in ogni singola
- view e per questo si è deciso di implementare fin da subito le interfaccie
- utenti per non dover replicare ad ogni passaggio le stesse operazioni di
- personalizzazione della UI.
+ view e per questo si è deciso di implementare fin da subito l'interfaccia
+ utente dell'intera applicazione per non dover replicare ad ogni passaggio
+ le stesse operazioni di personalizzazione.
 \end_layout
 
 \begin_layout Standard
-Strutturato il metodo di sviluppo per la grafica dell'applicazione si è
- passati a gestire la navigazione principale scegliendo di utilizzare alcuni
- dei principali pattern Android: il 
+Strutturato il metodo di sviluppo per la grafica si è passati a gestire
+ la navigazione principale scegliendo di utilizzare alcuni dei principali
+ pattern Android: il 
 \shape italic
 NavigationDrawer
 \shape default
@@ -146,7 +146,7 @@ Design
 \end_layout
 
 \begin_layout Standard
-Il Design è stato il primo concetto sviluppato poichè avrebbe rappresentato
+Il Design è stata la prima specifica sviluppata poichè avrebbe rappresentato
  una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
  In figura 
 \begin_inset CommandInset ref
@@ -156,8 +156,8 @@ reference "fig:Temi"
 \end_inset
 
  sono visualizzati rispettivamente la scelta di due temi differenti, uno
- chiaro ed uno scuro e a fianco è mostarto come cambia l'interfaccia di
- navigazione in base al tema selezionato.
+ chiaro e uno scuro con a fianco mostrate le differenze dell'interfaccia
+ di navigazione in base al tema selezionato.
  Tutti i componenti sono personalizzati implementando i tre font differenti,
  utilizzando le risorse messe a disposizione sia per le icone che per le
  azioni di navigazione.
@@ -181,8 +181,8 @@ secondary color
 \emph default
 .
  Questo oggetto viene automaticamente generato unicamente a partire da un
- contesto di una scherata senza dover eseguire nessa operazione di inizializzazi
-one.
+ contesto di una scherata senza dover eseguire nessuna operazione di inizializza
+zione.
 \end_layout
 
 \begin_layout Standard
@@ -236,10 +236,9 @@ public class Flavors {
 \end_layout
 
 \begin_layout Standard
-Ad ogni inizializzazione e a ogni cambio di tema vi sono elementi dell'UI
- che sono da aggiornare, in special modo tutte le ImageView e le TextView
- che rappresentano rispettivamente ogni immagine e ogni testo presenti sulla
- schermata.
+Ad ogni cambio di tema vi sono elementi dell'UI da aggiornare, in special
+ modo tutte le ImageView e le TextView che rappresentano rispettivamente
+ ogni immagine e ogni testo presenti sulla schermata.
  Per automatizzare la gestione di questi componenti si è scelto di implementare
  un'interfaccia comune ai due oggetti chiamata 
 \emph on
@@ -249,7 +248,8 @@ FlavorObject
 \emph on
 updateFlavor()
 \emph default
- da richiamare ad ogni aggiornamento e che modifica gli elementi necessari.
+ da richiamare ad ogni aggiornamento e che modifica le proprietà necessarie
+ come sfondo, colore e immagini visualizzate.
 \end_layout
 
 \begin_layout Standard
@@ -283,11 +283,22 @@ public interface FlavorObject {
 \end_layout
 
 \begin_layout Standard
-Da quest'interfaccia si sono ereditate le tre view principali che sono state
- utilizzate durante tutto lo sviluppo di questa tesi e che hanno permesso
- di richiamare in metodo ricorsivo su tutti i componenti lo stesso metodo,
- in modo da aggiornare la schermata senza dover conoscere esattamente come
- ogni singolo elemento andava modificato.
+Da quest'interfaccia si sono ereditate le tre view principali (
+\emph on
+CustomImageView, CustomTextView 
+\emph default
+e
+\emph on
+ CustomEditTextView
+\emph default
+) che sono state utilizzate durante tutto lo sviluppo di questa tesi e che
+ hanno permesso di richiamare in metodo ricorsivo su tutti i componenti
+ lo stesso metodo - 
+\emph on
+updateFlavor
+\emph default
+() - in modo da aggiornare la schermata senza dover conoscere esattamente
+ come ogni singolo elemento andava modificato.
  Ogni custom view ha quindi implementato il metodo dell'interfaccia così
  da gestire in maniera automatica i temi chiari/scuri e il cambio ad ogni
  aggiornamento.
@@ -295,11 +306,15 @@ Da quest'interfaccia si sono ereditate le tre view principali che sono state
 
 \begin_layout Standard
 Per la gestione dei font dei testi si è sfruttato il fatto di aver implementato
- una versione personalizzata della textView così da implementare un nuovo
+ una versione personalizzata della TextView così da implementare un nuovo
  elemento all'interno del componente scritto in xml.
- In questo modo si è potuto rendere il codice molto più pulito indicando
- il font per ogni testo direttamente nella definizione della view senza
- dover gestire ogni elemento tramite java alla creazione della schermata.
+ Così si è potuto rendere il codice Java molto più pulito indicando il font
+ per ogni testo direttamente nella definizione della view all'interno della
+ risorsa di tipo 
+\emph on
+layout
+\emph default
+ senza dover gestire ogni elemento alla creazione della schermata.
 \end_layout
 
 \begin_layout Standard
@@ -338,21 +353,22 @@ status open
 \end_layout
 
 \begin_layout Standard
-Per eseguire l'aggiornamento automatico di tutte le view si è scelto di
- creare una custom Activity, che rappresenta il componente di una schermata
- dell'interfaccia utente, così da implementare anche in questo caso un metodo
- che venisse richiamato ogni volta che vi erano elementi da modificare.
-\end_layout
-
-\begin_layout Standard
-Questa 
+Per eseguire l'aggiornamento automatico di tutte le view di una schermata
+ si è scelto di creare una custom Activity, che rappresenta il componente
+ di una schermata dell'interfaccia utente, così da implementare anche in
+ questo caso un metodo che venisse richiamato ogni volta che vi erano elementi
+ da modificare.
+ Questa 
 \emph on
 FlavorActivity
 \emph default
  incapsula la gestione stessa del tema attuale, grazie ad una variabile
- Flavors, aggiornando in maniera automatica oltre agli elementi dichiarati
- anche la toolbar e la statusbar visibili come componenti di sistema di
- Android.
+ 
+\emph on
+Flavors
+\emph default
+, aggiornando in maniera automatica oltre agli elementi dichiarati anche
+ la toolbar e la statusbar visibili come componenti di sistema di Android.
 \end_layout
 
 \begin_layout Standard
@@ -442,9 +458,9 @@ public class FlavorActivity extends AppCompatActivity {
 \begin_layout Standard
 Concluso lo sviluppo di ogni componente si è inserita all'interno della
  navigazione principale la possibilità di accedere alla sezione per la scelta
- del tema da parte dell'utente che elenca ogni tema identificandolo con
- un nome di gelato e alcune immagini personalizzate come si può notare in
- figura 
+ del tema da parte dell'utente, schermata che elenca ogni tema identificandolo
+ con un nome di gelato e alcune immagini personalizzate come si può notare
+ in figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Temi"
@@ -501,7 +517,8 @@ Tutte le funzionalità di collegamento al backend tramite API Rest sono state
  raccolte e incapsulate all'interno di un unico componente utilizzato ad
  ogni chiamata server in maniera standardizzata.
  Sfruttando la libreria OkHttp si è potuto semplificare la gestione delle
- chiamate http potendo incapsulare il risultato in un classe 
+ chiamate con protocollo Http potendo incapsulare il risultato in un classe
+ 
 \emph on
 Result
 \emph default
@@ -509,14 +526,24 @@ Result
 \end_layout
 
 \begin_layout Standard
-La possibilità di utilizzare il 
+Le API Rest rese disponibili dal backend hanno permesso di standardizzare
+ le chiamate richiedendo ad ogni chiamata l'inserimento solo del metodo,
+ dei parametri da inviare e dell'eventuale payload.
+ Anche la gestione degli errori grazie ai codici identificativi Http hanno
+ reso la gestione di tutti gli errori semplificata così da poter visualizzare
+ un messaggio di errore il più specifico possibile e localizzato in base
+ alla lingua utilizzata sul device.
+\end_layout
+
+\begin_layout Standard
+Per la gestione della risposta di una richiesta al server la possibilità
+ di utilizzare il 
 \emph on
 Diamond Operator
 \emph default
- ha permesso di utilizzare lo stesso oggetto anche con risultato di tipo
- differente, come per esempio i dati relativi ad un utente o ad una carta
- promozionale.
- 
+ ha permesso di utilizzare lo stesso oggetto di tipo Result anche con risultato
+ di tipo differente, come per esempio i dati relativi ad un utente o ad
+ una carta promozionale.
 \end_layout
 
 \begin_layout Standard
@@ -570,16 +597,6 @@ public class Result<T, E> {
 \end_layout
 
 \begin_layout Standard
-Le API Rest rese disponibili dal backend hanno permesso di standardizzare
- le chiamate richiedendo ad ogni chiamata l'inserimento solo del metodo,
- dei parametri da inviare e dell'eventuale payload.
- Anche la gestione degli errori grazie ai codici identificativi Http hanno
- reso la gestione di tutti gli errori semplificata così da poter visualizzare
- un messaggio di errore il più specifico possibile e localizzato in base
- alla lingua utilizzata sul device.
-\end_layout
-
-\begin_layout Standard
 L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
  ha permesso anche di inserire alcuni controlli su ogni tipo di richiesta,
  per esempio la possibilità di verificare che le chiamate autenticate non
@@ -587,14 +604,24 @@ L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
  situazione che doveva invocare il logout dell'attuale utente dall'applicazione.
 \end_layout
 
+\begin_layout Standard
+L'utilizzo dell'oggetto Network, che esponeva i metodi statici necessari
+ all'utilizzo delle sue funzionalità in ogni punto dell'applicazione, è
+ stato ogni volta inserito all'interno di un componente 
+\emph on
+AsyncTask
+\emph default
+ che permette l'esecuzione di un blocco di codice in maniera asincrona dal
+ processo principale, migliorando di gran lunga le performance dell'applicazione.
+\end_layout
+
 \begin_layout Section
 Utente
 \end_layout
 
 \begin_layout Standard
-Il primo passaggio effettuato durante lo sviluppo della sezione legata all'utent
-e è stato quello di realizzare un modello, definito all'interno della classe
- 
+Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
+ di un modello, definito all'interno della classe 
 \emph on
 User
 \emph default
@@ -607,8 +634,8 @@ User
 \begin_layout Standard
 La sezione per la gestione del proprio account e delle funzioni di autenticazion
 e sono inserite in una parte del menù laterale della pagina principale dell'appl
-icazione, permette di verificare se si è effettuato o meno l'accesso rapidamente
- potendo eseguire anche le azioni di login e logout.
+icazione, permettendo di verificare se si è effettuato o meno l'accesso
+ rapidamente.
  Si è inserito un header all'interno del menù laterale in cui sono visibili
  un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
  l'accesso.
@@ -619,10 +646,10 @@ icazione, permette di verificare se si è effettuato o meno l'accesso rapidament
 
 \begin_layout Standard
 Si è poi implementata un'unica schermata dalla quale si può accedere al
- login tramite credenziali, al login tramite social network, alla registrazione
- di un nuovo account e si verrà reindirizzati a questa sezione ogni volta
- che l'utente tenterà di eseguire delle azioni in cui è necessario aver
- eseguito l'accesso senza essere autenticato.
+ login tramite credenziali personali, al login tramite social network, alla
+ registrazione di un nuovo account e si verrà reindirizzati a questa sezione
+ ogni volta che l'utente tenterà di eseguire delle azioni in cui è necessario
+ aver eseguito l'accesso senza essere autenticato.
 \end_layout
 
 \begin_layout Standard
@@ -643,8 +670,8 @@ Network
 \begin_layout Standard
 Nel momento in cui l'utente esegue il login vengono aggiornate sul device
  le informazioni legate all'account, creando un oggetto Realm partendo dal
- modello, incapsulando ogni informazione scaricata dal server in modo che
- ogni sezione dell'applicativo possa accedervi localmente.
+ modello, incapsulando ogni informazione scaricata dal server così che ogni
+ sezione dell'applicativo possa accedervi localmente.
  L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
  che altrimenti non si potrebbero visualizzare poichè ogni chiamata alle
  API deve essere corredata delle informazioni legate all'utente che esegue
@@ -664,25 +691,24 @@ Shop
 \end_layout
 
 \begin_layout Standard
-Ogni esercizio inserito all'interno del circutio MyGelato è formalizzato
+Ogni gelateria inserita all'interno del circutio MyGelato è formalizzata
  concettualmente come un oggetto 
 \emph on
 Shop
 \emph default
- che incapsula tutte le informazioni che il server rende disponibili al
+ che incapsula tutte le informazioni che il server rende leggibili per il
  download di volta in volta: identificativo, nome, indirizzo, recapito telefonic
-o, ecc...
+o e ogni dato disponibile.
 \end_layout
 
 \begin_layout Standard
-La gestione degli Shop all'interno dell'applicazione è stato necessario
- poichè la visualizzazione delle informazioni necessarie in più di un nodo
- fondamentale dell'applicazione avrebbe reso impossibile la richiesta dei
- dati necessari solo in caso di necessità.
- Il download sul device delle informazioni dei device avviene all'interno
- della schermata della Ricerca in maniera asincrona, a causa della grossa
- mole di dati da dover scaricare, e permette all'utente di avere anche offline
- le informazioni legate agli shop già visualizzati.
+La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
+ è stato necessario poichè in molti casi dati devono poter essere accessibili
+ anche offline per quanto riguarda le operazioni che non richiedono un collegame
+nto istantaneo con il backend, come per esempio la visualizzazione dei preferiti.
+ Il download delle informazioni sul device avviene all'interno della schermata
+ della Ricerca e avviene in background poichè avviata in maniera asincrona,
+ a causa della grossa mole di dati da dover scaricare.
 \end_layout
 
 \begin_layout Standard
@@ -691,8 +717,8 @@ La gestione degli Shop all'interno dell'applicazione è stato necessario
  il salvataggio e la gestione dei dati in database.
  Ad ogni ricerca le gelaterie vengono nuovamente scaricate così da avere
  sempre tutte le informazioni aggiornate, creando però un collo di bottiglia
- in termini di prestazioni che verrà spiegato nel dettaglio nel capitolo
- successivo.
+ in termini di prestazioni che verrà spiegato e gestito nel dettaglio nel
+ capitolo successivo.
 \end_layout
 
 \begin_layout Section
@@ -705,9 +731,9 @@ Marketing Digitale
 
 \begin_layout Standard
 Il primo flusso logico principale ad essere stato implementato è stato quello
- di marketing digitale poichè legato solo in parte alla presenza di un utente
- registrato e autenticato all'applicazione; sono quindi presenti alcune
- operazioni comunque disponibili anche senza aver eseguito il login.
+ del marketing digitale poichè legato solo in parte alla presenza di un
+ utente registrato e autenticato all'applicazione; sono quindi presenti
+ alcune operazioni comunque disponibili anche senza aver eseguito il login.
 \end_layout
 
 \begin_layout Standard
@@ -715,48 +741,57 @@ La prima sezione ad essere implementata è stata quella legata alla visualizzazi
 ni delle carte del Mastro Gelatiere poichè il numero delle promozioni disponibil
 i era da visualizzare anche all'interno della navigazione principale e quindi
  la richiesta per scaricarle doveva essere presente anche all'interno della
- schermata principale dell'applicazione.
+ schermata iniziale dell'applicazione.
 \end_layout
 
 \begin_layout Standard
-Per ottenere un maggiore riutilizzo del codice si è scelto di utilizzare
- la stessa schermata per visualizzare sia le carte del mastro gelatiere
- sia quelle delle singole gelaterie ottenendo una visualizzazione differente
- in base al collegamento che avrebbe portato l'utente all'interno della
- sezione.
+Per ottenere un maggiore riutilizzo del codice si è scelto di creare una
+ stessa sezione per visualizzare sia le carte del mastro gelatiere sia quelle
+ delle singole gelaterie ottenendo una visualizzazione differente in base
+ al collegamento (
+\emph on
+Intent
+\emph default
+) che avrebbe portato l'utente all'interno della sezione.
  Allo stesso modo si è utilizzato uno stesso modello per entrambe le carte
  definendo un elemento Realm di nome 
 \emph on
 Card
 \emph default
  che incapsula i dati necessari all'utilizzo delle carte nel sistema differenzia
-ndole grazie ad un flag.
+ndole grazie ad un flag presente anche nel modello fornito dal backend.
 \end_layout
 
 \begin_layout Standard
-Avendo quindi già implementato la visualizzazione delle carte, scaricate
- tramite chiamata alle API, è stato semplice eseguire il passaggio successivo
- che dalla singola gelateria portava alle proprie carte promozionali.
- A fianco dell'icona che funge da collegamento alle carte è stato successivament
-e inserita l'icona per aggiungere ai preferiti il singolo esercizio.
- 
+Avendo quindi implementato la visualizzazione delle carte scaricate tramite
+ chiamata alle API, nella schermata appena descritta, è stato semplice eseguire
+ il passaggio successivo che dalla visualizzazione della singola gelateria
+ portava alle proprie carte promozionali: all'interno della finestra informativa
+ con i dati dello shop all'interno della ricerca si sono inserite un'icona
+ che funge da collegamento alle carte un'icona per aggiungere ai preferiti
+ il singolo esercizio.
 \end_layout
 
 \begin_layout Standard
-Si è dovuto creare un secondo modello all'interno del database che semplicemente
- identifica gli esercizi salvati tra i preferiti in modo che queste informazioni
- rimangano salvate in locale sul dispositivo anche senza un utente che si
- sia loggato.
+Per il salvataggio offline dei preferiti si è però dovuto creare un secondo
+ modello all'interno del database 
+\emph on
+Favorite
+\emph default
+ che semplicemente identifica gli esercizi salvati tra i preferiti in modo
+ che queste informazioni rimangano salvate in locale sul dispositivo anche
+ senza che un utente che si sia loggato.
  L'inserimento di un flag all'interno del modello degli shop non avrebbe
  funzionato poichè sarebbe stato sovrascritto ad ogni aggiornamento degli
- shop durante il download e l'aggiornamento con le informazioni sul server.
+ shop durante il download e la modifica con le informazioni sul server.
 \end_layout
 
 \begin_layout Standard
 Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
  si sia autenticato verrà eseguita una chiamata al server che attiverà la
  ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
- per il geofencing sul dispositivo.
+ per il geofencing sul dispositivo, entrambe le funzioni sono spiegate nel
+ dettaglio nel capitolo 4.6.2.
 \end_layout
 
 \begin_layout Subsection
@@ -768,18 +803,26 @@ L'implementazione delle carte promozionali ha seguito uno sviluppo volto
  ad utilizzare lo stesso codice e le stesse visualizzazioni sia per la la
  presentazione delle carte legate al singolo esercizio sia per quelle del
  mastro gelataio.
- Prima di tutto si è quindi realizzato il modello in Realm contenente le
- principali informazioni legate alla carta: identfiicativo, titolo, immagine,
- descrizione, eventuale link e recapito teleofonico.
+ Prima di tutto si è quindi realizzato il modello in Realm chiamato 
+\emph on
+Card
+\emph default
+ contenente le principali informazioni legate alla carta: identfiicativo,
+ titolo, immagine, descrizione, eventuale link e recapito teleofonico.
 \end_layout
 
 \begin_layout Standard
 È stata creata una schermata unica per la visualizzazione delle carte affiancate
- con un layout abbastanza grafico dove ogni carta mostra la propria immagine
- e al click su un'icona ruota su se stessa per permettere di leggere la
- descrizione ed eventualmente ottenere nuove informazioni tramite i l link
- proposto.
- 
+, grazie all'utilizzo di un 
+\emph on
+ViewPager
+\emph default
+, con un layout elaborato dove ogni carta mostra la propria immagine e al
+ click su un'icona in basso a destra ruota su se stessa per permettere di
+ leggere la descrizione ed eventualmente ottenere nuove informazioni tramite
+ il link proposto.
+ Nel caso vi sia la presenza di un video il tap sull'immagine porterà alla
+ visualizzazione online della risorsa resa disponibile tramite url.
 \end_layout
 
 \begin_layout Standard
@@ -792,14 +835,13 @@ Il download delle informazioni deve avvenire all'apertura della schermata
 \end_layout
 
 \begin_layout Standard
-Lo stesso procedimento, nel caso delle carte del mastro gelatiere però deve
- essere eseguito anche all'interno della schermata principale poichè il
- numero delle carte è da visualizzare all'interno dell'immagine che rimanda
- alla sezione del mastro gelatiere.
- Il collegamento a questa sezione rimane valido comunque da qualsiasi parte
- dell'applicazione poichè in ogni caso tutti dati vengono anche aggiornati
- al momento, permettendo così di inserire il collegamento ogni volta che
- vengono presentate le informazioni legato ad uno shop.
+Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
+ dati deve essere eseguito anche all'interno della schermata principale
+ poichè il numero delle carte è da visualizzare all'interno dell'immagine
+ del menù che rimanda alla sezione del mastro gelatiere.
+ Il collegamento a questa sezione rimane comunque valido da qualsiasi parte
+ dell'applicazione poichè in ogni caso tutti i dati vengono anche aggiornati
+ al momento dell'avvio della schermata.
 \end_layout
 
 \begin_layout Subsection
@@ -847,12 +889,22 @@ status open
 
 \begin_layout Plain Layout
 
-FirebaseApp.initializeApp(this,
+FirebaseApp.initializeApp(
 \end_layout
 
 \begin_layout Plain Layout
 
-	FirebaseOptions.fromResource(this));
+    this,
+\end_layout
+
+\begin_layout Plain Layout
+
+    FirebaseOptions.fromResource(this)
+\end_layout
+
+\begin_layout Plain Layout
+
+);
 \end_layout
 
 \end_inset
