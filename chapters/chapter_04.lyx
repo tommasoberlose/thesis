@@ -146,8 +146,9 @@ Design
 \end_layout
 
 \begin_layout Standard
-Il Design è stata la prima specifica sviluppata poichè avrebbe rappresentato
- una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
+Il Design è stata la prima specifica considerata durante lo sviluppo poichè
+ avrebbe rappresentato una costante durante l'implementazione di qualsiasi
+ schermata dell'applicazione.
  In figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -468,6 +469,16 @@ reference "fig:Temi"
 \end_inset
 
 .
+ Questa schermata è formata da un 
+\emph on
+ViewPager
+\emph default
+ che permette lo scorrimento laterale da un tema al successivo, sia tramite
+ slide sullo schermo sia tramite le icone laterali mostrate anche in figura.
+ Per permettere la visualizzazione di elementi personalizzati in ogni dettaglio
+ si sono rese dinamiche la maggior parte delle immagini, come quella in
+ background e quella a rappresentazione del gelato in modo che si aggiornassero
+ a partire dal Flavor selezionato durante lo scorrimento.
 \end_layout
 
 \begin_layout Standard
@@ -514,15 +525,18 @@ Network
 
 \begin_layout Standard
 Tutte le funzionalità di collegamento al backend tramite API Rest sono state
- raccolte e incapsulate all'interno di un unico componente utilizzato ad
- ogni chiamata server in maniera standardizzata.
+ raccolte e incapsulate all'interno di un unico componente 
+\emph on
+Network
+\emph default
+ utilizzato ad ogni chiamata server in maniera standardizzata.
  Sfruttando la libreria OkHttp si è potuto semplificare la gestione delle
  chiamate con protocollo Http potendo incapsulare il risultato in un classe
  
 \emph on
 Result
 \emph default
- contenente i dati sia in caso di errore sia in caso di successo.
+ contenente i dati sia in caso di successo sia in caso di errore.
 \end_layout
 
 \begin_layout Standard
@@ -536,6 +550,15 @@ Le API Rest rese disponibili dal backend hanno permesso di standardizzare
 \end_layout
 
 \begin_layout Standard
+L'utilizzo di una libreria esterna molto performante ha permesso di evitare
+ l'utilizzo delle libreria Apache che, anche se elemento fondamentale della
+ programmazione Java in generale, nello specifico dello sviluppo Android
+ sono molto limitanti riguardo alla compatibilità con tutte le versioni
+ commercializzate e rende il codice piuttosto legato al backend con cui
+ ci si collega.
+\end_layout
+
+\begin_layout Standard
 Per la gestione della risposta di una richiesta al server la possibilità
  di utilizzare il 
 \emph on
@@ -544,6 +567,10 @@ Diamond Operator
  ha permesso di utilizzare lo stesso oggetto di tipo Result anche con risultato
  di tipo differente, come per esempio i dati relativi ad un utente o ad
  una carta promozionale.
+ In questo modo tutte le chiamate server che venivano effettuate all'interno
+ delle sezioni dell'applicazione potevano essere replicate ed adeguate facilment
+e al contesto senza dover riscrivere ogni volta il codice necessario al
+ funzionamento di una particolare sezione.
 \end_layout
 
 \begin_layout Standard
@@ -598,21 +625,22 @@ public class Result<T, E> {
 
 \begin_layout Standard
 L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
- ha permesso anche di inserire alcuni controlli su ogni tipo di richiesta,
- per esempio la possibilità di verificare che le chiamate autenticate non
- dessero come risultato il codice 401 in caso di utente non autorizzato;
- situazione che doveva invocare il logout dell'attuale utente dall'applicazione.
+ ha permesso anche di inserire alcuni controlli su ogni richiesta inviata
+ dall'applicativo, per esempio la possibilità di verificare che le chiamate
+ autenticate non dessero come risultato il codice 401 in caso di utente
+ non autorizzato; situazione che invoca il logout dell'attuale utente dall'appli
+cazione.
 \end_layout
 
 \begin_layout Standard
-L'utilizzo dell'oggetto Network, che esponeva i metodi statici necessari
- all'utilizzo delle sue funzionalità in ogni punto dell'applicazione, è
- stato ogni volta inserito all'interno di un componente 
+L'utilizzo dell'oggetto Network, che espone i metodi statici necessari all'utili
+zzo delle sue funzionalità in ogni punto dell'applicazione, è stato ogni
+ volta inserito all'interno di un componente 
 \emph on
 AsyncTask
 \emph default
  che permette l'esecuzione di un blocco di codice in maniera asincrona dal
- processo principale, migliorando di gran lunga le performance dell'applicazione.
+ processo principale, migliorando di gran lunga le performance dell'applicativo.
 \end_layout
 
 \begin_layout Section
@@ -625,37 +653,120 @@ Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
 \emph on
 User
 \emph default
-, che racchiude tutte le informazioni legate ad un account.
+, che racchiude tutte le informazioni legate ad un account (mostrate nel
+ codice CODICE per come sono implementate all'interno del modello).
  Utilizzando Realm è stato possibile definire un oggetto che lo rappresenta,
  mantiene in locale sul dispositivo tutti i dati inseriti e mette a disposizione
  un insieme di funzioni utili per la gestione del database.
 \end_layout
 
 \begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@PrimaryKey
+\end_layout
+
+\begin_layout Plain Layout
+
+public String uuid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public String firstName;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String lastName;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String email;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String avatar;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String uid;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String client;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String token;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String provider;
+\end_layout
+
+\begin_layout Plain Layout
+
+public boolean shop;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La sezione per la gestione del proprio account e delle funzioni di autenticazion
-e sono inserite in una parte del menù laterale della pagina principale dell'appl
-icazione, permettendo di verificare se si è effettuato o meno l'accesso
- rapidamente.
- Si è inserito un header all'interno del menù laterale in cui sono visibili
- un'immagine circolare, un messaggio di benvenuto e un bottone per eseguire
- l'accesso.
- Una volta che l'utente sarà autenticato saranno invece visibili l'avatar,
- il nome, un'icona per accedere alla schermata di modifica dell'account
- e il bottone per eseguire il logout.
+e sono inserite in una parte del menù laterale (
+\emph on
+NavigationDrawer
+\emph default
+) della pagina principale dell'applicazione, permettendo di verificare se
+ si è effettuato o meno l'accesso rapidamente.
+ Si è inserito un header in cui sono visibili un'immagine circolare, un
+ messaggio di benvenuto e un bottone per eseguire l'accesso e una volta
+ che l'utente sarà autenticato saranno invece visibili l'avatar, il nome,
+ un'icona per accedere alla schermata di modifica dell'account e il bottone
+ per eseguire il logout.
 \end_layout
 
 \begin_layout Standard
 Si è poi implementata un'unica schermata dalla quale si può accedere al
- login tramite credenziali personali, al login tramite social network, alla
- registrazione di un nuovo account e si verrà reindirizzati a questa sezione
- ogni volta che l'utente tenterà di eseguire delle azioni in cui è necessario
- aver eseguito l'accesso senza essere autenticato.
+ login tramite credenziali personali (
+\emph on
+EmailLogin
+\emph default
+), al login tramite social network (
+\emph on
+FacebookLogin
+\emph default
+), alla registrazione di un nuovo account (
+\emph on
+SignUp
+\emph default
+) e si verrà reindirizzati a questa sezione ogni volta che l'utente tenterà
+ di eseguire delle azioni in cui è necessario aver eseguito l'accesso senza
+ essere autenticato.
 \end_layout
 
 \begin_layout Standard
 Ogni azione che si vuole compiere, come per esempio l'accesso tramite credenzial
-i, deve essere gestito all'interno dell'applicazione in modo molto accurato.
- Ogni campo di input è stato gestito in modo da attuare una validazione
+i, deve è gestito all'interno dell'applicazione in modo molto accurato:
+ ogni campo di input è stato controllato in modo da attuare una validazione
  anche lato client informando in maniera diretta l'utente nel caso in cui
  i dati inseriti non siano corretti.
  A seguito dell'invio di ogni form viene eseguita una chiamata alle API
@@ -668,22 +779,38 @@ Network
 \end_layout
 
 \begin_layout Standard
+Tutte le schermate facenti parte della sezione del Login sono state create
+ con un tema differente da quelli disponibili volendo creare una separazione
+ anche visiva tra i sistemi di marketing ed e-commerce e le funzionalità
+ legate all'utente che sono concettualmente parallele ai flussi logici dell'appl
+icazione e a un livello maggiore di generalità.
+\end_layout
+
+\begin_layout Standard
 Nel momento in cui l'utente esegue il login vengono aggiornate sul device
  le informazioni legate all'account, creando un oggetto Realm partendo dal
  modello, incapsulando ogni informazione scaricata dal server così che ogni
  sezione dell'applicativo possa accedervi localmente.
- L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
- che altrimenti non si potrebbero visualizzare poichè ogni chiamata alle
- API deve essere corredata delle informazioni legate all'utente che esegue
- una determinata azione.
+ L'autenticazione e il logout sono funzioni gestite in maniera centralizzata
+ grazie ad un 
+\emph on
+helper
+\emph default
+ che incapsula tutte le operazioni per far si che nessun dato sensibile
+ rimanga salvato in locale a seguite della disconessione dell'account e
+ non vi siano casi di incosistenza tra le informazioni presenti in locale
+ e sul server.
 \end_layout
 
 \begin_layout Standard
-Infine anche le funzioni di logout sono gestite all'interno di un helper
- che incapsula tutte le operazioni necessarie per far si che nessun dato
- sensibile rimanga salvato in locale a seguite della disconessione dell'account
- e non vi siano casi di incosistenza tra le informazioni presenti in locale
- e sul server.
+L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
+ che altrimenti non si potrebbero utilizzare poichè ogni chiamata alle API
+ deve essere corredata delle informazioni legate all'utente che esegue una
+ determinata azione.
+ Per questo motivo nel menù laterale della navigazione principale dell'applicazi
+one alcuni elementi sono disabilitati finchè l'utente non esegue l'autenticazion
+e, come mostrato anche in figura FIGURA insieme agli elementi presentati
+ in questo capitolo.
 \end_layout
 
 \begin_layout Section
@@ -696,29 +823,98 @@ Ogni gelateria inserita all'interno del circutio MyGelato è formalizzata
 \emph on
 Shop
 \emph default
- che incapsula tutte le informazioni che il server rende leggibili per il
- download di volta in volta: identificativo, nome, indirizzo, recapito telefonic
-o e ogni dato disponibile.
+, sia all'interno del frontend sia sul backend, che incapsula tutte le informazi
+oni disponibili al download di volta in volta, anche qui presentati sotto
+ forma di codice per rendere più completa la descrizione delle variabili
+ utilizzate.
 \end_layout
 
 \begin_layout Standard
-La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@PrimaryKey
+\end_layout
+
+\begin_layout Plain Layout
+
+public String uuid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public double latitude;
+\end_layout
+
+\begin_layout Plain Layout
+
+public double longitude;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String name;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String address;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String phone;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String status;
+\end_layout
+
+\begin_layout Plain Layout
+
+public boolean canBurnCoupons = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+public boolean myGelatoShop = false;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le informazioni riguardanti le gelaterie sono essenziali per la fruizione
+ dei contenuti all'interno del sistema di marketing digitale e per la selezione
+ dell'esercizio all'interno di quello di e-commerce.
+ La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
  è stato necessario poichè in molti casi dati devono poter essere accessibili
  anche offline per quanto riguarda le operazioni che non richiedono un collegame
-nto istantaneo con il backend, come per esempio la visualizzazione dei preferiti.
- Il download delle informazioni sul device avviene all'interno della schermata
- della Ricerca e avviene in background poichè avviata in maniera asincrona,
- a causa della grossa mole di dati da dover scaricare.
+nto istantaneo con il backend, come per esempio la visualizzazione degle
+ esercizi preferiti.
 \end_layout
 
 \begin_layout Standard
 È stato quindi creato un modello per l'oggetto Shop sempre derivante da
  un oggetto Realm così da sfruttare tutta la potenza della libreria per
  il salvataggio e la gestione dei dati in database.
- Ad ogni ricerca le gelaterie vengono nuovamente scaricate così da avere
- sempre tutte le informazioni aggiornate, creando però un collo di bottiglia
- in termini di prestazioni che verrà spiegato e gestito nel dettaglio nel
- capitolo successivo.
+ Il download delle informazioni sul device avviene all'interno della schermata
+ della Ricerca e avviene in background poichè avviata in maniera asincrona,
+ a causa della grossa mole di dati da dover scaricare.
+ Ad ogni ricerca infatti le gelaterie vengono nuovamente scaricate così
+ da avere sempre tutte le informazioni aggiornate, creando però un collo
+ di bottiglia in termini di prestazioni che verrà spiegato e gestito nel
+ dettaglio nel capitolo successivo.
 \end_layout
 
 \begin_layout Section
@@ -807,8 +1003,81 @@ L'implementazione delle carte promozionali ha seguito uno sviluppo volto
 \emph on
 Card
 \emph default
- contenente le principali informazioni legate alla carta: identfiicativo,
- titolo, immagine, descrizione, eventuale link e recapito teleofonico.
+ contenente le principali informazioni legate alla carta: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@PrimaryKey
+\end_layout
+
+\begin_layout Plain Layout
+
+public String uuid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public String name;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String title;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String imageUrl; 
+\end_layout
+
+\begin_layout Plain Layout
+
+public String shopUUID; 
+\end_layout
+
+\begin_layout Plain Layout
+
+public String cardDescription; 
+\end_layout
+
+\begin_layout Plain Layout
+
+public String link;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String phone; 
+\end_layout
+
+\begin_layout Plain Layout
+
+public Long start; 
+\end_layout
+
+\begin_layout Plain Layout
+
+public Long end;
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -817,10 +1086,10 @@ Card
 \emph on
 ViewPager
 \emph default
-, con un layout elaborato dove ogni carta mostra la propria immagine e al
- click su un'icona in basso a destra ruota su se stessa per permettere di
- leggere la descrizione ed eventualmente ottenere nuove informazioni tramite
- il link proposto.
+, con un layout di ogni pagina elaborato dove ogni carta mostra la propria
+ immagine e al click su un'icona in basso a destra ruota su se stessa per
+ permettere di leggere la descrizione ed eventualmente ottenere nuove informazio
+ni tramite il link proposto.
  Nel caso vi sia la presenza di un video il tap sull'immagine porterà alla
  visualizzazione online della risorsa resa disponibile tramite url.
 \end_layout
@@ -830,18 +1099,19 @@ Il download delle informazioni deve avvenire all'apertura della schermata
  grazie ad una richiesta alle API in background così da non bloccare il
  dispositivo dell'utente.
  Tutti i dati scaricati vengono salvati in locale così da essere disponibili
- anche offline e nel caso di modifiche saranno aggiornati eliminando anche
- le promozioni non più disponbili perchè scadute.
+ anche offline e nel caso di modifiche saranno aggiornati eliminando le
+ promozioni non più disponbili perchè scadute.
 \end_layout
 
 \begin_layout Standard
 Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
- dati deve essere eseguito anche all'interno della schermata principale
- poichè il numero delle carte è da visualizzare all'interno dell'immagine
- del menù che rimanda alla sezione del mastro gelatiere.
+ dati deve essere eseguito, come già detto, anche all'interno della schermata
+ principale poichè il numero delle carte è da visualizzare all'interno dell'imma
+gine del menù che rimanda alla sezione del mastro gelatiere.
  Inoltre nel caso di un utente con autenticazione effettuata verrà registrato
  il dispositivo sul server per la ricezione di una notifica push ogni volta
- che sarano pubblicate nuove promozioni.
+ che sarano pubblicate nuove promozioni, funzionalità spiegata nel dettaglio
+ nel capitolo successivo.
 \end_layout
 
 \begin_layout Subsection
@@ -850,20 +1120,12 @@ Preferiti
 
 \begin_layout Standard
 Il primo sviluppo legato alla sezione dei preferiti è stata quella della
- gestione dell'aggiunta e della rimozione all'interno della visualizzazione
- della ricerca in cui tramite un'icona l'utente può salvare localmente le
- sue preferenze.
+ gestione dell'aggiunta e della rimozione di una gelateria come esercizio
+ d'interesse tramite un'icona all'interno della visualizzazione della ricerca
+ con cui l'utente può salvare localmente le sue preferenze.
  Successivamente si è implementata la sezione dell'applicazione che permette
  la visualizzazione e la gestione della lista degli esercizi preferiti,
  direttamente raggiungibile dalla navigazione principale.
-\end_layout
-
-\begin_layout Standard
-Avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad un sistema
- centralizzato che racchiudeva tutte le operazioni necessarie è stato abbastanza
- intuitivo poter inserire un middleware che gestisse l'aggiunta e la rimozione
- delle funzionalità riguardanti l'iscrizione alle notifiche push ricevute
- del server e del geofencing gestito dal dispositivo.
 \end_layout
 
 \begin_layout Standard
@@ -872,6 +1134,36 @@ L'utente può aggiungere una gelateria ai preferiti cliccando sull'icona
  della ricerca degli shop una volta selezionatone uno.
  L'aggiunta, come anche la rimozione, aggiorna immediatamente sia la mappa
  modificando il marker mostrato a video e anche la lista dei preferiti.
+\end_layout
+
+\begin_layout Standard
+Grazie all'utilizzo del modello 
+\emph on
+Favorite
+\emph default
+ è possibile accedere ai codici identificativi degli Shop preferiti così
+ da richiamarli dal database in locale visualizzando tutte le principali
+ informazioni legate al sistema di marketing e dando la possibilità di accedere
+ alle carte promozionali o direttamente al 
+\emph on
+dialer 
+\emph default
+selezionando il recapito telefonico, se presente.
+\end_layout
+
+\begin_layout Standard
+Avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad un sistema
+ centralizzato che racchiudeva tutte le operazioni necessarie è stato abbastanza
+ intuitivo poter inserire un middleware che gestisse l'aggiunta e la rimozione
+ delle funzionalità riguardanti l'iscrizione alle 
+\emph on
+Notifiche Push
+\emph default
+ ricevute del server e del 
+\emph on
+Geofencing
+\emph default
+ gestito dal dispositivo.
 \end_layout
 
 \begin_layout Standard
@@ -890,7 +1182,11 @@ Firebase
  Per far dialogare in maniera bidirezionale l'applicativo e il server nel
  momento in cui un utente esegue il login all'applicazione viene attivato
  Firebase richiedendo al server un token che verrà poi passato al sistema
- di gestione delle notifiche che si metterà in ascolto.
+ di gestione delle notifiche, incluso al'interno del codice come libreria,
+ che si metterà in ascolto di eventuali messaggi.
+ Viene presentato per semplificazione solo l'inizializzazione parziale del
+ sistema di ascolto di notifiche push e si rimanda alla documentazione completa
+ per ottenere le informazioni necessarie alla descrizione dell'implementazione.
 \end_layout
 
 \begin_layout Standard
@@ -928,14 +1224,19 @@ Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
  eseguita una chiamata al backend con lo scopo di informarlo della modifca
  attivando o disattivando rispettivamente la ricezione delle notifiche push.
  In questo modo nel momento in cui sarà disponibile una nuova carta promozionale
- per quello schop verrà visualizzata una notifica sul device che permetterà
- all'utente di accedere direttamente alla sezione delle carte promozionali
- specifiche per quell'esercizio.
+ per quello 
+\emph on
+Shop
+\emph default
+ verrà visualizzata una notifica sul device che permetterà all'utente di
+ accedere direttamente alla sezione delle carte promozionali specifiche
+ per quell'esercizio.
 \end_layout
 
 \begin_layout Standard
-Allo stesso tempo, solo a livello applicativo verrà inoltre sottoscritto
- al sistema una richiesta di geofencing che produrrà un 
+Allo stesso tempo, solo a livello applicativo in locale sul device verrà
+ inoltre sottoscritto al sistema una richiesta di geofencing che produrrà
+ un 
 \emph on
 Intent
 \emph default
@@ -954,7 +1255,8 @@ Nello snippet di codice si può vedere come l'applicazione si registra al
 \emph on
 shop
 \emph default
- viene inserito tra i preferiti.
+ viene inserito tra i preferiti, situazione che va oltretutto ripetuta ogni
+ volta che il device dell'utente viene riavviato.
 \end_layout
 
 \begin_layout Standard

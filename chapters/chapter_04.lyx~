@@ -839,9 +839,9 @@ Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
  dati deve essere eseguito anche all'interno della schermata principale
  poichè il numero delle carte è da visualizzare all'interno dell'immagine
  del menù che rimanda alla sezione del mastro gelatiere.
- Il collegamento a questa sezione rimane comunque valido da qualsiasi parte
- dell'applicazione poichè in ogni caso tutti i dati vengono anche aggiornati
- al momento dell'avvio della schermata.
+ Inoltre nel caso di un utente con autenticazione effettuata verrà registrato
+ il dispositivo sul server per la ricezione di una notifica push ogni volta
+ che sarano pubblicate nuove promozioni.
 \end_layout
 
 \begin_layout Subsection
@@ -854,17 +854,24 @@ Il primo sviluppo legato alla sezione dei preferiti è stata quella della
  della ricerca in cui tramite un'icona l'utente può salvare localmente le
  sue preferenze.
  Successivamente si è implementata la sezione dell'applicazione che permette
- la visualizzazione della lista degli esercizi preferiti con la conseguente
- gestione, direttamente raggiungibile dalla navigazione principale.
+ la visualizzazione e la gestione della lista degli esercizi preferiti,
+ direttamente raggiungibile dalla navigazione principale.
 \end_layout
 
 \begin_layout Standard
-Infine avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad
- un sistema centralizzato che racchiudeva tutte le operazioni necessarie
- è stato abbastanza intuitivo poter inserire un middleware che gestisse
- l'aggiunta e la rimozione di una gelateria dai preferiti anche per quanto
- riguardava l'iscrizione alle notifiche push da parte del server e del geofencin
-g da parte del dispositivo.
+Avendo gestito l'aggiunta e la rimozione dei preferiti grazie ad un sistema
+ centralizzato che racchiudeva tutte le operazioni necessarie è stato abbastanza
+ intuitivo poter inserire un middleware che gestisse l'aggiunta e la rimozione
+ delle funzionalità riguardanti l'iscrizione alle notifiche push ricevute
+ del server e del geofencing gestito dal dispositivo.
+\end_layout
+
+\begin_layout Standard
+L'utente può aggiungere una gelateria ai preferiti cliccando sull'icona
+ della stella presente nella finestra di informazioni visualizzata all'interno
+ della ricerca degli shop una volta selezionatone uno.
+ L'aggiunta, come anche la rimozione, aggiorna immediatamente sia la mappa
+ modificando il marker mostrato a video e anche la lista dei preferiti.
 \end_layout
 
 \begin_layout Standard
@@ -874,11 +881,15 @@ Per l'implementazione della funzinalità di notifiche push si è scelto di
 \emph on
 Google Cloud Messaging
 \emph default
- per poi passare ad utilizzare Firebase, nuovo applicativo appena reso disponbil
-e e sicuramente più innovativo e aggiornato.
- Per far dialogare in maniera bidirezionale l'applicativo e il server ogni
- volta che un utente esegue il login ad una applicazione viene attivato
- firebase richiedendo al server un token che verrà poi passato al sistema
+ per poi passare ad utilizzare il servizio 
+\emph on
+Firebase
+\emph default
+, nuovo applicativo appena reso disponbile e sicuramente più innovativo
+ e aggiornato.
+ Per far dialogare in maniera bidirezionale l'applicativo e il server nel
+ momento in cui un utente esegue il login all'applicazione viene attivato
+ Firebase richiedendo al server un token che verrà poi passato al sistema
  di gestione delle notifiche che si metterà in ascolto.
 \end_layout
 
@@ -914,22 +925,36 @@ FirebaseApp.initializeApp(
 
 \begin_layout Standard
 Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
- eseguita una chiamata al backend con lo scopo di informarlo dell'aggiunto
- dello shop a quelli di interesse, in questo modo nel momento in cui sarà
- disponibile una nuova carta promozionale per quello schop verrà visualizzata
- una notifica sul device che permetterà all'utente di accedere direttamente
- alla sezione delle carte promozionali specifiche per quell'esercizio.
+ eseguita una chiamata al backend con lo scopo di informarlo della modifca
+ attivando o disattivando rispettivamente la ricezione delle notifiche push.
+ In questo modo nel momento in cui sarà disponibile una nuova carta promozionale
+ per quello schop verrà visualizzata una notifica sul device che permetterà
+ all'utente di accedere direttamente alla sezione delle carte promozionali
+ specifiche per quell'esercizio.
 \end_layout
 
 \begin_layout Standard
 Allo stesso tempo, solo a livello applicativo verrà inoltre sottoscritto
- al sistema una richiesta di geofencing che produrrà un intent ogni qual
- volta l'utente rimarrà entro l'area di 5 kilometri dalla gelateria per
- almeno un cinque minuti, il quale verrà gestito per mostrare anche in questo
- caso una notifica che permetterà di accedere invece alle informazioni della
- gelateria all'interno della lista dei preferiti.
+ al sistema una richiesta di geofencing che produrrà un 
+\emph on
+Intent
+\emph default
+ ogni qual volta l'utente rimarrà entro l'area di 5 kilometri da una gelateria
+ presente tra i preferiti, il quale verrà gestito per mostrare anche in
+ questo caso una notifica che permetterà di accedere invece alle informazioni
+ della gelateria all'interno della lista dei preferiti.
  Ovviamente per i dispositivi con le ultime versioni di Android sarà necessario
- richiedere anche in questo caso la possibilità di accedere alla localizzazione.
+ richiedere anche in questo caso la possibilità di accedere alla localizzazione
+ come fatto all'interno della ricerca.
+\end_layout
+
+\begin_layout Standard
+Nello snippet di codice si può vedere come l'applicazione si registra al
+ servizio di Geofencing del sistema una volta che una gelateria 
+\emph on
+shop
+\emph default
+ viene inserito tra i preferiti.
 \end_layout
 
 \begin_layout Standard
