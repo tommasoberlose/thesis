@@ -1332,30 +1332,34 @@ E-Commerce
 
 \begin_layout Standard
 Il sistema di e-commerce è stato l'ultimo tassello dell'applicazione che
- ha concluso il lavoro di sviluppo diretto di questo elaborato.
+ ha concluso il lavoro di sviluppo di questo elaborato.
  Si è trattato di unificare parte delle componenti già implementate creando
  un workflow che permetta all'utente di comprare e utilizzare i coupon digitali
  in sicurezza e con facilità.
 \end_layout
 
 \begin_layout Standard
-La prima fase è stata legata alla rappresentazione formale dei buoni salvati
- sul server legati ad un determinato account e dei buoni disponibili all'acquist
-o legati invece ad una determinata gelateria, in particolare è stato importante
- valutare quali informazioni mantenere sempre in locale per non inficiare
- la consistenza dei dati presenti sul dispositivo rispetto a quelli online.
+La prima fase è stata legata alla rappresentazione formale dei buoni acquistati
+ da un determinato account e di quelli invece disponibili all'acquisto legati
+ ad una determinata gelateria, in particolare è stato importante valutare
+ quali informazioni mantenere sempre in locale per non inficiare la consistenza
+ dei dati presenti sul dispositivo rispetto a quelli online.
 \end_layout
 
 \begin_layout Standard
 Definita la struttura degli elementi che si sarebbero andati ad utilizzare
  si è creata la sezione dedicata alla gestione dei coupon personali disponibili
- ad ogni utente, ovviamente legado ogni funzione alla necessaria autenticazione
- tramite account iscritto all'applicazione MyGelato.
+ ad ogni utente, ovviamente legando ogni funzione all'avvenuta autenticazione
+ tramite account MyGelato.
  Questa sezione permette di avere una visione completa delle proprie informazion
-i aggiornate poichè vi è un forte legame con i dati presenti sul server
- online, infatti molte delle funzioni legate al sistema di e-commerce comprendon
-o l'utilizzo di account e dispositivi diversi che interagiscono e che non
- devono assolutamente creare casi di incosistenza.
+i aggiornate costantemente rispetto ai dati presenti sul server online.
+\end_layout
+
+\begin_layout Standard
+Le funzioni legate al sistema di e-commerce comprendono l'utilizzo di account
+ e dispositivi diversi che interagiscono tra di loro e che non devono assolutame
+nte creare casi di incosistenza sul database sia online sia offline in locale
+ sui device utilizzati.
 \end_layout
 
 \begin_layout Standard
@@ -1372,33 +1376,44 @@ Coupon
 \end_layout
 
 \begin_layout Standard
-Per formalizzare il concetto di coupon personale di ogni utente si è scelto
- di creare una classe 
+Per formalizzare il concetto di buono che ogni utente ha acquistato si è
+ scelto di creare il modello 
 \emph on
 Coupon
 \emph default
-, estensione di un modello Realm, che incapsula tutte le informazioni disponibil
-i: identificativo, nome, gelateria di riferimento, acquirente, ecc...
- Sfruttando Realm le operazioni di gestione e salvataggio sul database sono
- particolamente semplificate ed è essenziale che venga assicurata un'alta
- sicurezza nella gestione.
+, estensione di un oggetto Realm, che incapsula tutte le informazioni disponibil
+i visualizzate sotto forma di codice all'interno dello snippet di codice
+ successivo.
+ Sfruttando Realm inoltre le operazioni di salvataggio sul database sono
+ particolamente semplificate e grazie alla corretta gestione delle transizioni
+ viene assicurata un alto livello di sicurezza rispettando le proprietà
+ logiche 
+\emph on
+ACID
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
-Ogni coupon è unico grazie a un identificativo personale, possiede alcune
- informazioni importanti come l'acquirente e l'attuale propietario, la data
- di vendita e anche alcune informazioni non direttamente utili all'utilizzo
- tramite applicativo.
- Ogni dato viene salvato sul server e richiesto tramite una chiamata alle
- API quando si utilizza la sezione per la gestione dei buoni.
+Ogni coupon è unico grazie a un codice identificativo, possiede alcune informazi
+oni importanti come l'acquirente e l'attuale propietario, la data di vendita
+ e anche alcune informazioni non direttamente utili all'utilizzo all'interno
+ dell'applicativo frontend che però vengono trasmesse per completezza e
+ nel caso possano essere necessarie per futuri sviluppi.
  
 \end_layout
 
 \begin_layout Standard
-Dentro questa sezione sono presenti tre elenchi in cui sono visibili i coupon
- validi (utilizzabili e condivisibili), ricevuti da altri utenti, e la lista
- completa di tutti buoni legati all'utente.
- Come si può vedere in figura 
+Nel momento in cui si accede alla sezione per la gestione dei coupon vengono
+ scaricati tutti i dati in background così da aggiornare il database locale
+ e grazie ad una funzionalità di Realm, una volta eseguito un update sulla
+ base dei dati vengono ricaricate alcune view dell'interfaccia andando a
+ riempire con tutte le informazioni le tre liste presenti: Coupon Validi,
+ Coupon Ricevuti e Lista Completa dei Coupon.
+\end_layout
+
+\begin_layout Standard
+Come si può vedere in figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Coupon"
@@ -1407,6 +1422,19 @@ reference "fig:Coupon"
 
 , ogni coupon visualizza alcune informazioni di base e sono presenti i collegame
 nti diretti per l'utilizzo e lo share tramite altri canali di comunicazioni.
+ Selezionando la parte sinistra del buono si verrà reindirizzati all'interfaccia
+ di utilizzo presentata nel dettaglio al capitolo 4.7.4 mentre cliccando sulla
+ parte destra si verrà invitati a chiedere il metodo di condivisione da
+ utilizzare.
+\end_layout
+
+\begin_layout Standard
+Nel caso in cui un coupon sia stato già utilizzato non sarà possibile eseguire
+ nessuna delle due operazioni e la parte destra dell'immagine verrà nascosta
+ per dare l'impressione di un buono strappato dopo averne usufruito.
+ Per ottenere coerenza da questo punto di vista ad ogni passaggio di schermata
+ vengono ricercate eventuali modifiche sul server sempre per mantenere la
+ coerenza dei dati interni al sistema MyGelato.
 \end_layout
 
 \begin_layout Standard
@@ -1455,31 +1483,40 @@ Condivisione e Riscatto
 \end_layout
 
 \begin_layout Standard
-Il meccanismo di condivisione e riscatto ha coinvolto funzioni complementari
- che dovevano sfruttare anche componenti a livello di sistema operativo.
+Il meccanismo di condivisione e riscatto ha portato allo sviluppo di funzioni
+ complementari per un sistema e per l'altro che dovevano sfruttare anche
+ componenti a livello di sistema operativo.
  Per permettere il dialogo tra due dispositivi differenti si è scelto di
  sfruttare i canali di comunicazioni più comuni e diffusi anche tra gli
  utenti medi in modo che il sistema di share sia il più facile possibile
  e del tutto conforme al sistema di condivisione standard della piattaforma.
+ In genere questi metodi presuppongo una conoscenza da parte dei due utenti
+ che interagiscono, ma ci si è basati sul fatto che da specifiche questo
+ fosse una parametro valutato durante lo sviluppo del sistema MyGelato.
 \end_layout
 
 \begin_layout Standard
-Dalla lista di coupon disponibili l'utente ha la possibilità di cliccare
+Dalla lista di coupon disponibili l'utente ha quindi la possibilità di cliccare
  sull'icona per la condivisone e verrà inviata una richiesta - 
 \emph on
 Intent
 \emph default
  - a livello di sistema in broadcast per poter selezionare il metodo che
- si preferisce per inviare un testo precompilato insieme ad un link.
+ si preferisce per inviare il contenuto da scambiare: un testo precompilato
+ insieme ad un link che riporta ad una pagina web esposta online dal backend.
  Il testo presenta brevemente l'oggetto della condivisione e invita ad utilizzar
 e il link per riscattare il coupon specificato.
 \end_layout
 
 \begin_layout Standard
-Il link riporta a una pagina resa disponibile dal backend che riconosce
- il sistema operativo dal quale ci sis sta collegando per effettuare un
- redirect ad un link particolare che verrà gestito in automatico dal device
- con cui si sta visualizzando il sito.
+La pagina web a cui si viene reindirizzati riconosce il sistema operativo
+ dal quale ci si sta collegando per effettuare un redirect ad un link particolar
+e (
+\emph on
+mygelato://
+\emph default
+) che verrà gestito in automatico dal device con cui si sta visualizzando
+ il sito.
  Nel caso in cui vi sia installata sul device l'applicazione MyGelato allorà
  verrà avviata la schermata di riscatto precompilata con i dati necessari,
  altrimenti si verrà reindirizzati agli store principali per consigliare
@@ -1487,14 +1524,14 @@ Il link riporta a una pagina resa disponibile dal backend che riconosce
 \end_layout
 
 \begin_layout Standard
-Il mezzo per permettere l'identificazione del coupon da condividere è un
- codice alfanumerico a sei cifre, il PNR, che viene condiviso in automatico
- insieme al resto delle informazioni.
- All'interno della schermata di riscatto di un buono, raggiungibile dirattamente
- dalla navigazione princiapale dell'app è necessario inserire il codice
- del buono che si vuole riscattare.
- Come detto nel caso si arrivi sulla schermata tramite il link condiviso
- allora il campo di input del codice sarà precompilato.
+Il mezzo di identificazione del coupon condiviso è un codice alfanumerico
+ a sei cifre, il PNR, che viene condiviso in automatico insieme al resto
+ delle informazioni.
+ Si è quindi creata la schermata per riscattare un buono, sezione raggiungibile
+ dirattamente dalla navigazione princiapale dell'applicazione, dove è presente
+ una view di input dove si deve inserire il codice PNR; nel caso si arrivi
+ sulla schermata tramite il link descritto sopra allora il campo di input
+ del codice sarà già compilato.
 \end_layout
 
 \begin_layout Standard
@@ -1503,14 +1540,14 @@ Una volta inserito il codice, che verrà validato al momento con dei controlli
  che attuerà lo spostamento del buono da un utente all'altro.
  Per entrambi gli account vi sarà quindi l'aggiormento delle informazioni
  sul proprio dispositivo la prima volta che verranno richiesti i coupon
- disponibili.
+ disponibili e l'utente che ha effettuato il riscatto verrà immediatamente
+ reindirizzato sulla schermata di lista dei coupon altrimenti, in caso di
+ fallimento dell'operazione, verrà notificato con un messaggio di errore.
+ 
 \end_layout
 
 \begin_layout Standard
-L'utente che ha effettuato il riscatto verrà immediatamente reindirizzato
- sulla schermata di lista dei coupon nel caso in cui il processo sia andato
- a buon fine, altrimenti verrà notificato con un messaggio di errore.
- La figura 
+La figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Condivisione-e-Riscatto"
@@ -1518,7 +1555,9 @@ reference "fig:Condivisione-e-Riscatto"
 \end_inset
 
  mostra tutti i passaggi principali per la condivisione e il riscatto di
- un buono.
+ un buono seguendo il flusso logico proposto all'utente ad ogni step, molti
+ dei quali anticipati da un'immagine informativa che esplica brevemente
+ come utilizzare ogni singola schermata.
 \end_layout
 
 \begin_layout Standard
@@ -1563,8 +1602,8 @@ Utilizzo e Validazione
 \end_layout
 
 \begin_layout Standard
-L'ultimo passaggio del workflow di e-commerce è l'utilizzo dei coupon che
- si sono acquistati o che si hanno riscattato perchè condivisi da altri
+L'ultimo passaggio del workflow di e-commerce è l'utilizzo pratico dei coupon
+ che si sono acquistati o che si sono riscattati perchè condivisi da altri
  utenti.
  In questo processo entrato in gioco due entità che sono utenti che spesso
  non entrano in contatto se non solo per i pochi momenti che servono all'acquist
@@ -1576,7 +1615,7 @@ o materiale del valore del buono utilizzato.
 
 \begin_layout Standard
 Per superare questo ostacolo si è scelto uno strumento molto diffuso che
- è l'utilizzo di QR code che permette di generare un'immagine a partire
+ è l'utilizzo di un QR code che permette di generare un'immagine a partire
  da un testo, in questo caso il PNR code lagato al coupon che si vuole utilizzar
 e, leggibile ed interpretabile da un qualsiasi cellulare con un fotocamera.
  Chiunque abbia effettuato l'accesso all'applicazione con account di tipo
@@ -1589,9 +1628,14 @@ e, leggibile ed interpretabile da un qualsiasi cellulare con un fotocamera.
 La sezione per generare e visualizzare il codice QR da mostrare in gelateria
  è raggungibile cliccando sul singolo coupon all'interno della gestione
  dei propri buoni.
+ Questa schermata mostra una versione del coupon a tutto schermo e, grazie
+ ad una libreria esterna, inserisce il codice QR all'interno del coupon
+ in modo che sia ben visibile e riconoscibile da qualsiasi software.
+ Si deve quindi solamente mostrare il dispositivo utilizzato a chi dovrà
+ poi validare il buono.
  Non essendo presente in questo caso una connessione bidirezionale con il
  backend, per aggiornare la schermata una volta concluso il processo di
- utilizzo l'applicazione effettua un polling al server ogni cinque secondi
+ utilizzo, l'applicazione effettua un polling al server ogni cinque secondi
  per verificare se il coupon sia stato utilizzato o meno.
 \end_layout
 
@@ -1613,9 +1657,14 @@ Chiunque possieda un account di tipo gelatiere avrà nella navigazione principal
 A conclusione del processo di validazione di un coupon entrambi i dispositivi
  verranno aggiornati per mantenere coerenza tra i dati presenti sul sistema
  risolvendo così in maniera semplice il problema principale del dialogo
- tra due dispositivi rendendo l'utilizzo di un buono molto semplice sempre
- basandosi sul fatto che ormai uno smartphone sia diventato un bene comune.
- La figura 
+ tra due dispositivi mentre verranno nel frattempo applicati i passaggi
+ commerciali totalmente all'interno del backend avendo passato il codice
+ identificativo del commerciante.
+ 
+\end_layout
+
+\begin_layout Standard
+La figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Acquisto"
@@ -1623,7 +1672,9 @@ reference "fig:Acquisto"
 \end_inset
 
  permette di visualizzare i passaggi fondamentali per l'utilizzo e la validazion
-e di un buono.
+e di un buono, anche in questo caso vengono visualizzati al primo avvio
+ alcune immagini informative per aiutare gli utenti nell'utilizzo delle
+ funzionalità appena descritte.
 \end_layout
 
 \begin_layout Standard
