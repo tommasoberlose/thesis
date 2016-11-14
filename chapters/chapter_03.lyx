@@ -672,9 +672,9 @@ La piattaforma Android fornisce diversi metodi e strumenti per salvare i
 \emph on
 Shared Preferences 
 \emph default
-per salvare in maniera persistente le scelte dell’utente; mentre per quanto
- riguarda la memorizzazione persistente di una grossa mole di dati si possono
- utilizzare strumenti come l'
+per salvare le scelte dell’utente; mentre per quanto riguarda la memorizzazione
+ persistente di una grossa mole di dati si possono utilizzare strumenti
+ come l'
 \emph on
 Internal Storage
 \emph default
@@ -738,7 +738,7 @@ zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
  una notevole semplificazione del codice utilizzato per programmare.
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -751,7 +751,7 @@ autocite
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

@@ -1,12 +1,31 @@
-\documentclass[12pt, twoside, openright, cleardoublepage=empty]{extreport}
-
-\usepackage[a4paper, hmarginratio=3:2, vmarginratio=1:1]{geometry}
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,twoside,italian,openright,cleardoublepage=empty]{extreport}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
 \usepackage[italian]{babel}
-\usepackage{hyperref}
 \usepackage{indentfirst}
 \usepackage[signatures, norules, nouppercase]{frontespizio}
-\usepackage{hyperref}
 \usepackage{emptypage}
 \usepackage{float}
 \usepackage{epigraph}
@@ -15,13 +34,12 @@
 \usepackage{siunitx}
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[T1]{fontenc}
 \usepackage{comment}
-\usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[backend=bibtex,style=verbose-trad2,maxcitenames=1]{biblatex}
+
 
 \definecolor{mygreen}{HTML}{63a35c}
 \definecolor{mygray}{HTML}{ededed}
@@ -29,7 +47,7 @@
 \definecolor{myblue}{HTML}{4078c0}
 
 \lstset{ %
-  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  backgroundcolor=,   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
@@ -41,7 +59,7 @@
   keywordstyle=\color{myblue},       % keyword style
   language=Java,                 % the language of the code
   otherkeywords={*,...},           % if you want to add more keywords to the set
-  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  rulecolor=,         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
   showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
   showstringspaces=false,          % underline spaces within strings only
   showtabs=false,                  % show tabs within strings adding particular underscores
@@ -52,21 +70,15 @@
 
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-}
 
-\renewcommand\contentsname{Indice}
-\renewcommand\figurename{Fig.}
-\renewcommand\listfigurename{Figure}
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\listfigurename}{Figure}
 \renewcommand{\baselinestretch}{1.5}
 \graphicspath{ {images/} }
 
-\pagestyle{fancy}
+
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
 
@@ -76,31 +88,27 @@
 
 \bibliography{bibliografia}
 
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listato}
+
 \begin{document}
+\pagenumbering{gobble} \maketitle \newpage{}\pagenumbering{arabic}
 
-  \pagenumbering{gobble}
-  \maketitle
-  \newpage
-  \pagenumbering{arabic}
-  
-  \include{indice}
-  
-  \include{chapters/intro}
-  
-  \include{chapters/chapter_01}
-  \include{chapters/chapter_02}
-  \include{chapters/chapter_03}  
-  \include{chapters/chapter_04}
-  
-  \include{chapters/conclusioni}
-  
-  \include{bibliografia}
-  
-  \listoffigures
-  \newpage
-  
-  \include{codice}
-  
-  \include{ringraziamenti}
+\include{indice}
 
+\include{chapters/intro}
+
+\include{chapters/chapter_01}\include{chapters/chapter_02}\include{chapters/chapter_03}\include{chapters/chapter_04}
+
+\include{chapters/conclusioni}
+
+\include{bibliografia}
+
+\listoffigures
+
+\include{codice}
+
+\include{ringraziamenti}
 \end{document}

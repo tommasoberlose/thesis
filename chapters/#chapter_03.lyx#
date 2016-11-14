@@ -568,7 +568,8 @@ Per la generazione delle risorse Android Studio mette a disposizione alcuni
 \begin_layout Standard
 Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
 ione, lo stile e la correzione in realtime del codice scritto effettuando
- anche il controllo sintattico e un basilare 
+ anche il controllo sintattico e un basilare confronto semantico seguendo
+ i pattern standard della piattaforma.
 \end_layout
 
 \begin_layout Subsection
@@ -702,6 +703,10 @@ Realm
 
 \begin_layout Subsection
 Realm
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section

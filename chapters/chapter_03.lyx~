@@ -532,11 +532,44 @@ status collapsed
  È stato annunciato il 16 maggio 2013 in occasione della conferenza Google
  I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
  Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato
- progettato specificamente per lo sviluppo di Android.[4] È disponibile il
- download su Windows, Mac OS X e Linux,[5][6] e sostituisce gli Android
- Development Tools (ADT) di Eclipse, diventando l' IDE primario di Google
- per lo sviluppo nativo di applicazioni Android.
- Permette di creare un progetto gradle, apk, github,
+ progettato specificamente per lo sviluppo di Android.
+ Sostituisce gli Android Development Tools (ADT) di Eclipse, diventando
+ l' IDE primario di Google per lo sviluppo nativo di applicazioni Android
+ offre ancora più funzioni che migliorano la produttività durante la creazione
+ di applicazioni Android, come ad esempio: un sistema di compilazione Gradle,
+ un ambiente unificato dove è possibile sviluppare per tutti i dispositivi,
+ esecuzione e costruzione di un file APK per la pubblicazione di una applicazion
+e sui canali di distribuzione più importanti e l'integrazione GitHub.
+\end_layout
+
+\begin_layout Standard
+Ogni progetto creato all'interno del software contiene alcuni moduli principali
+ che riguardano l'applicazione vera e propria, le librerie incluse e i moduli
+ proprietari di Google che permettono l'utilizzo dei suoi servizi principali
+ come Firebase e le Google Maps API.
+\end_layout
+
+\begin_layout Standard
+A livello di build del sistema si trova uno script Gradle che a partire
+ da un manifesto, che dichiara la struttura dell'applicazione, i file Java
+ contenenti il codice sorgente (inclusi i test) e l'insieme delle risorse
+ e degli asset può generare un file apk firmato installabile su qualsiasi
+ device Android.
+\end_layout
+
+\begin_layout Standard
+Per la generazione delle risorse Android Studio mette a disposizione alcuni
+ tool, tra cui alcuni grafici, che permettono l'implementazione e il test
+ dell'interfaccia utente senza dover di volta in volta avviare l'applicativo
+ su un emulatore, messo a disposizione dal sofwtare stesso, o su un device
+ fisico.
+\end_layout
+
+\begin_layout Standard
+Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
+ione, lo stile e la correzione in realtime del codice scritto effettuando
+ anche il controllo sintattico e un basilare confronto semantico seguendo
+ i pattern standard della piattaforma.
 \end_layout
 
 \begin_layout Subsection
