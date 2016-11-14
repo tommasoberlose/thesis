@@ -95,11 +95,11 @@ Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli
 \end_layout
 
 \begin_layout Standard
-Durante la prima fase di sviluppo strutturale si è dovuto valutare la tecnologia
+Durante la prima fase di sviluppo strutturale si sono valutate le tecnologie
  da utilizzare in modo da tenere il passo con le ultime specifiche di Android
  e tenendo conto che, anche secondo gli ultimi report pubblicati da Google,
  rimane una forte frammentazione della distribuzione del sistema operativo,
- dovuta ai molteplici produttori di hardware.
+ dovuta ai molteplici vendor.
  
 \begin_inset ERT
 status collapsed
@@ -135,20 +135,18 @@ status collapsed
 
 \end_inset
 
-
+ È quindi da tenere in considerazione la retrocompatibilità delle librerie
+ utilizzate, avendo scelto di supportare fino alla versione 16 del SDK di
+ Android (versione 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione
+ anche su device con schermi e hardware differenti.
 \end_layout
 
 \begin_layout Standard
-Era quindi da tenere in considerazione la retrocompatibilità delle librerie
- utilizzate, avendo scelto di supportare fino alla versione 16 del SDK (Android
- 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione anche su
- device con schermi e hardware differenti.
-\end_layout
-
-\begin_layout Standard
-Si sono inoltre adottate alcune strategie implementative, come la creazione
- di custom view, per poter meglio strutturare il progetto favorendone anche
- eventuali modifiche o ampliamenti.
+Considerato infine che alcuni nodi centrali dell'elaborato necessitano di
+ specifiche minime in termini di affidabilità e sicurezza si è scelto di
+ utilizzare librerie esterne anche per le funzioni di utilizzo del database
+ e di connessione al server, rispettivamente Realm e OkHttp, che oltre a
+ semplificare lo sviluppo garantiscono un'alta gestione degli errori.
 \end_layout
 
 \begin_layout Section
@@ -156,13 +154,72 @@ Sviluppo Android
 \end_layout
 
 \begin_layout Standard
-Considerato che l'applicazione mobile, oggetto di tesi, era destinata a
- lavorare unicamente sulla piattaforma Android, si è scelto di utilizzare
- come principale strumento di sviluppo 
-\series bold
+Questa tesi si inserisce all'interno del lavoro di creazione della piattaforma
+ MyGelato, il quale include il supporto sia alla piattaforma Android sia
+ alla piattaforma iOS.
+ Essendosi però creati due differenti progetti durante la prima fase di
+ progettazione, si è potuto scegliere come metodo implementativo l'utilizzo
+ della programmazione nativa Android che si basa su Java per la programmazione
+ e su XML per la creazione delle risorse.
+\end_layout
+
+\begin_layout Standard
+Sicuramente lavorare in questo modo ha i propri pro e contro: mentre da
+ un lato il nativo offre la possibilità di una gestione totale del dispositivo
+ senza la paura di trovare limiti, d’altra parte richiede spesso una programmazi
+one molto professionale e si concentra esclusivamente su una piattaforma
+ impedendo un’agile riciclo dei propri sforzi su altri mercati del mobile.
+ Il non-nativo, invece, offre diversi vantaggi ascrivibili alla necessità
+ di creare applicazioni cross-platform distribuibili su sistemi operativi
+ diversi.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+autocite
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+HTMLIT:PROGNATIVA
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Non avendo quindi necessità di mantenere alta la portabilità del codice
+ su altre piattaforme, si è preferito sviluppare tramite programmazione
+ nativa; potendo quindi sfruttare pienamente l'architettura del sistema
+ operativo sottostante e gli strumenti di sviluppo forniti ufficialmente.
+\end_layout
+
+\begin_layout Standard
+Si è scelto quindi di utilizzare come principale strumento 
+\emph on
 Android Studio
-\series default
-, software dedicato alla programmazione nativa del suddetto sistema operativo.
+\emph default
+, Integrated Development Environment (IDE) dedicato alla programmazione
+ Android distruibuito da JetBrains IntelliJ IDEA e Google che è ormai il
+ miglior software per la creazione dei applicazioni su questa piattaforma.
  
 \begin_inset ERT
 status collapsed
@@ -212,14 +269,8 @@ Git
 \shape italic
 Version Control System - VCS
 \shape default
-).
-\end_layout
-
-\begin_layout Standard
-Sono inoltre da citare alcuni software utilizzati durante il lavoro di tesi
- che, anche se di minore impatto, sono serviti a testare e sviluppare alcune
- parti fondamentali di codice.
- Primo fra tanti la web application Postman 
+), mentre per il test delle chiamate al backend della piattaforma si è utilizzat
+a la web application Postman 
 \begin_inset ERT
 status collapsed
 
@@ -255,58 +306,97 @@ status collapsed
 \end_inset
 
  che permette di testare e sviluppare le APIs con cui due applicativi possono
- dialogare, in maniera semplice ed intuitiva.
- Utile per valutare le chiamate al server e per verificare le risposte ottenute.
- 
-\series bold
-Altri da citare???
+ dialogare.
+\end_layout
+
+\begin_layout Subsection
+Programmazione Nativa
 \end_layout
 
 \begin_layout Standard
-Questa tesi si inserisce all'interno del lavoro di modifica e miglioramento
- delle applicazioni mobile dell'ecosistema MyGelato, il quale includeva
- un progetto sia per piattaforma Android sia per piattaforma iOS.
- Essendosi creati due differenti progetti, durante la prima fase di progettazion
-e, si è potuto valutare in maniera più libera l'utilizzo o meno della programmaz
-ione nativa.
+Le applicazioni Android sono sviluppate utilizzando il linguaggio Java.
+ È un linguaggio di programmazione molto popolare sviluppato da Sun Microsystems
+ (ora di proprietà di Oracle) orientato agli oggetti a tipizzazione statica,
+ specificatamente progettato per essere il più possibile indipendente dalla
+ piattaforma di esecuzione.
+ //https://it.wikipedia.org/wiki/Java_(linguaggio_di_programmazione)
 \end_layout
 
 \begin_layout Standard
-Sicuramente lavorare in questo modo o meno ha i propri pro e contro.
- Mentre da un lato il nativo offre la possibilità di una gestione totale
- del dispositivo senza la paura di trovare limiti, d’altra parte richiede
- spesso una programmazione molto professionale e si concentra esclusivamente
- su una piattaforma impedendo un’agile riciclo dei propri sforzi su altri
- mercati del mobile.
- Il non-nativo, invece, offre diversi vantaggi ascrivibili ad una minore
- necessità di programmare e molto spesso alla possibilità di creare applicazioni
- cross-platform distribuibili su sistemi operativi diversi.
-\begin_inset ERT
-status collapsed
+Per lo sviluppo di un'applicativo si devono sfruttare le principali caratteristi
+che di Java andando ad estendere, per ogni schermata che si vuole creare,
+ la classe 
+\emph on
+Activity 
+\emph default
+implementata come standard all'interno delle libreria Android.
+ Qualsiasi progetto sarà quindi formato da un insieme di classi che rappresenter
+anno logicamente ogni singola schermata unite ad altre classi che incapsuleranno
+ invece le funzioni, i modelli e ogni altro componente standard di Android
+ (Broadcast Receiver, Service, ecc...).All'interno dell'ultima distribuzione
+ di Android sono state incluse alcune delle funzionalità di Java 8, ma l'alta
+ frammentazione della piattaforma non ne permette correttamente l'utilizzo.
+ Questo si ripercuote su alcune funzionalità come le chiamate http che non
+ supportano alcune delle semplificazioni che sono state fatte ad esempio
+ nelle connessioni sicure grazie a TLS.
+\end_layout
+
+\begin_layout Standard
+Come si può vedere all'interno dello snippet di codice la classe 
+\emph on
+Main
+\emph default
+ estende la classe 
+\emph on
+AppCompatActivity 
+\emph default
+e dopo aver richiamato il costruttore della propria superclasse esegue la
+ creazione dell'internfaccia utente grazie al file di layout 
+\emph on
+activity_main
+\emph default
+ che ne specifica la struttura e le impostazioni, scritto in XML.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-autocite
+ public class Main extends AppCompatActivity {
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
+    @Override
 \end_layout
 
-\end_inset
+\begin_layout Plain Layout
 
-HTMLIT:PROGNATIVA
-\begin_inset ERT
-status collapsed
+    protected void onCreate(Bundle savedInstanceState) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        super.onCreate(savedInstanceState);
+\end_layout
+
+\begin_layout Plain Layout
+
+        setContentView(R.layout.activity_main);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -319,18 +409,82 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Non avendo quindi necessità di mantenere alta la portabilità del codice
- su altre piattaforme, si è preferito sviluppare tramite programmazione
- natuva; potendo quindi sfruttare pienamente l'architettura del sistema
- operativo sottostante.
+In informatica XML (sigla di eXtensible Markup Language) è un metalinguaggio
+ per la definizione di linguaggi di markup, ovvero un linguaggio marcatore
+ basato su un meccanismo sintattico che consente di definire e controllare
+ il significato degli elementi contenuti in un documento o in un testo.
+ All'interno dello sviluppo di applicazioni Android rappresenta il linguaggio
+ per la creazione delle risorse: layout, icone, manifest, ecc...
 \end_layout
 
-\begin_layout Subsection
-Java
+\begin_layout Standard
+L'esempio più ecclatante è l'utilizzo dell'XML per produrre il manifesto
+ dell'applicazione, che ne rappresenta ed espone la struttura principale
+ dichiarando ogni singola schermata o servizio presenti specificando anche
+ il tema da utilizzare, il nome e alcune opzioni di avvio.
+ Sono scritte in XML anche tutte le risorse interne all'applicazione come
+ si può notare nell'esempio di codice sottostante che descrive una schermata
+ con una singola immagine.
 \end_layout
 
-\begin_layout Subsection
-XML
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<?xml version="1.0" encoding="utf-8"?>
+\end_layout
+
+\begin_layout Plain Layout
+
+<LinearLayout
+\end_layout
+
+\begin_layout Plain Layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+\end_layout
+
+\begin_layout Plain Layout
+
+    android:layout_width="match_parent"
+\end_layout
+
+\begin_layout Plain Layout
+
+    android:layout_height="match_parent">
+\end_layout
+
+\begin_layout Plain Layout
+
+    <ImageView
+\end_layout
+
+\begin_layout Plain Layout
+
+         android:layout_width="wrap_content"
+\end_layout
+
+\begin_layout Plain Layout
+
+         android:layout_height="wrap_content"
+\end_layout
+
+\begin_layout Plain Layout
+
+         src="drawable/icon" />
+\end_layout
+
+\begin_layout Plain Layout
+
+</LinearLayout>
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -378,11 +532,44 @@ status collapsed
  È stato annunciato il 16 maggio 2013 in occasione della conferenza Google
  I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
  Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato
- progettato specificamente per lo sviluppo di Android.[4] È disponibile il
- download su Windows, Mac OS X e Linux,[5][6] e sostituisce gli Android
- Development Tools (ADT) di Eclipse, diventando l' IDE primario di Google
- per lo sviluppo nativo di applicazioni Android.
- Permette di creare un progetto gradle, apk, github,
+ progettato specificamente per lo sviluppo di Android.
+ Sostituisce gli Android Development Tools (ADT) di Eclipse, diventando
+ l' IDE primario di Google per lo sviluppo nativo di applicazioni Android
+ offre ancora più funzioni che migliorano la produttività durante la creazione
+ di applicazioni Android, come ad esempio: un sistema di compilazione Gradle,
+ un ambiente unificato dove è possibile sviluppare per tutti i dispositivi,
+ esecuzione e costruzione di un file APK per la pubblicazione di una applicazion
+e sui canali di distribuzione più importanti e l'integrazione GitHub.
+\end_layout
+
+\begin_layout Standard
+Ogni progetto creato all'interno del software contiene alcuni moduli principali
+ che riguardano l'applicazione vera e propria, le librerie incluse e i moduli
+ proprietari di Google che permettono l'utilizzo dei suoi servizi principali
+ come Firebase e le Google Maps API.
+\end_layout
+
+\begin_layout Standard
+A livello di build del sistema si trova uno script Gradle che a partire
+ da un manifesto, che dichiara la struttura dell'applicazione, i file Java
+ contenenti il codice sorgente (inclusi i test) e l'insieme delle risorse
+ e degli asset può generare un file apk firmato installabile su qualsiasi
+ device Android.
+\end_layout
+
+\begin_layout Standard
+Per la generazione delle risorse Android Studio mette a disposizione alcuni
+ tool, tra cui alcuni grafici, che permettono l'implementazione e il test
+ dell'interfaccia utente senza dover di volta in volta avviare l'applicativo
+ su un emulatore, messo a disposizione dal sofwtare stesso, o su un device
+ fisico.
+\end_layout
+
+\begin_layout Standard
+Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
+ione, lo stile e la correzione in realtime del codice scritto effettuando
+ anche il controllo sintattico e un basilare confronto semantico seguendo
+ i pattern standard della piattaforma.
 \end_layout
 
 \begin_layout Subsection
@@ -477,12 +664,49 @@ Infine grazie all'utilizzo di piccoli accorgimenti come il file .gitignore
 Database
 \end_layout
 
+\begin_layout Standard
+La piattaforma Android fornisce diversi metodi e strumenti per salvare i
+ dati delle applicazioni in modo persistente.
+ Per quanto riguarda le preferenze relative alle impostazioni dell'applicazione
+ si possono implementare le 
+\emph on
+Shared Preferences 
+\emph default
+per salvare in maniera persistente le scelte dell’utente; mentre per quanto
+ riguarda la memorizzazione persistente di una grossa mole di dati si possono
+ utilizzare strumenti come l'
+\emph on
+Internal Storage
+\emph default
+ o un 
+\emph on
+Database SQLlite
+\emph default
+.
+ //cit http://www.html.it/articoli/la-gestione-dei-database-in-android-1/
+\end_layout
+
+\begin_layout Standard
+Esistono però anche alternativa agli strumenti standard forniti ufficialmente
+ per la piattaforma e uno di questi è la libreria 
+\emph on
+Realm
+\emph default
+: database object-oriented che non incapsula SQLite ma lo sostituisce con
+ un sistema di memorizzazione scritto in C++ che permette l'accesso ai dati
+ anche tramite l'utilizzo di linguaggi di programmazione differenti.
+ Modifica inoltre il metodo di accesso ai dati salvati non richiedendo query
+ esplicite ma semplici richieste in Java utilizzabili direttamente all'interno
+ del codice implementato, semplificando di gran lunga l'utilizzo del database
+ durante lo sviluppo di qualsiasi applicazione.
+\end_layout
+
 \begin_layout Subsection
 Realm
 \end_layout
 
 \begin_layout Section
-Chiamate Server
+Network Connection
 \end_layout
 
 \begin_layout Standard
@@ -500,17 +724,15 @@ Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente
 
 \begin_layout Standard
 Il passaggio di informazioni tra i due applicativi avviene tramite chiamate
- internet con protocollo http protette grazie ad una connessione criptata
+ internet con protocollo Http protette grazie ad una connessione criptata
  dal Transport Layer Security (TLS) o dal suo predecessore, Secure Sockets
  Layer (SSL).
- Grazie alla API REST è possibile sviluppare in maniera strutturata e di
- seguire alcuni pattern delle tecnologie che permettono di valutare ogni
- possibile errore delle connessioni: errori nei dati, nell connessione,
- ecc...
- In Java le chiamate http sono abbastanza difficili da gestire poichè non
- sono automatizzate e son stati effettuati dei cambiamenti tra le ultime
- versioni che non permettono di lavorare correttamente su tutti i dispositivi
- Android.
+ Grazie alla API REST è possibile seguire alcuni pattern delle tecnologie
+ che permettono di valutare ogni possibile errore delle connessioni: errori
+ nei dati, nell connessione, ecc...
+ In Java le chiamate http sono difficilmente gestibili poichè non sono automatiz
+zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
+ permettono di lavorare correttamente su tutti i dispositivi Android.
  Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata
  da Square, che permette di automatizzare le chiamate http sfruttando anche
  una notevole semplificazione del codice utilizzato per programmare.
@@ -539,17 +761,6 @@ status collapsed
 \end_inset
 
 SQUARE:OKHTTP
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -578,7 +789,7 @@ Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching,
 \begin_layout Standard
 \begin_inset listings
 inline false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -620,14 +831,17 @@ Response response = client.newCall(request).execute();
 \end_layout
 
 \begin_layout Standard
-Inizializzato il client OkHttp basta creare un oggetto request a cui vanno
- passati i parametri necessari; basta poi eseguire la chiamata per ottenere
- un oggetto response all'interno del quale sono presenti i dati scaricati,
- il codice di risposta della chiamata e anche eventuali errori.
-\end_layout
-
-\begin_layout Subsection
-API REST
+Inizializzato il client OkHttp serve creare un oggetto 
+\emph on
+Request 
+\emph default
+a cui vanno passati i parametri necessari per poi eseguire la chiamata ottenendo
+ infine un oggetto 
+\emph on
+Response 
+\emph default
+all'interno del quale sono presenti i dati scaricati, il codice di risposta
+ della chiamata e anche eventuali errori.
 \end_layout
 
 \begin_layout Section
@@ -654,9 +868,9 @@ Questo problema necessita di ampia valutazione durante lo sviluppo e anche
 e in errori di inconsistenza tra le view a cui il programma voleva accedere
  e le view realmente visualizzate al momento.
  Nel caso si utilizzino script asincroni è molto facile tentare di accedere
- ad elementi, o anche intere activity, non più presenti nell'interfaccia
- utente; per questo motivo si è scelto di utilizzare la libreria EventBus
- sviluppata da GreenRobot 
+ ad elementi, o anche intere schermate, non più presenti a video; per questo
+ motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot
+ 
 \begin_inset ERT
 status collapsed
 
@@ -691,7 +905,7 @@ status collapsed
 
 \end_inset
 
- e pensata esattamente per risolvere questo tipo di errori.
+ e pensata esattamente per gestire e risolvere questo tipo di problemi.
 \end_layout
 
 \begin_layout Subsection
@@ -882,10 +1096,6 @@ EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end_layout
 
 \begin_layout Section
-E-Commerce
-\end_layout
-
-\begin_layout Subsection
 Stripe
 \end_layout
 

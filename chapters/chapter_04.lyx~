@@ -1376,8 +1376,8 @@ Coupon
 \end_layout
 
 \begin_layout Standard
-Per formalizzare il concetto di buono che ogni utente ha acquistato si è
- scelto di creare il modello 
+Per formalizzare il concetto di buono acquistato da ogni utente si è scelto
+ di creare il modello 
 \emph on
 Coupon
 \emph default
@@ -1476,10 +1476,6 @@ Coupon
 
 \begin_layout Subsection
 Acquisto
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Subsection

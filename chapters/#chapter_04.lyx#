@@ -1376,8 +1376,8 @@ Coupon
 \end_layout
 
 \begin_layout Standard
-Per formalizzare il concetto di buono che ogni utente ha acquistato si è
- scelto di creare il modello 
+Per formalizzare il concetto di buono acquistato da ogni utente si è scelto
+ di creare il modello 
 \emph on
 Coupon
 \emph default
@@ -1479,7 +1479,35 @@ Acquisto
 \end_layout
 
 \begin_layout Standard
+Il sistema di acquisto di un coupon è stato quello più complesso poichè
+ doveva operare con più di un componente esterno all'applicazione mantenendo
+ però ad ogni passaggio un alto livello di sicurezza senza inficiare alla
+ consistenza dei dati della piattaforma MyGelato: a esempio una volta scelto
+ lo shop, per modifcare la gelateria si perdono le scelte successive riportando
+ l'utente al passaggio iniziale per non rischiare incosistenze nel sistema.
+ Si è poi analizzato ogni singolo passaggio per poter guidare l'utente durante
+ ogni step mostrando a video di volta in volta solo ciò che era richiesto.
+\end_layout
 
+\begin_layout Standard
+La schermata di acquisto di un coupon è stata creata in modo che sia raggiungibi
+le direttamente dal menù di navigazione princiapale, ma nel caso in cui
+ l'utente non abbia eseguito l'autenticazione viene rimandato alla schermata
+ di login dove vengono richieste le credenziali per poter continuare.
+ In questo modo solo gli utenti registrati alla piattaforma hanno la possibilità
+ di effettuare un acquisto che richiede un collegamento con il backend dove
+ sono necessarie le credenziali di autenticazione.
+\end_layout
+
+\begin_layout Standard
+Come si può vedere in figura FIGURA dopo l'helper iniziale viene richiesto
+ all'utente di scegliere da quale gelateria vuole acquistare un coupon e,
+ come già specificato, si verrà reindirizzati alla mappa di ricerca con
+ un Intent contenente alcune opzioni che disabiliteranno la visibilità degli
+ shop che non hanno abilitato il sistema di e-commerce e sostituiranno alle
+ icone presenti nella finestra di dettaglio un'icona per la selezione dell'eserc
+izio.
+ Una volta che l'utente
 \end_layout
 
 \begin_layout Subsection
