@@ -1,9 +1,9 @@
-#LyX file created by tex2lyx 2.2
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /home/tommaso/Documents/Tesi/thesis/
+\origin unavailable
 \textclass extreport
 \begin_preamble
 
@@ -72,8 +72,6 @@
 \author{Tommaso Berlose}
 
 \bibliography{bibliografia}
-
-
 \end_preamble
 \options openright,cleardoublepage=empty
 \use_default_options false
@@ -100,15 +98,15 @@
 \paperfontsize 12
 \spacing single
 \use_hyperref true
-\pdf_bookmarks 0
-\pdf_bookmarksnumbered 0
-\pdf_bookmarksopen 0
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
-\pdf_breaklinks 0
-\pdf_pdfborder 0
-\pdf_colorlinks 0
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
 \pdf_backref section
-\pdf_pdfusetitle 0
+\pdf_pdfusetitle false
 \pdf_quoted_options "colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black"
 \papersize a4paper
 \use_geometry true
@@ -153,13 +151,11 @@
 \begin_body
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 pagenumbering{gobble}
@@ -172,6 +168,7 @@ pagenumbering{gobble}
 status collapsed
 
 \begin_layout Plain Layout
+
 
 \backslash
 maketitle
@@ -189,6 +186,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+
 \backslash
 pagenumbering{arabic}
 \end_layout
@@ -199,12 +197,8 @@ pagenumbering{arabic}
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "indice.lyx"
 
 \end_inset
@@ -213,12 +207,8 @@ filename "indice.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/intro.lyx"
 
 \end_inset
@@ -227,36 +217,29 @@ filename "chapters/intro.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/chapter_01.lyx"
 
 \end_inset
 
- 
+
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/chapter_02.lyx"
 
 \end_inset
 
- 
+
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/chapter_03.lyx"
 
 \end_inset
 
- 
+
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/chapter_04.lyx"
 
 \end_inset
@@ -265,12 +248,8 @@ filename "chapters/chapter_04.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chapters/conclusioni"
 
 \end_inset
@@ -279,12 +258,8 @@ filename "chapters/conclusioni"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "bibliografia.lyx"
 
 \end_inset
@@ -293,27 +268,16 @@ filename "bibliografia.lyx"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset FloatList figure
 
-\end_inset
-
-
-\begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "codice"
 
 \end_inset
@@ -322,12 +286,8 @@ filename "codice"
 \end_layout
 
 \begin_layout Standard
-
-\lang italian
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "ringraziamenti"
 
 \end_inset

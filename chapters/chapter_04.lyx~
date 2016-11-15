@@ -921,6 +921,10 @@ nto istantaneo con il backend, come per esempio la visualizzazione degle
 Ricerca
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Section
 Marketing Digitale
 \end_layout
@@ -1503,11 +1507,77 @@ le direttamente dal menù di navigazione princiapale, ma nel caso in cui
 Come si può vedere in figura FIGURA dopo l'helper iniziale viene richiesto
  all'utente di scegliere da quale gelateria vuole acquistare un coupon e,
  come già specificato, si verrà reindirizzati alla mappa di ricerca con
- un Intent contenente alcune opzioni che disabiliteranno la visibilità degli
- shop che non hanno abilitato il sistema di e-commerce e sostituiranno alle
- icone presenti nella finestra di dettaglio un'icona per la selezione dell'eserc
-izio.
- Una volta che l'utente
+ un Intent d'avvio contenente alcune opzioni che disabiliteranno la visibilità
+ degli shop in cui non è abilitato il sistema di e-commerce e sostituiranno
+ alle icone presenti nella finestra di dettaglio un'icona per la selezione
+ dell'esercizio.
+ Una volta che l'utente avrà effettuato la selezione verrà riportato sulla
+ schermata di acquisto dove saranno mostrati i dettagli della gelateria
+ e verrà invece visualizzata la possibilità di scegliere il metodo di pagamento.
+\end_layout
+
+\begin_layout Standard
+Per effettuare questa operazione l'applicazione esegue due chiamate differenti
+ al server, una nelle quali richiede il codice identificativo dell'utente
+ rispetto alla libreria di e-commerce Stripe, che servirà per richiedere
+ i metodi di pagamento disponibili dell'utente, e scarica inoltre anche
+ i coupon disponibili per l'esercizio scelto.
+ In questa caso i coupon sono salvati all'interno di un modello 
+\emph on
+AvaiableCoupon 
+\emph default
+poichè le informazioni necessarie sono ridotte rispetto al singolo coupon
+ dell'utente; i dati scaricati inoltre non vengono salvati sul database
+ del device poichè una volta usciti dalla schermata non sono più utili ed
+ è in ogni caso necessario ogni volta riscaricarli nel caso siano stati
+ modificati.
+\end_layout
+
+\begin_layout Standard
+Lo step successivo con cui l'utente può procedere è la scelta del metodo
+ di pagamento che verrà effettuato in una schermata separata dove sarà visualizz
+ata la lista dei motodi precedentemente inseriti dall'utente e scaricati
+ tramite chiamata al backend.
+ Gli unici dati verranno ricevuti saranno però parziali e utili solo al
+ riconoscimento dei dati presenti: ultimi numeri della carta inserita e
+ la data di scadenza.
+ Oltre alla possibilità di scegliere una delle opzioni già presenti l'utente
+ potrà aggiungere una nuova carta grazie ad una schermata separata, differenziat
+a anche nella grafica, dove i dati non verranno memorizzati ma inviati direttame
+nte alla libreria di Stripe che si occuperà di validare i dati e aggiornare
+ i dati presenti sul backend.
+ Si verrà infine reindirizzati alla schermata precedente dove le opzioni
+ saranno aggiornate.
+\end_layout
+
+\begin_layout Standard
+Scelto il metodo di pagamento si verrà riportati sulla schermata di acquisto
+ dove saranno visualizzati i dati essenziali dell'opzione scelta dando,
+ come nel caso dello shop, la possibilità di modificare la decisione presa.
+ Infine l'ultima decisione sarà quella riguardante il coupon da acquistare
+ grazie alla visualizzazione di quelli disponibili.
+\end_layout
+
+\begin_layout Standard
+Sotto il collegamento alla scelta del motodo di pagamento è quindi presente
+ un 
+\emph on
+ViewPager
+\emph default
+ che visualizza i coupon disponibili specifici per la gelateria scelta mostrando
+ i dettagli principali: nome, descrizione, prezzo e valuta.
+ In questo caso la scelta verrà effettuata scorrendo sullo slide in modo
+ che al centro della schermata vi sia quello scelto dall'utente.
+\end_layout
+
+\begin_layout Standard
+Concluse tutte le scelte l'utente potrà procedere con l'acquisto che si
+ tratterà di una nuova chiamata alle API del server in modo che grazie anche
+ all'utilizzo del codice Stripe sia dell'utente che dello shop potrà effettuare
+ la transizione e aggiungere il coupon a quelli legati all'account utilizzato.
+ Nel caso di errori verrà visualizzato un messaggio e si potrà ritentare
+ l'operazione, altrimenti se non vi dovessero essere problemi si verrà reindiriz
+zati alla schermata di gestione dei coupon personali.
 \end_layout
 
 \begin_layout Subsection

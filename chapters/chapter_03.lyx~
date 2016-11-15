@@ -672,15 +672,15 @@ La piattaforma Android fornisce diversi metodi e strumenti per salvare i
 \emph on
 Shared Preferences 
 \emph default
-per salvare in maniera persistente le scelte dell’utente; mentre per quanto
- riguarda la memorizzazione persistente di una grossa mole di dati si possono
- utilizzare strumenti come l'
+per salvare le scelte dell’utente; mentre per quanto riguarda la memorizzazione
+ persistente di una grossa mole di dati si possono utilizzare strumenti
+ come l'
 \emph on
 Internal Storage
 \emph default
  o un 
 \emph on
-Database SQLlite
+Database SQLite
 \emph default
 .
  //cit http://www.html.it/articoli/la-gestione-dei-database-in-android-1/
@@ -703,6 +703,282 @@ Realm
 
 \begin_layout Subsection
 Realm
+\end_layout
+
+\begin_layout Standard
+La prima configurazione per l'utilizzo di Realm è rintracciabile nella creazione
+ di una semplice dipendenza all'interno dei file di assetto di 
+\emph on
+Gradle
+\emph default
+ (tool di Andriod Studio per il compile, il deploy e la gestione delle dipendenz
+e) dove va inserita l'ultima versione disponibile dell'applicativo.
+ È inoltre necessario inserire una prima inizializzazione all'interno dell'avvio
+ dell'applicazione, andando quindi ad estendere la classe 
+\emph on
+Application
+\emph default
+ esposta dalle libreria dell'sdk di Android.
+\end_layout
+
+\begin_layout Standard
+Una volta configurato il plugin si possono creare i modelli degli oggetti
+ che saranno da salvare all'interno della base di dati, come per esempio
+ un oggetto 
+\emph on
+Utente
+\emph default
+ rappresentato ad esempio dalla classe 
+\emph on
+User
+\emph default
+ come si può vedere nello snippet di codice CODICE dove sono descritte le
+ principali variabili che lo compongono, tra cui la chiave primaria denotata
+ dalla keyword 
+\emph on
+PrimaryKey.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import io.realm.RealmObject;
+\end_layout
+
+\begin_layout Plain Layout
+
+import io.realm.annotations.PrimaryKey;
+\end_layout
+
+\begin_layout Plain Layout
+
+public class User extends RealmObject {
+\end_layout
+
+\begin_layout Plain Layout
+
+    @PrimaryKey
+\end_layout
+
+\begin_layout Plain Layout
+
+    public String uuid;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public String firstName;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public String lastName;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public String email;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public User() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dalla documentazione ufficiale è anche richiesto un costruttore vuoto, una
+ serie di annotazioni per descrivere quali oggetti sono da ignorare durante
+ il salvataggio e vi è infine la possibilità di aggiungere funzioni setter/gette
+r.
+\end_layout
+
+\begin_layout Standard
+L'utilizzo di questi modelli è molto semplificato poichè Realm permette
+ di creare delle transizioni sui singoli oggetti creati così da poter aggiornare
+ la loro versione contenuta all'interno del database, assicurando in ogni
+ istante le proprie ACID delle operazioni.
+ Si può vedere nel seguente listato un esempio di creazione o aggiornamento
+ di un oggetto user in base al fatto che sia o non sia già presente all'interno
+ della base di dati.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Realm realm = Realm.getDefaultInstance();
+\end_layout
+
+\begin_layout Plain Layout
+
+User user = new User(Params...);
+\end_layout
+
+\begin_layout Plain Layout
+
+realm.executeTransaction(new Realm.Transaction() {
+\end_layout
+
+\begin_layout Plain Layout
+
+      @Override
+\end_layout
+
+\begin_layout Plain Layout
+
+      public void execute(Realm realm) {
+\end_layout
+
+\begin_layout Plain Layout
+
+          realm.copyToRealmOrUpdate(user);
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+});
+\end_layout
+
+\begin_layout Plain Layout
+
+realm.close();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
+o del db è forse fondamentale capire come vengono gestite anche le query
+ sulla base di dati; Un esempio molto semplice visibile nello snippet di
+ codice CODICE mostra come sia possibile richiedere un utente con email
+ non nulla all'interno dei dati salvati ottenendoli in un 
+\emph on
+ArrayList
+\emph default
+ utilizzabile direttamente per scorrere ogni singolo oggetto ottenuto dalla
+ richiesta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+RealmResults<User> results = 
+\end_layout
+
+\begin_layout Plain Layout
+
+     Realm.getDefaultInstance()
+\end_layout
+
+\begin_layout Plain Layout
+
+          .where(User.class)
+\end_layout
+
+\begin_layout Plain Layout
+
+          .notNull("email")
+\end_layout
+
+\begin_layout Plain Layout
+
+          .findAll();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ultimo elemento da presentare della libreria Realm sono i 
+\emph on
+listener
+\emph default
+ che si possono attivare sia sull'intero database sia su una singola porzione
+ in modo che eseguano una determinata callback nel momento in cui avviene
+ una modificati dei dati monitorati.
+ Un breve esempio è visualizzato nel codice seguente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Realm realm = Realm.getDefaultInstance();
+\end_layout
+
+\begin_layout Plain Layout
+
+realm.addChangeListener(new RealmChangeListener<Realm>() {
+\end_layout
+
+\begin_layout Plain Layout
+
+      @Override
+\end_layout
+
+\begin_layout Plain Layout
+
+      public void onChange(Realm element) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            // do something...
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+});
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -738,7 +1014,7 @@ zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
  una notevole semplificazione del codice utilizzato per programmare.
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -751,7 +1027,7 @@ autocite
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
