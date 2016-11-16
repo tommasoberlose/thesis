@@ -921,6 +921,224 @@ nto istantaneo con il backend, come per esempio la visualizzazione degle
 Ricerca
 \end_layout
 
+\begin_layout Standard
+Lo sviluppo della sezione di Ricerca è stato il fulcro del lavoro svolto
+ per questo elaborato, sia perchè come componente si pone a nodo centrale
+ di tutta l'applicazione, sia perchè in termini di prestazioni si sono dovuti
+ valutare molti aspetti per poter mantere un'alta fluidità e reattività
+ anche su device meno prestanti.
+\end_layout
+
+\begin_layout Standard
+Sono stati svolti molti passaggi successivi volti a migliorare di volta
+ in volta l'algoritmo presente dietro la semplice interfaccia utente composta
+ da una mappa e una lista che devono visualizzare gli shop disponibili nell'area
+ sotto forma di marker.
+ Di seguito verrà quindi descritta soltanto la struttura finale dell'activity
+ 
+\emph on
+Map
+\emph default
+ che risulta essere implementata all'interno della versione in produzione
+ dell'applicazione.
+\end_layout
+
+\begin_layout Standard
+Come primo punto è essenziale valutare l'inizializzazione della schermata,
+ considerando che in caso di qualsiasi problema di rete si deve comunque
+ presentare all'utente la struttura cardine anche senza nessun dato visualizzato.
+ Il layout è quindi formato da un header all'interno dei quali vengono innestati
+ i due tab per poter eseguire lo switch tra la visualizzazione a mappa e
+ quella a lista, mentra il corpo è composto da una view che mostra rispettivamen
+te una mappa, inserita grazie all'utilizzo delle API di Google Maps, e una
+ lista, dove è stata nuovamente riutilizzata una RecyclerView unita ad un
+ custom Adapter.
+\end_layout
+
+\begin_layout Standard
+Nel primo caso, che è inoltre l'opzione di default, verrà visualizzata una
+ mappa vuota e si tenterà di posizionare il centro della mappa sull'attuale
+ posizione dell'utente.
+ Per eseguire questa operazione verrà richiesto all'utente il permesso di
+ accedere alla localizzazione e, nel caso venga concessa, si salverà in
+ un oggetto locale l'attuale posizione, altrimenti si utilizzerà la lingua
+ impostata sul dispositivo per centrare la mappa sullo stato corrispondente.
+\end_layout
+
+\begin_layout Standard
+Per effettuare queste operazioni si sono utilizzati i metodi esposti dalle
+ API di Google Maps e dalla libreria dei Google Play Services che permetto
+ di inizializzare la mappa modificando alcune impostazioni di base come
+ lo zoom, i controlli visibili e permettono di ottenere la posizione il
+ più precisa possibile del device dell'utente.
+\end_layout
+
+\begin_layout Standard
+L'inizializzazione della mappa viene eseguita in maniera asincrona e una
+ volta che la mappa è pronta sono state aggiunte una serie di inizializzazioni
+ che mirano ad attivare i componenti custom creati per la visualizzazione
+ e la gestione dei marker che saranno poi inseriti a video; prima tra tutti
+ l'attivazione del sistema di Clustering che si pone a middleware tra la
+ mappa e l'insieme dei marker aggiunti in modo da aggregarli ad ogni movimento
+ della view così da non rendere confusa la presenza di un numero alto di
+ icone aggregandole e mostrando il numero di elementi presenti in ogni cluster.
+ Un esempio è visibile nella figura FIG.
+\end_layout
+
+\begin_layout Standard
+Come la mappa, anche la lista viene inizializzata con una base di dati inizialme
+nte vuota mostrando un messaggio di notifica all'utente che segnala il fatto
+ che non vi siano presenti degli Shop in zona.
+ Nel frattempo viene caricato e inizializzato l'adapter che, dato l'insieme
+ degli shop, mostrerà l'elenco delle gelaterie in ordine di distanza dall'attual
+e posizione dell'utente (ovviamente se verrà concesso il permesso di accedere
+ alla localizzazione).
+\end_layout
+
+\begin_layout Standard
+Una volta che entrambi i sistemi saranno stati inizializzati verranno avviati
+ in background tutti i meccanismi di richiesta di download degli shop da
+ mostrare a video.
+ Per fare questo una forte componentistica di questa schermata risultano
+ quindi essere i processi asincroni che vengono avviati tramite l'utilizzo
+ di componenti AsyncTask o grazie all'uso di Thread con metodi Runnable.
+\end_layout
+
+\begin_layout Standard
+L'oggetto 
+\emph on
+LoadShopAtAsyncTask
+\emph default
+, funzione principale per il download dei dati, richiede in ingresso un
+ insieme di parametri tra cui la posizione e il raggio all'interno del quale
+ si è interessati agli Shop, in questo modo la richiesta al backend non
+ otterrà in risposta l'intera base di dati presente sul server ma solo le
+ informazioni utili da essere visualizzate a video.
+\end_layout
+
+\begin_layout Standard
+In background i dati scaricati verranno salvati direttamente sul database
+ grazie all'utilizzo di Realm che semplifica l'inserimento di un grosso
+ numero di elementi grazie alla possibilità di salvare anche interi ArrayList.
+ Una volta completato il processo senza errori, grazie all'utilizzo di EventBus
+ verrà richiesto l'aggiornamento dell'interfaccia che dovrà richiedere i
+ dati dal database, gestirli come marker e aggiungerli al sistema di Clustering
+ della mappa.
+\end_layout
+
+\begin_layout Standard
+Questo è stato il primo punto critico in termini di prestazioni che si è
+ presentato logicamente durante lo sviluppo.
+ L'aggiunta dei marker è vincolata all'elaborazione dei dati del singolo
+ shop, poichè saranno mostrati a video solo gli shop veramente presenti
+ all'interno della vista della mappa, dovranno essere salvati in RAM tutti
+ i dati che verranno richiesti una volta selezionato il singolo marker per
+ essere mostrati all'utente e in ultimo dovrà essere anche calcolata la
+ distanza del singolo esercizio dall'utente, così da poter ordinare la lista
+ rispetto a questo parametro.
+\end_layout
+
+\begin_layout Standard
+Dopo alcune rielaborazioni del codice si è spostato totalmente in background
+ ogni singolo passaggio che non intervenisse direttamente sull'UI, poichè
+ l'unico Thread che vi può accedere è quello principale, così da non rendere
+ bloccante l'operazione di aggiornamento della mappa, processa che rendeva
+ poco fluido il sistema di clustering.
+\end_layout
+
+\begin_layout Standard
+In questo modo si è risolto il problema del download delle informazioni,
+ che spesso rappresentano comunque una grossa mole di dati, la loro rielaborazio
+ne ai fini delle operazioni rese disponibili sulla schermata per l'utente
+ e l'aggiornamento delle view di conseguenza al cambio della base di dati.
+\end_layout
+
+\begin_layout Standard
+Il meccanismo appena descritto però gestisce il fatto di visualizzare solo
+ gli Shop presenti attorno all'utente all'apertura della schermata, mentre
+ si vuole poter permettere all'utilizzatore anche di esplorare le zone su
+ altri punti della mappa.
+ Per questo motivo ad ogni conclusione di spostamento della view GoogleMap
+ viene risollevato un evento grazie ad EventBus che porta ad eseguire nuovamente
+ tutti i processi sopra descritti.
+ Se logicamente il sistema ha risolto immediatamente il problema che si
+ era creato ci si è trovati di fronte al secondo punto critico in termiti
+ di prestazioni.
+\end_layout
+
+\begin_layout Standard
+Il movimento della mappa e il listener che solleva la callback ad ogni fine
+ spostamento della mappa verrebbe sollevato troppe volte, portanto ad un
+ rallentamento molto forte dell'applicazione.
+ Per risolvere questo problema si è utilizzato uno scheduler, definito dal'ogget
+to 
+\emph on
+ScheduledExecutorService
+\emph default
+, che avvia l'esecuzione del processo di aggiornamento solo dopo 500 millisecond
+i che l'utente ha smesso di muoversi sulla mappa.
+ Si è valutato questo intervallo di tempo per non dover gestire istruzioni
+ che verrebbero lanciate anche ogni dieci millisecondi mantenendo però una
+ forte reattività agli occhi dell'utente.
+\end_layout
+
+\begin_layout Standard
+Conclusa l'implementazione della visualizzazione degli shop all'interno
+ della mappa si è implementato, all'interno del sistema di elaborazione
+ dati, il meccanismo di aggiornamento dell'adapter della lista.
+ Questo adapter è stato poi utilizzato in maniera identica per la gestione
+ della lista all'interno della sezione dei Preferiti poichè sono state notate
+ una serie di similitudini che ne hanno permesso il riutilizzo.
+\end_layout
+
+\begin_layout Standard
+Il successivo passaggio ha portato all'implementazione della InfoWindow
+ del singolo shop, all'interno del quale vengono visualizzate le informazioni
+ essenziali utili all'utente, come nome e indirizzo, unite alle icone per
+ raggiungere la sezione delle Carte Promozionali e per la gestione delle
+ funzionalità dell'aggiunta e rimozione dai Preferiti, spiegate dettagliatamente
+ nei capitoli successivi.
+\end_layout
+
+\begin_layout Standard
+Si è dovuto creare una view custom esterna alla mappa per questo utilizzo
+ poichè le info window standard proposte dalle API di Google Maps non permetteva
+no di gestire correttamente il click in punti differenti della finestra
+ visualizzata.
+\end_layout
+
+\begin_layout Standard
+Concluse le funzionalità relative al sistema di marketing si sono dovute
+ implementare le funzionalità del flusso logico dell'e-commerce, poichè
+ si è scelto di riutilizzare l'intera schermata senza crearne una prettamente
+ identica.
+ Per fare questo passaggio si è gestito l'Intent di avvio della sezione
+ valutando l'
+\emph on
+Action
+\emph default
+ inserita all'interno che demarca quale delle funzionalità sono richieste.
+\end_layout
+
+\begin_layout Standard
+Nel caso in cui si arrivi a questa sezione durante l'acquisto di un coupon,
+ le icone presenti nella info window verranno sostituite da un'icona per
+ la selezione della gelateria e nel momento in cui l'utente farà una scelta
+ questa activity verrà chiusa inserendo all'interno del risultato della
+ chiamata l'identificativo dello shop.
+ In questo ci si rifà all'architettura modulare di Android che permette
+ l'utilizzo di Acitivyt differenti per ottenere oggetti come risultato della
+ chiamata.
+\end_layout
+
+\begin_layout Standard
+Concluso quest'ultimo passaggio, come già detto, si sono susseguiti alcuni
+ test prestazionali sull'interfaccia che hanno portato ad ottenere alta
+ fluidità e reattività anche su device meno prestanti.
+ si è infine aggiunto il collegamento differeneziato all'interno della navigazio
+ne principale dell'applicazione.
+\end_layout
+
 \begin_layout Section
 Marketing Digitale
 \end_layout
