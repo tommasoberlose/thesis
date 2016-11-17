@@ -79,11 +79,50 @@ Conclusioni
 Il lavoro esposto all'interno di questa tesi ha portato al completamento
  e alla pubblicazione della applicazione mobile per piattaforma Android
  che si inserisce all'interno della creazione dell'ecosistema MyGelato,
- progetto dell'azienda Carpigiani.
+ progetto dell'azienda Carpigiani leader nel settore della vendita di macchine
+ per gelato.
 \end_layout
 
 \begin_layout Standard
-Le princip
+Un progetto di questo tipo descrive appieno la situazione tipo in cui si
+ sono trovate o si verranno a trovare tutte le aziende leader nei propri
+ settori che saranno costrette a diversificare il proprio prodotto integrando
+ un sistema di marketing e di vendita che sfrutti le nuove tecnologie disponibil
+i sul mercato.
+ Il pubblico consumer diventa ogni giorno più esigente per quanto riguarda
+ i servizi resi disponibili dalle aziende parallelamente ai loro core business,
+ specialmente se si tratta come in questo caso di un mercato in cui non
+ vi è ancora un'ingerenza tecnologica così profonda.
+\end_layout
+
+\begin_layout Standard
+È stato quindi essenziale valutare e studiare ogni dettaglio sin dalla prima
+ fase di progettazione così da poter fornire agli utenti un prodotto finale
+ efficiente, curato nel design e al passo con gli ultimi sviluppi in termini
+ di programmazione mobile.
+ Per poter ottenere un risultato ottimo in questo senso si sono studiate
+ tutte le molteplici possibilità disponibili in ambito open source sia per
+ quanto riguarda i pattern strutturali sia per le librerie utilizzate.
+\end_layout
+
+\begin_layout Standard
+Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
+ sia in termini di funzionalità e-commerce sono state pienamente soddisfatte
+ rendendo già disponibile per l'utente finale un prodotto performante e
+ in perfetta sinergia con le altre componenti della piattaforma.
+ Sarà ora di fondamentale importanza considerare una buona campagna di marketing
+ affiancata alla corretta comunicazione con i gelatieri in modo da garantire
+ al progetto una diffusione capillare nel territorio e aprire la strada
+ per un’espansione di livello mondiale.
+\end_layout
+
+\begin_layout Standard
+L'elaborato, per come è stato sviluppato con architettura modulare, permette
+ l'implementazione di nuove funzionalità con il minimo sforzo, senza dover
+ riprogettare l’attuale struttura dell'applicazione e si pone ad esempio
+ per progetti simili che abbiano specifiche progettuali simili anche solo
+ parzialmente potendo estrapolare da ogni flusso logico le scelte implementative
+ fatte.
 \end_layout
 
 \end_body

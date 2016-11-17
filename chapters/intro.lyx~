@@ -97,28 +97,27 @@ Informazione
 \emph default
  che è diventata il nodo fondamentale di ogni sistema economico moderno:
  il pubblico consumer rispetto alle aziende ha creato un collegamento bidirezion
-ale in cui l'utente vuole poter ottenere tutti i dati disponibili riguardanti
- il prodotto che desidera acquistare e allo stesso tempo le aziende hanno
- la necessità di informare i propri utenti tramite sistemi di marketing
- moderni.
+ale in cui l'utente può e vuole poter ottenere tutti i dati disponibili
+ riguardanti il prodotto che desidera acquistare e allo stesso tempo le
+ aziende hanno la necessità di informare i propri utenti tramite sistemi
+ di marketing moderni.
 \end_layout
 
 \begin_layout Standard
 Questi sono alcuni dei meccanismi alla base del nostro sistema di mercato
  che vede nel capitalismo la sua forma più evoluta ma che proprio a causa
  della forte ingerenza della tecnologia inizia a mostrare i primi segni
- di uno spostamento degli equilibri, portando l'intero sistema ad una deriva
- difficilmente prevedibile e che si potrà assestare solo nel momento in
- cui le aziende prenderanno consapevolezza di come tutti i settori commerciali
- di stanno cambiando.
+ di uno spostamento degli equilibri che si dovranno assestare nel momento
+ in cui le aziende prenderanno consapevolezza di come tutti i settori commercial
+i stanno cambiando.
 \end_layout
 
 \begin_layout Standard
 Si tratta fondamentalmente di valutare l'inserimento di un carattere tecnologico
  in ogni ambito della produzione e della commercializzazione di un prodotto,
  di cui il secondo punto trattato in questo elaborato; La vendita stessa
- di un prodotto in molti casi non è più legata ad un rivenditore fisico
- ma sono ormai più che diffusi sistemi di reselling che permettono all'utente
+ di un prodotto in determinati casi non è più legate ad un rivenditore fisico
+ ma sono ormai più che diffusi sistemi di e-commerce che permettono all'utente
  l'acquisto di qualsiasi prodotto online e in mobilità.
 \end_layout
 
@@ -143,50 +142,7 @@ e mobile con l'obiettivo di porsi tra le gelaterie e i loro clienti.
  a questo progetto e distribuita per il sistema operativo Google Android.
  Le tecnologie scelte e la generalità della soluzione consentono di impiegare
  gli stessi principi per altri progetti con architetture analoghe.
-\end_layout
-
-\begin_layout Standard
-La stesura di questo elaborato segue logicamente i passaggi fondamentali
- di progetti di questo calibro partendo dall'introduzione del contesto in
- cui si vuole inserire lo sviluppo di elaborati di questo tipo insieme alla
- valutazione delle finalità implicite ed esplicite che hanno portato l'azienda
- Carpigiani a dare vita all'intero ecosistema MyGelato.
-\end_layout
-
-\begin_layout Standard
-Nel capitolo successivo si passa alla presentazione e alla valutazione delle
- specifiche richieste ponendo maggiore attenzione ai due sistemi di marketing
- digitale ed e-commerce che rappresentano il fulcro dell'applicativo uniti
- ovviamente ai concetti principali che formano i modelli della piattaforma
- e che devono essere considerati nel dettaglio per capire alcune scelte
- strutturali effettuate durante lo sviluppo.
-\end_layout
-
-\begin_layout Standard
-Sono poi introdotte le principali tecnologie, librerie e i metodi di sviluppo
- utilizzati durante l'implementazione di ogni singolo componente dando ampio
- spazio alle funzionalità rese disponibili dall'utilizzo di ottime librerie
- open source descrivendo come hanno potuto semplificare e velocizzare il
- processo lavorativo fornendo un forte imprinting modulare all'architettura
- di tutta l'applicazione.
  
-\end_layout
-
-\begin_layout Standard
-Si prosegue con la descrizione del lavoro svolto, discernendo ogni singolo
- componente dell'applicativo così da poter spiegare nel dettaglio le scelte
- implementative che hanno portato al prodotto finale di questa tesi che
- dopo una serie di test in termini di prestazioni potrà essere pubblicato
- e reso disponibile sui principali mezzi di distribuzione di applicazioni
- Android.
-\end_layout
-
-\begin_layout Standard
-Alcune considerazioni di carattere generale e possibili sviluppi futuri
- concludono, infine, la tesi.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 

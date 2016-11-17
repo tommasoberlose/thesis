@@ -173,17 +173,10 @@ Sono poi introdotte le principali tecnologie, librerie e i metodi di sviluppo
 \end_layout
 
 \begin_layout Standard
-Si prosegue con la descrizione del lavoro svolto, discernendo ogni singolo
- componente dell'applicativo così da poter spiegare nel dettaglio le scelte
- implementative che hanno portato al prodotto finale di questa tesi che
- dopo una serie di test in termini di prestazioni potrà essere pubblicato
- e reso disponibile sui principali mezzi di distribuzione di applicazioni
- Android.
-\end_layout
-
-\begin_layout Standard
-Alcune considerazioni di carattere generale e possibili sviluppi futuri
- concludono, infine, la tesi.
+Si prosegue con la descrizione del lavoro svolto per ottenere il prodotto
+ finale che dovrà essere infine testato attentamente in termini di prestazioni
+ per essere pubblicato e reso disponibile sui principali mezzi di distribuzione
+ di applicazioni Android.
 \end_layout
 
 \begin_layout Standard
