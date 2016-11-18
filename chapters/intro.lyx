@@ -89,45 +89,38 @@ Introduzione
 \begin_layout Standard
 Questo momento storico è caratterizzato se non forse pienamente descritto
  dall'esplosione dello sviluppo tecnologico che ha drasticamente cambiato
- i metodi di comunicazione e i modi con cui le persone accedono alle informazion
-i.
+ i metodi di comunicazione e il modo con cui le persone accedono alle informazio
+ni.
  Ed è proprio l'
 \emph on
 Informazione
 \emph default
  che è diventata il nodo fondamentale di ogni sistema economico moderno:
- il pubblico consumer rispetto alle aziende ha creato un collegamento bidirezion
-ale in cui l'utente vuole poter ottenere tutti i dati disponibili riguardanti
- il prodotto che desidera acquistare e allo stesso tempo le aziende hanno
- la necessità di informare i propri utenti tramite sistemi di marketing
- moderni.
+ tracciabilità, trasparenza e accesso ai dati di un prodotto sia in termini
+ di procuzione che di commercializzazione sono solo alcuni dei concetti
+ che si sono diffusi grazie all'entrata della tecnologia, come gli smartphone,
+ nella quotidianità del pubblico consumer.
+\end_layout
+
+\begin_layout Standard
+Nel momento in cui l'utente accede a qualsiasi risorsa presente online,
+ si tratti anche solo della visualizzazione di un sito web, viene però esposto
+ ai nuovi sistemi di marketing digitale fondati sull'advertising online
+ che, uniti ai nuovi sistemi di e-commerce, sono diventati una delle strumenti
+ principali per la commercializzazione e vendita di un prodotto.
 \end_layout
 
 \begin_layout Standard
 Questi sono alcuni dei meccanismi alla base del nostro sistema di mercato
  che vede nel capitalismo la sua forma più evoluta ma che proprio a causa
  della forte ingerenza della tecnologia inizia a mostrare i primi segni
- di uno spostamento degli equilibri, portando l'intero sistema ad una deriva
+ di uno spostamento degli equilibri, portando l'intero sistema a una deriva
  difficilmente prevedibile e che si potrà assestare solo nel momento in
- cui le aziende prenderanno consapevolezza di come tutti i settori commerciali
- di stanno cambiando.
-\end_layout
-
-\begin_layout Standard
-Si tratta fondamentalmente di valutare l'inserimento di un carattere tecnologico
- in ogni ambito della produzione e della commercializzazione di un prodotto,
- di cui il secondo punto trattato in questo elaborato; La vendita stessa
- di un prodotto in molti casi non è più legata ad un rivenditore fisico
- ma sono ormai più che diffusi sistemi di reselling che permettono all'utente
- l'acquisto di qualsiasi prodotto online e in mobilità.
-\end_layout
-
-\begin_layout Standard
-Lo stesso ragionamento deve essere affrontato per quanto riguarda lo scambio
- di informazioni tra il produttore e il cliente che, come già detto, deve
- diventare maggiormente semplificato e sfruttare i nuovi mezzi di comunicazioni
- che si fondano sull'utilizzo dei device personali degli utenti come principale
- mezzo di advertising.
+ cui le aziende prenderanno consapevolezza di come molti settori stanno
+ cambiando.
+ Sarà sempre più importante quindi tenere in considerazione l'inserimento
+ di una componente tecnologica in ogni ambito della produzione di un prodotto,
+ ma specialmente durante la sua commercializzazione.
 \end_layout
 
 \begin_layout Standard
@@ -138,7 +131,7 @@ ndere lo sviluppo dell'ecosistema
 MyGelato
 \emph default
 , piattaforma di marketing digitale e di e-commerce fruibile tramite applicazion
-e mobile con l'obiettivo di porsi tra le gelaterie e i loro clienti.
+e mobile con l'obiettivo di dare nuovi strumenti ai propri clienti.
  Si presenta il design e l’implementazione dell'applicazione mobile legata
  a questo progetto e distribuita per il sistema operativo Google Android.
  Le tecnologie scelte e la generalità della soluzione consentono di impiegare
@@ -147,19 +140,19 @@ e mobile con l'obiettivo di porsi tra le gelaterie e i loro clienti.
 
 \begin_layout Standard
 La stesura di questo elaborato segue logicamente i passaggi fondamentali
- di progetti di questo calibro partendo dall'introduzione del contesto in
- cui si vuole inserire lo sviluppo di elaborati di questo tipo insieme alla
- valutazione delle finalità implicite ed esplicite che hanno portato l'azienda
- Carpigiani a dare vita all'intero ecosistema MyGelato.
+ che si presentano in progetti di questa tipologia partendo dall'introduzione
+ del contesto in cui si inserisce il lavoro in oggetto, insieme alla valutazione
+ delle finalità implicite ed esplicite che hanno portato l'azienda Carpigiani
+ a dare vita all'intero ecosistema MyGelato.
 \end_layout
 
 \begin_layout Standard
-Nel capitolo successivo si passa alla presentazione e alla valutazione delle
- specifiche richieste ponendo maggiore attenzione ai due sistemi di marketing
- digitale ed e-commerce che rappresentano il fulcro dell'applicativo uniti
- ovviamente ai concetti principali che formano i modelli della piattaforma
- e che devono essere considerati nel dettaglio per capire alcune scelte
- strutturali effettuate durante lo sviluppo.
+Nel capitolo 1 si passa alla presentazione e alla valutazione delle specifiche
+ richieste ponendo maggiore attenzione ai due sistemi di marketing digitale
+ ed e-commerce che rappresentano il fulcro dell'applicativo uniti ovviamente
+ ai concetti principali che formano i modelli della piattaforma e che devono
+ essere considerati nel dettaglio per capire alcune scelte strutturali effettuat
+e durante lo sviluppo.
 \end_layout
 
 \begin_layout Standard

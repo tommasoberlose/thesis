@@ -6,6 +6,50 @@
 \origin unavailable
 \textclass extreport
 \begin_preamble
+\usepackage[english]{babel}
+\usepackage{palatino}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{pdfpages}
+\usepackage{supertabular}
+\usepackage{longtable}
+%%\usepackage{psfig}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{minitoc}
+\usepackage[pdftex]{hyperref}
+\listfiles
+\marginparwidth=0cm             % spazio per note a margine
+\marginparsep=0cm               % separazione note a margine
+\topmargin=-0.5cm               % margine alto = 3.54 + topmargin (in cm)
+\headheight=0cm
+\oddsidemargin=0.46cm    
+\evensidemargin=-0.46cm   
+%\headsep=1.5cm
+\headsep=2cm
+%\footheight=0.5cm
+\textwidth=15cm
+\textheight=21.5cm
+\parindent 0.6cm
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries \thepage}
+\fancyhead[LO]{\bfseries \rightmark}
+\fancyhead[RE]{\bfseries \leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+%%\addtolenght{\headheight}{0.5pt}
+\fancypagestyle{plain}{%
+                       \fancyhead{}%
+                       \renewcommand{\headrulewidth}{0pt}%
+                      }
 
 
 \usepackage[italian]{babel}

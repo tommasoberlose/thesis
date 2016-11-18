@@ -218,8 +218,8 @@ Si è scelto quindi di utilizzare come principale strumento
 Android Studio
 \emph default
 , Integrated Development Environment (IDE) dedicato alla programmazione
- Android distruibuito da JetBrains IntelliJ IDEA e Google che è ormai il
- miglior software per la creazione dei applicazioni su questa piattaforma.
+ Android distruibuito da JetBrains e Google che è ormai il miglior software
+ per la creazione dei applicazioni su questa piattaforma.
  
 \begin_inset ERT
 status collapsed
@@ -305,7 +305,7 @@ status collapsed
 
 \end_inset
 
- che permette di testare e sviluppare le APIs con cui due applicativi possono
+ che permette di testare e sviluppare le API con cui due applicativi possono
  dialogare.
 \end_layout
 
@@ -323,8 +323,8 @@ Le applicazioni Android sono sviluppate utilizzando il linguaggio Java.
 \end_layout
 
 \begin_layout Standard
-Per lo sviluppo di un'applicativo si devono sfruttare le principali caratteristi
-che di Java andando ad estendere, per ogni schermata che si vuole creare,
+Per lo sviluppo di un applicativo si devono sfruttare le principali caratteristi
+che di Java andando a estendere, per ogni schermata che si vuole creare,
  la classe 
 \emph on
 Activity 
@@ -332,17 +332,17 @@ Activity
 implementata come standard all'interno delle libreria Android.
  Qualsiasi progetto sarà quindi formato da un insieme di classi che rappresenter
 anno logicamente ogni singola schermata unite ad altre classi che incapsuleranno
- invece le funzioni, i modelli e ogni altro componente standard di Android
- (Broadcast Receiver, Service, ecc...).All'interno dell'ultima distribuzione
- di Android sono state incluse alcune delle funzionalità di Java 8, ma l'alta
- frammentazione della piattaforma non ne permette correttamente l'utilizzo.
+ invece le funzioni, i modelli e ogni altro componente standard di Android.All'in
+terno dell'ultima distribuzione di Android sono state incluse alcune delle
+ funzionalità di Java 8, ma l'alta frammentazione della piattaforma non
+ ne permette correttamente l'utilizzo.
  Questo si ripercuote su alcune funzionalità come le chiamate http che non
  supportano alcune delle semplificazioni che sono state fatte ad esempio
  nelle connessioni sicure grazie a TLS.
 \end_layout
 
 \begin_layout Standard
-Come si può vedere all'interno dello snippet di codice la classe 
+Come si può vedere all'interno del listato la classe 
 \emph on
 Main
 \emph default
@@ -359,48 +359,60 @@ activity_main
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
- public class Main extends AppCompatActivity {
+public class Main extends AppCompatActivity {
 \end_layout
 
 \begin_layout Plain Layout
-
     @Override
 \end_layout
 
 \begin_layout Plain Layout
-
     protected void onCreate(Bundle savedInstanceState) {
 \end_layout
 
 \begin_layout Plain Layout
-
         super.onCreate(savedInstanceState);
 \end_layout
 
 \begin_layout Plain Layout
-
         setContentView(R.layout.activity_main);
 \end_layout
 
 \begin_layout Plain Layout
-
     }
 \end_layout
 
 \begin_layout Plain Layout
-
     ...
 \end_layout
 
 \begin_layout Plain Layout
-
 }
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:AppCompatActivity"
+
+\end_inset
+
+AppCompatActivity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -409,12 +421,12 @@ status open
 \end_layout
 
 \begin_layout Standard
-In informatica XML (sigla di eXtensible Markup Language) è un metalinguaggio
- per la definizione di linguaggi di markup, ovvero un linguaggio marcatore
- basato su un meccanismo sintattico che consente di definire e controllare
- il significato degli elementi contenuti in un documento o in un testo.
+XML (sigla di eXtensible Markup Language) è un metalinguaggio per la definizione
+ di linguaggi di markup, ovvero un linguaggio marcatore basato su un meccanismo
+ sintattico che consente di definire e controllare il significato degli
+ elementi contenuti in un documento o in un testo.
  All'interno dello sviluppo di applicazioni Android rappresenta il linguaggio
- per la creazione delle risorse: layout, icone, manifest, ecc...
+ per la creazione delle risorse: layout, manifest, ecc...
 \end_layout
 
 \begin_layout Standard
@@ -428,58 +440,65 @@ L'esempio più ecclatante è l'utilizzo dell'XML per produrre il manifesto
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 <?xml version="1.0" encoding="utf-8"?>
 \end_layout
 
 \begin_layout Plain Layout
-
 <LinearLayout
 \end_layout
 
 \begin_layout Plain Layout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
 \end_layout
 
 \begin_layout Plain Layout
-
     android:layout_width="match_parent"
 \end_layout
 
 \begin_layout Plain Layout
-
     android:layout_height="match_parent">
 \end_layout
 
 \begin_layout Plain Layout
-
     <ImageView
 \end_layout
 
 \begin_layout Plain Layout
-
          android:layout_width="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
-
          android:layout_height="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
-
          src="drawable/icon" />
 \end_layout
 
 \begin_layout Plain Layout
-
 </LinearLayout>
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Layout XML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -531,8 +550,8 @@ status collapsed
  Android.
  È stato annunciato il 16 maggio 2013 in occasione della conferenza Google
  I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
- Basato sul software della JetBrains IntelliJ IDEA, Android Studio è stato
- progettato specificamente per lo sviluppo di Android.
+ Basato sul software della JetBrains, Android Studio è stato progettato
+ specificamente per lo sviluppo di Android.
  Sostituisce gli Android Development Tools (ADT) di Eclipse, diventando
  l' IDE primario di Google per lo sviluppo nativo di applicazioni Android
  offre ancora più funzioni che migliorano la produttività durante la creazione
@@ -553,8 +572,8 @@ Ogni progetto creato all'interno del software contiene alcuni moduli principali
 A livello di build del sistema si trova uno script Gradle che a partire
  da un manifesto, che dichiara la struttura dell'applicazione, i file Java
  contenenti il codice sorgente (inclusi i test) e l'insieme delle risorse
- e degli asset può generare un file apk firmato installabile su qualsiasi
- device Android.
+ e degli asset può generare un file firmato installabile su qualsiasi device
+ Android.
 \end_layout
 
 \begin_layout Standard
@@ -568,8 +587,8 @@ Per la generazione delle risorse Android Studio mette a disposizione alcuni
 \begin_layout Standard
 Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
 ione, lo stile e la correzione in realtime del codice scritto effettuando
- anche il controllo sintattico e un basilare confronto semantico seguendo
- i pattern standard della piattaforma.
+ anche il controllo sintattico e un'analisi statica seguendo i pattern standard
+ della piattaforma.
 \end_layout
 
 \begin_layout Subsection
@@ -629,11 +648,11 @@ Per quanto riguarda qualsiasi tipo di progetto di IT (
 Information Technology
 \shape default
 ), specialmente se si tratta di un lavoro da dover svolgere in team, Git
- da la possibilità di mantenere in memoria tutte le versioni del proprio
+ dà la possibilità di mantenere in memoria tutte le versioni del proprio
  lavoro (sia in locale che online).
  Questo permette a più persone di poter accedere alla cronologia del lavoro
  condiviso, avendo anche la possibilità di verificare la presenza di errori
- e di eliminarli tornando ad una versione precedente del progetto.
+ e di eliminarli tornando a una versione precedente del progetto.
  Git sfrutta alcuni algoritmi avanzati per calcolare le differenze riga
  per riga tra i file di diverse versioni così da verificare la presenza
  di errori o conflitti.
@@ -696,9 +715,12 @@ Realm
  un sistema di memorizzazione scritto in C++ che permette l'accesso ai dati
  anche tramite l'utilizzo di linguaggi di programmazione differenti.
  Modifica inoltre il metodo di accesso ai dati salvati non richiedendo query
- esplicite ma semplici richieste in Java utilizzabili direttamente all'interno
- del codice implementato, semplificando di gran lunga l'utilizzo del database
- durante lo sviluppo di qualsiasi applicazione.
+ esplicite integrando molte delle funzionalità dei sistemi basati su l'
+\emph on
+Object-Relational Mapping (ORM)
+\emph default
+, semplificando di gran lunga l'utilizzo del database durante lo sviluppo
+ di qualsiasi applicazione.
 \end_layout
 
 \begin_layout Subsection
@@ -707,14 +729,14 @@ Realm
 
 \begin_layout Standard
 La prima configurazione per l'utilizzo di Realm è rintracciabile nella creazione
- di una semplice dipendenza all'interno dei file di assetto di 
+ di una semplice dipendenza all'interno dei file 
 \emph on
 Gradle
 \emph default
  (tool di Andriod Studio per il compile, il deploy e la gestione delle dipendenz
-e) dove va inserita l'ultima versione disponibile dell'applicativo.
+e) dove va inserita l'ultima versione disponibile della libreria.
  È inoltre necessario inserire una prima inizializzazione all'interno dell'avvio
- dell'applicazione, andando quindi ad estendere la classe 
+ dell'applicazione, andando quindi a estendere la classe 
 \emph on
 Application
 \emph default
@@ -732,71 +754,89 @@ Utente
 \emph on
 User
 \emph default
- come si può vedere nello snippet di codice CODICE dove sono descritte le
- principali variabili che lo compongono, tra cui la chiave primaria denotata
- dalla keyword 
+ come si può vedere nel listato 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Model-Realm"
+
+\end_inset
+
+ dove sono descritte le principali variabili che lo compongono, tra cui
+ la chiave primaria denotata dalla keyword 
 \emph on
 PrimaryKey.
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 import io.realm.RealmObject;
 \end_layout
 
 \begin_layout Plain Layout
-
 import io.realm.annotations.PrimaryKey;
 \end_layout
 
 \begin_layout Plain Layout
-
 public class User extends RealmObject {
 \end_layout
 
 \begin_layout Plain Layout
-
     @PrimaryKey
 \end_layout
 
 \begin_layout Plain Layout
-
     public String uuid;
 \end_layout
 
 \begin_layout Plain Layout
-
     public String firstName;
 \end_layout
 
 \begin_layout Plain Layout
-
     public String lastName;
 \end_layout
 
 \begin_layout Plain Layout
-
     public String email;
 \end_layout
 
 \begin_layout Plain Layout
-
     public User() {
 \end_layout
 
 \begin_layout Plain Layout
-
     }
 \end_layout
 
 \begin_layout Plain Layout
-
 }
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Model-Realm"
+
+\end_inset
+
+Model Realm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -805,70 +845,71 @@ public class User extends RealmObject {
 \end_layout
 
 \begin_layout Standard
-Dalla documentazione ufficiale è anche richiesto un costruttore vuoto, una
- serie di annotazioni per descrivere quali oggetti sono da ignorare durante
- il salvataggio e vi è infine la possibilità di aggiungere funzioni setter/gette
-r.
-\end_layout
-
-\begin_layout Standard
 L'utilizzo di questi modelli è molto semplificato poichè Realm permette
  di creare delle transizioni sui singoli oggetti creati così da poter aggiornare
  la loro versione contenuta all'interno del database, assicurando in ogni
- istante le proprie ACID delle operazioni.
+ istante le proprietà ACID delle operazioni.
  Si può vedere nel seguente listato un esempio di creazione o aggiornamento
  di un oggetto user in base al fatto che sia o non sia già presente all'interno
  della base di dati.
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
-
 User user = new User(Params...);
 \end_layout
 
 \begin_layout Plain Layout
-
 realm.executeTransaction(new Realm.Transaction() {
 \end_layout
 
 \begin_layout Plain Layout
-
       @Override
 \end_layout
 
 \begin_layout Plain Layout
-
       public void execute(Realm realm) {
 \end_layout
 
 \begin_layout Plain Layout
-
           realm.copyToRealmOrUpdate(user);
 \end_layout
 
 \begin_layout Plain Layout
-
       }
 \end_layout
 
 \begin_layout Plain Layout
-
 });
 \end_layout
 
 \begin_layout Plain Layout
-
 realm.close();
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Realm Transaction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -890,33 +931,45 @@ ArrayList
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 RealmResults<User> results = 
 \end_layout
 
 \begin_layout Plain Layout
-
      Realm.getDefaultInstance()
 \end_layout
 
 \begin_layout Plain Layout
-
           .where(User.class)
 \end_layout
 
 \begin_layout Plain Layout
-
           .notNull("email")
 \end_layout
 
 \begin_layout Plain Layout
+.findAll();
+\end_layout
 
-          .findAll();
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Realm Query
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -936,44 +989,54 @@ listener
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
-
 realm.addChangeListener(new RealmChangeListener<Realm>() {
 \end_layout
 
 \begin_layout Plain Layout
-
       @Override
 \end_layout
 
 \begin_layout Plain Layout
-
       public void onChange(Realm element) {
 \end_layout
 
 \begin_layout Plain Layout
-
             // do something...
     
 \end_layout
 
 \begin_layout Plain Layout
-
       }
 \end_layout
 
 \begin_layout Plain Layout
-
 });
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Realm Listener
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1000,7 +1063,7 @@ Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente
 
 \begin_layout Standard
 Il passaggio di informazioni tra i due applicativi avviene tramite chiamate
- internet con protocollo Http protette grazie ad una connessione criptata
+ internet con protocollo Http protette grazie a una connessione criptata
  dal Transport Layer Security (TLS) o dal suo predecessore, Secure Sockets
  Layer (SSL).
  Grazie alla API REST è possibile seguire alcuni pattern delle tecnologie
@@ -1012,31 +1075,7 @@ zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
  Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata
  da Square, che permette di automatizzare le chiamate http sfruttando anche
  una notevole semplificazione del codice utilizzato per programmare.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-SQUARE:OKHTTP
+ SQUARE:OKHTTP
 \end_layout
 
 \begin_layout Subsection
@@ -1063,32 +1102,28 @@ Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching,
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 OkHttpClient client = new OkHttpClient();
 \end_layout
 
 \begin_layout Plain Layout
-
 Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
-
            .url(endpoint)
 \end_layout
 
 \begin_layout Plain Layout
-
            .addHeader("Accept","application/json")
 \end_layout
 
 \begin_layout Plain Layout
-
            .build();
 \end_layout
 
@@ -1097,8 +1132,23 @@ Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
-
 Response response = client.newCall(request).execute();
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network Connection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1258,48 +1308,57 @@ Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
-status collapsed
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-
 public static class UpdateCouponUiEvent<T> {
 \end_layout
 
 \begin_layout Plain Layout
-
 	public T data;
 \end_layout
 
 \begin_layout Plain Layout
-
 	public UpdateCouponUiEvent() {
 \end_layout
 
 \begin_layout Plain Layout
-
 	}
 \end_layout
 
 \begin_layout Plain Layout
-
 	public UpdateCouponUiEvent(T data) {
 \end_layout
 
 \begin_layout Plain Layout
-
 		this.data = data;
 \end_layout
 
 \begin_layout Plain Layout
-
 	}
 \end_layout
 
 \begin_layout Plain Layout
-
 }
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Event Class
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1315,28 +1374,41 @@ EventBus permette di registrare dei metodi eseguendo una subscribe ad un
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
-status collapsed
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-
 @Subscribe
 \end_layout
 
 \begin_layout Plain Layout
-
 public void updateUI(UpdateCouponUiEvent event) {
 \end_layout
 
 \begin_layout Plain Layout
-
 	// update UI with event.data
 \end_layout
 
 \begin_layout Plain Layout
-
 }
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EventBus Subscribe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1357,13 +1429,29 @@ Infine all'interno del AsyncTask, a conclusione del download delle informazioni
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
-status collapsed
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+EventBus.getDefault().post(new UpdateCouponUiEvent());
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EventBus Update
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 
-EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end_layout
 
 \end_inset
@@ -1372,7 +1460,68 @@ EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end_layout
 
 \begin_layout Section
+E-Commerce
+\end_layout
+
+\begin_layout Standard
+Ogni sistema di e-commerce presente sugli applicativi moderni è normalmente
+ basato su alcune delle librerie più diffuse nell'ambito dei pagamenti online.
+ La sicurezza e l'affidabilità che questo tipo di sistemi devono assolutamente
+ garantire rende necessario l'uso di tools testati e specifici per l'utilizzo.
+ Questi sistemi ovviamente devono garantire l'utilizzo sia da parte dell'applica
+tivo di frontend sia da parte del server di backend in modo che l'intero
+ sistema sia consistente.
+\end_layout
+
+\begin_layout Standard
+In questo specifico caso si è scelto di utilizzare il tool Stripe, piattaforma
+ per i pagamenti online disponibile anche come plugin da poter importare
+ all'interno del proprio progetto che permette di avere una gestione dei
+ metodi di pagamento di un singolo utente e di eseguire transizioni monetarie
+ tra un account user ed un account commerciant.
+\end_layout
+
+\begin_layout Subsection
 Stripe
+\end_layout
+
+\begin_layout Standard
+L'implementazione di Stripe richiede un'inizializzazione da parte del sistema
+ di backend della piattaforma, il quale espone poi per ogni account un token
+ identificativo che sarà necessario per le richieste effettuate tramite
+ la piattaforma Stripe.
+\end_layout
+
+\begin_layout Standard
+Ogni token viene inserito all'interno dei dati del singolo account in modo
+ che grazie all'utilizzo del plugin importato come dipendenza all'interno
+ del progetto Android sia possibile richiedere i metodi di pagamento già
+ collegati all'account selezionato e nel caso aggiungerne di nuovi.
+ Questo sistema non espoerrà mai le informazioni sensibili e riservate date
+ dall'utente all'aggiunta di una carta poichè saranno gestite internamente
+ alla libreria e salvate solo sul sistema di e-commerce.
+ Gli unici dati, utili all'identificazione e alla scelta di volta in volta
+ del metodo di pagamento saranno solo le ultime quattro cifre della carta
+ e la data di scadenza.
+\end_layout
+
+\begin_layout Standard
+Nel momento in cui si vorrà eseguire una transizione monetaria tra due account
+ sarà necessario avere il token identificativo dell'utente e quello dell'eserciz
+io su cui si vorrà acquistare, in questo caso le gelateria inserite all'interno
+ del circuito MyGelato.
+ Interverrà poi il sistema di pagamento interno alla piattaforma Stripe
+ per effettuare il passaggio e concludere la transizione in sicurezza e
+ con l'affidabilità di un alto controllo sugli errori.
+\end_layout
+
+\begin_layout Standard
+Oltre alla semplicità di utilizzo di un tool di questo tipo che permette
+ l'inserimento di pagamenti online all'interno dei propri progetti anche
+ senza una specifica esperienza nel campo, è fondamentale la parte di test
+ resa disponibile da Stripe che permette di aggiungere dei metodi di pagamento
+ fittizzi e di eseguire delle transizioni senza che vi sia un reale spostamento
+ monetario ai fine del testing dei proprio applicativi.
 \end_layout
 
 \begin_layout Standard

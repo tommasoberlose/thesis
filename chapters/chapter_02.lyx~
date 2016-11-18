@@ -126,7 +126,7 @@ to il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazion
 
 \begin_layout Standard
 Fatte queste considerazioni si valuta come implementare una navigazione
- ch permetta all'utente la scelta delle principali funzioni disponibili
+ che permetta all'utente la scelta delle principali funzioni disponibili
  all'interno dell'applicazione: 
 \shape italic
 Acquisto/Utilizzo Coupon
@@ -150,10 +150,10 @@ Cambio Tema
 .
  Ogni sezione fa parte dei due principali flussi logici presenti all'interno
  dell'applicativo: quello di marketing digitale che permette l'esplorazione
- da parte dell'utente delle gelaterie in una determinata zona e delle relative
- promozioni; e quello di e-commerce che permette l'acquisto online, la gestione,
- il regalo e l'utilizzo dei coupon gelato resi disponibili dalle gelaterie
- del circuito MyGelato.
+ da parte dell'utente delle gelaterie in una determinata zona geografica
+ e delle relative promozioni; e quello di e-commerce che permette l'acquisto
+ online, la gestione, il regalo e l'utilizzo dei coupon gelato resi disponibili
+ dalle gelaterie del circuito MyGelato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -247,7 +247,7 @@ reference "fig:Risorse-Design"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -255,8 +255,8 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
-	lyxscale 20
-	scale 20
+	lyxscale 40
+	scale 33
 
 \end_inset
 
@@ -343,21 +343,13 @@ Oltre al sistema di marketing la ricerca delle gelaterie è essenziale per
  il sistema di e-commerce poichè la mappa viene utilizzata per la scelta
  da parte dell'utente della gelateria per la quale vuole acquistare un determina
 to coupon.
- 
-\begin_inset VSpace smallskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La ricerca è quindi presente sia nel sistema di navigazione principale dell'appl
-icazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente
- e come si può vedere in figura il mockup della mappa permette di capire
- la necessità di avere un'implementazione semplice e facilmente utilizzabile
- da qualsiasi utente, dove sia possibile passare dalla visualizzazione a
- mappa a quella a lista e dove siano già visibili le principali informazioni
- riguardo a ogni gelateria.
+ La ricerca è quindi presente sia nel sistema di navigazione principale
+ dell'applicazione sia raggiungibile all'interno di ogni flusso logico scelto
+ dall'utente e come si può vedere in figura il mockup della mappa permette
+ di capire la necessità di avere un'implementazione semplice e facilmente
+ utilizzabile da qualsiasi utente, dove sia possibile passare dalla visualizzazi
+one a mappa a quella a lista e dove siano già visibili le principali informazion
+i riguardo a ogni gelateria.
 \end_layout
 
 \begin_layout Standard
@@ -378,7 +370,7 @@ reference "fig:Mockup-Mappa"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -561,7 +553,7 @@ Oltre alle singole gelaterie l'ecosistema MyGelato prevede anche le carte
 \begin_layout Standard
 Infine, come avverrà poi per le gelaterie preferite, ogni utente registrato
  dovrà avere la possibilità di essere notificato di eventuali nuove promozioni
- nel momento stesso in cui diventerano disponibili.
+ nel momento stesso in cui diventeranno disponibili.
 \end_layout
 
 \begin_layout Subsection
@@ -697,8 +689,8 @@ o la vendita.
  il sistema amministrativo gestionale che può inserire anche informazioni
  aggiuntive come la scadenza e la valuta.
  Sono generici per tutto l'ecosistema e sono quindi disponibili per ogni
- gelateria che li rende disponibili anche se all'acquisto sarà necessario
- specificare l'esercizio nel quale si desidereranno poi utilizzare.
+ gelateria facente parte del circuito MyGelato anche se all'acquisto sarà
+ necessario specificare l'esercizio nel quale si desidereranno poi utilizzare.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -763,7 +755,8 @@ Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
 \begin_layout Standard
 Una volta selezionata la gelateria dovranno essere scaricati dal server
  i coupon disponibili e nel frattempo verrà resa disponibile la scelta del
- metodo di pagamento che si appoggerà al sistema di pagamento online Stripe.
+ metodo di pagamento che si appoggerà ad un sistema di pagamento online
+ esterno.
  Si potrà scegliere tramite una lista di metodi di pagamento quello che
  si preferirà usare che sarà successivamente impostato come predefinito.
 \end_layout
