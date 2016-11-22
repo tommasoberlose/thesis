@@ -91,7 +91,11 @@ Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli
  strumenti di sviluppo da utilizzare durante lo svolgimento della tesi:
  come parametri si é tenuto conto di tempistiche di aggiornamento, adeguamento
  alle linee guida del sistema operativo in oggetto, documentazione disponibile
- e modernità delle tecnlogie utilizzate.
+ e modernità delle tecnologie utilizzate.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -101,44 +105,20 @@ Durante la prima fase di sviluppo strutturale si sono valutate le tecnologie
  rimane una forte frammentazione della distribuzione del sistema operativo,
  dovuta ai molteplici vendor.
  
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-ANDROIDSTUDIO:DASHBOARD
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ANDROIDSTUDIO:DASHBOARD"
 
 \end_inset
 
  È quindi da tenere in considerazione la retrocompatibilità delle librerie
  utilizzate, avendo scelto di supportare fino alla versione 16 del SDK di
  Android (versione 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione
- anche su device con schermi e hardware differenti.
+ anche su dispositivi con schermi e hardware differenti.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -161,6 +141,10 @@ Questa tesi si inserisce all'interno del lavoro di creazione della piattaforma
  progettazione, si è potuto scegliere come metodo implementativo l'utilizzo
  della programmazione nativa Android che si basa su Java per la programmazione
  e su XML per la creazione delle risorse.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -172,37 +156,10 @@ one molto professionale e si concentra esclusivamente su una piattaforma
  Il non-nativo, invece, offre diversi vantaggi ascrivibili alla necessità
  di creare applicazioni cross-platform distribuibili su sistemi operativi
  diversi.
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-HTMLIT:PROGNATIVA
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTMLIT:PROG_NATIVA"
 
 \end_inset
 
@@ -210,6 +167,10 @@ status collapsed
  su altre piattaforme, si è preferito sviluppare tramite programmazione
  nativa; potendo quindi sfruttare pienamente l'architettura del sistema
  operativo sottostante e gli strumenti di sviluppo forniti ufficialmente.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -218,41 +179,17 @@ Si è scelto quindi di utilizzare come principale strumento
 Android Studio
 \emph default
 , Integrated Development Environment (IDE) dedicato alla programmazione
- Android distruibuito da JetBrains e Google che è ormai il miglior software
+ Android distribuito da JetBrains e Google che è ormai il miglior software
  per la creazione dei applicazioni su questa piattaforma.
  
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ANDROIDDEVELOPERS:FIRSTAPP"
 
 \end_inset
 
 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-ANDROIDDEVELOPERS:FIRSTAPP
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -265,43 +202,15 @@ Durante lo sviluppo del progetto si è utilizzato come sistema di versioning
 Git
 \series default
 , così da poter mantenere uno storico del lavoro svolto e ottenendo tutti
- i vantaggi del'utilizzo di un Sistema per il Controllo di Versione (
+ i vantaggi dell'utilizzo di un Sistema per il Controllo di Versione (
 \shape italic
 Version Control System - VCS
 \shape default
 ), mentre per il test delle chiamate al backend della piattaforma si è utilizzat
 a la web application Postman 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-POSTMAN
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "POSTMAN"
 
 \end_inset
 
@@ -319,7 +228,18 @@ Le applicazioni Android sono sviluppate utilizzando il linguaggio Java.
  (ora di proprietà di Oracle) orientato agli oggetti a tipizzazione statica,
  specificatamente progettato per essere il più possibile indipendente dalla
  piattaforma di esecuzione.
- //https://it.wikipedia.org/wiki/Java_(linguaggio_di_programmazione)
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKIPEDIA:JAVA"
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -339,6 +259,10 @@ terno dell'ultima distribuzione di Android sono state incluse alcune delle
  Questo si ripercuote su alcune funzionalità come le chiamate http che non
  supportano alcune delle semplificazioni che sono state fatte ad esempio
  nelle connessioni sicure grazie a TLS.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -351,7 +275,7 @@ Main
 AppCompatActivity 
 \emph default
 e dopo aver richiamato il costruttore della propria superclasse esegue la
- creazione dell'internfaccia utente grazie al file di layout 
+ creazione dell'interfaccia utente grazie al file di layout 
 \emph on
 activity_main
 \emph default
@@ -427,10 +351,14 @@ XML (sigla di eXtensible Markup Language) è un metalinguaggio per la definizion
  elementi contenuti in un documento o in un testo.
  All'interno dello sviluppo di applicazioni Android rappresenta il linguaggio
  per la creazione delle risorse: layout, manifest, ecc...
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-L'esempio più ecclatante è l'utilizzo dell'XML per produrre il manifesto
+L'esempio più eclatante è l'utilizzo dell'XML per produrre il manifesto
  dell'applicazione, che ne rappresenta ed espone la struttura principale
  dichiarando ogni singola schermata o servizio presenti specificando anche
  il tema da utilizzare, il nome e alcune opzioni di avvio.
@@ -512,37 +440,9 @@ Android Studio
 
 \begin_layout Standard
 Android Studio 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-WIKIPEDIA:ANDROIDSTUDIO
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKIPEDIA:ANDROIDSTUDIO"
 
 \end_inset
 
@@ -566,21 +466,39 @@ Ogni progetto creato all'interno del software contiene alcuni moduli principali
  che riguardano l'applicazione vera e propria, le librerie incluse e i moduli
  proprietari di Google che permettono l'utilizzo dei suoi servizi principali
  come Firebase e le Google Maps API.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GOOGLE:MAPS_API"
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A livello di build del sistema si trova uno script Gradle che a partire
- da un manifesto, che dichiara la struttura dell'applicazione, i file Java
- contenenti il codice sorgente (inclusi i test) e l'insieme delle risorse
- e degli asset può generare un file firmato installabile su qualsiasi device
- Android.
+A livello di build del sistema si trova uno script Gradle
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GRADLE"
+
+\end_inset
+
+ che a partire da un manifesto, che dichiara la struttura dell'applicazione,
+ i file Java contenenti il codice sorgente (inclusi i test) e l'insieme
+ delle risorse e degli asset può generare un file firmato installabile su
+ qualsiasi dispositivo Android.
 \end_layout
 
 \begin_layout Standard
 Per la generazione delle risorse Android Studio mette a disposizione alcuni
  tool, tra cui alcuni grafici, che permettono l'implementazione e il test
  dell'interfaccia utente senza dover di volta in volta avviare l'applicativo
- su un emulatore, messo a disposizione dal sofwtare stesso, o su un device
+ su un emulatore, messo a disposizione dal sofwtare stesso, o su un dispositivo
  fisico.
 \end_layout
 
@@ -603,37 +521,9 @@ Distributed Version Control Systems - DVCS
 ) utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds
  nel 2005.
  
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-WIKIPEDIA:GIT
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKIPEDIA:GIT"
 
 \end_inset
 
@@ -656,6 +546,10 @@ Information Technology
  Git sfrutta alcuni algoritmi avanzati per calcolare le differenze riga
  per riga tra i file di diverse versioni così da verificare la presenza
  di errori o conflitti.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -669,6 +563,10 @@ branching and merging
  È veloce e scalabile nella gestione di grandi progetti ed è molto utile
  nello sviluppo in team, specialmente se affiancato dal modello GitFlow
  che permette di gestire rami specifici per il developing o per le release.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -691,7 +589,7 @@ La piattaforma Android fornisce diversi metodi e strumenti per salvare i
 \emph on
 Shared Preferences 
 \emph default
-per salvare le scelte dell’utente; mentre per quanto riguarda la memorizzazione
+per salvare le scelte dell'utente; mentre per quanto riguarda la memorizzazione
  persistente di una grossa mole di dati si possono utilizzare strumenti
  come l'
 \emph on
@@ -702,7 +600,18 @@ Internal Storage
 Database SQLite
 \emph default
 .
- //cit http://www.html.it/articoli/la-gestione-dei-database-in-android-1/
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTMLIT:DB"
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -711,6 +620,13 @@ Esistono però anche alternativa agli strumenti standard forniti ufficialmente
 \emph on
 Realm
 \emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "REALM"
+
+\end_inset
+
 : database object-oriented che non incapsula SQLite ma lo sostituisce con
  un sistema di memorizzazione scritto in C++ che permette l'accesso ai dati
  anche tramite l'utilizzo di linguaggi di programmazione differenti.
@@ -740,7 +656,11 @@ e) dove va inserita l'ultima versione disponibile della libreria.
 \emph on
 Application
 \emph default
- esposta dalle libreria dell'sdk di Android.
+ esposta dalle libreria dell'SDK di Android.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -842,6 +762,10 @@ Model Realm
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -915,14 +839,18 @@ Realm Transaction
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
 o del db è forse fondamentale capire come vengono gestite anche le query
- sulla base di dati; Un esempio molto semplice visibile nello snippet di
- codice CODICE mostra come sia possibile richiedere un utente con email
- non nulla all'interno dei dati salvati ottenendoli in un 
+ sulla base di dati; Un esempio molto semplice visibile nel listato CODICE
+ mostra come sia possibile richiedere un utente con email non nulla all'interno
+ dei dati salvati ottenendoli in un 
 \emph on
 ArrayList
 \emph default
@@ -972,6 +900,10 @@ Realm Query
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -1056,19 +988,23 @@ Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente
 ) che mantenga, gestisca e restituisca i dati necessari alle funzioni degli
  applicativi.
  Nello stesso modo la piattaforma MyGelato si basa su un server che mantiene
- ogni informazione riguardante utenti, shop e cards fornendo delle API REST
+ ogni informazione riguardante utenti, shop e card fornendo delle API REST
  che vengono sfruttate dalle applicazioni mobile e web per poter fornire
  i propri servizi.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Il passaggio di informazioni tra i due applicativi avviene tramite chiamate
- internet con protocollo Http protette grazie ad una connessione criptata
+ internet con protocollo Http protette grazie a una connessione criptata
  dal Transport Layer Security (TLS) o dal suo predecessore, Secure Sockets
  Layer (SSL).
  Grazie alla API REST è possibile seguire alcuni pattern delle tecnologie
  che permettono di valutare ogni possibile errore delle connessioni: errori
- nei dati, nell connessione, ecc...
+ nei dati, nella connessione, ecc...
  In Java le chiamate http sono difficilmente gestibili poichè non sono automatiz
 zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
  permettono di lavorare correttamente su tutti i dispositivi Android.
@@ -1085,9 +1021,9 @@ OkHttp
 \begin_layout Standard
 La liberia OkHttp nasce dal fatto che il protocollo http è l'attuale mezzo
  di comunicazione per ogni applicativo moderno.
- Per questo si pone l'obiettivo di semplificarne l'utilizzo in più di una
- tecnologia migliorandone le prestazioni e fornendo allo sviluppatore alcuni
- automatismi comodi durante lo sviluppo e la programmazione.
+ Per questo si pone l'obiettivo di semplificarne l'utilizzo e di migliorare
+ le prestazioni delle tecnologie che lo sfruttano fornendo allo sviluppatore
+ alcuni automatismi comodi durante la programmazione e l'implementazione.
 \end_layout
 
 \begin_layout Standard
@@ -1095,7 +1031,7 @@ Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching,
  la riconnessione, l'utilizzo di protocolli sicuri come TLS, l'utilizzo
  di indirizzi IP multipli ed è molto semplice da integrare e utilizzare
  all'interno del proprio software.
- Grazie ad un'interfaccia molto semplice permette di automatizzare le chiamate
+ Grazie a un'interfaccia molto semplice permette di automatizzare le chiamate
  http utilizzando dei Builder che lasciano specificare solo i parametri
  necessari e restituiscono un unico oggetto da cui si ottiene la risposta,
  positiva o negativa, della richiesta.
@@ -1182,10 +1118,15 @@ a modificando ogni oggetto in base alle specifiche richieste senza poter
  sfruttare veri e propri automatismi.
  Una forte limitazione del sistema operativo è dovuta, per esempio, al fatto
  che l'unico thread che ha il permesso di accedere e di modificare l'interfaccia
- utente è il Main Thread; questo complica l'interazione con eventuali sistemi
- multithreading anche se, ovviamente, fa parte delle specifiche di sistema
- utili a limitare i conflitti sull'accesso alle risorse condivise (in questo
- caso le view).
+ utente è il Main Thread, cioè il processo principale sul quale viene avviata
+ l'applicazione; questo complica l'interazione con sistemi multithreading
+ anche se, ovviamente, fa parte delle specifiche di sistema utili a limitare
+ i problemi durante l'accesso alle risorse condivise (in questo caso le
+ view).
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1194,7 +1135,7 @@ Questo problema necessita di ampia valutazione durante lo sviluppo e anche
 e in errori di inconsistenza tra le view a cui il programma voleva accedere
  e le view realmente visualizzate al momento.
  Nel caso si utilizzino script asincroni è molto facile tentare di accedere
- ad elementi, o anche intere schermate, non più presenti a video; per questo
+ a elementi, o anche intere schermate, non più presenti a video; per questo
  motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot
  
 \begin_inset ERT
@@ -1243,7 +1184,7 @@ EventBus è una libreria open-source per Android che utilizza il pattern
  publish/subscribe per far dialogare tutti i componenti di un'applicazione.
  Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce
  in maniera centralizzata monitorando le performance e gestendo gli errori
- che potrebbero essere sollevati da uno sviluppo multithreading.
+ che potrebbero essere sollevati da uno sviluppo multithread.
 \begin_inset ERT
 status collapsed
 
@@ -1279,6 +1220,10 @@ status collapsed
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1287,23 +1232,42 @@ I principali benefici che si riscontrano tramite l'utilizzo di questa libreria
  tra mittenti e riceventi degli eventi, miglioramenti nelle perfomance,
  facile integrazione dei metodi da utilizzare ed infine anche caratteristiche
  avanzate come priorità e indirizzamento a thread specifici.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Durante lo svolgimento di questa tesi si è definita una struttura abbastanza
- comune formata da: - AsyncTask, oggetto che permette di elaborare una serie
- di informazioni in background, utilizzato per eseguire il download delle
- informazioni dal server; - View specifica dell'activity con determinati
- componenti da aggiornare in base allo stato dell'applicazione; - Metodo
- updateUI() che preso in gresso i dati scaricati doveva aggiornare le view
- rispetto allo stato.
+ comune formata da: 
+\end_layout
+
+\begin_layout Itemize
+AsyncTask, oggetto che permette di elaborare una serie di informazioni in
+ background, utilizzato per eseguire il download delle informazioni dal
+ server; 
+\end_layout
+
+\begin_layout Itemize
+View specifica dell'activity con determinati componenti da aggiornare in
+ base allo stato dell'applicazione; 
+\end_layout
+
+\begin_layout Itemize
+Metodo 
+\emph on
+updateUI()
+\emph default
+ che presi in ingresso i dati scaricati doveva aggiornare le view rispetto
+ allo stato.
 \end_layout
 
 \begin_layout Standard
 Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare
  il lavoro di thread in background senza limitare l'utente nell'attesa di
  un determinato evento.
- Si procedeva quindi crendo un evento specifico per l'interazione da dover
+ Si procedeva quindi creando un evento specifico per l'interazione da dover
  gestire di cui qui viene riportato un esempio:
 \end_layout
 
@@ -1314,14 +1278,42 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+public static class UpdateCouponUiEvent<T> {
+\end_layout
 
+\begin_layout Plain Layout
+	public T data;
+\end_layout
+
+\begin_layout Plain Layout
+	public UpdateCouponUiEvent() {
+\end_layout
+
+\begin_layout Plain Layout
+	}
+\end_layout
+
+\begin_layout Plain Layout
+	public UpdateCouponUiEvent(T data) {
+\end_layout
+
+\begin_layout Plain Layout
+		this.data = data;
+\end_layout
+
+\begin_layout Plain Layout
+	}
+\end_layout
+
+\begin_layout Plain Layout
+}
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Event Class
 \end_layout
 
 \end_inset
@@ -1336,90 +1328,61 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-public static class UpdateCouponUiEvent<T> {
-\end_layout
-
-\begin_layout Plain Layout
-
-	public T data;
-\end_layout
-
-\begin_layout Plain Layout
-
-	public UpdateCouponUiEvent() {
-\end_layout
-
-\begin_layout Plain Layout
-
-	}
-\end_layout
-
-\begin_layout Plain Layout
-
-	public UpdateCouponUiEvent(T data) {
-\end_layout
-
-\begin_layout Plain Layout
-
-		this.data = data;
-\end_layout
-
-\begin_layout Plain Layout
-
-	}
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
+\begin_inset VSpace bigskip
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-EventBus permette di registrare dei metodi eseguendo una subscribe ad un
+EventBus permette di registrare dei metodi eseguendo una subscribe a un
  determinato evento: ogni qual volta un evento di quel tipo viene sollevato,
  il metodo viene eseguito.
  La subscribe deve essere definita nel codice nel seguente modo:
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 @Subscribe
 \end_layout
 
 \begin_layout Plain Layout
-
 public void updateUI(UpdateCouponUiEvent event) {
 \end_layout
 
 \begin_layout Plain Layout
-
 	// update UI with event.data
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EventBus Subscribe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -1433,18 +1396,34 @@ Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei
 
 \begin_layout Standard
 Infine all'interno del AsyncTask, a conclusione del download delle informazioni
- e dell'aggiornamento dello stato, era sollevato un evento grazie ad una
+ e dell'aggiornamento dello stato, era sollevato un evento grazie a una
  publish:
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
 EventBus.getDefault().post(new UpdateCouponUiEvent());
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EventBus Update
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1460,10 +1439,14 @@ E-Commerce
 Ogni sistema di e-commerce presente sugli applicativi moderni è normalmente
  basato su alcune delle librerie più diffuse nell'ambito dei pagamenti online.
  La sicurezza e l'affidabilità che questo tipo di sistemi devono assolutamente
- garantire rende necessario l'uso di tools testati e specifici per l'utilizzo.
+ garantire rende necessario l'uso di tool testati e specifici per l'utilizzo.
  Questi sistemi ovviamente devono garantire l'utilizzo sia da parte dell'applica
 tivo di frontend sia da parte del server di backend in modo che l'intero
  sistema sia consistente.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1471,7 +1454,7 @@ In questo specifico caso si è scelto di utilizzare il tool Stripe, piattaforma
  per i pagamenti online disponibile anche come plugin da poter importare
  all'interno del proprio progetto che permette di avere una gestione dei
  metodi di pagamento di un singolo utente e di eseguire transizioni monetarie
- tra un account user ed un account commerciant.
+ tra un account user e un account commerciante.
 \end_layout
 
 \begin_layout Subsection
@@ -1483,19 +1466,20 @@ L'implementazione di Stripe richiede un'inizializzazione da parte del sistema
  di backend della piattaforma, il quale espone poi per ogni account un token
  identificativo che sarà necessario per le richieste effettuate tramite
  la piattaforma Stripe.
-\end_layout
-
-\begin_layout Standard
-Ogni token viene inserito all'interno dei dati del singolo account in modo
+ Ogni token viene inserito all'interno dei dati del singolo account in modo
  che grazie all'utilizzo del plugin importato come dipendenza all'interno
  del progetto Android sia possibile richiedere i metodi di pagamento già
  collegati all'account selezionato e nel caso aggiungerne di nuovi.
- Questo sistema non espoerrà mai le informazioni sensibili e riservate date
+ Questo sistema non esporrà mai le informazioni sensibili e riservate date
  dall'utente all'aggiunta di una carta poichè saranno gestite internamente
  alla libreria e salvate solo sul sistema di e-commerce.
  Gli unici dati, utili all'identificazione e alla scelta di volta in volta
  del metodo di pagamento saranno solo le ultime quattro cifre della carta
  e la data di scadenza.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1506,6 +1490,10 @@ io su cui si vorrà acquistare, in questo caso le gelateria inserite all'interno
  Interverrà poi il sistema di pagamento interno alla piattaforma Stripe
  per effettuare il passaggio e concludere la transizione in sicurezza e
  con l'affidabilità di un alto controllo sugli errori.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1513,7 +1501,7 @@ Oltre alla semplicità di utilizzo di un tool di questo tipo che permette
  l'inserimento di pagamenti online all'interno dei propri progetti anche
  senza una specifica esperienza nel campo, è fondamentale la parte di test
  resa disponibile da Stripe che permette di aggiungere dei metodi di pagamento
- fittizzi e di eseguire delle transizioni senza che vi sia un reale spostamento
+ non reali e di eseguire delle transizioni senza che vi sia un reale spostamento
  monetario ai fine del testing dei proprio applicativi.
 \end_layout
 

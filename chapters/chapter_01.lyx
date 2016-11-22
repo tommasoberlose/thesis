@@ -115,7 +115,10 @@ Application Economy
  lasciano influenzare hanno portato a un sostanziale sconvolgimento del
  sistema di marketing e delle strategie commerciali anche di aziende multinazion
 ali, spostando l'interesse sulla ricerca nel campo delle applicazioni mobile.
- Proprio in questo contesto è necessario inquadrare le motivazioni che hanno
+\end_layout
+
+\begin_layout Standard
+Proprio in questo contesto è necessario inquadrare le motivazioni che hanno
  portato Carpigiani, azienda leader nel settore della produzione di macchine
  per il gelato, a dare vita all'ecosistema MyGelato, di cui questa tesi
  sviluppa solo una componente, valutando sia le finalità in ambito di marketing
@@ -128,15 +131,18 @@ Application Economy
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/The-App-Economy.jpg
+	filename /home/tommaso/Documents/Tesi/thesis/images/app_economy.png
+	lyxscale 40
 	width 100line%
+	BoundingBox 0bp 0bp 1520bp 655bp
 
 \end_inset
 
@@ -144,19 +150,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Application Economy
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:appEconomy1"
 
 \end_inset
 
- 
+ Application Economy
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -176,6 +181,10 @@ Era dell'Informazione
  a partire dagli anni Novanta, ha portato la connessione globale a Internet
  ad assumere un ruolo essenziale in ogni aspetto della società moderna e
  della nostra vita.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -204,13 +213,6 @@ Secondo il giornalista Paul Mason, è stata la dottrina economica degli ultimi
  i propri investimenti sulla diversificazione e sulle nuove strategie di
  vendita.
  
-\begin_inset CommandInset citation
-LatexCommand cite
-key "POSTCAPITALISMO"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -234,7 +236,7 @@ marketing digitale
 , fortemente spinti dalle tecnologie e dalla nuova possibilità di accedere
  a una risorsa comune (Internet) da parte della maggior parte della persone
  anche di cultura, età e ambienti sociali diversi.
- L'utente medio, per esempio, viene ormai maggiormente raggiunto e conivolto
+ L'utente medio, per esempio, viene ormai maggiormente raggiunto e coinvolto
  tramite email pubblicitarie o advertising online rispetto a meccanismi
  tradizionali ormai meno incisivi di marketing non digitale.
 \end_layout
@@ -248,7 +250,7 @@ marketing digitale
 
 \begin_layout Standard
 Legato alla diffusione sempre crescente di smartphone, che sono di fatto
- diventati l'accesso principale degl utenti a Internet, nasce quindi l'
+ diventati l'accesso principale degli utenti a Internet, nasce quindi l'
 \shape italic
 Application Economy
 \shape default
@@ -258,6 +260,10 @@ Application Economy
  azioni online in mobilità e con semplicità; potendo confidare, nella maggior
  parte dei casi, in un'alta sicurezza della propria connessione e nello
  scambio dei dati.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -288,6 +294,10 @@ Tutti questi concetti sono ormai più che affermati in ambiti come la vendita
 MyGelato
 \emph default
 .
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -345,6 +355,10 @@ ta gelateria.
  applicazione con un account specifico per il gelatiere che permetterà di
  validare i coupon utilizzati e ricevere il proprio compenso tramite il
  sistema di pagamento online.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -356,38 +370,6 @@ Questo sistema di e-commerce sposta la vendita di un prodotto molto semplice
  Questo sistema, per quanto diffuso in altri mercati come il reselling online
  di oggettistica è fortemente innovativo in questo campo e rende l'ecosistema
  MyGelato uno dei primi nel suo settore.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement bh
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/mygelato.png
-	scale 40
-
-\end_inset
-
- 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Logo MyGelato
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

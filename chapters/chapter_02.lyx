@@ -106,7 +106,7 @@ MyGelato
 \end_layout
 
 \begin_layout Standard
-Essendo l'applicazione Android solo una compenente di un più ampio progetto
+Essendo l'applicazione Android solo una componente di un più ampio progetto
  è essenziale fin dalla prima fase di sviluppo valutare correttamente e
  nella loro completezza tutte le specifiche date dall'azienda che ha commissiona
 to il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazione
@@ -246,17 +246,19 @@ reference "fig:Risorse-Design"
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
-placement bh
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
 	lyxscale 40
-	scale 33
+	scale 25
 
 \end_inset
 
@@ -370,16 +372,17 @@ reference "fig:Mockup-Mappa"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement bh
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
 	lyxscale 60
-	scale 30
+	scale 25
 
 \end_inset
 
@@ -431,9 +434,9 @@ La piattaforma MyGelato per poter offrire alcune funzionalità personalizzate
 Sarà necessario poter accedere direttamente dalla navigazione principale
  alle informazioni riguardanti il proprio stato di accesso alla piattaforma,
  verificando se si è già autenticati o meno.
- Le funzionalità che devono essere più facilmente accessibili sono quendi
+ Le funzionalità che devono essere più facilmente accessibili sono quindi
  quelle di login e di logout, in modo che l'utente in pochi passaggi possa
- accedere o rimuovere i propri dati dal device utilizzato.
+ accedere o rimuovere i propri dati dal dispositivo utilizzato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -571,7 +574,7 @@ La gestione delle proprie gelaterie preferite è uno degli elementi presenti
 Questo dà modo all'utente di poter accedere in ogni momento, specialmente
  in mobilità, alle informazioni che più gli interessano di ogni gelateria:
  indirizzo, recapito telefonico ed eventuali promozioni.
- La ricerca in questo caso è molto semplicificata poichè viene presentata
+ La ricerca in questo caso è molto semplificata poichè viene presentata
  una sezione a parte con una lista degli shops preferiti, senza dover obbligare
  l'utente a effettuare una nuova ricerca all'interno della mappa.
  Il salvataggio all'interno dei preferiti avviene direttamente all'interno
@@ -588,7 +591,7 @@ Questa funzionalità è pensata principalmente per fidelizzare il consumatore:
  ogni utente avendo la possibilità di salvare una gelateria ha anche la
  possibilità di ottenere velocemente informazioni su nuove promozioni, trovare
  velocemente i contatti dell'esercizio come se li avesse salvati in rubrica
- e valuatare ogni volta la distanza tra se e lo shop.
+ e valutare ogni volta la distanza tra se e lo shop.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -612,8 +615,8 @@ Il geofencing permette di ricevere una notifica ogni qualvolta l'utente
  delle proprie gelaterie ha pubblicato una nuova promozione tramite l'aggiunta
  una carta sul sistema MyGelato.
  L'utente così rimane informato costantemente delle ultime promozioni disponibil
-i e il propietario di una gelateria ha la certezza di effettuare pubblicità
- diretta tra se e i suoi clienti più affezzionati.
+i e il proprietario di una gelateria ha la certezza di effettuare pubblicità
+ diretta tra se e i suoi clienti più affezionati.
 \end_layout
 
 \begin_layout Section
@@ -637,7 +640,7 @@ I
 \emph on
 Coupon
 \emph default
- gelato sono buoni acquisto che si possono acquistare dirattemente tramite
+ gelato sono buoni acquisto che si possono acquistare direttamente tramite
  l'applicazione e permettono a chiunque ne sia virtualmente in possesso
  di utilizzarli nelle gelaterie che li hanno rilasciati tramite validazione.
  L'acquisto dei buoni deve poter essere fatto in qualsiasi momento utilizzando
@@ -743,7 +746,7 @@ Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
  e la lista per la ricerca degli shop già utilizzata all'interno di altre
  funzionalità.
  In questo caso però verranno visualizzati solo le gelaterie che permettono
- l'acquisto di coupon e quando verranno selezionati i marker non si otterenno
+ l'acquisto di coupon e quando verranno selezionati i marker non si otterranno
  tutte le informazioni sull'esercizio ma sarà presente un'icona per selezionare
  lo shop.
 \begin_inset VSpace bigskip
@@ -791,9 +794,9 @@ Product Nr.
 \end_layout
 
 \begin_layout Standard
-L'uso di un codice inviabile facilmente come teso permette di sfrutare altri
- applicativi presenti sul device dell'utente per la condivisione tra persone
- differenti.
+L'uso di un codice inviabile facilmente come teso permette di sfruttare
+ altri applicativi presenti sul dispositivo dell'utente per la condivisione
+ tra persone differenti.
  Scegliendo il coupon da regalare si dovrà quindi chiedere all'utente tramite
  quale canale di comunicazione preferisce inviare il codice PNR per poi
  inserire il codice in un testo promozionale legato ad un link di reindirizzamen
@@ -803,10 +806,10 @@ to a una pagina web della piattaforma MyGelato.
 \begin_layout Standard
 L'inserimento del link a una pagina web della piattaforma accessibile online
  da qualsiasi dispositivo è una funzionalità di grande potenza: nel caso
- in cui la pagina web sia raggiunta da un device che ha installata sopra
- l'applicazione MyGelato aprirà direttamente l'applicativo stesso gestendo
- internamente il codice presente; altrimenti verrà presentata una pagina
- web che suggerisce all'utente di scaricare l'applicazione dai principali
+ in cui la pagina web sia raggiunta da un dispositivo che ha installato
+ sopra l'applicazione MyGelato aprirà direttamente l'applicativo stesso
+ gestendo internamente il codice presente; altrimenti verrà presentata una
+ pagina web che suggerisce all'utente di scaricare l'applicazione dai principali
  store mobile.
 \begin_inset VSpace bigskip
 \end_inset
@@ -840,7 +843,7 @@ L'ultimo passo all'interno del flusso logico di questo sistema di e-commerce
  bene materiale direttamente in sede all'esercizio che ha venduto il buono.
  Per semplificare l'utilizzo della piattaforma MyGelato ci si è rifatti
  nuovamente al fatto che gli smartphone siano diventati dei beni di uso
- comune e che quindi anche i propetari delle gelaterie possano utilizzare
+ comune e che quindi anche i proprietari delle gelaterie possano utilizzare
  l'applicazione MyGelato come mezzo per la validazione dei coupon.
 \begin_inset VSpace bigskip
 \end_inset
@@ -862,7 +865,7 @@ Allo stesso modo che per le funzionalità di condivisone e riscatto si è
 Si è quindi proposto di generare un QR Code a partire dal codice PNR di
  ogni coupon, raggiungibile direttamente cliccando sul buono presente nella
  lista di gestione interna all'applicazione.
- Il consumatore dovrà quindi mostrare il QR Code al propietario dell'esercizio
+ Il consumatore dovrà quindi mostrare il QR Code al proprietario dell'esercizio
  che, utilizzando la stessa applicazione MyGelato con un account di tipo
  
 \emph on

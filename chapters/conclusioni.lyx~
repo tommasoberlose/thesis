@@ -102,15 +102,14 @@ i sul mercato.
  di programmazione mobile.
  Per poter ottenere un risultato ottimo in questo senso si sono studiate
  tutte le molteplici possibilità disponibili in ambito open source sia per
- quanto riguarda i pattern strutturali sia per le librerie incluse all'interno
- del progetto.
+ quanto riguarda i pattern strutturali sia per le librerie utilizzate.
 \end_layout
 
 \begin_layout Standard
 Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
  sia in termini di funzionalità e-commerce sono state pienamente soddisfatte
  rendendo già disponibile per l'utente finale un prodotto performante e
- in perfetta sinergia rispetto alle altre componenti della piattaforma.
+ in perfetta sinergia con le altre componenti della piattaforma.
  Sarà ora di fondamentale importanza considerare una buona campagna di marketing
  affiancata alla corretta comunicazione con i gelatieri in modo da garantire
  al progetto una diffusione capillare nel territorio e aprire la strada
@@ -118,12 +117,12 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
 \end_layout
 
 \begin_layout Standard
-L'elaborato, per come è stato sviluppato con architettura modulare, permette
- l'implementazione di nuove funzionalità con il minimo sforzo, senza dover
- riprogettare l’attuale struttura dell'applicazione e si pone ad esempio
- per progetti simili che abbiano specifiche progettuali simili anche solo
- parzialmente potendo estrapolare da ogni flusso logico le scelte implementative
- fatte.
+L'elaborato, grazie all'architettura modulare con cui è stato sviluppato,
+ permette l'implementazione di nuove funzionalità con il minimo sforzo,
+ senza dover riprogettare l’attuale struttura dell'applicazione e si pone
+ ad esempio per progetti simili che abbiano specifiche progettuali simili
+ anche solo parzialmente potendo estrapolare da ogni flusso logico le scelte
+ implementative fatte.
 \end_layout
 
 \end_body

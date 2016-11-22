@@ -7,7 +7,7 @@
 \textclass extreport
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language italian
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -117,12 +117,12 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
 \end_layout
 
 \begin_layout Standard
-L'elaborato, per come è stato sviluppato con architettura modulare, permette
- l'implementazione di nuove funzionalità con il minimo sforzo, senza dover
- riprogettare l’attuale struttura dell'applicazione e si pone ad esempio
- per progetti simili che abbiano specifiche progettuali simili anche solo
- parzialmente potendo estrapolare da ogni flusso logico le scelte implementative
- fatte.
+L'elaborato, grazie all'architettura modulare con cui è stato sviluppato,
+ permette l'implementazione di nuove funzionalità con il minimo sforzo,
+ senza dover riprogettare l’attuale struttura dell'applicazione e si pone
+ ad esempio per progetti simili che abbiano specifiche progettuali simili
+ anche solo parzialmente potendo estrapolare da ogni flusso logico le scelte
+ implementative fatte.
 \end_layout
 
 \end_body

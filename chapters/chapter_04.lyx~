@@ -87,7 +87,7 @@ Implementazione
 \end_layout
 
 \begin_layout Standard
-A seguito della fase di progettazione si è scelto di suddivedere lo sviluppo
+A seguito della fase di progettazione si è scelto di suddividere lo sviluppo
  dell'applicazione in alcune fasi principali che seguono logicamente i workflow
  presentati nel dettaglio all'interno del capitolo 2.
  Questo ha permesso di dedicare maggiore attenzione a ogni componente fino
@@ -125,10 +125,17 @@ NavigationDrawer
 RecyclerView
 \shape default
 .
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ANDROID:NAV_PATTERN"
+
+\end_inset
+
  Il menù iniziale è servito a separare anche concettualmente le principali
  funzioni da dover sviluppare così da poter procedere successivamente con
- l'impletazione di ogni componente potendovi accedere anche se altre parti
- dell'applicazione non erano ancora disponibili.
+ l'implementazione di ogni componente potendovi accedere anche se altre
+ parti dell'applicazione non erano ancora disponibili.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -185,7 +192,7 @@ reference "fig:Temi"
 \end_layout
 
 \begin_layout Standard
-Per incapsulare tutte le funzioni rigurdanti i temi all'interno di un unico
+Per incapsulare tutte le funzioni riguardanti i temi all'interno di un unico
  oggetto si è creata la classe 
 \emph on
 Flavors 
@@ -207,44 +214,52 @@ azione.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public class Flavors {
 \end_layout
 
 \begin_layout Plain Layout
+
     Context mContext;
 \end_layout
 
 \begin_layout Plain Layout
+
     ...
 \end_layout
 
 \begin_layout Plain Layout
+
     public int getPrimaryColor();
 \end_layout
 
 \begin_layout Plain Layout
+
     public int getStatusBarColor();
 \end_layout
 
 \begin_layout Plain Layout
+
     public int getPrimaryTextColor();
 \end_layout
 
 \begin_layout Plain Layout
+
     ...
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -256,13 +271,12 @@ Classe Flavors
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -287,28 +301,32 @@ updateFlavor()
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public interface FlavorObject {
 \end_layout
 
 \begin_layout Plain Layout
+
     public void updateFlavor(Flavors flavor);
 \end_layout
 
 \begin_layout Plain Layout
+
     public void updateFlavor(Context context, String taste);
 \end_layout
 
 \begin_layout Plain Layout
+
 } 
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -320,13 +338,12 @@ FlavorObject
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -373,32 +390,37 @@ layout
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 <com.carpigiani.mygelato.custom.CustomTextView             
 \end_layout
 
 \begin_layout Plain Layout
+
 	android:layout_width="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
 	android:layout_height="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
 	...
 \end_layout
 
 \begin_layout Plain Layout
+
 	app:typefaceAsset="fonts/Pacifico.ttf"/>
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -410,13 +432,12 @@ CustomTextView
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -442,40 +463,47 @@ Flavors
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public class FlavorActivity extends AppCompatActivity {
 \end_layout
 
 \begin_layout Plain Layout
+
     private Flavors flavors;
 \end_layout
 
 \begin_layout Plain Layout
+
     ...
 \end_layout
 
 \begin_layout Plain Layout
+
     @Override     
 \end_layout
 
 \begin_layout Plain Layout
+
 	public void onResume() {
 \end_layout
 
 \begin_layout Plain Layout
+
         super.onResume();
 \end_layout
 
 \begin_layout Plain Layout
+
         applyFlavor();
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
@@ -484,30 +512,37 @@ public class FlavorActivity extends AppCompatActivity {
 \end_layout
 
 \begin_layout Plain Layout
+
     public void applyFlavor() {
 \end_layout
 
 \begin_layout Plain Layout
+
         this.flavors = new Flavors(this);
 \end_layout
 
 \begin_layout Plain Layout
+
         updateBar();
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
 \begin_layout Plain Layout
+
     ...
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -519,13 +554,12 @@ FlavorActivity
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -565,6 +599,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/temi.jpg
 	lyxscale 20
@@ -650,6 +685,13 @@ Per la gestione della risposta di una richiesta al server la possibilità
  di utilizzare i 
 \emph on
 Generics 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKIPEDIA:GENERICS"
+
+\end_inset
+
+ 
 \emph default
 durante la dichiarazione del tipo delle variabili ha permesso di utilizzare
  lo stesso oggetto Result anche con risultati di tipo differente, come per
@@ -705,6 +747,19 @@ public class Result<T, E> {
 }
 \end_layout
 
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Result
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -722,8 +777,15 @@ L'utilizzo di un middleware così sviluppato per ogni chiamata al backend
 \emph on
 Unauthorized
 \emph default
-) in caso di utente non autorizzato; situazione che invoca il logout dell'attual
-e utente dall'applicazione.
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTTPSTATUS"
+
+\end_inset
+
+ in caso di utente non autorizzato; situazione che invoca il logout dell'attuale
+ utente dall'applicazione.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -752,7 +814,14 @@ Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
 User
 \emph default
 , che racchiude tutte le informazioni legate ad un account (mostrate nel
- codice CODICE per come sono implementate all'interno del modello).
+ codice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:User-Model"
+
+\end_inset
+
+ per come sono implementate all'interno del modello).
  Utilizzando Realm è stato possibile definire una tabella nel database che
  descrive gli account collegati, mantiene in locale sul dispositivo tutti
  i dati inseriti e mette a disposizione un insieme di funzioni utili per
@@ -821,6 +890,25 @@ public String provider;
 \begin_layout Plain Layout
 
 public boolean shop;
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:User-Model"
+
+\end_inset
+
+User Model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -912,8 +1000,8 @@ Nel momento in cui l'utente esegue il login vengono aggiornate sul dispositivo
 helper
 \emph default
  che incapsula tutte le operazioni per far si che nessun dato sensibile
- rimanga salvato in locale a seguito della disconessione dell'account e
- non vi siano casi di incosistenza tra le informazioni presenti in locale
+ rimanga salvato in locale a seguito della disconnessione dell'account e
+ non vi siano casi di inconsistenza tra le informazioni presenti in locale
  e sul server.
 \begin_inset VSpace bigskip
 \end_inset
@@ -945,6 +1033,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/user.png
+	lyxscale 20
+	scale 6
+
+\end_inset
+
 
 \end_layout
 
@@ -980,7 +1076,7 @@ Shop
 \end_layout
 
 \begin_layout Standard
-Ogni gelateria inserita all'interno del circutio MyGelato è formalizzata
+Ogni gelateria inserita all'interno del circuito MyGelato è formalizzata
  concettualmente come un oggetto 
 \emph on
 Shop
@@ -1048,6 +1144,19 @@ public boolean canBurnCoupons = false;
 \begin_layout Plain Layout
 
 public boolean myGelatoShop = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Shop Model
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1122,15 +1231,58 @@ Map
 \end_layout
 
 \begin_layout Standard
-Come primo punto è essenziale valutare l'inizializzazione della schermata,
- considerando che in caso di qualsiasi problema di rete si deve comunque
+Come primo punto è essenziale valutare l'inizializzazione della schermata
+ (visibile in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Struttura-Mappa"
+
+\end_inset
+
+), considerando che in caso di qualsiasi problema di rete si deve comunque
  presentare all'utente la struttura cardine anche senza nessun dato visualizzato.
  Il layout è quindi formato da un header all'interno dei quali vengono innestati
  i due tab per poter eseguire lo switch tra la visualizzazione a mappa e
- quella a lista, mentra il corpo è composto da una view che mostra rispettivamen
+ quella a lista, mentre il corpo è composto da una view che mostra rispettivamen
 te una mappa, inserita grazie all'utilizzo delle API di Google Maps, e una
  lista, dove è stata nuovamente riutilizzata una RecyclerView unita a un
  custom Adapter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Struttura-Mappa"
+
+\end_inset
+
+Struttura Mappa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1365,11 +1517,45 @@ Nel caso in cui si arrivi a questa sezione durante l'acquisto di un coupon,
 Concluso quest'ultimo passaggio, come già detto, si sono susseguiti alcuni
  test prestazionali sull'interfaccia che hanno portato a ottenere alta fluidità
  e reattività anche su dispositivi meno prestanti.
- Si è infine aggiunto il collegamento differeneziato all'interno della navigazio
-ne principale dell'applicazione.
+ Si è infine aggiunto il collegamento differenziato all'interno della navigazion
+e principale dell'applicazione.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/mappa_con_gelati.png
+	lyxscale 20
+	scale 8
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mappa"
+
+\end_inset
+
+Ricerca
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1475,16 +1661,17 @@ Card
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 @PrimaryKey
 \end_layout
 
 \begin_layout Plain Layout
+
 public String uuid;
 \end_layout
 
@@ -1493,46 +1680,57 @@ public String uuid;
 \end_layout
 
 \begin_layout Plain Layout
+
 public String name;
 \end_layout
 
 \begin_layout Plain Layout
+
 public String title;
 \end_layout
 
 \begin_layout Plain Layout
+
 public String imageUrl; 
 \end_layout
 
 \begin_layout Plain Layout
+
 public String shopUUID; 
 \end_layout
 
 \begin_layout Plain Layout
+
 public String cardDescription; 
 \end_layout
 
 \begin_layout Plain Layout
+
 public String link;
 \end_layout
 
 \begin_layout Plain Layout
+
 public String phone; 
 \end_layout
 
 \begin_layout Plain Layout
+
 public Long start; 
 \end_layout
 
 \begin_layout Plain Layout
+
 public Long end;
 \end_layout
 
 \begin_layout Plain Layout
+
 ...
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1541,10 +1739,6 @@ Modello Card
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1571,7 +1765,7 @@ ViewPager
  permettere di leggere la descrizione ed eventualmente ottenere nuove informazio
 ni tramite il link proposto.
  Nel caso vi sia la presenza di un video il tap sull'immagine porterà alla
- visualizzazione online della risorsa resa disponibile tramite url.
+ visualizzazione online della risorsa resa disponibile tramite URL.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1582,8 +1776,8 @@ ni tramite il link proposto.
 Il download delle informazioni deve avvenire all'apertura della schermata
  grazie a una richiesta alle API in background e tutti i dati scaricati
  vengono salvati in locale così da essere disponibili anche offline e nel
- caso di modifiche saranno aggiornati eliminando le promozioni non più disponbil
-i perchè, per esempio, scadute.
+ caso di modifiche saranno aggiornati eliminando le promozioni non più disponibi
+li perchè, per esempio, scadute.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1597,8 +1791,46 @@ Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
 gine del menù che rimanda alla sezione del mastro gelatiere.
  Inoltre nel caso di un utente con autenticazione effettuata verrà registrato
  il dispositivo sul server per la ricezione di una notifica push ogni volta
- che sarano pubblicate nuove promozioni, funzionalità spiegata nel dettaglio
+ che saranno pubblicate nuove promozioni, funzionalità spiegata nel dettaglio
  nel capitolo successivo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/card.png
+	lyxscale 20
+	scale 12
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:carte"
+
+\end_inset
+
+Card
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1684,7 +1916,7 @@ Firebase
  Per far dialogare in maniera bidirezionale l'applicativo e il server nel
  momento in cui un utente esegue il login all'applicazione viene attivato
  Firebase richiedendo al server un token che verrà poi passato al sistema
- di gestione delle notifiche, incluso al'interno del codice come libreria,
+ di gestione delle notifiche, incluso all'interno del codice come libreria,
  che si metterà in ascolto di eventuali messaggi.
  Viene presentato per semplificazione solo l'inizializzazione parziale del
  sistema di ascolto di notifiche push e si rimanda alla documentazione completa
@@ -1692,28 +1924,32 @@ Firebase
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 FirebaseApp.initializeApp(
 \end_layout
 
 \begin_layout Plain Layout
+
     this,
 \end_layout
 
 \begin_layout Plain Layout
+
     FirebaseOptions.fromResource(this)
 \end_layout
 
 \begin_layout Plain Layout
+
 );
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1722,10 +1958,6 @@ Firebase
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1743,7 +1975,7 @@ Firebase
 
 \begin_layout Standard
 Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
- eseguita una chiamata al backend con lo scopo di informarlo della modifca
+ eseguita una chiamata al backend con lo scopo di informarlo della modifica
  attivando o disattivando rispettivamente la ricezione delle notifiche push.
  In questo modo nel momento in cui sarà disponibile una nuova carta promozionale
  per quello 
@@ -1782,7 +2014,7 @@ Intent
 Nel listato 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "alg:Geofencing"
+reference "lis:Geofencing"
 
 \end_inset
 
@@ -1796,64 +2028,75 @@ shop
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 mGeofenceList.add(new
 \end_layout
 
 \begin_layout Plain Layout
+
     Geofence.Builder()  
 \end_layout
 
 \begin_layout Plain Layout
+
       .setCircularRegion(                                             
 \end_layout
 
 \begin_layout Plain Layout
+
          shop.latitude,                                             
 \end_layout
 
 \begin_layout Plain Layout
+
          shop.longitude,                                             
 \end_layout
 
 \begin_layout Plain Layout
+
          GEOFENCE_RADIUS_IN_METERS                                     
 \end_layout
 
 \begin_layout Plain Layout
+
       )                                     
 \end_layout
 
 \begin_layout Plain Layout
+
       .setLoiteringDelay(2 * 60 * 1000)                                 
     
 \end_layout
 
 \begin_layout Plain Layout
+
       .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL)            
                          
 \end_layout
 
 \begin_layout Plain Layout
+
       .build()
 \end_layout
 
 \begin_layout Plain Layout
+
 );
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:Geofencing"
+name "lis:Geofencing"
 
 \end_inset
 
@@ -1865,7 +2108,41 @@ Geofencing
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/preferiti.png
+	lyxscale 20
+	scale 8
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:preferiti"
+
+\end_inset
+
+Preferiti
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1914,8 +2191,8 @@ i aggiornate costantemente rispetto ai dati presenti sul server online.
 \begin_layout Standard
 Le funzioni legate al sistema di e-commerce comprendono l'utilizzo di account
  e dispositivi diversi che interagiscono tra di loro e che non devono assolutame
-nte creare casi di incosistenza sul database sia online sia offline in locale
- sui dispositivi utilizzati.
+nte creare casi di inconsistenza sul database sia online sia offline in
+ locale sui dispositivi utilizzati.
 \end_layout
 
 \begin_layout Standard
@@ -1948,7 +2225,7 @@ i e assicura una corretta gestione delle transizioni insieme a un alto livello
 
 \begin_layout Standard
 Ogni coupon è unico grazie a un codice identificativo, possiede alcune informazi
-oni importanti come l'acquirente e l'attuale propietario, la data di vendita
+oni importanti come l'acquirente e l'attuale proprietario, la data di vendita
  e anche alcune informazioni non direttamente utili all'utilizzo all'interno
  dell'applicativo frontend che però vengono trasmesse per completezza e
  nel caso possano essere necessarie per futuri sviluppi.
@@ -2008,10 +2285,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/coupon.png
+	lyxscale 20
+	scale 8
 
-\end_layout
+\end_inset
 
-\begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2047,8 +2329,8 @@ Il sistema di acquisto di un coupon è stato quello più complesso poichè
  doveva operare con più di un componente esterno all'applicazione mantenendo
  però a ogni passaggio un alto livello di sicurezza senza inficiare alla
  consistenza dei dati della piattaforma MyGelato: ad esempio una volta scelto
- lo shop, per modifcare la gelateria si perdono le scelte successive riportando
- l'utente al passaggio iniziale per non rischiare incosistenze nel sistema.
+ lo shop, per modificare la gelateria si perdono le scelte successive riportando
+ l'utente al passaggio iniziale per non rischiare inconsistenze nel sistema.
  Si è poi analizzato ogni singolo passaggio per poter guidare l'utente durante
  ogni step mostrando a video di volta in volta solo ciò che era richiesto.
 \begin_inset VSpace bigskip
@@ -2059,9 +2341,9 @@ Il sistema di acquisto di un coupon è stato quello più complesso poichè
 
 \begin_layout Standard
 La schermata di acquisto di un coupon è stata creata in modo che sia raggiungibi
-le direttamente dal menù di navigazione princiapale, ma nel caso in cui
- l'utente non abbia eseguito l'autenticazione viene rimandato alla schermata
- di login dove vengono richieste le credenziali per poter continuare.
+le direttamente dal menù di navigazione principale, ma nel caso in cui l'utente
+ non abbia eseguito l'autenticazione viene rimandato alla schermata di login
+ dove vengono richieste le credenziali per poter continuare.
  In questo modo solo gli utenti registrati alla piattaforma hanno la possibilità
  di effettuare un acquisto che richiede un collegamento con il backend dove
  sono necessarie le credenziali di autenticazione.
@@ -2116,7 +2398,7 @@ poichè le informazioni necessarie sono ridotte rispetto al singolo coupon
 \begin_layout Standard
 Lo step successivo con cui l'utente può procedere è la scelta del metodo
  di pagamento che verrà effettuato in una schermata separata dove sarà visualizz
-ata la lista dei motodi precedentemente inseriti dall'utente e scaricati
+ata la lista dei metodi precedentemente inseriti dall'utente e scaricati
  tramite chiamata al backend, che esporrà però solo gli ultimi numeri della
  carta inserita e la data di scadenza così da non trasmettere dati sensibili
  non necessari.
@@ -2178,6 +2460,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/acquisto.png
+	lyxscale 20
+	scale 6
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2248,7 +2539,7 @@ mygelato://
 ) che verrà gestito in automatico dal dispositivo con cui si sta visualizzando
  il sito.
  Nel caso in cui vi sia installata sul dispositivo l'applicazione MyGelato
- allorà verrà avviata la schermata di riscatto precompilata con i dati necessari
+ allora verrà avviata la schermata di riscatto precompilata con i dati necessari
 , altrimenti si verrà reindirizzati agli store principali per consigliare
  il download dell'applicazione.
 \begin_inset VSpace bigskip
@@ -2262,7 +2553,7 @@ Il mezzo di identificazione del coupon condiviso è un codice alfanumerico
  a sei cifre, il PNR, che viene condiviso in automatico insieme al resto
  delle informazioni.
  Si è quindi creata la schermata per riscattare un buono, sezione raggiungibile
- dirattamente dalla navigazione princiapale dell'applicazione, dove è presente
+ direttamente dalla navigazione principale dell'applicazione, dove è presente
  una view di input dove si deve inserire il codice PNR; nel caso si arrivi
  sulla schermata tramite il link descritto sopra allora il campo di input
  del codice sarà già compilato.
@@ -2275,7 +2566,7 @@ Il mezzo di identificazione del coupon condiviso è un codice alfanumerico
 \begin_layout Standard
 Una volta inserito il codice sarà effettuata una richiesta al server tramite
  chiamata API che attuerà lo spostamento del buono da un utente all'altro.
- Per entrambi gli account vi sarà quindi l'aggiormento delle informazioni
+ Per entrambi gli account vi sarà quindi l'aggiornamento delle informazioni
  sul proprio dispositivo la prima volta che verranno richiesti i coupon
  disponibili e l'utente che ha effettuato il riscatto verrà immediatamente
  reindirizzato sulla schermata di lista dei coupon altrimenti, in caso di
@@ -2312,6 +2603,15 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/condivisione.png
+	lyxscale 20
+	scale 8
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2362,7 +2662,7 @@ o materiale del valore del buono utilizzato.
 \begin_layout Standard
 Per superare questo ostacolo si è scelto uno strumento molto diffuso che
  è l'utilizzo di un QR code che permette di generare un'immagine codificata
- a partire da un testo, in questo caso il PNR code lagato al coupon che
+ a partire da un testo, in questo caso il PNR code legato al coupon che
  si vuole utilizzare, leggibile e interpretabile da un qualsiasi cellulare
  con un fotocamera.
  Chiunque abbia effettuato l'accesso all'applicazione con account di tipo
@@ -2377,7 +2677,7 @@ Per superare questo ostacolo si è scelto uno strumento molto diffuso che
 
 \begin_layout Standard
 La sezione per generare e visualizzare il codice QR da mostrare in gelateria
- è raggungibile cliccando sul singolo coupon all'interno della gestione
+ è raggiungibile cliccando sul singolo coupon all'interno della gestione
  dei propri buoni.
  Questa schermata mostra una versione del coupon a tutto schermo e, grazie
  ad una libreria esterna, inserisce il codice QR all'interno del coupon
@@ -2399,7 +2699,7 @@ Chiunque possieda un account di tipo gelatiere avrà nella navigazione principal
  dell'applicativo il collegamento alla sezione per la convalida.
  Verrà avviata immediatamente la fotocamera che, tramite una libreria esterna,
  verificherà la presenza o meno di codici QR leggendoli.
- Dopo una validazione semplice si effettettuerà la chiamata al server dando
+ Dopo una validazione semplice si effettuerà la chiamata al server dando
  poi la possibilità di convalidare altri coupon senza dover ritornare ogni
  volta alla schermata iniziale.
  Nel caso in cui la fotocamera sia già occupata da altri processi attivi
@@ -2447,6 +2747,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/utilizzo.png
+	lyxscale 20
+	scale 6
+
+\end_inset
+
 
 \end_layout
 

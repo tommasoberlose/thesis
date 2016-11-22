@@ -6,30 +6,12 @@
 \origin unavailable
 \textclass extreport
 \begin_preamble
-\usepackage[english]{babel}
-\usepackage{palatino}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{epsfig}
-\usepackage{pdfpages}
-\usepackage{supertabular}
-\usepackage{longtable}
-%%\usepackage{psfig}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{rotating}
-\usepackage{amsmath}
-\usepackage{subfigure}
-\usepackage{fancyhdr}
-\usepackage{minitoc}
-\usepackage[pdftex]{hyperref}
-\listfiles
 \marginparwidth=0cm             % spazio per note a margine
 \marginparsep=0cm               % separazione note a margine
 \topmargin=-0.5cm               % margine alto = 3.54 + topmargin (in cm)
 \headheight=0cm
-\oddsidemargin=0.46cm    
-\evensidemargin=-0.46cm   
+\oddsidemargin=0.96cm    
+\evensidemargin=-0.96cm   
 %\headsep=1.5cm
 \headsep=2cm
 %\footheight=0.5cm
@@ -39,22 +21,19 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries \thepage}
-\fancyhead[LO]{\bfseries \rightmark}
-\fancyhead[RE]{\bfseries \leftmark}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-%%\addtolenght{\headheight}{0.5pt}
-\fancypagestyle{plain}{%
-                       \fancyhead{}%
-                       \renewcommand{\headrulewidth}{0pt}%
-                      }
 
 
-\usepackage[italian]{babel}
-\usepackage{indentfirst}
-\usepackage[signatures, norules, nouppercase]{frontespizio}
+
+
+\renewcommand{\contentsname}{Indice}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\listfigurename}{Figure}
+\renewcommand{\baselinestretch}{1.5}
+\graphicspath{ {images/} }
+
+
+\pagestyle{plain}
+
 \usepackage{emptypage}
 \usepackage{float}
 \usepackage{epigraph}
@@ -67,8 +46,6 @@
 \usepackage{fancyhdr}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[backend=bibtex,style=verbose-trad2,maxcitenames=1]{biblatex}
-
 
 \definecolor{mygreen}{HTML}{63a35c}
 \definecolor{mygray}{HTML}{ededed}
@@ -77,7 +54,7 @@
 
 \lstset{ %
   backgroundcolor=,   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  basicstyle=\footnotesize\ttfamily,        % the size of the fonts that are used for the code
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
   commentstyle=\color{mygreen},    % comment style
@@ -98,30 +75,12 @@
 }
 
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-
-
-
-\renewcommand{\contentsname}{Indice}
-\renewcommand{\figurename}{Fig.}
-\renewcommand{\listfigurename}{Figure}
-\renewcommand{\baselinestretch}{1.5}
-\graphicspath{ {images/} }
-
-
-\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
-
-\title{Progettazione e Sviluppo di un'Applicazione Mobile di Marketing ed E-Commerce}
-\date{2016-11}
-\author{Tommaso Berlose}
-
-\bibliography{bibliografia}
 \end_preamble
 \options openright,cleardoublepage=empty
 \use_default_options false
 \maintain_unincluded_children false
 \language italian
-\language_package default
+\language_package babel
 \inputencoding utf8
 \fontencoding T1
 \font_roman "default" "default"
@@ -195,8 +154,11 @@
 \begin_body
 
 \begin_layout Standard
+
+\size large
+\lang english
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -205,36 +167,433 @@ status collapsed
 pagenumbering{gobble}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-maketitle
+oddsidemargin=0.46cm
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+evensidemargin=0cm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename ../../../Desktop/Tesi/png/unife.png
+	lyxscale 40
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size larger
+UNIVERSITÀ DEGLI STUDI DI FERRARA
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\lang english
+DIPARTIMENTO DI INGEGNERIA
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing other 0.75
+\align center
+
+\size large
+\lang english
  
+\size larger
+Corso di Laurea Magistrale in Ingegneria
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing other 0.75
+\align center
+
+\size larger
+\lang english
+Informatica e 
+\lang italian
+dell'Automazione
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\series bold
+\size largest
+\lang italian
+Progettazione
+\lang english
+ e 
+\lang italian
+Sviluppo
+\lang english
+ di un'Applicazione
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+\lang english
+Mobile di Marketing ed E-Commerce
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="35col%">
+<column alignment="right" valignment="top" width="55col%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size large
+\emph on
+Tesi
+\lang english
+ di laurea 
+\lang italian
+di
+\lang english
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size large
+\emph on
+Relatore
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Tommaso
+\lang english
+ Berlose
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang english
+Chiar.mo Prof.
+ Ing.
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang english
+Cesare Stefanelli
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size large
+\emph on
+\lang english
+Correlatore
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\lang english
+Dott.
+ Ing.
+ Andrea Mazzini
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset VSpace 2cm
+\end_inset
+
+Anno Accademico 2015-2016
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size large
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+oddsidemargin=1.46cm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+evensidemargin=-0.46cm
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-pagenumbering{arabic}
+cleardoublepage
 \end_layout
 
+\end_inset
+
+
+\lang italian
+
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -254,6 +613,19 @@ filename "indice.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapters/intro.lyx"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
 
 \end_inset
 
@@ -302,10 +674,21 @@ filename "chapters/conclusioni.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "bibliografia.lyx"
 
+\end_inset
+
+
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -317,12 +700,15 @@ filename "bibliografia.lyx"
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "codice"
+\begin_inset CommandInset toc
+LatexCommand lstlistoflistings
 
 \end_inset
 
@@ -332,7 +718,7 @@ filename "codice"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "ringraziamenti"
+filename "chapters/ringraziamenti.lyx"
 
 \end_inset
 

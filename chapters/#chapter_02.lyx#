@@ -106,7 +106,7 @@ MyGelato
 \end_layout
 
 \begin_layout Standard
-Essendo l'applicazione Android solo una compenente di un più ampio progetto
+Essendo l'applicazione Android solo una componente di un più ampio progetto
  è essenziale fin dalla prima fase di sviluppo valutare correttamente e
  nella loro completezza tutte le specifiche date dall'azienda che ha commissiona
 to il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazione
@@ -126,7 +126,7 @@ to il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazion
 
 \begin_layout Standard
 Fatte queste considerazioni si valuta come implementare una navigazione
- ch permetta all'utente la scelta delle principali funzioni disponibili
+ che permetta all'utente la scelta delle principali funzioni disponibili
  all'interno dell'applicazione: 
 \shape italic
 Acquisto/Utilizzo Coupon
@@ -150,10 +150,10 @@ Cambio Tema
 .
  Ogni sezione fa parte dei due principali flussi logici presenti all'interno
  dell'applicativo: quello di marketing digitale che permette l'esplorazione
- da parte dell'utente delle gelaterie in una determinata zona e delle relative
- promozioni; e quello di e-commerce che permette l'acquisto online, la gestione,
- il regalo e l'utilizzo dei coupon gelato resi disponibili dalle gelaterie
- del circuito MyGelato.
+ da parte dell'utente delle gelaterie in una determinata zona geografica
+ e delle relative promozioni; e quello di e-commerce che permette l'acquisto
+ online, la gestione, il regalo e l'utilizzo dei coupon gelato resi disponibili
+ dalle gelaterie del circuito MyGelato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -179,13 +179,20 @@ Design
 \end_layout
 
 \begin_layout Standard
-Il design dell'applicazione è uno degli elementi più particolari dell'applicazio
-ne: sviluppato fin nel dettaglio permette di personalizzare in maniera coerente
- anche i componenti più basilari dell'interfaccia utente come icone, testi
- e bottoni.
+Il design dell'applicazione è uno degli elementi di maggior risalto: sviluppato
+ fin nel dettaglio permette di personalizzare anche i componenti più basilari
+ della 
+\emph on
+User Interface
+\emph default
+ (
+\emph on
+UI
+\emph default
+) come icone, testi e bottoni.
  Sono presenti tre font custom che devono essere utilizzati in situazioni
- e contesti differenti in modo che l'utente fin dal primo colpo d'occhio
- capisca quali siano i messaggi informativi e quali siano quelli di contorno.
+ e contesti differenti in modo che possa capire fin dal primo colpo d'occhio
+ quali siano i messaggi informativi e quali siano quelli di contorno.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -193,36 +200,8 @@ ne: sviluppato fin nel dettaglio permette di personalizzare in maniera coerente
 \end_layout
 
 \begin_layout Standard
-Le risorse grafiche rese disponibili all'interno delle specifiche richieste
- servono a rendere coerente l'interfaccia utente in ogni suo elemento: fin
- dall'icona per chiudere un'Activity a concludere con ogni elemento della
- navigazione principale.
- Il fatto di avere un'insieme di risorse ben organizzate è necessario per
- rendere la programmazione più semplice, così da includere di volta in volta
- in maniera dinamica immagini in base alla lingua dell'applicazione o in
- base al tema chiaro/scuro.
-\end_layout
-
-\begin_layout Standard
-In figura è possibile vedere alcune delle immagini presentate per la navigazione
- principale, in tutte le loro versioni.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-FIGGG
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Altro elemento fondamentale presente in quasi ogni Activity dell'applicativo
- è il tema dell'applicazione.
+Altro elemento fondamentale presente in quasi ogni schermata è il tema dell'appl
+icazione.
  I temi sono principalmente delle colorazioni differenti che devono caratterizza
 re e modificare il 
 \emph on
@@ -240,9 +219,77 @@ main color
 \end_layout
 
 \begin_layout Standard
-Sarà importante capire come implementare un sistema che implementi i temi
- in ogni componente della UI senza rendere lo sviluppo dell'applicazione
- in questo senso un collo di bottiglia.
+Le risorse grafiche rese disponibili all'interno delle specifiche richieste
+ servono a rendere coerente l'interfaccia utente in ogni suo elemento: fin
+ dall'icona per chiudere una sezione a concludere con ogni elemento della
+ navigazione principale.
+ Il fatto di avere un'insieme di risorse ben organizzate è necessario, così
+ da includere di volta in volta in maniera dinamica immagini in base alla
+ lingua dell'applicazione e al tema chiaro/scuro.
+\end_layout
+
+\begin_layout Standard
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Risorse-Design"
+
+\end_inset
+
+ è possibile vedere alcune delle immagini presentate per la navigazione
+ principale e alcune icone in tutte le versioni disponibili rispettivamente
+ per un tema chiaro ed uno scuro.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Risorse-Design"
+
+\end_inset
+
+Risorse Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -254,7 +301,7 @@ L'elemento centrale di tutta l'applicazione è la possibilità di effettuare
  una ricerca delle gelaterie, iscritte al circuito MyGelato, presenti in
  una determinata zona geografica così da ottenere alcune informazioni essenziali
  sull'esercizio e le relative promozioni disponibili.
- Questa funzionalità è, infatti, l'elemento cardine che lega ogni possibile
+ Questa funzionalità è infatti l'elemento cardine che lega ogni possibile
  azione dell'utente all'interno dell'applicazione: è essenziale sia per
  il sistema di marketing che per il sistema di e-commerce.
 \begin_inset VSpace bigskip
@@ -264,13 +311,13 @@ L'elemento centrale di tutta l'applicazione è la possibilità di effettuare
 \end_layout
 
 \begin_layout Standard
-Ogni utente, anche se non registrato, deve poter accedere ad una mappa che
+Ogni utente, anche se non registrato, deve poter accedere a una mappa che
  visualizzi tutti gli shop disponibili, sia sotto forma di marker visibili
  in base al luogo di ricerca sia sotto forma di lista ordinata in base alla
  distanza dall'utente.
  Ogni elemento, scaricato e aggiornato in base alle ultime informazioni
  presenti sul server, permette di ottenere il nome della gelateria, l'indirizzo
- ed un eventuale recapito telefonico.
+ e un eventuale recapito telefonico.
 \end_layout
 
 \begin_layout Standard
@@ -297,23 +344,26 @@ carte promozionali
 Oltre al sistema di marketing la ricerca delle gelaterie è essenziale per
  il sistema di e-commerce poichè la mappa viene utilizzata per la scelta
  da parte dell'utente della gelateria per la quale vuole acquistare un determina
-to coupon, ovviamente con una gestione leggermente differente dei marker
- cosi da permetterne la selezione.
- 
-\begin_inset VSpace smallskip
-\end_inset
-
-
+to coupon.
+ La ricerca è quindi presente sia nel sistema di navigazione principale
+ dell'applicazione sia raggiungibile all'interno di ogni flusso logico scelto
+ dall'utente e come si può vedere in figura il mockup della mappa permette
+ di capire la necessità di avere un'implementazione semplice e facilmente
+ utilizzabile da qualsiasi utente, dove sia possibile passare dalla visualizzazi
+one a mappa a quella a lista e dove siano già visibili le principali informazion
+i riguardo a ogni gelateria.
 \end_layout
 
 \begin_layout Standard
-La ricerca è quindi presente sia nel sistema di navigazione principale dell'appl
-icazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente
- e come si può vedere in figura l'abbozzo della mappa permette di capire
- la necessità di avere un'implementazione semplice e facilmente utilizzabile
- da qualsiasi utente, dove sia possibile passare dalla visualizzazione a
- mappa a quella a lista e dove siano già visibili le principali informazioni
- riguardo ad ogni gelateria.
+È possibile osservare in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mockup-Mappa"
+
+\end_inset
+
+ un mockup esplicativo per la schermata della ricerca tramite mappa con
+ dettaglio sulla selezione di un marker informativo.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -321,7 +371,48 @@ icazione sia raggiungibile all'interno di ogni flusso logico scelto dall'utente
 \end_layout
 
 \begin_layout Standard
-FIGGGGGGGGGGGGGGGGGG MAPPA
+\begin_inset Float figure
+placement bh
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mockup-Mappa"
+
+\end_inset
+
+Mockup Mappa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -342,9 +433,9 @@ La piattaforma MyGelato per poter offrire alcune funzionalità personalizzate
 Sarà necessario poter accedere direttamente dalla navigazione principale
  alle informazioni riguardanti il proprio stato di accesso alla piattaforma,
  verificando se si è già autenticati o meno.
- Le funzionalità che devono essere più facilmente accessibili sono quendi
+ Le funzionalità che devono essere più facilmente accessibili sono quindi
  quelle di login e di logout, in modo che l'utente in pochi passaggi possa
- accedere o rimuovere i propri dati dal device utilizzato.
+ accedere o rimuovere i propri dati dal dispositivo utilizzato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -464,7 +555,7 @@ Oltre alle singole gelaterie l'ecosistema MyGelato prevede anche le carte
 \begin_layout Standard
 Infine, come avverrà poi per le gelaterie preferite, ogni utente registrato
  dovrà avere la possibilità di essere notificato di eventuali nuove promozioni
- nel momento stesso in cui diventerano disponibili.
+ nel momento stesso in cui diventeranno disponibili.
 \end_layout
 
 \begin_layout Subsection
@@ -482,7 +573,7 @@ La gestione delle proprie gelaterie preferite è uno degli elementi presenti
 Questo dà modo all'utente di poter accedere in ogni momento, specialmente
  in mobilità, alle informazioni che più gli interessano di ogni gelateria:
  indirizzo, recapito telefonico ed eventuali promozioni.
- La ricerca in questo caso è molto semplicificata poichè viene presentata
+ La ricerca in questo caso è molto semplificata poichè viene presentata
  una sezione a parte con una lista degli shops preferiti, senza dover obbligare
  l'utente a effettuare una nuova ricerca all'interno della mappa.
  Il salvataggio all'interno dei preferiti avviene direttamente all'interno
@@ -499,7 +590,7 @@ Questa funzionalità è pensata principalmente per fidelizzare il consumatore:
  ogni utente avendo la possibilità di salvare una gelateria ha anche la
  possibilità di ottenere velocemente informazioni su nuove promozioni, trovare
  velocemente i contatti dell'esercizio come se li avesse salvati in rubrica
- e valuatare ogni volta la distanza tra se e lo shop.
+ e valutare ogni volta la distanza tra se e lo shop.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -523,8 +614,8 @@ Il geofencing permette di ricevere una notifica ogni qualvolta l'utente
  delle proprie gelaterie ha pubblicato una nuova promozione tramite l'aggiunta
  una carta sul sistema MyGelato.
  L'utente così rimane informato costantemente delle ultime promozioni disponibil
-i e il propietario di una gelateria ha la certezza di effettuare pubblicità
- diretta tra se e i suoi clienti più affezzionati.
+i e il proprietario di una gelateria ha la certezza di effettuare pubblicità
+ diretta tra se e i suoi clienti più affezionati.
 \end_layout
 
 \begin_layout Section
@@ -548,7 +639,7 @@ I
 \emph on
 Coupon
 \emph default
- gelato sono buoni acquisto che si possono acquistare dirattemente tramite
+ gelato sono buoni acquisto che si possono acquistare direttamente tramite
  l'applicazione e permettono a chiunque ne sia virtualmente in possesso
  di utilizzarli nelle gelaterie che li hanno rilasciati tramite validazione.
  L'acquisto dei buoni deve poter essere fatto in qualsiasi momento utilizzando
@@ -600,8 +691,8 @@ o la vendita.
  il sistema amministrativo gestionale che può inserire anche informazioni
  aggiuntive come la scadenza e la valuta.
  Sono generici per tutto l'ecosistema e sono quindi disponibili per ogni
- gelateria che li rende disponibili anche se all'acquisto sarà necessario
- specificare l'esercizio nel quale si desidereranno poi utilizzare.
+ gelateria facente parte del circuito MyGelato anche se all'acquisto sarà
+ necessario specificare l'esercizio nel quale si desidereranno poi utilizzare.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -654,7 +745,7 @@ Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
  e la lista per la ricerca degli shop già utilizzata all'interno di altre
  funzionalità.
  In questo caso però verranno visualizzati solo le gelaterie che permettono
- l'acquisto di coupon e quando verranno selezionati i marker non si otterenno
+ l'acquisto di coupon e quando verranno selezionati i marker non si otterranno
  tutte le informazioni sull'esercizio ma sarà presente un'icona per selezionare
  lo shop.
 \begin_inset VSpace bigskip
@@ -666,7 +757,8 @@ Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
 \begin_layout Standard
 Una volta selezionata la gelateria dovranno essere scaricati dal server
  i coupon disponibili e nel frattempo verrà resa disponibile la scelta del
- metodo di pagamento che si appoggerà al sistema di pagamento online Stripe.
+ metodo di pagamento che si appoggerà ad un sistema di pagamento online
+ esterno.
  Si potrà scegliere tramite una lista di metodi di pagamento quello che
  si preferirà usare che sarà successivamente impostato come predefinito.
 \end_layout
@@ -701,9 +793,9 @@ Product Nr.
 \end_layout
 
 \begin_layout Standard
-L'uso di un codice inviabile facilmente come teso permette di sfrutare altri
- applicativi presenti sul device dell'utente per la condivisione tra persone
- differenti.
+L'uso di un codice inviabile facilmente come teso permette di sfruttare
+ altri applicativi presenti sul dispositivo dell'utente per la condivisione
+ tra persone differenti.
  Scegliendo il coupon da regalare si dovrà quindi chiedere all'utente tramite
  quale canale di comunicazione preferisce inviare il codice PNR per poi
  inserire il codice in un testo promozionale legato ad un link di reindirizzamen
@@ -713,10 +805,10 @@ to a una pagina web della piattaforma MyGelato.
 \begin_layout Standard
 L'inserimento del link a una pagina web della piattaforma accessibile online
  da qualsiasi dispositivo è una funzionalità di grande potenza: nel caso
- in cui la pagina web sia raggiunta da un device che ha installata sopra
- l'applicazione MyGelato aprirà direttamente l'applicativo stesso gestendo
- internamente il codice presente; altrimenti verrà presentata una pagina
- web che suggerisce all'utente di scaricare l'applicazione dai principali
+ in cui la pagina web sia raggiunta da un dispositivo che ha installato
+ sopra l'applicazione MyGelato aprirà direttamente l'applicativo stesso
+ gestendo internamente il codice presente; altrimenti verrà presentata una
+ pagina web che suggerisce all'utente di scaricare l'applicazione dai principali
  store mobile.
 \begin_inset VSpace bigskip
 \end_inset
@@ -750,7 +842,7 @@ L'ultimo passo all'interno del flusso logico di questo sistema di e-commerce
  bene materiale direttamente in sede all'esercizio che ha venduto il buono.
  Per semplificare l'utilizzo della piattaforma MyGelato ci si è rifatti
  nuovamente al fatto che gli smartphone siano diventati dei beni di uso
- comune e che quindi anche i propetari delle gelaterie possano utilizzare
+ comune e che quindi anche i proprietari delle gelaterie possano utilizzare
  l'applicazione MyGelato come mezzo per la validazione dei coupon.
 \begin_inset VSpace bigskip
 \end_inset
@@ -772,7 +864,7 @@ Allo stesso modo che per le funzionalità di condivisone e riscatto si è
 Si è quindi proposto di generare un QR Code a partire dal codice PNR di
  ogni coupon, raggiungibile direttamente cliccando sul buono presente nella
  lista di gestione interna all'applicazione.
- Il consumatore dovrà quindi mostrare il QR Code al propietario dell'esercizio
+ Il consumatore dovrà quindi mostrare il QR Code al proprietario dell'esercizio
  che, utilizzando la stessa applicazione MyGelato con un account di tipo
  
 \emph on
