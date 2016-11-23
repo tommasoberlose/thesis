@@ -283,47 +283,58 @@ activity_main
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public class Main extends AppCompatActivity {
 \end_layout
 
 \begin_layout Plain Layout
+
     @Override
 \end_layout
 
 \begin_layout Plain Layout
+
     protected void onCreate(Bundle savedInstanceState) {
 \end_layout
 
 \begin_layout Plain Layout
+
         super.onCreate(savedInstanceState);
 \end_layout
 
 \begin_layout Plain Layout
+
         setContentView(R.layout.activity_main);
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
 \begin_layout Plain Layout
+
     ...
 \end_layout
 
 \begin_layout Plain Layout
+
 }
+\end_layout
+
+\begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:AppCompatActivity"
+name "lis:AppCompatActivity"
 
 \end_inset
 
@@ -332,10 +343,6 @@ AppCompatActivity
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -368,52 +375,62 @@ L'esempio più eclatante è l'utilizzo dell'XML per produrre il manifesto
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 <?xml version="1.0" encoding="utf-8"?>
 \end_layout
 
 \begin_layout Plain Layout
+
 <LinearLayout
 \end_layout
 
 \begin_layout Plain Layout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
 \end_layout
 
 \begin_layout Plain Layout
+
     android:layout_width="match_parent"
 \end_layout
 
 \begin_layout Plain Layout
+
     android:layout_height="match_parent">
 \end_layout
 
 \begin_layout Plain Layout
+
     <ImageView
 \end_layout
 
 \begin_layout Plain Layout
+
          android:layout_width="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
          android:layout_height="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
          src="drawable/icon" />
 \end_layout
 
 \begin_layout Plain Layout
+
 </LinearLayout>
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -422,10 +439,6 @@ Layout XML
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -491,7 +504,7 @@ key "GRADLE"
  che a partire da un manifesto, che dichiara la struttura dell'applicazione,
  i file Java contenenti il codice sorgente (inclusi i test) e l'insieme
  delle risorse e degli asset può generare un file firmato installabile su
- qualsiasi dispositivo Android.
+ qualsiasi dispositivo.
 \end_layout
 
 \begin_layout Standard
@@ -505,7 +518,7 @@ Per la generazione delle risorse Android Studio mette a disposizione alcuni
 \begin_layout Standard
 Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
 ione, lo stile e la correzione in realtime del codice scritto effettuando
- anche il controllo sintattico e un'analisi statica seguendo i pattern standard
+ il controllo sintattico e l'analisi statica seguendo i pattern standard
  della piattaforma.
 \end_layout
 
@@ -677,7 +690,7 @@ User
  come si può vedere nel listato 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "alg:Model-Realm"
+reference "lis:Model-Realm"
 
 \end_inset
 
@@ -688,62 +701,73 @@ PrimaryKey.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 import io.realm.RealmObject;
 \end_layout
 
 \begin_layout Plain Layout
+
 import io.realm.annotations.PrimaryKey;
 \end_layout
 
 \begin_layout Plain Layout
+
 public class User extends RealmObject {
 \end_layout
 
 \begin_layout Plain Layout
+
     @PrimaryKey
 \end_layout
 
 \begin_layout Plain Layout
+
     public String uuid;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String firstName;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String lastName;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String email;
 \end_layout
 
 \begin_layout Plain Layout
+
     public User() {
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:Model-Realm"
+name "lis:Model-Realm"
 
 \end_inset
 
@@ -755,13 +779,12 @@ Model Realm
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -786,48 +809,57 @@ key "WIKIPEDIA:ACID"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
+
 User user = new User(Params...);
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.executeTransaction(new Realm.Transaction() {
 \end_layout
 
 \begin_layout Plain Layout
+
       @Override
 \end_layout
 
 \begin_layout Plain Layout
+
       public void execute(Realm realm) {
 \end_layout
 
 \begin_layout Plain Layout
+
           realm.copyToRealmOrUpdate(user);
 \end_layout
 
 \begin_layout Plain Layout
+
       }
 \end_layout
 
 \begin_layout Plain Layout
+
 });
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.close();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -839,14 +871,6 @@ Realm Transaction
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -855,7 +879,13 @@ Realm Transaction
 \begin_layout Standard
 Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
 o del DB è forse fondamentale capire come vengono gestite anche le query
- sulla base di dati; Un esempio molto semplice visibile nel listato CODICE
+ sulla base di dati; Un esempio molto semplice visibile nel listato 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Realm-Query"
+
+\end_inset
+
  mostra come sia possibile richiedere un utente con email non nulla all'interno
  dei dati salvati ottenendoli in un 
 \emph on
@@ -866,35 +896,46 @@ ArrayList
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 RealmResults<User> results = 
 \end_layout
 
 \begin_layout Plain Layout
+
      Realm.getDefaultInstance()
 \end_layout
 
 \begin_layout Plain Layout
+
           .where(User.class)
 \end_layout
 
 \begin_layout Plain Layout
+
           .notNull("email")
 \end_layout
 
 \begin_layout Plain Layout
+
 .findAll();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Realm-Query"
+
+\end_inset
+
 Realm Query
 \end_layout
 
@@ -903,13 +944,12 @@ Realm Query
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -928,41 +968,48 @@ listener
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.addChangeListener(new RealmChangeListener<Realm>() {
 \end_layout
 
 \begin_layout Plain Layout
+
       @Override
 \end_layout
 
 \begin_layout Plain Layout
+
       public void onChange(Realm element) {
 \end_layout
 
 \begin_layout Plain Layout
+
             // do something...
     
 \end_layout
 
 \begin_layout Plain Layout
+
       }
 \end_layout
 
 \begin_layout Plain Layout
+
 });
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -971,10 +1018,6 @@ Realm Listener
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1060,28 +1103,32 @@ Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 OkHttpClient client = new OkHttpClient();
 \end_layout
 
 \begin_layout Plain Layout
+
 Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
+
            .url(endpoint)
 \end_layout
 
 \begin_layout Plain Layout
+
            .addHeader("Accept","application/json")
 \end_layout
 
 \begin_layout Plain Layout
+
            .build();
 \end_layout
 
@@ -1090,10 +1137,12 @@ Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
+
 Response response = client.newCall(request).execute();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1238,44 +1287,42 @@ Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public static class UpdateCouponUiEvent<T> {
 \end_layout
 
 \begin_layout Plain Layout
+
 	public T data;
 \end_layout
 
 \begin_layout Plain Layout
-	public UpdateCouponUiEvent() {
-\end_layout
 
-\begin_layout Plain Layout
-	}
-\end_layout
-
-\begin_layout Plain Layout
 	public UpdateCouponUiEvent(T data) {
 \end_layout
 
 \begin_layout Plain Layout
+
 		this.data = data;
 \end_layout
 
 \begin_layout Plain Layout
+
 	}
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1294,6 +1341,9 @@ Event Class
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1308,28 +1358,32 @@ EventBus permette di registrare dei metodi eseguendo una subscribe a un
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 @Subscribe
 \end_layout
 
 \begin_layout Plain Layout
+
 public void updateUI(UpdateCouponUiEvent event) {
 \end_layout
 
 \begin_layout Plain Layout
+
 	// update UI with event.data
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1341,13 +1395,12 @@ EventBus Subscribe
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1356,27 +1409,23 @@ EventBus Subscribe
 
 \begin_layout Standard
 Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei
- dati tramite l'evento che viene lanciato, nel codice messo ad esempio si
- tratta della variable data, definito di tipo generico.
+ dati tramite l'evento che viene lanciato all'interno di un AsyncTask, a
+ conclusione del download delle informazioni e dell'aggiornamento dello
+ stato, grazie a una publish:
 \end_layout
 
 \begin_layout Standard
-Infine all'interno del AsyncTask, a conclusione del download delle informazioni
- e dell'aggiornamento dello stato, era sollevato un evento grazie a una
- publish:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1385,10 +1434,6 @@ EventBus Update
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1409,7 +1454,7 @@ Ogni sistema di e-commerce presente sugli applicativi moderni è normalmente
  Questi sistemi ovviamente devono garantire l'utilizzo sia da parte dell'applica
 tivo di frontend sia da parte del server di backend in modo che l'intero
  sistema sia consistente.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 

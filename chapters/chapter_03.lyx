@@ -504,7 +504,7 @@ key "GRADLE"
  che a partire da un manifesto, che dichiara la struttura dell'applicazione,
  i file Java contenenti il codice sorgente (inclusi i test) e l'insieme
  delle risorse e degli asset può generare un file firmato installabile su
- qualsiasi dispositivo Android.
+ qualsiasi dispositivo.
 \end_layout
 
 \begin_layout Standard
@@ -518,7 +518,7 @@ Per la generazione delle risorse Android Studio mette a disposizione alcuni
 \begin_layout Standard
 Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
 ione, lo stile e la correzione in realtime del codice scritto effettuando
- anche il controllo sintattico e un'analisi statica seguendo i pattern standard
+ il controllo sintattico e l'analisi statica seguendo i pattern standard
  della piattaforma.
 \end_layout
 
@@ -877,13 +877,6 @@ Realm Transaction
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
 o del DB è forse fondamentale capire come vengono gestite anche le query
  sulla base di dati; Un esempio molto semplice visibile nel listato 
@@ -1235,6 +1228,7 @@ EventBus è una libreria open-source per Android che utilizza il pattern
  Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce
  in maniera centralizzata monitorando le performance e gestendo gli errori
  che potrebbero essere sollevati da uno sviluppo multithread.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GREENROBOT:EVENTBUS"
@@ -1306,16 +1300,6 @@ public static class UpdateCouponUiEvent<T> {
 \begin_layout Plain Layout
 
 	public T data;
-\end_layout
-
-\begin_layout Plain Layout
-
-	public UpdateCouponUiEvent() {
-\end_layout
-
-\begin_layout Plain Layout
-
-	}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1426,14 +1410,9 @@ EventBus Subscribe
 
 \begin_layout Standard
 Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei
- dati tramite l'evento che viene lanciato, nel codice messo ad esempio si
- tratta della variable data, definito di tipo generico.
-\end_layout
-
-\begin_layout Standard
-Infine all'interno del AsyncTask, a conclusione del download delle informazioni
- e dell'aggiornamento dello stato, era sollevato un evento grazie a una
- publish:
+ dati tramite l'evento che viene lanciato all'interno di un AsyncTask, a
+ conclusione del download delle informazioni e dell'aggiornamento dello
+ stato, grazie a una publish:
 \end_layout
 
 \begin_layout Standard
@@ -1476,7 +1455,7 @@ Ogni sistema di e-commerce presente sugli applicativi moderni è normalmente
  Questi sistemi ovviamente devono garantire l'utilizzo sia da parte dell'applica
 tivo di frontend sia da parte del server di backend in modo che l'intero
  sistema sia consistente.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 

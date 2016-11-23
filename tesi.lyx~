@@ -35,7 +35,17 @@
 \pagestyle{plain}
 
 \usepackage{emptypage}
+\usepackage{float}
+\usepackage{epigraph}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
 \usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \definecolor{mygreen}{HTML}{63a35c}
 \definecolor{mygray}{HTML}{ededed}
@@ -63,6 +73,8 @@
   stringstyle=\color{mymauve},     % string literal style
   tabsize=2,                       % sets default tabsize to 2 spaces
 }
+
+\captionsetup[listings]{position=bottom}
 
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 \end_preamble
@@ -600,12 +612,93 @@ filename "indice.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapters/intro.lyx"
 
 \end_inset
 
+
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\lang italian
 
 \begin_inset ERT
 status open
@@ -620,6 +713,10 @@ pagenumbering{arabic}
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -630,6 +727,45 @@ filename "chapters/chapter_01.lyx"
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapters/chapter_02.lyx"
@@ -637,6 +773,42 @@ filename "chapters/chapter_02.lyx"
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapters/chapter_03.lyx"
@@ -644,9 +816,78 @@ filename "chapters/chapter_03.lyx"
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapters/chapter_04.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
 
 \end_inset
 
@@ -678,6 +919,9 @@ filename "bibliografia.lyx"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -690,6 +934,9 @@ filename "bibliografia.lyx"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -703,6 +950,10 @@ LatexCommand lstlistoflistings
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -710,6 +961,10 @@ LatexCommand lstlistoflistings
 LatexCommand include
 filename "chapters/ringraziamenti.lyx"
 
+\end_inset
+
+
+\begin_inset Newpage newpage
 \end_inset
 
 

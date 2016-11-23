@@ -93,7 +93,7 @@ A seguito della fase di progettazione si è scelto di suddividere lo sviluppo
  Questo ha permesso di dedicare maggiore attenzione a ogni componente fino
  a un livello di dettaglio molto alto, in modo da poter anche ottenere una
  buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -107,7 +107,7 @@ e che alcune specifiche richieste erano presenti in tutto il sistema e che
  grafica in relazione al design richiesto, portando alla creazione di alcune
  view custom che incapsulano i meccanismi di personalizzazione così da non
  doverli replicare singolarmente in ogni schermata.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -136,7 +136,7 @@ key "ANDROID:NAV_PATTERN"
  funzioni da dover sviluppare così da poter procedere successivamente con
  l'implementazione di ogni componente potendovi accedere anche se altre
  parti dell'applicazione non erano ancora disponibili.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -151,7 +151,7 @@ Ragionando ulteriormente dal generale al dettaglio si è scelto di sviluppare
 nticazione di un utente poichè facente parte sia del sistema di marketing
  sia di quello di e-commerce, ultimi componenti implementati durante la
  fase di sviluppo.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -172,7 +172,15 @@ Design
 Il Design è stata la prima specifica considerata durante lo sviluppo poichè
  avrebbe rappresentato una costante durante l'implementazione di qualsiasi
  schermata dell'applicazione.
- In figura 
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Temi"
@@ -208,9 +216,19 @@ main
 secondary color
 \emph default
 .
- Questo oggetto viene automaticamente generato unicamente a partire da un
+\end_layout
+
+\begin_layout Standard
+Questo oggetto viene automaticamente generato unicamente a partire da un
  contesto di una schermata senza dover eseguire nessuna operazione di inizializz
 azione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -230,11 +248,6 @@ public class Flavors {
 
 \begin_layout Plain Layout
 
-    ...
-\end_layout
-
-\begin_layout Plain Layout
-
     public int getPrimaryColor();
 \end_layout
 
@@ -250,7 +263,7 @@ public class Flavors {
 
 \begin_layout Plain Layout
 
-    ...
+    [...]
 \end_layout
 
 \begin_layout Plain Layout
@@ -271,13 +284,6 @@ Classe Flavors
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -479,41 +485,12 @@ public class FlavorActivity extends AppCompatActivity {
 
 \begin_layout Plain Layout
 
-    ...
-\end_layout
-
-\begin_layout Plain Layout
-
     @Override     
 \end_layout
 
 \begin_layout Plain Layout
 
-	public void onResume() {
-\end_layout
-
-\begin_layout Plain Layout
-
-        super.onResume();
-\end_layout
-
-\begin_layout Plain Layout
-
-        applyFlavor();
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    public void applyFlavor() {
+    public void onResume() {
 \end_layout
 
 \begin_layout Plain Layout
@@ -533,7 +510,7 @@ public class FlavorActivity extends AppCompatActivity {
 
 \begin_layout Plain Layout
 
-    ...
+    [...]
 \end_layout
 
 \begin_layout Plain Layout
@@ -869,27 +846,12 @@ public String avatar;
 
 \begin_layout Plain Layout
 
-public String uid;
-\end_layout
-
-\begin_layout Plain Layout
-
 public String client;
 \end_layout
 
 \begin_layout Plain Layout
 
 public String token;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String provider;
-\end_layout
-
-\begin_layout Plain Layout
-
-public boolean shop;
 \end_layout
 
 \begin_layout Plain Layout
@@ -911,10 +873,6 @@ User Model
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -1095,6 +1053,10 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 @PrimaryKey
 \end_layout
 
@@ -1160,10 +1122,6 @@ Shop Model
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -1728,11 +1686,6 @@ public Long end;
 
 \begin_layout Plain Layout
 
-...
-\end_layout
-
-\begin_layout Plain Layout
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1768,7 +1721,7 @@ ViewPager
 ni tramite il link proposto.
  Nel caso vi sia la presenza di un video il tap sull'immagine porterà alla
  visualizzazione online della risorsa resa disponibile tramite URL.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -1780,7 +1733,7 @@ Il download delle informazioni deve avvenire all'apertura della schermata
  vengono salvati in locale così da essere disponibili anche offline e nel
  caso di modifiche saranno aggiornati eliminando le promozioni non più disponibi
 li perchè, per esempio, scadute.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -2114,6 +2067,20 @@ Geofencing
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:preferiti"
+
+\end_inset
+
+ infine è visibile l'implementazione della lista degli Shop preferiti, di
+ cui sono presentate le informazioni essenziali e la distanza, insieme ad
+ un esempio di notifica push inviata da MyGalato per segnalare l'aggiunta
+ di una nuova carta promozionale.
 \end_layout
 
 \begin_layout Standard

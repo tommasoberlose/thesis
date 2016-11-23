@@ -82,7 +82,7 @@
 
 \begin_body
 
-\begin_layout Section*
+\begin_layout Chapter*
 Introduzione
 \end_layout
 
@@ -96,37 +96,73 @@ ni.
 Informazione
 \emph default
  che è diventata il nodo fondamentale di ogni sistema economico moderno:
- tracciabilità, trasparenza e accesso ai dati di un prodotto sia in termini
- di procuzione che di commercializzazione sono solo alcuni dei concetti
- che si sono diffusi grazie all'entrata della tecnologia, come gli smartphone,
- nella quotidianità del pubblico consumer.
+ tracciabilità, trasparenza e accesso ai dati relativi al singolo prodotto
+ sono solo alcuni dei concetti che si sono diffusi grazie all'entrata di
+ dispositivi, come gli smartphone, nella quotidianità del pubblico consumer.
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Nel momento in cui l'utente accede a qualsiasi risorsa presente online,
- si tratti anche solo della visualizzazione di un sito web, viene però esposto
- ai nuovi sistemi di marketing digitale fondati sull'advertising online
- che, uniti ai nuovi sistemi di e-commerce, sono diventati una delle strumenti
- principali per la commercializzazione e vendita di un prodotto.
+L'avvento di queste tecnologie standardizzate e disponibili sul mercato
+ con un target di acquirenti molto ampio, ha permesso all'utente medio di
+ poter accedere in ogni istante e in mobilità a internet, realtà da cui
+ può ottenere informazioni riguardanti le attività commerciali a cui è maggiorme
+nte interessato e acquistare moltissimi prodotti grazie alla diffusione
+ di sistemi di reselling online.
 \end_layout
 
 \begin_layout Standard
-Questi sono alcuni dei meccanismi alla base del nostro sistema di mercato
- che vede nel capitalismo la sua forma più evoluta ma che proprio a causa
- della forte ingerenza della tecnologia inizia a mostrare i primi segni
- di uno spostamento degli equilibri, portando l'intero sistema a una deriva
- difficilmente prevedibile e che si potrà assestare solo nel momento in
- cui le aziende prenderanno consapevolezza di come molti settori stanno
- cambiando.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tutte le fasi di commercializzazione di un prodotto o di un servizio, sono
+ quindi da rivalutare in considerazione di questo cambio di paradigma che
+ ha spostato online sia la pubblicizzazione che la vendita.
+ L'utilizzo di questo nuovo mezzo di comunicazione delle interazioni tra
+ il produttore e il consumatore ha però anche comportato la nascita di un
+ sistema di scambio di informazioni bidirezionale molto più stretto: i sistemi
+ di 
+\emph on
+interest-based advertising
+\emph default
+ permettono all'utente di avere consigli e pubblicità personalizzate mentre
+ le aziende ottengono la possibilità di creare sistemi di commercializzazione
+ efficaci e diversificati grazie alla presenza di moderne intelligenze artificia
+li.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vi è quindi stato un completo rinnovamento dei meccanismi alla base del
+ nostro sistema di mercato, che vede nel capitalismo la sua forma più evoluta
+ ma che proprio a causa della forte ingerenza della tecnologia inizia a
+ mostrare i primi segni di uno spostamento degli equilibri, portando l'intero
+ sistema a una deriva difficilmente prevedibile e che si potrà assestare
+ solo nel momento in cui le aziende prenderanno consapevolezza di come molti
+ settori stiano cambiando.
  Sarà sempre più importante quindi tenere in considerazione l'inserimento
- di una componente tecnologica in ogni ambito della produzione di un prodotto,
- ma specialmente durante la sua commercializzazione.
+ di una componente tecnologica in ogni ambito della produzione di un'azienda,
+ ma specialmente durante la fase di commercializzazione.
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 In questa tesi si tratterà la soluzione adottata dall'azienda Carpigiani,
- leader mondiale nel settore della vendita di macchine per gelato, nell'intrapre
-ndere lo sviluppo dell'ecosistema 
+ leader mondiale nel settore della vendita di macchine per gelato artigianale,
+ nell'intraprendere lo sviluppo dell'ecosistema denominato 
 \emph on
 MyGelato
 \emph default
@@ -136,46 +172,51 @@ e mobile con l'obiettivo di dare nuovi strumenti ai propri clienti.
  a questo progetto e distribuita per il sistema operativo Google Android.
  Le tecnologie scelte e la generalità della soluzione consentono di impiegare
  gli stessi principi per altri progetti con architetture analoghe.
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 La stesura di questo elaborato segue logicamente i passaggi fondamentali
- di progetti di questo calibro partendo dall'introduzione del contesto in
- cui si vuole inserire lo sviluppo di elaborati di questo tipo insieme alla
- valutazione delle finalità implicite ed esplicite che hanno portato l'azienda
- Carpigiani a dare vita all'intero ecosistema MyGelato.
+ che si presentano durante lo sviluppo di questo tipo di sistemi, partendo
+ dall'introduzione del contesto in cui si inserisce il lavoro in oggetto,
+ insieme alla valutazione delle finalità implicite ed esplicite che hanno
+ portato l'azienda Carpigiani a dare vita a questo ecosistema.
 \end_layout
 
 \begin_layout Standard
-Nel capitolo successivo si passa alla presentazione e alla valutazione delle
- specifiche richieste ponendo maggiore attenzione ai due sistemi di marketing
- digitale ed e-commerce che rappresentano il fulcro dell'applicativo uniti
+Nel primo capitolo si passa alla presentazione e alla valutazione delle
+ specifiche richieste ponendo maggiore attenzione ai sistemi di marketing
+ digitale ed e-commerce che rappresentano il fulcro dell'applicativo, uniti
  ovviamente ai concetti principali che formano i modelli della piattaforma
  e che devono essere considerati nel dettaglio per capire alcune scelte
  strutturali effettuate durante lo sviluppo.
 \end_layout
 
 \begin_layout Standard
-Sono poi introdotte le principali tecnologie, librerie e i metodi di sviluppo
+Sono poi introdotte le principali tecnologie, librerie e metodi di sviluppo
  utilizzati durante l'implementazione di ogni singolo componente dando ampio
  spazio alle funzionalità rese disponibili dall'utilizzo di ottime librerie
- open source descrivendo come hanno potuto semplificare e velocizzare il
+ open source, descrivendo come hanno potuto semplificare e velocizzare il
  processo lavorativo fornendo un forte imprinting modulare all'architettura
  di tutta l'applicazione.
  
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Si prosegue con la descrizione del lavoro svolto, discernendo ogni singolo
  componente dell'applicativo così da poter spiegare nel dettaglio le scelte
- implementative che hanno portato al prodotto finale di questa tesi che
- dopo una serie di test in termini di prestazioni potrà essere pubblicato
+ implementative che hanno portato al prodotto finale di questa tesi che,
+ dopo una serie di test funzionali e prestazionali, potrà essere pubblicato
  e reso disponibile sui principali mezzi di distribuzione di applicazioni
  Android.
-\end_layout
-
-\begin_layout Standard
-Alcune considerazioni di carattere generale e possibili sviluppi futuri
+ Alcune considerazioni di carattere generale e possibili sviluppi futuri
  concludono, infine, la tesi.
 \end_layout
 

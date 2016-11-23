@@ -246,17 +246,19 @@ reference "fig:Risorse-Design"
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
-placement bh
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
 	lyxscale 40
-	scale 33
+	scale 25
 
 \end_inset
 
@@ -370,16 +372,17 @@ reference "fig:Mockup-Mappa"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement bh
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
 	lyxscale 60
-	scale 30
+	scale 25
 
 \end_inset
 
