@@ -1228,6 +1228,7 @@ EventBus è una libreria open-source per Android che utilizza il pattern
  Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce
  in maniera centralizzata monitorando le performance e gestendo gli errori
  che potrebbero essere sollevati da uno sviluppo multithread.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GREENROBOT:EVENTBUS"

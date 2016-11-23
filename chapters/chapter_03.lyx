@@ -283,6 +283,13 @@ activity_main
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -315,11 +322,6 @@ public class Main extends AppCompatActivity {
 \begin_layout Plain Layout
 
     }
-\end_layout
-
-\begin_layout Plain Layout
-
-    ...
 \end_layout
 
 \begin_layout Plain Layout
