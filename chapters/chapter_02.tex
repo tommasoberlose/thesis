@@ -10,7 +10,7 @@ di tali servizi è necessario l'utilizzo di un'applicazione mobile,
 chiamata \emph{MyGelato}, disponibile per i sistemi operativi mobile
 Apple iOS e Google Android; quest'ultima argomento di questa tesi.\bigskip{}
 
-Essendo l'applicazione Android solo una compenente di un più ampio
+Essendo l'applicazione Android solo una componente di un più ampio
 progetto è essenziale fin dalla prima fase di sviluppo valutare correttamente
 e nella loro completezza tutte le specifiche date dall'azienda che
 ha commissionato il lavoro e tutte quelle date dalla necessità di
@@ -24,16 +24,16 @@ interazioni tra i flussi logici e valutare come mantenere coerente
 il design all'interno di tutta l'interfaccia utente.\bigskip{}
 
 Fatte queste considerazioni si valuta come implementare una navigazione
-ch permetta all'utente la scelta delle principali funzioni disponibili
+che permetta all'utente la scelta delle principali funzioni disponibili
 all'interno dell'applicazione: \textit{Acquisto/Utilizzo Coupon},
 \textit{Lista Gelaterie Preferite}, \textit{Mappa per la Ricerca},
 \textit{Mastro Gelatiere} e \textit{Cambio Tema}. Ogni sezione fa
 parte dei due principali flussi logici presenti all'interno dell'applicativo:
 quello di marketing digitale che permette l'esplorazione da parte
-dell'utente delle gelaterie in una determinata zona e delle relative
-promozioni; e quello di e-commerce che permette l'acquisto online,
-la gestione, il regalo e l'utilizzo dei coupon gelato resi disponibili
-dalle gelaterie del circuito MyGelato.\bigskip{}
+dell'utente delle gelaterie in una determinata zona geografica e delle
+relative promozioni; e quello di e-commerce che permette l'acquisto
+online, la gestione, il regalo e l'utilizzo dei coupon gelato resi
+disponibili dalle gelaterie del circuito MyGelato.\bigskip{}
 
 Si valutano infine le specifiche tecnologiche richieste sia dall'azienda
 che dalla necessaria cooperazione con gli altri elementi del progetto.
@@ -76,15 +76,16 @@ dell'applicazione e al tema chiaro/scuro.
 In figura \ref{fig:Risorse-Design} è possibile vedere alcune delle
 immagini presentate per la navigazione principale e alcune icone in
 tutte le versioni disponibili rispettivamente per un tema chiaro ed
-uno scuro.\bigskip{}
-
+uno scuro.
+\begin{center}
 \begin{figure}[H]
-\includegraphics[scale=0.33]{/home/tommaso/Documents/Tesi/thesis/images/res_colors}
-
+\begin{centering}
+\includegraphics[scale=0.25]{/home/tommaso/Documents/Tesi/thesis/images/res_colors}
+\par\end{centering}
 \caption{\label{fig:Risorse-Design}Risorse Design}
 
 \end{figure}
-
+\par\end{center}
 
 \section{Ricerca}
 
@@ -117,23 +118,23 @@ standardizzata: le \emph{carte promozionali}.\bigskip{}
 Oltre al sistema di marketing la ricerca delle gelaterie è essenziale
 per il sistema di e-commerce poichè la mappa viene utilizzata per
 la scelta da parte dell'utente della gelateria per la quale vuole
-acquistare un determinato coupon. \smallskip{}
-
-La ricerca è quindi presente sia nel sistema di navigazione principale
-dell'applicazione sia raggiungibile all'interno di ogni flusso logico
-scelto dall'utente e come si può vedere in figura il mockup della
-mappa permette di capire la necessità di avere un'implementazione
-semplice e facilmente utilizzabile da qualsiasi utente, dove sia possibile
-passare dalla visualizzazione a mappa a quella a lista e dove siano
-già visibili le principali informazioni riguardo a ogni gelateria.
+acquistare un determinato coupon. La ricerca è quindi presente sia
+nel sistema di navigazione principale dell'applicazione sia raggiungibile
+all'interno di ogni flusso logico scelto dall'utente e come si può
+vedere in figura il mockup della mappa permette di capire la necessità
+di avere un'implementazione semplice e facilmente utilizzabile da
+qualsiasi utente, dove sia possibile passare dalla visualizzazione
+a mappa a quella a lista e dove siano già visibili le principali informazioni
+riguardo a ogni gelateria.
 
 È possibile osservare in figura \ref{fig:Mockup-Mappa} un mockup
 esplicativo per la schermata della ricerca tramite mappa con dettaglio
 sulla selezione di un marker informativo.\bigskip{}
 
 \begin{figure}[H]
-\includegraphics[scale=0.3]{/home/tommaso/Documents/Tesi/thesis/images/mockup_map}
-
+\begin{centering}
+\includegraphics[scale=0.25]{/home/tommaso/Documents/Tesi/thesis/images/mockup_map}
+\par\end{centering}
 \caption{\label{fig:Mockup-Mappa}Mockup Mappa}
 
 \end{figure}
@@ -152,9 +153,9 @@ eseguire il login sulla piattaforma.
 Sarà necessario poter accedere direttamente dalla navigazione principale
 alle informazioni riguardanti il proprio stato di accesso alla piattaforma,
 verificando se si è già autenticati o meno. Le funzionalità che devono
-essere più facilmente accessibili sono quendi quelle di login e di
+essere più facilmente accessibili sono quindi quelle di login e di
 logout, in modo che l'utente in pochi passaggi possa accedere o rimuovere
-i propri dati dal device utilizzato.\bigskip{}
+i propri dati dal dispositivo utilizzato.\bigskip{}
 
 I nuovi utenti potranno utilizzare un form per iscriversi alla piattaforma
 MyGelato inserendo solo alcune informazioni essenziali come nome,
@@ -226,7 +227,7 @@ della navigazione principale del sistema.\bigskip{}
 
 Infine, come avverrà poi per le gelaterie preferite, ogni utente registrato
 dovrà avere la possibilità di essere notificato di eventuali nuove
-promozioni nel momento stesso in cui diventerano disponibili.
+promozioni nel momento stesso in cui diventeranno disponibili.
 
 \subsection{Preferiti}
 
@@ -238,8 +239,8 @@ salvare sul proprio dispositivo gli esercizi di maggiore interesse.
 Questo dà modo all'utente di poter accedere in ogni momento, specialmente
 in mobilità, alle informazioni che più gli interessano di ogni gelateria:
 indirizzo, recapito telefonico ed eventuali promozioni. La ricerca
-in questo caso è molto semplicificata poichè viene presentata una
-sezione a parte con una lista degli shops preferiti, senza dover obbligare
+in questo caso è molto semplificata poichè viene presentata una sezione
+a parte con una lista degli shops preferiti, senza dover obbligare
 l'utente a effettuare una nuova ricerca all'interno della mappa. Il
 salvataggio all'interno dei preferiti avviene direttamente all'interno
 della ricerca, sia tramite la mappa che tramite la lista grazie a
@@ -249,7 +250,7 @@ Questa funzionalità è pensata principalmente per fidelizzare il consumatore:
 ogni utente avendo la possibilità di salvare una gelateria ha anche
 la possibilità di ottenere velocemente informazioni su nuove promozioni,
 trovare velocemente i contatti dell'esercizio come se li avesse salvati
-in rubrica e valuatare ogni volta la distanza tra se e lo shop.\bigskip{}
+in rubrica e valutare ogni volta la distanza tra se e lo shop.\bigskip{}
 
 Il passo successivo in questo senso è dato dal rendere bidirezionale
 questo collegamento, rendendo in alcuni casi non necessaria la ricerca
@@ -265,9 +266,9 @@ informato di essere vicino in termini di localizzazione. Le notifiche
 push invece sono attivate per avvertire un utente che una delle proprie
 gelaterie ha pubblicato una nuova promozione tramite l'aggiunta una
 carta sul sistema MyGelato. L'utente così rimane informato costantemente
-delle ultime promozioni disponibili e il propietario di una gelateria
+delle ultime promozioni disponibili e il proprietario di una gelateria
 ha la certezza di effettuare pubblicità diretta tra se e i suoi clienti
-più affezzionati.
+più affezionati.
 
 \section{E-Commerce}
 
@@ -278,7 +279,7 @@ vendita online è uno dei cardini su cui maggiormente si vuole puntare
 sia per funzionalità sia per innovazione.\bigskip{}
 
 I \emph{Coupon} gelato sono buoni acquisto che si possono acquistare
-dirattemente tramite l'applicazione e permettono a chiunque ne sia
+direttamente tramite l'applicazione e permettono a chiunque ne sia
 virtualmente in possesso di utilizzarli nelle gelaterie che li hanno
 rilasciati tramite validazione. L'acquisto dei buoni deve poter essere
 fatto in qualsiasi momento utilizzando le ultime tecnologie disponibili
@@ -309,7 +310,7 @@ che ha effettuato la vendita. Hanno un nome e un valore, il prezzo,
 scelti durante l'inserimento tramite il sistema amministrativo gestionale
 che può inserire anche informazioni aggiuntive come la scadenza e
 la valuta. Sono generici per tutto l'ecosistema e sono quindi disponibili
-per ogni gelateria che li rende disponibili anche se all'acquisto
+per ogni gelateria facente parte del circuito MyGelato anche se all'acquisto
 sarà necessario specificare l'esercizio nel quale si desidereranno
 poi utilizzare.\bigskip{}
 
@@ -343,15 +344,15 @@ l'acquisto, come spiegato precedentemente si andrà a sfruttare la
 mappa e la lista per la ricerca degli shop già utilizzata all'interno
 di altre funzionalità. In questo caso però verranno visualizzati solo
 le gelaterie che permettono l'acquisto di coupon e quando verranno
-selezionati i marker non si otterenno tutte le informazioni sull'esercizio
+selezionati i marker non si otterranno tutte le informazioni sull'esercizio
 ma sarà presente un'icona per selezionare lo shop.\bigskip{}
 
 Una volta selezionata la gelateria dovranno essere scaricati dal server
 i coupon disponibili e nel frattempo verrà resa disponibile la scelta
-del metodo di pagamento che si appoggerà al sistema di pagamento online
-Stripe. Si potrà scegliere tramite una lista di metodi di pagamento
-quello che si preferirà usare che sarà successivamente impostato come
-predefinito.
+del metodo di pagamento che si appoggerà ad un sistema di pagamento
+online esterno. Si potrà scegliere tramite una lista di metodi di
+pagamento quello che si preferirà usare che sarà successivamente impostato
+come predefinito.
 
 Scelto il metodo di pagamento, scorrendo la lista dei coupon disponibili
 ed decidendo il valore che si vuole acquistare si potrà infine scegliere
@@ -370,8 +371,8 @@ chiunque si dovrà legare ogni coupon grazie ad un codice alfanumerico
 di sei cifre detto PNR (\emph{Product Nr.}) che potrà quindi essere
 condiviso tramite qualsiasi mezzo disponibile.\bigskip{}
 
-L'uso di un codice inviabile facilmente come teso permette di sfrutare
-altri applicativi presenti sul device dell'utente per la condivisione
+L'uso di un codice inviabile facilmente come teso permette di sfruttare
+altri applicativi presenti sul dispositivo dell'utente per la condivisione
 tra persone differenti. Scegliendo il coupon da regalare si dovrà
 quindi chiedere all'utente tramite quale canale di comunicazione preferisce
 inviare il codice PNR per poi inserire il codice in un testo promozionale
@@ -380,10 +381,10 @@ MyGelato.
 
 L'inserimento del link a una pagina web della piattaforma accessibile
 online da qualsiasi dispositivo è una funzionalità di grande potenza:
-nel caso in cui la pagina web sia raggiunta da un device che ha installata
-sopra l'applicazione MyGelato aprirà direttamente l'applicativo stesso
-gestendo internamente il codice presente; altrimenti verrà presentata
-una pagina web che suggerisce all'utente di scaricare l'applicazione
+nel caso in cui la pagina web sia raggiunta da un dispositivo che
+ha installato sopra l'applicazione MyGelato aprirà direttamente l'applicativo
+stesso gestendo internamente il codice presente; altrimenti verrà
+presentata una pagina web che suggerisce all'utente di scaricare l'applicazione
 dai principali store mobile.\bigskip{}
 
 Valutato come scegliere di condividere un coupon è necessario inserire
@@ -406,9 +407,9 @@ e-commerce è ovviamente l'utilizzo e la validazione di un coupon per
 acquistare un bene materiale direttamente in sede all'esercizio che
 ha venduto il buono. Per semplificare l'utilizzo della piattaforma
 MyGelato ci si è rifatti nuovamente al fatto che gli smartphone siano
-diventati dei beni di uso comune e che quindi anche i propetari delle
-gelaterie possano utilizzare l'applicazione MyGelato come mezzo per
-la validazione dei coupon.\bigskip{}
+diventati dei beni di uso comune e che quindi anche i proprietari
+delle gelaterie possano utilizzare l'applicazione MyGelato come mezzo
+per la validazione dei coupon.\bigskip{}
 
 Allo stesso modo che per le funzionalità di condivisone e riscatto
 si è scelto di utilizzare i codici PNR dei coupon come mezzo per far
@@ -421,7 +422,7 @@ slegati.
 Si è quindi proposto di generare un QR Code a partire dal codice PNR
 di ogni coupon, raggiungibile direttamente cliccando sul buono presente
 nella lista di gestione interna all'applicazione. Il consumatore dovrà
-quindi mostrare il QR Code al propietario dell'esercizio che, utilizzando
+quindi mostrare il QR Code al proprietario dell'esercizio che, utilizzando
 la stessa applicazione MyGelato con un account di tipo \emph{gelatiere},
 utilizzerà una funzione di validazione tramite lettura del codice
 mostrato. Sarà infine necessaria una connessione al server da parte

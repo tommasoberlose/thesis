@@ -7,7 +7,7 @@
 \textclass extreport
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language italian
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -78,9 +78,26 @@ Conclusioni
 \begin_layout Standard
 Il lavoro esposto all'interno di questa tesi ha portato al completamento
  e alla pubblicazione della applicazione mobile per piattaforma Android
- che si inserisce all'interno della creazione dell'ecosistema MyGelato,
- progetto dell'azienda Carpigiani leader nel settore della vendita di macchine
- per gelato.
+ che si inserisce all'interno della creazione dell'ecosistema denominato
+ MyGelato, progetto dell'azienda Carpigiani leader nel settore della vendita
+ di macchine per gelato.
+ È stato necessario valutare attentamente ogni passaggio dello sviluppo
+ partendo dalla fase di progettazione e studio delle specifiche richieste
+ fino all'implementazione vera e propria dell'applicativo.
+ Si è svolto un lavoro in team dovendo aggregare le informazioni derivanti
+ dagli altri componenti della piattaforma sia testando ad ogni step le funzional
+ità implementate che includessero il collegamento con il sistema di backend
+ sia studiando i pattern strutturali utilizzati nello sviluppo della rispettiva
+ applicazione per sistema iOS.
+\end_layout
+
+\begin_layout Standard
+Insieme al lavoro prettamente legato all'implementazione si sono anche proposte
+ alcune valutazioni sul contesto all'interno del quale si inserisce la piattafor
+ma che si è andati a creare, così da presentare sia le funzionalità maggiormente
+ legate al progetto MyGelato sia le funzionalità che formano invece un pattern
+ più generale adottabile anche da altre aziende che desiderino avviare lo
+ sviluppo di un sistema con finalità 
 \end_layout
 
 \begin_layout Standard
@@ -102,15 +119,14 @@ i sul mercato.
  di programmazione mobile.
  Per poter ottenere un risultato ottimo in questo senso si sono studiate
  tutte le molteplici possibilità disponibili in ambito open source sia per
- quanto riguarda i pattern strutturali sia per le librerie incluse all'interno
- del progetto.
+ quanto riguarda i pattern strutturali sia per le librerie utilizzate.
 \end_layout
 
 \begin_layout Standard
 Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
  sia in termini di funzionalità e-commerce sono state pienamente soddisfatte
  rendendo già disponibile per l'utente finale un prodotto performante e
- in perfetta sinergia rispetto alle altre componenti della piattaforma.
+ in perfetta sinergia con le altre componenti della piattaforma.
  Sarà ora di fondamentale importanza considerare una buona campagna di marketing
  affiancata alla corretta comunicazione con i gelatieri in modo da garantire
  al progetto una diffusione capillare nel territorio e aprire la strada
@@ -118,8 +134,12 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
 \end_layout
 
 \begin_layout Standard
-L'elaborato, per come è stato sviluppato con architettura modulare, permette
- eventuali modifiche ed espansioni future rispetto 
+L'elaborato, grazie all'architettura modulare con cui è stato sviluppato,
+ permette l'implementazione di nuove funzionalità con il minimo sforzo,
+ senza dover riprogettare l’attuale struttura dell'applicazione e si pone
+ ad esempio per progetti simili che abbiano specifiche progettuali simili
+ anche solo parzialmente potendo estrapolare da ogni flusso logico le scelte
+ implementative fatte.
 \end_layout
 
 \end_body
