@@ -83,7 +83,7 @@
 \begin_body
 
 \begin_layout Chapter
-Implementazione
+Progettazione e Realizzazione
 \end_layout
 
 \begin_layout Standard
@@ -2646,27 +2646,6 @@ Una volta inserito il codice sarà effettuata una richiesta al server tramite
  fallimento dell'operazione, verrà notificato con un messaggio di errore.
  
 \begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Condivisione-e-Riscatto"
-
-\end_inset
-
- mostra tutti i passaggi principali per la condivisione e il riscatto di
- un buono seguendo il flusso logico proposto all'utente a ogni step, molti
- dei quali anticipati da un'immagine informativa che esplica brevemente
- come utilizzare ogni singola schermata.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace vfill
 \end_inset
 
 

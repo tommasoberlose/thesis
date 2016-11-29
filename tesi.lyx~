@@ -376,7 +376,8 @@ Relatore
 
 \series bold
 \size large
-Tommaso
+Dott.
+ Tommaso
 \lang english
  Berlose
 \end_layout
@@ -862,8 +863,21 @@ filename "chapters/chapter_04.lyx"
 \end_inset
 
 
-\lang english
+\end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapters/conclusioni.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
 \begin_inset ERT
 status open
 
@@ -891,19 +905,8 @@ newpage
 \end_inset
 
 
-\end_layout
+\lang italian
 
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "chapters/conclusioni.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 

@@ -83,7 +83,7 @@
 \begin_body
 
 \begin_layout Chapter
-Progettazione
+Tecnologie
 \end_layout
 
 \begin_layout Standard
@@ -180,7 +180,7 @@ Android Studio
 \emph default
 , Integrated Development Environment (IDE) dedicato alla programmazione
  Android distribuito da JetBrains e Google che è ormai il miglior software
- per la creazione dei applicazioni su questa piattaforma.
+ per la creazione di applicazioni su questa piattaforma.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -461,7 +461,7 @@ key "WIKIPEDIA:ANDROIDSTUDIO"
 
 \end_inset
 
- è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma
+ è un ambiente di sviluppo integrato (IDE) di sviluppo per la piattaforma
  Android.
  È stato annunciato il 16 maggio 2013 in occasione della conferenza Google
  I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
@@ -469,7 +469,7 @@ key "WIKIPEDIA:ANDROIDSTUDIO"
  specificamente per lo sviluppo di Android.
  Sostituisce gli Android Development Tools (ADT) di Eclipse, diventando
  l' IDE primario di Google per lo sviluppo nativo di applicazioni Android
- offre ancora più funzioni che migliorano la produttività durante la creazione
+ e offre ancora più funzioni che migliorano la produttività durante la creazione
  di applicazioni Android, come ad esempio: un sistema di compilazione Gradle,
  un ambiente unificato dove è possibile sviluppare per tutti i dispositivi,
  esecuzione e costruzione di un file APK per la pubblicazione di una applicazion
@@ -585,7 +585,7 @@ branching and merging
 \end_layout
 
 \begin_layout Standard
-Infine grazie all'utilizzo di piccoli accorgimenti come il file .gitignore
+Infine grazie all'utilizzo di piccoli accorgimenti come il file gitignore
  (che permette di non salvare anche i file temporanei e non importanti del
  progetto) e soluzioni online come GitHub o BitBucket (quest'ultimo utilizzato
  durante lo sviluppo di questa tesi) il processo di sviluppo software viene
@@ -630,7 +630,7 @@ key "HTMLIT:DB"
 \end_layout
 
 \begin_layout Standard
-Esistono però anche alternativa agli strumenti standard forniti ufficialmente
+Esistono però anche alternative agli strumenti standard forniti ufficialmente
  per la piattaforma e uno di questi è la libreria 
 \emph on
 Realm
@@ -880,8 +880,8 @@ Realm Transaction
 
 \begin_layout Standard
 Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
-o del DB è forse fondamentale capire come vengono gestite anche le query
- sulla base di dati; Un esempio molto semplice visibile nel listato 
+o del DB è forse fondamentale capire come sono gestite anche le query sulla
+ base di dati: un esempio molto semplice visibile nel listato 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lis:Realm-Query"
@@ -1066,7 +1066,7 @@ Il passaggio di informazioni tra i due applicativi avviene tramite chiamate
  che permettono di valutare ogni possibile errore delle connessioni: errori
  nei dati, nella connessione, ecc...
  In Java le chiamate http sono difficilmente gestibili poichè non sono automatiz
-zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
+zate e sono stati effettuati dei cambiamenti nelle ultime versioni che non
  permettono di lavorare correttamente su tutti i dispositivi Android.
  Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata
  da Square, che permette di automatizzare le chiamate http sfruttando anche
@@ -1329,7 +1329,7 @@ public static class UpdateCouponUiEvent<T> {
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Event Class
+UpdateCouponUiEvent Class
 \end_layout
 
 \end_inset
@@ -1473,7 +1473,7 @@ key "STRIPE"
 
  piattaforma per i pagamenti online disponibile anche come plugin da poter
  importare all'interno del proprio progetto che permette di avere una gestione
- dei metodi di pagamento di un singolo utente e di eseguire transizioni
+ dei metodi di pagamento di un singolo utente e di eseguire transazioni
  monetarie tra un account user e un account commerciante.
 \end_layout
 
@@ -1505,7 +1505,7 @@ L'implementazione di Stripe richiede un'inizializzazione da parte del sistema
 \begin_layout Standard
 Nel momento in cui si vorrà eseguire una transizione monetaria tra due account
  sarà necessario avere il token identificativo dell'utente e quello dell'eserciz
-io su cui si vorrà acquistare, in questo caso le gelateria inserite all'interno
+io su cui si vorrà acquistare, in questo caso le gelaterie inserite all'interno
  del circuito MyGelato.
  Interverrà poi il sistema di pagamento interno alla piattaforma Stripe
  per effettuare il passaggio e concludere la transizione in sicurezza e
@@ -1521,7 +1521,7 @@ Oltre alla semplicità di utilizzo di un tool di questo tipo che permette
  l'inserimento di pagamenti online all'interno dei propri progetti anche
  senza una specifica esperienza nel campo, è fondamentale la parte di test
  resa disponibile da Stripe che permette di aggiungere dei metodi di pagamento
- non reali e di eseguire delle transizioni senza che vi sia un reale spostamento
+ non reali e di eseguire delle transazioni senza che vi sia un reale spostamento
  monetario ai fine del testing dei proprio applicativi.
 \end_layout
 

@@ -609,7 +609,7 @@ Il geofencing permette di ricevere una notifica ogni qualvolta l'utente
  informato di essere vicino in termini di localizzazione.
  Le notifiche push invece sono attivate per avvertire un utente che una
  delle proprie gelaterie ha pubblicato una nuova promozione tramite l'aggiunta
- una carta sul sistema MyGelato.
+ di una carta sul sistema MyGelato.
  L'utente così rimane informato costantemente delle ultime promozioni disponibil
 i e il proprietario di una gelateria ha la certezza di effettuare pubblicità
  diretta tra se e i suoi clienti più affezionati.
@@ -736,14 +736,14 @@ e principale dell'applicazione, anche se deve essere disponibile solo nel
 \begin_layout Standard
 Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
  racchiuse all'interno di una stessa schermata in cui l'utente verrà guidato
- attraverso le varie fasi fino all'avvenuta transizione.
+ attraverso le varie fasi fino all'avvenuta transazione.
  Il primo passo da svolgere è la scelta della gelateria su cui eseguire
  l'acquisto, come spiegato precedentemente si andrà a sfruttare la mappa
  e la lista per la ricerca degli shop già utilizzata all'interno di altre
  funzionalità.
- In questo caso però verranno visualizzati solo le gelaterie che permettono
+ In questo caso però verranno visualizzate solo le gelaterie che permettono
  l'acquisto di coupon e quando verranno selezionati i marker non si otterranno
- tutte le informazioni sull'esercizio ma sarà presente un'icona per selezionare
+ tutte le informazioni sull'esercizio, ma sarà presente un'icona per selezionare
  lo shop.
 \begin_inset VSpace bigskip
 \end_inset
@@ -752,20 +752,20 @@ Le operazioni richieste per l'acquisto di un coupon dovranno essere tutte
 \end_layout
 
 \begin_layout Standard
-Una volta selezionata la gelateria dovranno essere scaricati dal server
+Una volta selezionata la gelateria, dovranno essere scaricati dal server
  i coupon disponibili e nel frattempo verrà resa disponibile la scelta del
  metodo di pagamento che si appoggerà ad un sistema di pagamento online
  esterno.
  Si potrà scegliere tramite una lista di metodi di pagamento quello che
- si preferirà usare che sarà successivamente impostato come predefinito.
+ si preferirà usare, che sarà successivamente impostato come predefinito.
 \end_layout
 
 \begin_layout Standard
 Scelto il metodo di pagamento, scorrendo la lista dei coupon disponibili
- ed decidendo il valore che si vuole acquistare si potrà infine scegliere
- di completare l'acquisto che in caso di successo dovrà poi riportare l'utente
- sulla sezione di gestione dei coupon e altrimenti presentare un messaggio
- di errore.
+ e decidendo il valore che si vuole acquistare, si potrà infine scegliere
+ di completare l'acquisto che, in caso di successo, dovrà poi riportare
+ l'utente sulla sezione di gestione dei coupon o altrimenti presentare un
+ messaggio di errore.
 \end_layout
 
 \begin_layout Subsection
@@ -790,7 +790,7 @@ Product Nr.
 \end_layout
 
 \begin_layout Standard
-L'uso di un codice inviabile facilmente come teso permette di sfruttare
+L'uso di un codice inviabile facilmente come testo permette di sfruttare
  altri applicativi presenti sul dispositivo dell'utente per la condivisione
  tra persone differenti.
  Scegliendo il coupon da regalare si dovrà quindi chiedere all'utente tramite

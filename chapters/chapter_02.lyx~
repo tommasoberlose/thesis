@@ -239,10 +239,6 @@ reference "fig:Risorse-Design"
  è possibile vedere alcune delle immagini presentate per la navigazione
  principale e alcune icone in tutte le versioni disponibili rispettivamente
  per un tema chiaro ed uno scuro.
-\begin_inset VSpace bigskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -613,7 +609,7 @@ Il geofencing permette di ricevere una notifica ogni qualvolta l'utente
  informato di essere vicino in termini di localizzazione.
  Le notifiche push invece sono attivate per avvertire un utente che una
  delle proprie gelaterie ha pubblicato una nuova promozione tramite l'aggiunta
- una carta sul sistema MyGelato.
+ di una carta sul sistema MyGelato.
  L'utente così rimane informato costantemente delle ultime promozioni disponibil
 i e il proprietario di una gelateria ha la certezza di effettuare pubblicità
  diretta tra se e i suoi clienti più affezionati.

@@ -180,7 +180,7 @@ Android Studio
 \emph default
 , Integrated Development Environment (IDE) dedicato alla programmazione
  Android distribuito da JetBrains e Google che è ormai il miglior software
- per la creazione dei applicazioni su questa piattaforma.
+ per la creazione di applicazioni su questa piattaforma.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -283,47 +283,60 @@ activity_main
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public class Main extends AppCompatActivity {
 \end_layout
 
 \begin_layout Plain Layout
+
     @Override
 \end_layout
 
 \begin_layout Plain Layout
+
     protected void onCreate(Bundle savedInstanceState) {
 \end_layout
 
 \begin_layout Plain Layout
+
         super.onCreate(savedInstanceState);
 \end_layout
 
 \begin_layout Plain Layout
+
         setContentView(R.layout.activity_main);
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
 \begin_layout Plain Layout
-    ...
+
+}
 \end_layout
 
 \begin_layout Plain Layout
-}
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:AppCompatActivity"
+name "lis:AppCompatActivity"
 
 \end_inset
 
@@ -332,10 +345,6 @@ AppCompatActivity
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -368,52 +377,62 @@ L'esempio più eclatante è l'utilizzo dell'XML per produrre il manifesto
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 <?xml version="1.0" encoding="utf-8"?>
 \end_layout
 
 \begin_layout Plain Layout
+
 <LinearLayout
 \end_layout
 
 \begin_layout Plain Layout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
 \end_layout
 
 \begin_layout Plain Layout
+
     android:layout_width="match_parent"
 \end_layout
 
 \begin_layout Plain Layout
+
     android:layout_height="match_parent">
 \end_layout
 
 \begin_layout Plain Layout
+
     <ImageView
 \end_layout
 
 \begin_layout Plain Layout
+
          android:layout_width="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
          android:layout_height="wrap_content"
 \end_layout
 
 \begin_layout Plain Layout
+
          src="drawable/icon" />
 \end_layout
 
 \begin_layout Plain Layout
+
 </LinearLayout>
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -422,10 +441,6 @@ Layout XML
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -446,7 +461,7 @@ key "WIKIPEDIA:ANDROIDSTUDIO"
 
 \end_inset
 
- è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma
+ è un ambiente di sviluppo integrato (IDE) di sviluppo per la piattaforma
  Android.
  È stato annunciato il 16 maggio 2013 in occasione della conferenza Google
  I/O e la prima build stabile fu rilasciata nel dicembre del 2014.
@@ -454,7 +469,7 @@ key "WIKIPEDIA:ANDROIDSTUDIO"
  specificamente per lo sviluppo di Android.
  Sostituisce gli Android Development Tools (ADT) di Eclipse, diventando
  l' IDE primario di Google per lo sviluppo nativo di applicazioni Android
- offre ancora più funzioni che migliorano la produttività durante la creazione
+ e offre ancora più funzioni che migliorano la produttività durante la creazione
  di applicazioni Android, come ad esempio: un sistema di compilazione Gradle,
  un ambiente unificato dove è possibile sviluppare per tutti i dispositivi,
  esecuzione e costruzione di un file APK per la pubblicazione di una applicazion
@@ -491,7 +506,7 @@ key "GRADLE"
  che a partire da un manifesto, che dichiara la struttura dell'applicazione,
  i file Java contenenti il codice sorgente (inclusi i test) e l'insieme
  delle risorse e degli asset può generare un file firmato installabile su
- qualsiasi dispositivo Android.
+ qualsiasi dispositivo.
 \end_layout
 
 \begin_layout Standard
@@ -505,7 +520,7 @@ Per la generazione delle risorse Android Studio mette a disposizione alcuni
 \begin_layout Standard
 Ovviamente AS incapsula tutti i tool utili alla programmazione come la formattaz
 ione, lo stile e la correzione in realtime del codice scritto effettuando
- anche il controllo sintattico e un'analisi statica seguendo i pattern standard
+ il controllo sintattico e l'analisi statica seguendo i pattern standard
  della piattaforma.
 \end_layout
 
@@ -570,7 +585,7 @@ branching and merging
 \end_layout
 
 \begin_layout Standard
-Infine grazie all'utilizzo di piccoli accorgimenti come il file .gitignore
+Infine grazie all'utilizzo di piccoli accorgimenti come il file gitignore
  (che permette di non salvare anche i file temporanei e non importanti del
  progetto) e soluzioni online come GitHub o BitBucket (quest'ultimo utilizzato
  durante lo sviluppo di questa tesi) il processo di sviluppo software viene
@@ -615,7 +630,7 @@ key "HTMLIT:DB"
 \end_layout
 
 \begin_layout Standard
-Esistono però anche alternativa agli strumenti standard forniti ufficialmente
+Esistono però anche alternative agli strumenti standard forniti ufficialmente
  per la piattaforma e uno di questi è la libreria 
 \emph on
 Realm
@@ -677,7 +692,7 @@ User
  come si può vedere nel listato 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "alg:Model-Realm"
+reference "lis:Model-Realm"
 
 \end_inset
 
@@ -688,62 +703,73 @@ PrimaryKey.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 import io.realm.RealmObject;
 \end_layout
 
 \begin_layout Plain Layout
+
 import io.realm.annotations.PrimaryKey;
 \end_layout
 
 \begin_layout Plain Layout
+
 public class User extends RealmObject {
 \end_layout
 
 \begin_layout Plain Layout
+
     @PrimaryKey
 \end_layout
 
 \begin_layout Plain Layout
+
     public String uuid;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String firstName;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String lastName;
 \end_layout
 
 \begin_layout Plain Layout
+
     public String email;
 \end_layout
 
 \begin_layout Plain Layout
+
     public User() {
 \end_layout
 
 \begin_layout Plain Layout
+
     }
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "alg:Model-Realm"
+name "lis:Model-Realm"
 
 \end_inset
 
@@ -755,13 +781,12 @@ Model Realm
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -773,54 +798,70 @@ L'utilizzo di questi modelli è molto semplificato poichè Realm permette
  di creare delle transizioni sui singoli oggetti creati così da poter aggiornare
  la loro versione contenuta all'interno del database, assicurando in ogni
  istante le proprietà ACID delle operazioni.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKIPEDIA:ACID"
+
+\end_inset
+
  Si può vedere nel seguente listato un esempio di creazione o aggiornamento
  di un oggetto user in base al fatto che sia o non sia già presente all'interno
  della base di dati.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
+
 User user = new User(Params...);
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.executeTransaction(new Realm.Transaction() {
 \end_layout
 
 \begin_layout Plain Layout
+
       @Override
 \end_layout
 
 \begin_layout Plain Layout
+
       public void execute(Realm realm) {
 \end_layout
 
 \begin_layout Plain Layout
+
           realm.copyToRealmOrUpdate(user);
 \end_layout
 
 \begin_layout Plain Layout
+
       }
 \end_layout
 
 \begin_layout Plain Layout
+
 });
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.close();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -832,14 +873,6 @@ Realm Transaction
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -847,8 +880,14 @@ Realm Transaction
 
 \begin_layout Standard
 Allo stesso modo con cui vengono semplificati gli inserimenti di dati all'intern
-o del db è forse fondamentale capire come vengono gestite anche le query
- sulla base di dati; Un esempio molto semplice visibile nel listato CODICE
+o del DB è forse fondamentale capire come sono gestite anche le query sulla
+ base di dati: un esempio molto semplice visibile nel listato 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Realm-Query"
+
+\end_inset
+
  mostra come sia possibile richiedere un utente con email non nulla all'interno
  dei dati salvati ottenendoli in un 
 \emph on
@@ -859,35 +898,46 @@ ArrayList
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 RealmResults<User> results = 
 \end_layout
 
 \begin_layout Plain Layout
+
      Realm.getDefaultInstance()
 \end_layout
 
 \begin_layout Plain Layout
+
           .where(User.class)
 \end_layout
 
 \begin_layout Plain Layout
+
           .notNull("email")
 \end_layout
 
 \begin_layout Plain Layout
+
 .findAll();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Realm-Query"
+
+\end_inset
+
 Realm Query
 \end_layout
 
@@ -896,13 +946,12 @@ Realm Query
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -921,41 +970,48 @@ listener
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 Realm realm = Realm.getDefaultInstance();
 \end_layout
 
 \begin_layout Plain Layout
+
 realm.addChangeListener(new RealmChangeListener<Realm>() {
 \end_layout
 
 \begin_layout Plain Layout
+
       @Override
 \end_layout
 
 \begin_layout Plain Layout
+
       public void onChange(Realm element) {
 \end_layout
 
 \begin_layout Plain Layout
+
             // do something...
     
 \end_layout
 
 \begin_layout Plain Layout
+
       }
 \end_layout
 
 \begin_layout Plain Layout
+
 });
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -964,10 +1020,6 @@ Realm Listener
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -991,6 +1043,14 @@ Attualmente ogni tipo di piattaforma che voglia permettere al proprio utente
  ogni informazione riguardante utenti, shop e card fornendo delle API REST
  che vengono sfruttate dalle applicazioni mobile e web per poter fornire
  i propri servizi.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HTMLIT:REST"
+
+\end_inset
+
+
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1006,12 +1066,19 @@ Il passaggio di informazioni tra i due applicativi avviene tramite chiamate
  che permettono di valutare ogni possibile errore delle connessioni: errori
  nei dati, nella connessione, ecc...
  In Java le chiamate http sono difficilmente gestibili poichè non sono automatiz
-zate e son stati effettuati dei cambiamenti nelle ultime versioni che non
+zate e sono stati effettuati dei cambiamenti nelle ultime versioni che non
  permettono di lavorare correttamente su tutti i dispositivi Android.
  Per questo motivo è stata utilizzata la libreria open-source OkHttp sviluppata
  da Square, che permette di automatizzare le chiamate http sfruttando anche
  una notevole semplificazione del codice utilizzato per programmare.
- SQUARE:OKHTTP
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SQUARE:OKHTTP"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1038,28 +1105,32 @@ Supporta ogni tipo di comunicazione http, ne gestisce la latenza, il caching,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 OkHttpClient client = new OkHttpClient();
 \end_layout
 
 \begin_layout Plain Layout
+
 Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
+
            .url(endpoint)
 \end_layout
 
 \begin_layout Plain Layout
+
            .addHeader("Accept","application/json")
 \end_layout
 
 \begin_layout Plain Layout
+
            .build();
 \end_layout
 
@@ -1068,10 +1139,12 @@ Request request = new Request.Builder()
 \end_layout
 
 \begin_layout Plain Layout
+
 Response response = client.newCall(request).execute();
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1138,37 +1211,9 @@ e in errori di inconsistenza tra le view a cui il programma voleva accedere
  a elementi, o anche intere schermate, non più presenti a video; per questo
  motivo si è scelto di utilizzare la libreria EventBus sviluppata da GreenRobot
  
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-GITHUB:EVENTBUS
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GITHUB:EVENTBUS"
 
 \end_inset
 
@@ -1185,37 +1230,10 @@ EventBus è una libreria open-source per Android che utilizza il pattern
  Disaccoppia le classi che interagiscono sulla stessa interfaccia e le gestisce
  in maniera centralizzata monitorando le performance e gestendo gli errori
  che potrebbero essere sollevati da uno sviluppo multithread.
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autocite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-GREENROBOT:EVENTBUS
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GREENROBOT:EVENTBUS"
 
 \end_inset
 
@@ -1272,48 +1290,46 @@ Per far dialogare questi elementi si è utilizzato EventBus così da sfruttare
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 public static class UpdateCouponUiEvent<T> {
 \end_layout
 
 \begin_layout Plain Layout
+
 	public T data;
 \end_layout
 
 \begin_layout Plain Layout
-	public UpdateCouponUiEvent() {
-\end_layout
 
-\begin_layout Plain Layout
-	}
-\end_layout
-
-\begin_layout Plain Layout
 	public UpdateCouponUiEvent(T data) {
 \end_layout
 
 \begin_layout Plain Layout
+
 		this.data = data;
 \end_layout
 
 \begin_layout Plain Layout
+
 	}
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Event Class
+UpdateCouponUiEvent Class
 \end_layout
 
 \end_inset
@@ -1328,6 +1344,9 @@ Event Class
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1342,28 +1361,32 @@ EventBus permette di registrare dei metodi eseguendo una subscribe a un
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 @Subscribe
 \end_layout
 
 \begin_layout Plain Layout
+
 public void updateUI(UpdateCouponUiEvent event) {
 \end_layout
 
 \begin_layout Plain Layout
+
 	// update UI with event.data
 \end_layout
 
 \begin_layout Plain Layout
+
 }
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1375,13 +1398,12 @@ EventBus Subscribe
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1390,27 +1412,23 @@ EventBus Subscribe
 
 \begin_layout Standard
 Grazie all'utilizzo di eventi custom è dunque possibile passare anche dei
- dati tramite l'evento che viene lanciato, nel codice messo ad esempio si
- tratta della variable data, definito di tipo generico.
+ dati tramite l'evento che viene lanciato all'interno di un AsyncTask, a
+ conclusione del download delle informazioni e dell'aggiornamento dello
+ stato, grazie a una publish:
 \end_layout
 
 \begin_layout Standard
-Infine all'interno del AsyncTask, a conclusione del download delle informazioni
- e dell'aggiornamento dello stato, era sollevato un evento grazie a una
- publish:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
+
 EventBus.getDefault().post(new UpdateCouponUiEvent());
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1419,10 +1437,6 @@ EventBus Update
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1443,18 +1457,24 @@ Ogni sistema di e-commerce presente sugli applicativi moderni è normalmente
  Questi sistemi ovviamente devono garantire l'utilizzo sia da parte dell'applica
 tivo di frontend sia da parte del server di backend in modo che l'intero
  sistema sia consistente.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-In questo specifico caso si è scelto di utilizzare il tool Stripe, piattaforma
- per i pagamenti online disponibile anche come plugin da poter importare
- all'interno del proprio progetto che permette di avere una gestione dei
- metodi di pagamento di un singolo utente e di eseguire transizioni monetarie
- tra un account user e un account commerciante.
+In questo specifico caso si è scelto di utilizzare il tool Stripe, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "STRIPE"
+
+\end_inset
+
+ piattaforma per i pagamenti online disponibile anche come plugin da poter
+ importare all'interno del proprio progetto che permette di avere una gestione
+ dei metodi di pagamento di un singolo utente e di eseguire transazioni
+ monetarie tra un account user e un account commerciante.
 \end_layout
 
 \begin_layout Subsection

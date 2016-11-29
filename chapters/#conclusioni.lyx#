@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language italian
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -76,19 +76,24 @@ Conclusioni
 \end_layout
 
 \begin_layout Standard
-Il lavoro esposto all'interno di questa tesi ha portato al completamento
- e alla pubblicazione della applicazione mobile per piattaforma Android
+Il lavoro esposto all'interno di questa tesi ha portato alla progettazione
+ e alla realizzazione della applicazione mobile per piattaforma Android
  che si inserisce all'interno della creazione dell'ecosistema denominato
  MyGelato, progetto dell'azienda Carpigiani leader nel settore della vendita
  di macchine per gelato.
  È stato necessario valutare attentamente ogni passaggio dello sviluppo
  partendo dalla fase di progettazione e studio delle specifiche richieste
  fino all'implementazione vera e propria dell'applicativo.
- Si è svolto un lavoro in team dovendo aggregare le informazioni derivanti
- dagli altri componenti della piattaforma sia testando ad ogni step le funzional
-ità implementate che includessero il collegamento con il sistema di backend
- sia studiando i pattern strutturali utilizzati nello sviluppo della rispettiva
- applicazione per sistema iOS.
+ Si è svolto un lavoro nel dettaglio del singolo componente del sistema
+ dovendo però aggregare le informazioni derivanti dalle altre entità della
+ piattaforma, sia testando ad ogni step le funzionalità implementate che
+ includessero il collegamento con il sistema di backend sia studiando i
+ pattern strutturali utilizzati nello sviluppo della rispettiva applicazione
+ per sistema iOS.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -97,19 +102,29 @@ Insieme al lavoro prettamente legato all'implementazione si sono anche proposte
 ma che si è andati a creare, così da presentare sia le funzionalità maggiormente
  legate al progetto MyGelato sia le funzionalità che formano invece un pattern
  più generale adottabile anche da altre aziende che desiderino avviare lo
- sviluppo di un sistema con finalità 
+ sviluppo di un sistema con finalità simili.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Un progetto di questo tipo descrive appieno la situazione tipo in cui si
- sono trovate o si verranno a trovare tutte le aziende leader nei propri
- settori che saranno costrette a diversificare il proprio prodotto integrando
- un sistema di marketing e di vendita che sfrutti le nuove tecnologie disponibil
-i sul mercato.
+Si è descritto quindi la situazione tipo in cui si sono trovate o si verranno
+ a trovare tutte le aziende leader nei propri settori che saranno costrette
+ a diversificare il proprio prodotto integrando un sistema di marketing
+ e di vendita che sfrutti le nuove tecnologie disponibili sul mercato.
  Il pubblico consumer diventa ogni giorno più esigente per quanto riguarda
  i servizi resi disponibili dalle aziende parallelamente ai loro core business,
  specialmente se si tratta come in questo caso di un mercato in cui non
  vi è ancora un'ingerenza tecnologica così profonda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -120,6 +135,10 @@ i sul mercato.
  Per poter ottenere un risultato ottimo in questo senso si sono studiate
  tutte le molteplici possibilità disponibili in ambito open source sia per
  quanto riguarda i pattern strutturali sia per le librerie utilizzate.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -131,6 +150,10 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
  affiancata alla corretta comunicazione con i gelatieri in modo da garantire
  al progetto una diffusione capillare nel territorio e aprire la strada
  per un’espansione di livello mondiale.
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

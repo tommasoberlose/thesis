@@ -99,7 +99,7 @@ Per comprendere nella sua complessità il progetto elaborato in questa tesi
 \begin_layout Standard
 Oltre alle ingerenze esterne sul progetto, come il cambiamento repentino
  delle tecnologie o la presenza di eventuali competitor, deve essere valutata
- la posizione del singolo componente all'interno dello sviluppo dell'interno
+ la posizione del singolo componente all'interno dello sviluppo dell'intero
  progetto, la quale va tenuta in forte considerazione specialmente durante
  la prima fase di sviluppo in cui si determinano le prime linee guida da
  seguire durante tutto il lavoro.
@@ -127,46 +127,6 @@ Proprio in questo contesto è necessario inquadrare le motivazioni che hanno
 
 \begin_layout Section
 Application Economy
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/app_economy.png
-	lyxscale 40
-	width 100line%
-	BoundingBox 0bp 0bp 1520bp 655bp
-
-\end_inset
-
- 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:appEconomy1"
-
-\end_inset
-
- Application Economy
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -208,7 +168,7 @@ Secondo il giornalista Paul Mason, è stata la dottrina economica degli ultimi
  Si sono diffusi, infatti, concetti come i progetti open-source, la sharing
  economy e le licenze creative commons che hanno messo in crisi le fondamenta
  del capitalismo odierno.
- Questo fenomeno unito alla saturazione di molti mercati ha portando tante
+ Questo fenomeno unito alla saturazione di molti mercati ha portato tante
  aziende a dover rivedere la propria business strategy obbligandole a dirigere
  i propri investimenti sulla diversificazione e sulle nuove strategie di
  vendita.
@@ -332,7 +292,7 @@ Attraverso l'applicativo, l'utente può informarsi sulle gelaterie presenti
  delle gelaterie convenzionate alla vendita e alla validazione dei coupon
  online.
  È possibile ottenere alcune informazioni utili, come indirizzo e numero
- di telefono, salvarle nei preferiti e verificare se vi sono promozioni
+ di telefono, salvarle nei preferiti e verificare se vi siano promozioni
  attive.
  Sono strategie ovviamente di carattere pubblicitario e permettono anche
  a gelaterie minori, facenti però parte del circuito, di essere pubblicizzate
