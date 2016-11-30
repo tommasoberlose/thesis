@@ -76,19 +76,19 @@ Conclusioni
 \end_layout
 
 \begin_layout Standard
-Il lavoro esposto all'interno di questa tesi ha portato al completamento
- e alla pubblicazione della applicazione mobile per piattaforma Android
+Il lavoro esposto all'interno di questa tesi ha portato alla progettazione
+ e alla realizzazione della applicazione mobile per piattaforma Android
  che si inserisce all'interno della creazione dell'ecosistema denominato
  MyGelato, progetto dell'azienda Carpigiani leader nel settore della vendita
  di macchine per gelato.
  È stato necessario valutare attentamente ogni passaggio dello sviluppo
  partendo dalla fase di progettazione e studio delle specifiche richieste
  fino all'implementazione vera e propria dell'applicativo.
- Si è svolto un lavoro in team dovendo aggregare le informazioni derivanti
- dagli altri componenti della piattaforma sia testando ad ogni step le funzional
-ità implementate che includessero il collegamento con il sistema di backend
- sia studiando i pattern strutturali utilizzati nello sviluppo della rispettiva
- applicazione per sistema iOS.
+ Si è svolto un lavoro per un singolo componente del sistema dovendo però
+ aggregare le informazioni derivanti dalle altre entità della piattaforma,
+ sia testando ad ogni step le funzionalità implementate che includessero
+ il collegamento con il sistema di backend sia studiando i pattern strutturali
+ utilizzati nello sviluppo della rispettiva applicazione per sistema iOS.
 \begin_inset VSpace defskip
 \end_inset
 

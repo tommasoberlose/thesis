@@ -97,8 +97,8 @@ Informazione
 \emph default
  che è diventata il nodo fondamentale di ogni sistema economico moderno:
  tracciabilità, trasparenza e accesso ai dati relativi al singolo prodotto
- sono solo alcuni dei concetti che si sono diffusi grazie all'entrata di
- dispositivi, come gli smartphone, nella quotidianità del pubblico consumer.
+ sono solo alcuni dei concetti che si sono diffusi, grazie all'entrata di
+ dispositivi come gli smartphone, nella quotidianità del pubblico consumer.
 \begin_inset VSpace medskip
 \end_inset
 
@@ -145,9 +145,9 @@ li.
 Vi è quindi stato un completo rinnovamento dei meccanismi alla base del
  nostro sistema di mercato e, a causa della forte ingerenza della tecnologia,
  si possono già vedere i segni di uno spostamento degli equilibri, che porterann
-o l'intero sistema a una deriva difficilmente prevedibile la quale si potrà
- assestare solo nel momento in cui le aziende prenderanno consapevolezza
- di come molti settori stiano cambiando.
+o l'intero sistema commerciale a una deriva difficilmente prevedibile la
+ quale si potrà assestare solo nel momento in cui le aziende prenderanno
+ consapevolezza di come molti settori stiano cambiando.
  Sarà sempre più importante quindi tenere in considerazione l'inserimento
  di una componente tecnologica in ogni ambito della produzione di un'azienda,
  ma specialmente durante la fase di commercializzazione.
@@ -164,7 +164,7 @@ In questa tesi si tratterà la soluzione adottata dall'azienda Carpigiani,
 \emph on
 MyGelato
 \emph default
-, piattaforma di marketing digitale e di e-commerce fruibile tramite applicazion
+: piattaforma di marketing digitale e di e-commerce fruibile tramite applicazion
 e mobile con l'obiettivo di dare nuovi strumenti ai propri clienti.
  L'architettura dell'intero progetto si fonda su un backend Ruby on Rails
  che implementa le funzionalità di creazione, gestione e fruizione di contenuti
@@ -185,17 +185,33 @@ e mobile con l'obiettivo di dare nuovi strumenti ai propri clienti.
 \begin_layout Standard
 Nella descrizione del lavoro svolto si porrà maggiormente l'attenzione sui
  nodi cardini dell'applicativo, mostrando a ogni livello di progettazione
- e implementazione come si sono studiati e poi realizzati i sistemi di marketing
- ed e-commerce.
- Si inseriranno tutti i concetti presentati all'interno del contesto dello
- sviluppo per applicazioni mobile in ambito Android, presentando sia i pattern
- standard che si è scelto di utilizzare e commentando anche le motivazioni
+ come si sono studiati e infine realizzati i sistemi di marketing ed e-commerce.
+ Questi due concetti rappresentano infatti i flussi logici principali che
+ formano l'interno ecosistema MyGelato, nel primo caso rispondendo alla
+ necessità da parte dei proprietari di gelaterie di trovare un mezzo unificato
+ e standardizzato per comunicare con i propri clienti, mentre nel secondo
+ proponendo all'utenza consumer un sistema di buoni digitali che, anche
+ se già diffuso in altri ambiti, è fortemente innovativo nel mercato della
+ vendita di gelati artigianali.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tutti gli argomenti presentati verranno contestualizzati all'interno dello
+ sviluppo per applicazioni mobile in ambito Android, presentando i pattern
+ standard che si è scelto di utilizzare, commentando inoltre le motivazioni
  che hanno portato, in determinati casi, a scegliere strategie e metodologie
  differenti.
- Non può mancare ovviamente il fatto di porre un accento su come le tecnologie
+ Non potrà mancare infine il fatto di porre un accento su come le tecnologie
  per smartphone siano ormai fondamentali all'interno di un qualsiasi progetto
- che si ponga tra le finalità quello di interagire con un utente, sia questo
- in ambito consumer o in ambito business.
+ di questa tipologia che si ponga tra le finalità quello di interagire con
+ un utente medio, che sia questo in ambito consumer o in ambito business.
 \end_layout
 
 \begin_layout Standard

@@ -175,120 +175,6 @@ Si valutano infine le specifiche tecnologiche richieste sia dall'azienda
 \end_layout
 
 \begin_layout Section
-Design
-\end_layout
-
-\begin_layout Standard
-Il design dell'applicazione è uno degli elementi di maggior risalto: sviluppato
- fin nel dettaglio permette di personalizzare anche i componenti più basilari
- della 
-\emph on
-User Interface
-\emph default
- (
-\emph on
-UI
-\emph default
-) come icone, testi e bottoni.
- Sono presenti tre font custom che devono essere utilizzati in situazioni
- e contesti differenti in modo che possa capire fin dal primo colpo d'occhio
- quali siano i messaggi informativi e quali siano quelli di contorno.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Altro elemento fondamentale presente in quasi ogni schermata è il tema dell'appl
-icazione.
- I temi sono principalmente delle colorazioni differenti che devono caratterizza
-re e modificare il 
-\emph on
-main color
-\emph default
- della UI cambiando anche i testi e le icone in base al fatto di essere
- temi chiari o scuri fornendo rispettivamente testi e icone neri o bianchi.
- Ogni tema, che deve essere selezionabile a piacimento dall'utente direttamente
- da una funzione raggiungibile dalla navigazione principale, ha come nome
- un gusto differente di gelato e un proprio set di risorse.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Le risorse grafiche rese disponibili all'interno delle specifiche richieste
- servono a rendere coerente l'interfaccia utente in ogni suo elemento: fin
- dall'icona per chiudere una sezione a concludere con ogni elemento della
- navigazione principale.
- Il fatto di avere un'insieme di risorse ben organizzate è necessario, così
- da includere di volta in volta in maniera dinamica immagini in base alla
- lingua dell'applicazione e al tema chiaro/scuro.
-\end_layout
-
-\begin_layout Standard
-In figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Risorse-Design"
-
-\end_inset
-
- è possibile vedere alcune delle immagini presentate per la navigazione
- principale e alcune icone in tutte le versioni disponibili rispettivamente
- per un tema chiaro ed uno scuro.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
-	lyxscale 40
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Risorse-Design"
-
-\end_inset
-
-Risorse Design
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Ricerca
 \end_layout
 
@@ -871,6 +757,116 @@ gelatiere
  Sarà infine necessaria una connessione al server da parte di entrambi i
  dispositivi per verificare l'avvenuta validazione del coupon così da procedere
  all'acquisto materiale del bene rappresentato dal buono.
+\end_layout
+
+\begin_layout Section
+Design
+\end_layout
+
+\begin_layout Standard
+Il design dell'applicazione è uno degli elementi di maggior risalto: sviluppato
+ fin nel dettaglio permette di personalizzare anche i componenti più basilari
+ della 
+\emph on
+User Interface
+\emph default
+ (
+\emph on
+UI
+\emph default
+) come icone, testi e bottoni.
+ Sono presenti tre font custom che devono essere utilizzati in situazioni
+ e contesti differenti in modo che possa capire fin dal primo colpo d'occhio
+ quali siano i messaggi informativi e quali siano quelli di contorno.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Altro elemento fondamentale presente in quasi ogni schermata è il tema dell'appl
+icazione.
+ I temi sono principalmente delle colorazioni differenti che devono caratterizza
+re e modificare il 
+\emph on
+main color
+\emph default
+ della UI cambiando anche i testi e le icone in base al fatto di essere
+ temi chiari o scuri fornendo rispettivamente testi e icone neri o bianchi.
+ Ogni tema, che deve essere selezionabile a piacimento dall'utente direttamente
+ da una funzione raggiungibile dalla navigazione principale, ha come nome
+ un gusto differente di gelato e un proprio set di risorse.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le risorse grafiche rese disponibili all'interno delle specifiche richieste
+ servono a rendere coerente l'interfaccia utente in ogni suo elemento: fin
+ dall'icona per chiudere una sezione a concludere con ogni elemento della
+ navigazione principale.
+ Il fatto di avere un'insieme di risorse ben organizzate è necessario, così
+ da includere di volta in volta in maniera dinamica immagini in base alla
+ lingua dell'applicazione e al tema chiaro/scuro.
+\end_layout
+
+\begin_layout Standard
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Risorse-Design"
+
+\end_inset
+
+ è possibile vedere alcune delle immagini presentate per la navigazione
+ principale e alcune icone in tutte le versioni disponibili rispettivamente
+ per un tema chiaro ed uno scuro.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/res_colors.png
+	lyxscale 40
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Risorse-Design"
+
+\end_inset
+
+Risorse Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

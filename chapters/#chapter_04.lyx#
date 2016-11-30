@@ -83,13 +83,13 @@
 \begin_body
 
 \begin_layout Chapter
-Implementazione
+Progettazione e Implementazione
 \end_layout
 
 \begin_layout Standard
-A seguito della fase di progettazione si è scelto di suddividere lo sviluppo
- dell'applicazione in alcune fasi principali che seguono logicamente i workflow
- presentati nel dettaglio all'interno del capitolo 2.
+Per la fase di progettazione e implementazione si è scelto di suddividere
+ lo sviluppo dell'applicazione in alcune fasi principali che seguono logicamente
+ i workflow presentati nel dettaglio all'interno del capitolo 2.
  Questo ha permesso di dedicare maggiore attenzione a ogni componente fino
  a un livello di dettaglio molto alto, in modo da poter anche ottenere una
  buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
@@ -160,18 +160,17 @@ nticazione di un utente poichè facente parte sia del sistema di marketing
 \begin_layout Standard
 A conclusione dell'implementazione si sono effettuati dei test per valutare
  le prestazioni dell'applicazione, in particolar modo sui nodi centrali
- che avrebbero potuto inficiare l'esperienza utente se con basse prestazioni,
- come ad esempio la mappa di ricerca.
+ che avrebbero potuto inficiare l'esperienza utente se affetti da basse
+ prestazioni, come ad esempio la mappa di ricerca.
 \end_layout
 
 \begin_layout Section
-Design
+Interfaccia Grafica
 \end_layout
 
 \begin_layout Standard
-Il Design è stata la prima specifica considerata durante lo sviluppo poichè
- avrebbe rappresentato una costante durante l'implementazione di qualsiasi
- schermata dell'applicazione.
+Il Design è stata la prima specifica considerata poichè avrebbe rappresentato
+ una costante durante l'implementazione di qualsiasi schermata dell'applicazione.
  
 \begin_inset VSpace bigskip
 \end_inset
@@ -205,9 +204,9 @@ Per incapsulare tutte le funzioni riguardanti i temi all'interno di un unico
 \emph on
 Flavors 
 \emph default
-che rappresenta il tema attuale, recuperandolo dalle preferenze dell'applicazion
-e, e contiene tutti i dati utili a personalizzare i componenti dell'interfaccia
- come ad esempio il 
+che rappresenta il tema attuale, ne carica le specifiche dalle preferenze
+ dell'applicazione e contiene tutti i dati utili a personalizzare i componenti
+ dell'interfaccia come ad esempio il 
 \emph on
 main
 \emph default
@@ -608,7 +607,7 @@ Temi
 \end_layout
 
 \begin_layout Section
-Network
+Network Middleware
 \end_layout
 
 \begin_layout Standard
@@ -636,8 +635,8 @@ Le API Rest rese disponibili dal backend hanno permesso di standardizzare
  le chiamate richiedendo a ogni chiamata l'inserimento solo del metodo,
  dei parametri da inviare e dell'eventuale payload.
  I codici identificativi Http hanno reso la gestione di tutti gli errori
- maggiormente standardizzata così da poter visualizzare un messaggio di
- errore il più specifico possibile e localizzato in base alla lingua utilizzata
+ maggiormente semplificata così da poter visualizzare un messaggio di errore
+ il più specifico possibile e localizzato in base alla lingua utilizzata
  sul dispositivo.
 \begin_inset VSpace bigskip
 \end_inset
@@ -673,10 +672,10 @@ key "WIKIPEDIA:GENERICS"
 durante la dichiarazione del tipo delle variabili ha permesso di utilizzare
  lo stesso oggetto Result anche con risultati di tipo differente, come per
  esempio i dati relativi a un utente o a una carta promozionale.
- In questo modo tutte le chiamate server che venivano effettuate all'interno
- delle sezioni dell'applicazione potevano essere replicate e adeguate facilmente
- al contesto senza dover riscrivere ogni volta il codice necessario al funzionam
-ento di una particolare sezione.
+ In questo modo tutte le chiamate server effettuate all'interno delle sezioni
+ dell'applicazione potevano essere replicate e adeguate facilmente al contesto
+ senza dover riscrivere ogni volta il codice necessario al funzionamento
+ di una particolare sezione.
 \end_layout
 
 \begin_layout Standard
@@ -781,7 +780,7 @@ AsyncTask
 \end_layout
 
 \begin_layout Section
-Utente
+Autenticazione
 \end_layout
 
 \begin_layout Standard
@@ -931,7 +930,7 @@ i, deve essere gestito all'interno dell'applicazione in modo molto accurato:
 \emph on
 Network
 \emph default
- implementata in modo che ritorni eventuali messaggi di errore in maniera
+ implementata in modo che restituisca eventuali messaggi di errore in maniera
  standardizzata.
 \end_layout
 
@@ -1132,7 +1131,7 @@ Le informazioni riguardanti le gelaterie sono essenziali per la fruizione
  dei contenuti all'interno del sistema di marketing digitale e per la selezione
  dell'esercizio all'interno di quello di e-commerce.
  La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
- è stato necessario poichè in molti casi dati devono poter essere accessibili
+ è stato necessario poichè in molti casi i dati devono poter essere accessibili
  anche offline per quanto riguarda le operazioni che non richiedono un collegame
 nto istantaneo con il backend, come per esempio la visualizzazione degli
  esercizi preferiti.
@@ -1165,7 +1164,10 @@ Lo sviluppo della sezione di Ricerca è stato il fulcro del lavoro svolto
  di tutta l'applicazione, sia perchè in termini di prestazioni si sono dovuti
  valutare molti aspetti per poter mantenere un'alta fluidità e reattività
  anche su dispositivi meno prestanti.
-\begin_inset VSpace bigskip
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -1183,7 +1185,10 @@ Map
 \emph default
  che risulta essere implementata all'interno della versione in produzione
  dell'applicazione.
-\begin_inset VSpace bigskip
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -1206,6 +1211,24 @@ reference "fig:mappa-and-list"
 te una mappa, inserita grazie all'utilizzo delle API di Google Maps, e una
  lista, dove è stata nuovamente riutilizzata una RecyclerView unita a un
  custom Adapter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nel primo caso, che è inoltre l'opzione di default, verrà visualizzata una
+ mappa vuota e si tenterà di posizionare il centro della mappa sull'attuale
+ posizione dell'utente.
+ Per eseguire questa operazione verrà richiesto all'utente il permesso di
+ accedere ai dati relativi alla localizzazione e, nel caso venga concessa,
+ si salverà in un oggetto locale l'attuale posizione, altrimenti si utilizzerà
+ la lingua impostata sul dispositivo per centrare la mappa sullo stato corrispon
+dente.
 \end_layout
 
 \begin_layout Standard
@@ -1248,29 +1271,11 @@ Struttura Mappa
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nel primo caso, che è inoltre l'opzione di default, verrà visualizzata una
- mappa vuota e si tenterà di posizionare il centro della mappa sull'attuale
- posizione dell'utente.
- Per eseguire questa operazione verrà richiesto all'utente il permesso di
- accedere ai dati relativi alla localizzazione e, nel caso venga concessa,
- si salverà in un oggetto locale l'attuale posizione, altrimenti si utilizzerà
- la lingua impostata sul dispositivo per centrare la mappa sullo stato corrispon
-dente.
-\end_layout
-
-\begin_layout Standard
 Per effettuare queste operazioni si sono utilizzati i metodi esposti dalle
  API di Google Maps e dalla libreria dei Google Play Services che permetto
  di inizializzare la mappa modificando alcune impostazioni di base come
- lo zoom, i controlli visibili e permettono di ottenere la posizione il
- più precisa possibile del dispositivo dell'utente.
+ lo zoom, i controlli visibili e permettendo di ottenere la posizione precisa
+ del dispositivo dell'utente.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1364,8 +1369,7 @@ private class LoadShopAtAsyncTask
 
 \begin_layout Plain Layout
 
-     extends AsyncTask<String, String, Result<ArrayList<Shop>, NRError>>
- {
+     extends AsyncTask<String, String, Result<> {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1375,69 +1379,23 @@ private class LoadShopAtAsyncTask
 
 \begin_layout Plain Layout
 
-        protected Result<ArrayList<Shop>, NRError> doInBackground(String...
+        protected Result<> doInBackground(String...
  params) {
 \end_layout
 
 \begin_layout Plain Layout
 
-            java.util.Map<String,String> data = new LinkedHashMap<>();
+            Result<> result = Network.loadShopsAt(Map.this, data);
 \end_layout
 
 \begin_layout Plain Layout
 
-            // put params in data
+            Realm.copyToRealmOrUpdate(result.result);
 \end_layout
 
 \begin_layout Plain Layout
 
-            final ArrayList<Shop> shop_to_update = new ArrayList<>();
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-            final Result<ArrayList<Shop>, NRError> result = Network.loadShopsAt(M
-ap.this, data);
-\end_layout
-
-\begin_layout Plain Layout
-
-            Realm.getDefaultInstance().executeTransaction(new Realm.Transaction()
- {                 
-\end_layout
-
-\begin_layout Plain Layout
-
-@Override
-\end_layout
-
-\begin_layout Plain Layout
-
-                public void execute(Realm realm) {
-\end_layout
-
-\begin_layout Plain Layout
-
-                    realm.copyToRealmOrUpdate(result.result);
-\end_layout
-
-\begin_layout Plain Layout
-
-                }
-\end_layout
-
-\begin_layout Plain Layout
-
-            });
-\end_layout
-
-\begin_layout Plain Layout
-
-            return new Result<>(shop_to_update, result.error);
+            return new Result<>(shops, result.error);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1452,34 +1410,12 @@ ap.this, data);
 
 \begin_layout Plain Layout
 
-        protected void onPostExecute(final Result<ArrayList<Shop>, NRError>
- response) {
+        protected void onPostExecute(final Result<> response) {
 \end_layout
 
 \begin_layout Plain Layout
 
-            if (response.success()) {
-\end_layout
-
-\begin_layout Plain Layout
-
-                EventBus.getDefault().post(new Event.UpdateShopUiEvent());
-\end_layout
-
-\begin_layout Plain Layout
-
-            } else {
-\end_layout
-
-\begin_layout Plain Layout
-
-                Toast.makeText(Map.this, response.error.errorMessage, Toast.LENGTH_SH
-ORT).show();
-\end_layout
-
-\begin_layout Plain Layout
-
-            }
+            EventBus.getDefault().post(new Event());
 \end_layout
 
 \begin_layout Plain Layout
@@ -1565,6 +1501,26 @@ Il meccanismo appena descritto però gestisce il fatto di visualizzare solo
  Se logicamente il sistema ha risolto immediatamente il problema che si
  era creato ci si è trovati di fronte al secondo punto critico in termiti
  di prestazioni.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il movimento della mappa e il listener che solleva la callback a ogni fine
+ spostamento della mappa verrebbe sollevato troppe volte, portando a un
+ rallentamento significativo dell'applicazione.
+ Per risolvere questo problema si è utilizzato uno scheduler, definito dal'ogget
+to 
+\emph on
+ScheduledExecutorService
+\emph default
+, che avvia l'esecuzione del processo di aggiornamento solo dopo 500 millisecond
+i che l'utente ha smesso di muoversi sulla mappa.
+ Si è valutato questo intervallo di tempo per non dover gestire istruzioni
+ che verrebbero lanciate anche ogni dieci millisecondi mantenendo però una
+ forte reattività agli occhi dell'utente.
 \end_layout
 
 \begin_layout Standard
@@ -1611,29 +1567,9 @@ Processi
 \end_layout
 
 \begin_layout Standard
-Il movimento della mappa e il listener che solleva la callback a ogni fine
- spostamento della mappa verrebbe sollevato troppe volte, portanto a un
- rallentamento significativo dell'applicazione.
- Per risolvere questo problema si è utilizzato uno scheduler, definito dal'ogget
-to 
-\emph on
-ScheduledExecutorService
-\emph default
-, che avvia l'esecuzione del processo di aggiornamento solo dopo 500 millisecond
-i che l'utente ha smesso di muoversi sulla mappa.
- Si è valutato questo intervallo di tempo per non dover gestire istruzioni
- che verrebbero lanciate anche ogni dieci millisecondi mantenendo però una
- forte reattività agli occhi dell'utente.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Conclusa l'implementazione della visualizzazione degli shop all'interno
- della mappa si è implementato, all'interno del sistema di elaborazione
- dati, il meccanismo di aggiornamento dell'adapter della lista.
+Conclusa la realizzazione della visualizzazione degli shop all'interno della
+ mappa si è implementato, all'interno del sistema di elaborazione dati,
+ il meccanismo di aggiornamento dell'adapter della lista.
  Questo adapter è stato poi utilizzato in maniera identica per la gestione
  della lista all'interno della sezione dei Preferiti poichè sono state notate
  una serie di similitudini che ne hanno permesso il riutilizzo.
@@ -1719,7 +1655,7 @@ Concluse le funzionalità relative al sistema di marketing si sono dovute
 \emph on
 Action
 \emph default
- inserita all'interno che demarca quale delle funzionalità sono richieste.
+ inserita all'interno che demarca quale delle funzionalità siano richieste.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1855,7 +1791,7 @@ Favorite
 \emph default
  che semplicemente identifica gli esercizi salvati tra i preferiti in modo
  che queste informazioni rimangano salvate in locale sul dispositivo anche
- senza che un utente che si sia loggato.
+ senza un utente che si sia loggato.
  L'inserimento di un flag all'interno del modello degli shop non avrebbe
  funzionato poichè sarebbe stato sovrascritto ad ogni aggiornamento degli
  shop durante il download e la modifica con le informazioni sul server.
@@ -1869,8 +1805,8 @@ Favorite
 Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
  si sia autenticato verrà eseguita una chiamata al server che attiverà la
  ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
- per il geofencing sul dispositivo, entrambe le funzioni sono spiegate nel
- dettaglio nel capitolo 4.6.2.
+ per il geofencing sul dispositivo, entrambe le funzionalità sono spiegate
+ in dettaglio nel capitolo 4.6.2.
 \end_layout
 
 \begin_layout Subsection
@@ -2015,8 +1951,8 @@ Nel caso delle carte del mastro gelatiere il procedimento di richiesta dei
 gine del menù che rimanda alla sezione del mastro gelatiere.
  Inoltre nel caso di un utente con autenticazione effettuata verrà registrato
  il dispositivo sul server per la ricezione di una notifica push ogni volta
- che saranno pubblicate nuove promozioni, funzionalità spiegata nel dettaglio
- nel capitolo successivo.
+ che saranno pubblicate nuove promozioni, questa funzionalità è spiegata
+ in dettaglio nel capitolo successivo.
 \end_layout
 
 \begin_layout Standard
@@ -2081,11 +2017,7 @@ L'utente può aggiungere una gelateria ai preferiti cliccando sull'icona
  della stella presente nella finestra di informazioni visualizzata all'interno
  della ricerca degli shop una volta selezionatone uno.
  L'aggiunta, come anche la rimozione, aggiorna immediatamente sia la mappa
- modificando il marker mostrato a video e anche la lista dei preferiti.
-\begin_inset VSpace bigskip
-\end_inset
-
-
+ modificando il marker mostrato a video sia la lista dei preferiti.
 \end_layout
 
 \begin_layout Standard
@@ -2160,12 +2092,7 @@ FirebaseApp.initializeApp(
 
 \begin_layout Plain Layout
 
-    this,
-\end_layout
-
-\begin_layout Plain Layout
-
-    FirebaseOptions.fromResource(this)
+    this, FirebaseOptions.fromResource(this)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2199,7 +2126,7 @@ Firebase
 \end_layout
 
 \begin_layout Standard
-Ogni volta che l'utente aggiungerà e rimuoverà un preferito verrà quindi
+Ogni volta che l'utente aggiungerà o rimuoverà un preferito verrà quindi
  eseguita una chiamata al backend con lo scopo di informarlo della modifica
  attivando o disattivando rispettivamente la ricezione delle notifiche push.
  In questo modo nel momento in cui sarà disponibile una nuova carta promozionale
@@ -2210,146 +2137,15 @@ Shop
  verrà visualizzata una notifica sul dispositivo che permetterà all'utente
  di accedere direttamente alla sezione delle carte promozionali specifiche
  per quell'esercizio.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Allo stesso tempo sul dispositivo verrà inoltre sottoscritto al sistema
- di geofencing che produrrà un 
-\emph on
-Intent
-\emph default
- ogni qual volta l'utente rimarrà entro l'area di 5 kilometri da una gelateria
- presente tra i preferiti, il quale verrà gestito per mostrare anche in
- questo caso una notifica che permetterà di accedere invece alle informazioni
- della gelateria all'interno della lista dei preferiti.
- Ovviamente per i dispositivi con le ultime versioni di Android sarà necessario
- richiedere anche in questo caso la possibilità di accedere alla localizzazione
- come fatto all'interno della ricerca.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nel listato 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:Geofencing"
-
-\end_inset
-
- si può vedere come l'applicazione si registra al servizio di Geofencing
- del sistema una volta che una gelateria 
-\emph on
-shop
-\emph default
- viene inserito tra i preferiti, situazione che va oltretutto ripetuta ogni
- volta che il dispositivo dell'utente viene riavviato.
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-mGeofenceList.add(new
-\end_layout
-
-\begin_layout Plain Layout
-
-    Geofence.Builder()  
-\end_layout
-
-\begin_layout Plain Layout
-
-      .setCircularRegion(                                             
-\end_layout
-
-\begin_layout Plain Layout
-
-         shop.latitude,                                             
-\end_layout
-
-\begin_layout Plain Layout
-
-         shop.longitude,                                             
-\end_layout
-
-\begin_layout Plain Layout
-
-         GEOFENCE_RADIUS_IN_METERS                                     
-\end_layout
-
-\begin_layout Plain Layout
-
-      )                                     
-\end_layout
-
-\begin_layout Plain Layout
-
-      .setLoiteringDelay(2 * 60 * 1000)                                 
-    
-\end_layout
-
-\begin_layout Plain Layout
-
-      .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_DWELL)            
-                         
-\end_layout
-
-\begin_layout Plain Layout
-
-      .build()
-\end_layout
-
-\begin_layout Plain Layout
-
-);
-\end_layout
-
-\begin_layout Plain Layout
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "lis:Geofencing"
-
-\end_inset
-
-Geofencing
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In figura 
+ In figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:preferiti"
 
 \end_inset
 
- infine è visibile l'implementazione della lista degli Shop preferiti, di
- cui sono presentate le informazioni essenziali e la distanza, insieme ad
- un esempio di notifica push inviata da MyGalato per segnalare l'aggiunta
- di una nuova carta promozionale.
+ infine è visibile l'implementazione della lista degli Shop preferiti insieme
+ ad un esempio di notifica push inviata da MyGalato.
 \end_layout
 
 \begin_layout Standard
@@ -2389,6 +2185,36 @@ Preferiti
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Allo stesso tempo sul dispositivo verrà inoltre sottoscritto al sistema
+ di geofencing che produrrà un 
+\emph on
+Intent
+\emph default
+ ogni qual volta l'utente rimarrà entro l'area di 5 kilometri da una gelateria
+ presente tra i preferiti, il quale verrà gestito per mostrare anche in
+ questo caso una notifica che permetterà di accedere invece alle informazioni
+ della gelateria all'interno della lista dei preferiti.
+ Ovviamente per i dispositivi con le ultime versioni di Android sarà necessario
+ richiedere anche in questo caso la possibilità di accedere alla localizzazione
+ come fatto all'interno della ricerca.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'applicazione si registra al servizio di Geofencing del sistema una volta
+ che una gelateria viene inserita tra i preferiti, situazione che va ripetuta
+ ogni volta che il dispositivo dell'utente viene riavviato.
+ 
 \end_layout
 
 \begin_layout Section
@@ -2418,7 +2244,7 @@ La prima fase è stata legata alla rappresentazione formale dei buoni acquistati
 \begin_layout Standard
 Definita la struttura degli elementi che si sarebbero andati ad utilizzare
  si è creata la sezione dedicata alla gestione dei coupon personali disponibili
- a ogni utente, ovviamente legando ogni funzione all'avvenuta autenticazione
+ per ogni utente, ovviamente legando ogni funzione all'avvenuta autenticazione
  tramite account MyGelato.
  Questa sezione permette di avere una visione completa delle proprie informazion
 i aggiornate costantemente rispetto ai dati presenti sul server online.
@@ -2433,15 +2259,19 @@ Le funzioni legate al sistema di e-commerce comprendono l'utilizzo di account
  e dispositivi diversi che interagiscono tra di loro e che non devono assolutame
 nte creare casi di inconsistenza sul database sia online sia offline in
  locale sui dispositivi utilizzati.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Per rendere accessibile all'utente l'accesso alle funzioni di acquisto e
- di riscatto di un buono in maniera diretta si sono inseriti all'interno
- della navigazione principale dell'applicazione i collegamenti a queste
- sezioni insieme a un bottone flottante che riporta alla gestione dei coupon;
- nel caso si sia effettuato l'accesso con un account di tipo gelatiere si
- verrà riportati invece alla sezione per la validazione dei buoni.
+Per rendere accessibili all'utente le funzioni di acquisto e di riscatto
+ di un buono in maniera diretta, si sono inseriti all'interno della navigazione
+ principale dell'applicazione i collegamenti a queste sezioni insieme a
+ un bottone flottante che riporta alla gestione dei coupon; nel caso si
+ sia effettuato l'accesso con un account di tipo gelatiere si verrà riportati
+ invece alla sezione per la validazione dei buoni.
 \end_layout
 
 \begin_layout Subsection
@@ -2498,7 +2328,7 @@ reference "fig:Coupon"
 \end_inset
 
 , ogni coupon visualizza alcune informazioni di base e sono presenti i collegame
-nti diretti per l'utilizzo e lo share tramite altri canali di comunicazioni.
+nti diretti per l'utilizzo e lo share tramite altri canali di comunicazione.
  Selezionando la parte sinistra del buono si verrà reindirizzati all'interfaccia
  di utilizzo presentata nel dettaglio al capitolo 4.7.4 mentre cliccando sulla
  parte destra si verrà invitati a chiedere il metodo di condivisione da
@@ -2568,9 +2398,9 @@ Acquisto
 \begin_layout Standard
 Il sistema di acquisto di un coupon è stato quello più complesso poichè
  doveva operare con più di un componente esterno all'applicazione mantenendo
- però a ogni passaggio un alto livello di sicurezza senza inficiare alla
- consistenza dei dati della piattaforma MyGelato: ad esempio una volta scelto
- lo shop, per modificare la gelateria si perdono le scelte successive riportando
+ però a ogni passaggio un alto livello di sicurezza senza inficiare la consisten
+za dei dati della piattaforma MyGelato: ad esempio una volta scelto lo shop,
+ per modificare la gelateria si perdono le scelte successive riportando
  l'utente al passaggio iniziale per non rischiare inconsistenze nel sistema.
  Si è poi analizzato ogni singolo passaggio per poter guidare l'utente durante
  ogni step mostrando a video di volta in volta solo ciò che era richiesto.
@@ -2583,7 +2413,7 @@ Il sistema di acquisto di un coupon è stato quello più complesso poichè
 \begin_layout Standard
 La schermata di acquisto di un coupon è stata creata in modo che sia raggiungibi
 le direttamente dal menù di navigazione principale, ma nel caso in cui l'utente
- non abbia eseguito l'autenticazione viene rimandato alla schermata di login
+ non abbia eseguito l'autenticazione verrà rimandato alla schermata di login
  dove vengono richieste le credenziali per poter continuare.
  In questo modo solo gli utenti registrati alla piattaforma hanno la possibilità
  di effettuare un acquisto che richiede un collegamento con il backend dove
@@ -2603,11 +2433,11 @@ reference "fig:Acquisto"
 \end_inset
 
  dopo l'helper iniziale viene richiesto all'utente di scegliere da quale
- gelateria vuole acquistare un coupon e, come già specificato, si verrà
- reindirizzati alla mappa di ricerca con un Intent d'avvio contenente alcune
- opzioni che disabiliteranno la visibilità degli shop in cui non è abilitato
- il sistema di e-commerce e sostituiranno alle icone presenti nella finestra
- di dettaglio un'icona per la selezione dell'esercizio.
+ gelateria egli voglia acquistare un coupon e, come già specificato, si
+ verrà reindirizzati alla mappa di ricerca con un Intent d'avvio contenente
+ alcune opzioni che disabiliteranno la visibilità degli shop in cui non
+ è abilitato il sistema di e-commerce e sostituiranno alle icone presenti
+ nella finestra di dettaglio un'icona per la selezione dell'esercizio.
  Una volta che l'utente avrà effettuato la selezione verrà riportato sulla
  schermata di acquisto dove saranno mostrati i dettagli della gelateria
  e verrà invece visualizzata la possibilità di scegliere il metodo di pagamento.
@@ -2619,8 +2449,8 @@ reference "fig:Acquisto"
 
 \begin_layout Standard
 Per effettuare questa operazione l'applicazione esegue due chiamate differenti
- al server, una nelle quali richiede il codice identificativo dell'utente
- rispetto alla libreria di e-commerce Stripe, che servirà per richiedere
+ al server, una nella quale richiede il codice identificativo dell'utente
+ rispetto alla libreria di e-commerce Stripe, il quale servirà per richiedere
  i metodi di pagamento disponibili dell'utente, e scaricherà inoltre anche
  i coupon disponibili per l'esercizio scelto.
  In questa caso i coupon sono salvati all'interno di un modello 
@@ -2676,22 +2506,8 @@ ViewPager
 \emph default
  che visualizza i coupon disponibili specifici per la gelateria scelta mostrando
  i dettagli principali: nome, descrizione, prezzo e valuta.
- In questo caso la scelta verrà effettuata scorrendo sullo slide in modo
+ In questo caso la scelta verrà effettuata scorrendo sullo slider in modo
  che al centro della schermata vi sia quello scelto dall'utente.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Concluse tutte le scelte l'utente potrà procedere con l'acquisto che si
- tratterà di una nuova chiamata alle API del server in modo che grazie anche
- all'utilizzo del codice Stripe sia dell'utente che dello shop potrà effettuare
- la transizione e aggiungere il coupon a quelli legati all'account utilizzato.
- Nel caso di errori verrà visualizzato un messaggio e si potrà ritentare
- l'operazione, altrimenti se non vi dovessero essere problemi si verrà reindiriz
-zati alla schermata di gestione dei coupon personali.
 \end_layout
 
 \begin_layout Standard
@@ -2731,6 +2547,20 @@ Acquisto
 \end_inset
 
 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Concluse tutte le scelte l'utente potrà procedere con l'acquisto che si
+ tratterà di una nuova chiamata alle API del server in modo che grazie anche
+ all'utilizzo del codice Stripe sia dell'utente che dello shop potrà effettuare
+ la transazione e aggiungere il coupon a quelli legati all'account utilizzato.
+ Nel caso di errori verrà visualizzato un messaggio e si potrà ritentare
+ l'operazione, altrimenti se non vi dovessero essere problemi si verrà reindiriz
+zati alla schermata di gestione dei coupon personali.
 \end_layout
 
 \begin_layout Subsection
@@ -2742,12 +2572,13 @@ Il meccanismo di condivisione e riscatto ha richiesto lo sviluppo di funzioni
  complementari eseguite su dispositivi differenti dove l'interazione si
  basa fortemente sull'utilizzo di diversi componenti di sistema.
  Per permettere il dialogo tra due dispositivi differenti si è scelto per
- esempio di sfruttare i canali di comunicazioni più comuni e diffusi anche
+ esempio di sfruttare i canali di comunicazione più comuni e diffusi anche
  tra gli utenti medi in modo che il sistema di share sia il più facile possibile
  e del tutto conforme al sistema di condivisione standard della piattaforma.
  In genere questi metodi presuppongo una conoscenza da parte dei due utenti
- che interagiscono, ma ci si è basati sul fatto che da specifiche questo
- fosse una parametro valutato durante lo sviluppo del sistema MyGelato.
+ che interagiscono, ma ci si è basati sul fatto che, come inserito tra le
+ specifiche, questo fosse una parametro valutato durante lo sviluppo del
+ sistema MyGelato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -2756,7 +2587,7 @@ Il meccanismo di condivisione e riscatto ha richiesto lo sviluppo di funzioni
 
 \begin_layout Standard
 Dalla lista di coupon disponibili l'utente ha quindi la possibilità di cliccare
- sull'icona per la condivisone e verrà inviata una richiesta - 
+ sull'icona per la condivisone e sarà inviata una richiesta - 
 \emph on
 Intent
 \emph default
@@ -2781,8 +2612,8 @@ mygelato://
 ) che verrà gestito in automatico dal dispositivo con cui si sta visualizzando
  il sito.
  Nel caso in cui vi sia installata sul dispositivo l'applicazione MyGelato
- allora verrà avviata la schermata di riscatto precompilata con i dati necessari
-, altrimenti si verrà reindirizzati agli store principali per consigliare
+ verrà avviata la schermata di riscatto precompilata con i dati necessari,
+ altrimenti si verrà reindirizzati agli store principali per consigliare
  il download dell'applicazione.
 \begin_inset VSpace bigskip
 \end_inset
@@ -2797,8 +2628,8 @@ Il mezzo di identificazione del coupon condiviso è un codice alfanumerico
  Si è quindi creata la schermata per riscattare un buono, sezione raggiungibile
  direttamente dalla navigazione principale dell'applicazione, dove è presente
  una view di input dove si deve inserire il codice PNR; nel caso si arrivi
- sulla schermata tramite il link descritto sopra allora il campo di input
- del codice sarà già compilato.
+ sulla schermata tramite il link descritto sopra, il campo di input del
+ codice sarà già compilato.
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -2809,29 +2640,15 @@ Il mezzo di identificazione del coupon condiviso è un codice alfanumerico
 Una volta inserito il codice sarà effettuata una richiesta al server tramite
  chiamata API che attuerà lo spostamento del buono da un utente all'altro.
  Per entrambi gli account vi sarà quindi l'aggiornamento delle informazioni
- sul proprio dispositivo la prima volta che verranno richiesti i coupon
- disponibili e l'utente che ha effettuato il riscatto verrà immediatamente
- reindirizzato sulla schermata di lista dei coupon altrimenti, in caso di
- fallimento dell'operazione, verrà notificato con un messaggio di errore.
+ sul proprio dispositivo la prima volta che verranno nuovamente scaricati
+ i coupon disponibili e l'utente che ha effettuato il riscatto verrà immediatame
+nte reindirizzato sulla schermata di lista dei coupon, in caso di fallimento
+ dell'operazione, verrà invece notificato con un messaggio di errore.
  
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-La figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Condivisione-e-Riscatto"
-
-\end_inset
-
- mostra tutti i passaggi principali per la condivisione e il riscatto di
- un buono seguendo il flusso logico proposto all'utente a ogni step, molti
- dei quali anticipati da un'immagine informativa che esplica brevemente
- come utilizzare ogni singola schermata.
 \end_layout
 
 \begin_layout Standard
@@ -2889,7 +2706,7 @@ Utilizzo e Validazione
 L'ultimo passaggio del workflow di e-commerce è l'utilizzo pratico dei coupon
  che si sono acquistati o che si sono riscattati perchè condivisi da altri
  utenti.
- In questo processo entrato in gioco due entità che sono utenti che spesso
+ In questo processo entrano in gioco due entità che sono utenti che spesso
  non entrano in contatto se non solo per i pochi momenti che servono all'acquist
 o materiale del valore del buono utilizzato.
  Questa situazione pone alcune limitazioni negli strumenti utilizzati per
@@ -2908,7 +2725,10 @@ Per superare questo ostacolo si è scelto uno strumento molto diffuso che
  a partire da un testo, in questo caso il PNR code legato al coupon che
  si vuole utilizzare, leggibile e interpretabile da un qualsiasi cellulare
  con un fotocamera.
- Chiunque abbia effettuato l'accesso all'applicazione con account di tipo
+\end_layout
+
+\begin_layout Standard
+Chiunque abbia effettuato l'accesso all'applicazione con account di tipo
  gelatiere potrà validare il coupon direttamente tramite l'applicazione
  MyGelato grazie a una chiamata API al backend che confermerà o meno l'avvenuta
  conclusione del processo senza problemi.
@@ -2925,7 +2745,14 @@ La sezione per generare e visualizzare il codice QR da mostrare in gelateria
  Questa schermata mostra una versione del coupon a tutto schermo e, grazie
  ad una libreria esterna, inserisce il codice QR all'interno del coupon
  in modo che sia ben visibile e riconoscibile da qualsiasi software.
- Si deve quindi solamente mostrare il dispositivo utilizzato a chi dovrà
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si deve quindi solamente mostrare il dispositivo utilizzato a chi dovrà
  poi validare il buono.
  Non essendo presente in questo caso una connessione bidirezionale con il
  backend, per aggiornare la schermata una volta concluso il processo di
