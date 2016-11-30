@@ -109,7 +109,7 @@ ma che si è andati a creare, così da presentare sia le funzionalità maggiorme
 \end_layout
 
 \begin_layout Standard
-Si è descritto quindi la situazione tipo in cui si sono trovate o si verranno
+Si è descritta quindi la situazione tipo in cui si sono trovate o si verranno
  a trovare tutte le aziende leader nei propri settori che saranno costrette
  a diversificare il proprio prodotto integrando un sistema di marketing
  e di vendita che sfrutti le nuove tecnologie disponibili sul mercato.
@@ -158,10 +158,10 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
 \begin_layout Standard
 L'elaborato, grazie all'architettura modulare con cui è stato sviluppato,
  permette l'implementazione di nuove funzionalità con il minimo sforzo,
- senza dover riprogettare l’attuale struttura dell'applicazione e si pone
- ad esempio per progetti simili che abbiano specifiche progettuali simili
- anche solo parzialmente potendo estrapolare da ogni flusso logico le scelte
- implementative fatte.
+ senza dover riprogettare l’attuale struttura dell'applicazione e si propone
+ ad esempio per progetti che abbiano specifiche progettuali simili anche
+ solo parzialmente potendo estrapolare da ogni flusso logico le scelte implement
+ative fatte.
 \begin_inset VSpace defskip
 \end_inset
 
@@ -174,7 +174,7 @@ ione mobile Android, avendo integrato componenti e funzionalità che hanno
  spaziato dalla creazione di un'interfaccia grafica personalizzata al dialogo
  dell'applicativo con un server di backend.
  La necessità di ottenere alte prestazioni anche durante la gestione di
- grosse moli di dati ha inoltre richiesto lo studio e la progettazione di
+ grosse mole di dati ha inoltre richiesto lo studio e la progettazione di
  un sistema a più processi che sfruttasse la piattaforma sottostante e non
  si limitasse all'uso basilare dei pattern strutturali standard.
  Si è quindi trattato di un progetto completo che mi ha dato la possibilità

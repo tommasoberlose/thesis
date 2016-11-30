@@ -143,6 +143,27 @@ key "ANDROID:NAV_PATTERN"
 \end_layout
 
 \begin_layout Standard
+Si sono poi realizzati alcuni modelli dei dati presenti nel database, ad
+ esempio ogni gelateria inserita all'interno del circuito MyGelato è stata
+ formalizzata concettualmente come un oggetto 
+\emph on
+Shop
+\emph default
+, sia all'interno del frontend sia sul backend, che incapsula tutte le informazi
+oni disponibili, essenziali per la fruizione dei contenuti all'interno del
+ sistema di marketing digitale e per la selezione dell'esercizio all'interno
+ di quello di e-commerce.
+ In questo caso il salvataggio in locale è stato inoltre necessario poichè
+ in molti casi i dati devono poter essere accessibili anche offline per
+ quanto riguarda le operazioni che non richiedono un collegamento istantaneo
+ con il backend.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Ragionando ulteriormente dal generale al dettaglio si è scelto di sviluppare
  la mappa di ricerca degli shop poichè presente in entrambi i flussi logici
  principali e quindi nodo cardine dell'applicazione, specialmente in termini
@@ -162,6 +183,53 @@ A conclusione dell'implementazione si sono effettuati dei test per valutare
  le prestazioni dell'applicazione, in particolar modo sui nodi centrali
  che avrebbero potuto inficiare l'esperienza utente se affetti da basse
  prestazioni, come ad esempio la mappa di ricerca.
+ In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Struttura"
+
+\end_inset
+
+ è infine visualizzato come si è suddiviso lo sviluppo in macro argomenti
+ così da rispettare l'architettura modulare della piattaforma sia durante
+ la progettazione che durante l'implementazione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Struttura"
+
+\end_inset
+
+Struttura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1034,107 +1102,6 @@ Shop
 \end_layout
 
 \begin_layout Standard
-Ogni gelateria inserita all'interno del circuito MyGelato è formalizzata
- concettualmente come un oggetto 
-\emph on
-Shop
-\emph default
-, sia all'interno del frontend sia sul backend, che incapsula tutte le informazi
-oni disponibili al download di volta in volta, anche qui presentati sotto
- forma di codice per rendere più completa la descrizione delle variabili
- utilizzate.
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-@PrimaryKey
-\end_layout
-
-\begin_layout Plain Layout
-
-public String uuid;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-public double latitude;
-\end_layout
-
-\begin_layout Plain Layout
-
-public double longitude;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String name;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String address;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String phone;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String status;
-\end_layout
-
-\begin_layout Plain Layout
-
-public boolean canBurnCoupons = false;
-\end_layout
-
-\begin_layout Plain Layout
-
-public boolean myGelatoShop = false;
-\end_layout
-
-\begin_layout Plain Layout
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Shop Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Le informazioni riguardanti le gelaterie sono essenziali per la fruizione
- dei contenuti all'interno del sistema di marketing digitale e per la selezione
- dell'esercizio all'interno di quello di e-commerce.
- La gestione e il salvataggio in locale degli Shop all'interno dell'applicazione
- è stato necessario poichè in molti casi i dati devono poter essere accessibili
- anche offline per quanto riguarda le operazioni che non richiedono un collegame
-nto istantaneo con il backend, come per esempio la visualizzazione degli
- esercizi preferiti.
 \begin_inset VSpace bigskip
 \end_inset
 

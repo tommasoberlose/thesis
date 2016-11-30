@@ -87,9 +87,9 @@ Progettazione e Implementazione
 \end_layout
 
 \begin_layout Standard
-A seguito della fase di progettazione si è scelto di suddividere lo sviluppo
- dell'applicazione in alcune fasi principali che seguono logicamente i workflow
- presentati nel dettaglio all'interno del capitolo 2.
+Per la fase di progettazione e implementazione si è scelto di suddividere
+ lo sviluppo dell'applicazione in alcune fasi principali che seguono logicamente
+ i workflow presentati nel dettaglio all'interno del capitolo 2.
  Questo ha permesso di dedicare maggiore attenzione a ogni componente fino
  a un livello di dettaglio molto alto, in modo da poter anche ottenere una
  buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
@@ -165,7 +165,7 @@ A conclusione dell'implementazione si sono effettuati dei test per valutare
 \end_layout
 
 \begin_layout Section
-Design
+Interfaccia Grafica
 \end_layout
 
 \begin_layout Standard
@@ -607,7 +607,7 @@ Temi
 \end_layout
 
 \begin_layout Section
-Network
+Network Middleware
 \end_layout
 
 \begin_layout Standard
@@ -780,7 +780,7 @@ AsyncTask
 \end_layout
 
 \begin_layout Section
-Utente
+Autenticazione
 \end_layout
 
 \begin_layout Standard

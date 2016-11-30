@@ -87,18 +87,13 @@ Introduzione
 \end_layout
 
 \begin_layout Standard
-Questo momento storico è caratterizzato se non forse pienamente descritto
- dall'esplosione dello sviluppo tecnologico che ha drasticamente cambiato
- i metodi di comunicazione e il modo con cui le persone accedono alle informazio
-ni.
- Ed è proprio l'
-\emph on
-Informazione
-\emph default
- che è diventata il nodo fondamentale di ogni sistema economico moderno:
- tracciabilità, trasparenza e accesso ai dati relativi al singolo prodotto
- sono solo alcuni dei concetti che si sono diffusi, grazie all'entrata di
- dispositivi come gli smartphone, nella quotidianità del pubblico consumer.
+Lo sviluppo tecnologico caratteristico del periodo a cavallo tra primo e
+ secondo millennio ha drasticamente cambiato i metodi di comunicazione e
+ il modo con cui le persone accedono alle informazioni.
+ La gestione di quest'ultime è diventata il fulcro di ogni sistema economico
+ moderno: tracciabilità, trasparenza e accesso ai dati relativi al singolo
+ prodotto sono solo alcuni dei concetti che si sono diffusi, grazie all'entrata
+ nella quotidianità del pubblico consumer di dispositivi come gli smartphone.
 \begin_inset VSpace medskip
 \end_inset
 
@@ -106,12 +101,12 @@ Informazione
 \end_layout
 
 \begin_layout Standard
-La larga diffusione di queste tecnologie standardizzate e disponibili sul
- mercato con un target di acquirenti molto ampio, ha permesso all'utente
- medio di poter accedere in ogni istante e in mobilità a internet, realtà
- da cui può ottenere informazioni riguardanti le attività commerciali a
- cui è maggiormente interessato e acquistare moltissimi prodotti grazie
- alla diffusione di sistemi di reselling online.
+Il processo di crescita esponenziale relativo alla diffusione di queste
+ tecnologie e la facilità con la quale esse sono reperibili sul mercato,
+ ha fatto sì che l'utente medio sia in grado di poter accedere quando vuole
+ in mobilità a internet, mezzo tramite il quale può informarsi su ciò che
+ lo interessa o, per esempio, acquistare moltissimi prodotti grazie alla
+ diffusione di sistemi di reselling online.
 \end_layout
 
 \begin_layout Standard
@@ -122,19 +117,19 @@ La larga diffusione di queste tecnologie standardizzate e disponibili sul
 \end_layout
 
 \begin_layout Standard
-Tutte le fasi di commercializzazione di un prodotto o di un servizio, sono
- quindi da rivalutare in considerazione di questo cambio di paradigma che
- ha spostato online sia la pubblicizzazione che la vendita.
- Queste nuove interazioni tra il produttore e il consumatore hanno però
- comportato la nascita di un sistema di scambio di informazioni bidirezionale
- molto più stretto: i sistemi di 
+Tutte le fasi di commercializzazione di un prodotto o di un servizio sono
+ quindi da rivalutare in considerazione della tendenza sempre più frequente
+ di spostarne online sia la pubblicizzazione che la vendita.
+ Le nuove interazioni tra il produttore e il consumatore venutesi a creare
+ hanno però comportato la nascita di un sistema di scambio di informazioni
+ bidirezionale molto più serrato: i sistemi di 
 \emph on
 interest-based advertising
 \emph default
- permettono all'utente di avere consigli e pubblicità personalizzate mentre
- le aziende ottengono la possibilità di creare sistemi di commercializzazione
- efficaci e diversificati grazie alla presenza di moderne intelligenze artificia
-li.
+ permettono infatti all'utente di ricevere consigli e avere pubblicità personali
+zzate; per le aziende esiste invece la possibilità di creare sistemi di
+ commercializzazione efficaci e diversificati grazie alla presenza di moderne
+ intelligenze artificiali.
 \begin_inset VSpace medskip
 \end_inset
 
@@ -142,15 +137,18 @@ li.
 \end_layout
 
 \begin_layout Standard
-Vi è quindi stato un completo rinnovamento dei meccanismi alla base del
- nostro sistema di mercato e, a causa della forte ingerenza della tecnologia,
- si possono già vedere i segni di uno spostamento degli equilibri, che porterann
-o l'intero sistema commerciale a una deriva difficilmente prevedibile la
- quale si potrà assestare solo nel momento in cui le aziende prenderanno
- consapevolezza di come molti settori stiano cambiando.
- Sarà sempre più importante quindi tenere in considerazione l'inserimento
- di una componente tecnologica in ogni ambito della produzione di un'azienda,
+Tutto ciò ha comportato un rinnovamento dei meccanismi alla base del nostro
+ sistema di mercato e, a causa della forte ingerenza della tecnologia, si
+ possono già vedere i segni di uno spostamento degli equilibri che porteranno
+ l’intero sistema commerciale a una deriva difficilmente prevedibile che
+ si potrà assestare solo nel momento in cui le aziende prenderanno consapevolezz
+a di tali cambiamenti.
+ Sarà sempre più importante quindi tenere in considerazione l’inserimento
+ di una componente tecnologica in ogni ambito della produzione di un’azienda
  ma specialmente durante la fase di commercializzazione.
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace medskip
 \end_inset
 
@@ -158,41 +156,38 @@ o l'intero sistema commerciale a una deriva difficilmente prevedibile la
 \end_layout
 
 \begin_layout Standard
-In questa tesi si tratterà la soluzione adottata dall'azienda Carpigiani,
- leader mondiale nel settore della vendita di macchine per gelato artigianale,
- nell'intraprendere lo sviluppo dell'ecosistema denominato 
-\emph on
-MyGelato
-\emph default
-: piattaforma di marketing digitale e di e-commerce fruibile tramite applicazion
-e mobile con l'obiettivo di dare nuovi strumenti ai propri clienti.
- L'architettura dell'intero progetto si fonda su un backend Ruby on Rails
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All'interno di questa tesi si analizza la soluzione adottata dall'azienda
+ Carpigiani, leader mondiale nel settore della vendita di macchine per gelato
+ artigianale, per lo sviluppo dell'ecosistema denominato MyGelato, piattaforma
+ di marketing digitale e di e-commerce fruibile tramite applicazione mobile
+ con l’obiettivo di dare nuovi strumenti ai propri clienti.
+\end_layout
+
+\begin_layout Standard
+L’architettura dell'intero progetto si fonda su un backend Ruby on Rails
  che implementa le funzionalità di creazione, gestione e fruizione di contenuti
  multimediali affiancate da un sistema per la compravendita di coupon digitali.
- Per poter usufruire di tali servizi è necessario l'utilizzo di un'applicazione
- mobile disponibile per i sistemi operativi mobile Apple iOS e Google Android;
- quest'ultima argomento di questa tesi.
- Se ne presenta quindi la progettazione e l’implementazione descrivendo
+ Per poter usufruire di tali servizi è necessario l’utilizzo di un’applicazione
+ mobile disponibile per i sistemi operativi mobile Apple iOS e Google Android:
+ proprio quest'ultima è oggetto di studio della presente tesi.
+ Si è quindi presentata la progettazione e l’implementazione descrivendo
  una soluzione che, grazie alla sua generalità e alle tecnologie scelte,
  consente di impiegare gli stessi principi per altri progetti con architetture
  analoghe.
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nella descrizione del lavoro svolto si porrà maggiormente l'attenzione sui
- nodi cardini dell'applicativo, mostrando a ogni livello di progettazione
- come si sono studiati e infine realizzati i sistemi di marketing ed e-commerce.
- Questi due concetti rappresentano infatti i flussi logici principali che
- formano l'interno ecosistema MyGelato, nel primo caso rispondendo alla
- necessità da parte dei proprietari di gelaterie di trovare un mezzo unificato
- e standardizzato per comunicare con i propri clienti, mentre nel secondo
- si propone all'utenza consumer un sistema di buoni digitali che, anche
- se già diffuso in altri ambiti, è fortemente innovativo nel mercato della
- vendita di gelati artigianali.
 \end_layout
 
 \begin_layout Standard
@@ -203,15 +198,38 @@ Nella descrizione del lavoro svolto si porrà maggiormente l'attenzione sui
 \end_layout
 
 \begin_layout Standard
-Si inseriranno tutti gli argomenti presentati nel contesto attuale dello
- sviluppo per applicazioni mobile in ambito Android, presentando i pattern
- standard che si è scelto di utilizzare, commentando inoltre le motivazioni
- che hanno portato, in determinati casi, a scegliere strategie e metodologie
- differenti.
- Non potrà mancare infine il fatto di porre un accento su come le tecnologie
- per smartphone siano ormai fondamentali all'interno di un qualsiasi progetto
- di questa tipologia che si ponga tra le finalità quello di interagire con
- un utente medio, che sia questo in ambito consumer o in ambito business.
+I concetti di marketing ed e-commerce rappresentano i flussi logici principali
+ che formano l’interno ecosistema MyGelato: il primo rispondendo alla necessità
+ da parte dei proprietari di gelaterie di trovare un mezzo unificato e standardi
+zzato per comunicare con i propri clienti, il secondo proponendo al consumatore
+ un sistema di buoni digitali che, anche se già diffuso in altri ambiti,
+ è fortemente innovativo nel mercato della vendita di gelati artigianali.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All'interno di questa tesi di laurea sono trattati tutti gli argomenti contestua
+lizzati per quanto riguarda lo sviluppo per applicazioni mobile in ambito
+ Android, presentando i pattern standard che si è scelto di utilizzare e
+ commentando le motivazioni che hanno portato, in determinati casi, a scegliere
+ strategie e metodologie differenti.
+ È stato deciso inoltre di porre un accento sulle modalità con cui le tecnologie
+ per smartphone siano diventati fondamentali per qualsiasi progetto che
+ si ponga tra le finalità di interagire con una gamma di utilizzatori che
+ vada dall'utente medio all'ambito business.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
