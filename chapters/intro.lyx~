@@ -90,18 +90,11 @@ Introduzione
 Lo sviluppo tecnologico caratteristico del periodo a cavallo tra primo e
  secondo millennio ha drasticamente cambiato i metodi di comunicazione e
  il modo con cui le persone accedono alle informazioni.
- La gestione di quest'ultime è diventata il fulcro di ogni sistema economico
+ La gestione di queste ultime è diventata il fulcro di ogni sistema economico
  moderno: tracciabilità, trasparenza e accesso ai dati relativi al singolo
  prodotto sono solo alcuni dei concetti che si sono diffusi, grazie all'entrata
  nella quotidianità del pubblico consumer di dispositivi come gli smartphone.
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Il processo di crescita esponenziale relativo alla diffusione di queste
+ Il processo di crescita esponenziale relativo alla diffusione di queste
  tecnologie e la facilità con la quale esse sono reperibili sul mercato,
  ha fatto sì che l'utente medio sia in grado di poter accedere quando vuole
  in mobilità a internet, mezzo tramite il quale può informarsi su ciò che
@@ -156,29 +149,15 @@ a di tali cambiamenti.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 All'interno di questa tesi si analizza la soluzione adottata dall'azienda
  Carpigiani, leader mondiale nel settore della vendita di macchine per gelato
- artigianale, per lo sviluppo dell'ecosistema denominato MyGelato, piattaforma
- di marketing digitale e di e-commerce fruibile tramite applicazione mobile
- con l’obiettivo di dare nuovi strumenti ai propri clienti.
-\end_layout
-
-\begin_layout Standard
-L’architettura dell'intero progetto si fonda su un backend Ruby on Rails
+ artigianale, per lo sviluppo dell'ecosistema denominato 
+\emph on
+MyGelato
+\emph default
+, piattaforma di marketing digitale e di e-commerce fruibile tramite applicazion
+e mobile con l’obiettivo di dare nuovi strumenti ai propri clienti.
+ L’architettura dell'intero progetto si fonda su un backend Ruby on Rails
  che implementa le funzionalità di creazione, gestione e fruizione di contenuti
  multimediali affiancate da un sistema per la compravendita di coupon digitali.
  Per poter usufruire di tali servizi è necessario l’utilizzo di un’applicazione
@@ -207,7 +186,7 @@ zzato per comunicare con i propri clienti, il secondo proponendo al consumatore
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace medskip
+\begin_inset VSpace vfill
 \end_inset
 
 
@@ -220,7 +199,7 @@ lizzati per quanto riguarda lo sviluppo per applicazioni mobile in ambito
  commentando le motivazioni che hanno portato, in determinati casi, a scegliere
  strategie e metodologie differenti.
  È stato deciso inoltre di porre un accento sulle modalità con cui le tecnologie
- per smartphone siano diventati fondamentali per qualsiasi progetto che
+ per smartphone siano diventate fondamentali per qualsiasi progetto che
  si ponga tra le finalità di interagire con una gamma di utilizzatori che
  vada dall'utente medio all'ambito business.
 \end_layout

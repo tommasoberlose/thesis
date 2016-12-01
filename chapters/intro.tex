@@ -1,83 +1,115 @@
 
 \chapter*{Introduzione}
 
-Questo momento storico è caratterizzato se non forse pienamente descritto
-dall'esplosione dello sviluppo tecnologico che ha drasticamente cambiato
-i metodi di comunicazione e il modo con cui le persone accedono alle
-informazioni. Ed è proprio l'\emph{Informazione} che è diventata il
-nodo fondamentale di ogni sistema economico moderno: tracciabilità,
-trasparenza e accesso ai dati relativi al singolo prodotto sono solo
-alcuni dei concetti che si sono diffusi grazie all'entrata di dispositivi,
-come gli smartphone, nella quotidianità del pubblico consumer.\medskip{}
+Lo sviluppo tecnologico caratteristico del periodo a cavallo tra primo
+e secondo millennio ha drasticamente cambiato i metodi di comunicazione
+e il modo con cui le persone accedono alle informazioni. La gestione
+di queste ultime è diventata il fulcro di ogni sistema economico moderno:
+tracciabilità, trasparenza e accesso ai dati relativi al singolo prodotto
+sono solo alcuni dei concetti che si sono diffusi, grazie all'entrata
+nella quotidianità del pubblico consumer di dispositivi come gli smartphone.\medskip{}
 
-La larga diffusione di queste tecnologie standardizzate e disponibili
-sul mercato con un target di acquirenti molto ampio, ha permesso all'utente
-medio di poter accedere in ogni istante e in mobilità a internet,
-realtà da cui può ottenere informazioni riguardanti le attività commerciali
-a cui è maggiormente interessato e acquistare moltissimi prodotti
+Il processo di crescita esponenziale relativo alla diffusione di queste
+tecnologie e la facilità con la quale esse sono reperibili sul mercato,
+ha fatto sì che l'utente medio sia in grado di poter accedere quando
+vuole in mobilità a internet, mezzo tramite il quale può informarsi
+su ciò che lo interessa o, per esempio, acquistare moltissimi prodotti
 grazie alla diffusione di sistemi di reselling online.
 
 \medskip{}
 
-Tutte le fasi di commercializzazione di un prodotto o di un servizio,
-sono quindi da rivalutare in considerazione di questo cambio di paradigma
-che ha spostato online sia la pubblicizzazione che la vendita. Queste
-nuove interazioni tra il produttore e il consumatore hanno però comportato
-la nascita di un sistema di scambio di informazioni bidirezionale
-molto più stretto: i sistemi di \emph{interest-based advertising}
-permettono all'utente di avere consigli e pubblicità personalizzate
-mentre le aziende ottengono la possibilità di creare sistemi di commercializzazione
-efficaci e diversificati grazie alla presenza di moderne intelligenze
-artificiali.\medskip{}
+Tutte le fasi di commercializzazione di un prodotto o di un servizio
+sono quindi da rivalutare in considerazione della tendenza sempre
+più frequente di spostarne online sia la pubblicizzazione che la vendita.
+Le nuove interazioni tra il produttore e il consumatore venutesi a
+creare hanno però comportato la nascita di un sistema di scambio di
+informazioni bidirezionale molto più serrato: i sistemi di \emph{interest-based
+advertising} permettono infatti all'utente di ricevere consigli e
+avere pubblicità personalizzate; per le aziende esiste invece la possibilità
+di creare sistemi di commercializzazione efficaci e diversificati
+grazie alla presenza di moderne intelligenze artificiali.\medskip{}
 
-Vi è quindi stato un completo rinnovamento dei meccanismi alla base
-del nostro sistema di mercato, che vede nel capitalismo la sua forma
-più evoluta ma che proprio a causa della forte ingerenza della tecnologia
-inizia a mostrare i primi segni di uno spostamento degli equilibri,
-portando l'intero sistema a una deriva difficilmente prevedibile e
-che si potrà assestare solo nel momento in cui le aziende prenderanno
-consapevolezza di come molti settori stiano cambiando. Sarà sempre
-più importante quindi tenere in considerazione l'inserimento di una
-componente tecnologica in ogni ambito della produzione di un'azienda,
-ma specialmente durante la fase di commercializzazione.\medskip{}
+Tutto ciò ha comportato un rinnovamento dei meccanismi alla base del
+nostro sistema di mercato e, a causa della forte ingerenza della tecnologia,
+si possono già vedere i segni di uno spostamento degli equilibri che
+porteranno l’intero sistema commerciale a una deriva difficilmente
+prevedibile che si potrà assestare solo nel momento in cui le aziende
+prenderanno consapevolezza di tali cambiamenti. Sarà sempre più importante
+quindi tenere in considerazione l’inserimento di una componente tecnologica
+in ogni ambito della produzione di un’azienda ma specialmente durante
+la fase di commercializzazione.
 
-In questa tesi si tratterà la soluzione adottata dall'azienda Carpigiani,
-leader mondiale nel settore della vendita di macchine per gelato artigianale,
-nell'intraprendere lo sviluppo dell'ecosistema denominato \emph{MyGelato},
-piattaforma di marketing digitale e di e-commerce fruibile tramite
-applicazione mobile con l'obiettivo di dare nuovi strumenti ai propri
-clienti. Si presenta il design e l’implementazione dell'applicazione
-mobile legata a questo progetto e distribuita per il sistema operativo
-Google Android. Le tecnologie scelte e la generalità della soluzione
-consentono di impiegare gli stessi principi per altri progetti con
-architetture analoghe.\medskip{}
+\medskip{}
 
-La stesura di questo elaborato segue logicamente i passaggi fondamentali
-che si presentano durante lo sviluppo di questo tipo di sistemi, partendo
-dall'introduzione del contesto in cui si inserisce il lavoro in oggetto,
-insieme alla valutazione delle finalità implicite ed esplicite che
-hanno portato l'azienda Carpigiani a dare vita a questo ecosistema.
+All'interno di questa tesi si analizza la soluzione adottata dall'azienda
+Carpigiani, leader mondiale nel settore della vendita di macchine
+per gelato artigianale, per lo sviluppo dell'ecosistema denominato
+\emph{MyGelato}, piattaforma di marketing digitale e di e-commerce
+fruibile tramite applicazione mobile con l’obiettivo di dare nuovi
+strumenti ai propri clienti.
 
-Nel primo capitolo si passa alla presentazione e alla valutazione
-delle specifiche richieste ponendo maggiore attenzione ai sistemi
-di marketing digitale ed e-commerce che rappresentano il fulcro dell'applicativo,
-uniti ovviamente ai concetti principali che formano i modelli della
-piattaforma e che devono essere considerati nel dettaglio per capire
-alcune scelte strutturali effettuate durante lo sviluppo.
+\medskip{}
+
+L’architettura dell'intero progetto si fonda su un backend Ruby on
+Rails che implementa le funzionalità di creazione, gestione e fruizione
+di contenuti multimediali affiancate da un sistema per la compravendita
+di coupon digitali. Per poter usufruire di tali servizi è necessario
+l’utilizzo di un’applicazione mobile disponibile per i sistemi operativi
+mobile Apple iOS e Google Android: proprio quest'ultima è oggetto
+di studio della presente tesi. Si è quindi presentata la progettazione
+e l’implementazione descrivendo una soluzione che, grazie alla sua
+generalità e alle tecnologie scelte, consente di impiegare gli stessi
+principi per altri progetti con architetture analoghe.
+
+\medskip{}
+
+I concetti di marketing ed e-commerce rappresentano i flussi logici
+principali che formano l’intero ecosistema MyGelato: il primo rispondendo
+alla necessità da parte dei proprietari di gelaterie di trovare un
+mezzo unificato e standardizzato per comunicare con i propri clienti,
+il secondo proponendo al consumatore un sistema di buoni digitali
+che, anche se già diffuso in altri ambiti, è fortemente innovativo
+nel mercato della vendita di gelati artigianali.
+
+\medskip{}
+
+All'interno di questa tesi di laurea sono trattati tutti gli argomenti
+contestualizzati per quanto riguarda lo sviluppo per applicazioni
+mobile in ambito Android, presentando i pattern standard che si è
+scelto di utilizzare e commentando le motivazioni che hanno portato,
+in determinati casi, a scegliere strategie e metodologie differenti.
+È stato deciso inoltre di porre un accento sulle modalità con cui
+le tecnologie per smartphone siano diventate fondamentali per qualsiasi
+progetto che si ponga tra le finalità di interagire con una gamma
+di utilizzatori che vada dall'utente medio all'ambito business.
+
+\medskip{}
+La prima parte di questa tesi di laurea si occupa di descrivere il
+contesto in cui si inserisce il lavoro in oggetto, insieme alla valutazione
+delle finalità implicite ed esplicite che hanno portato l’azienda
+Carpigiani a dare vita al progetto. Grande attenzione è posta sui
+sistemi di marketing digitale ed e-commerce che rappresentano il fulcro
+dell'applicativo, uniti ovviamente ai concetti principali che formano
+i modelli della piattaforma e che devono essere considerati nel dettaglio
+per capire alcune scelte strutturali effettuate durante lo sviluppo.
+
+\medskip{}
 
 Sono poi introdotte le principali tecnologie, librerie e metodi di
-sviluppo utilizzati durante l'implementazione di ogni singolo componente
+sviluppo utilizzati durante l’implementazione di ogni singolo componente
 dando ampio spazio alle funzionalità rese disponibili dall'utilizzo
 di ottime librerie open source, descrivendo come hanno potuto semplificare
-e velocizzare il processo lavorativo fornendo un forte imprinting
-modulare all'architettura di tutta l'applicazione. \medskip{}
+e velocizzare il processo lavorativo fornendo un forte stampo modulare
+all'architettura di tutta l’applicazione.
 
-Si prosegue con la descrizione del lavoro svolto, discernendo ogni
-singolo componente dell'applicativo così da poter spiegare nel dettaglio
-le scelte implementative che hanno portato al prodotto finale di questa
+\medskip{}
+
+L'esposizione del lavoro svolto continua discernendo ogni singolo
+componente dell'applicativo così da poter spiegare nel dettaglio le
+scelte implementative che hanno portato al prodotto finale di questa
 tesi che, dopo una serie di test funzionali e prestazionali, potrà
 essere pubblicato e reso disponibile sui principali mezzi di distribuzione
 di applicazioni Android. Alcune considerazioni di carattere generale
-e possibili sviluppi futuri concludono, infine, la tesi.
+sui possibili sviluppi futuri concludono la tesi.
 
 \newpage{}

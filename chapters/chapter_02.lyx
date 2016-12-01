@@ -88,7 +88,14 @@ Specifiche Progettuali
 
 \begin_layout Standard
 L'ecosistema MyGelato è un progetto ampio che si basa sulla cooperazione
- tra più elementi fondamentali.
+ tra più elementi fondamentali, come visibile in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ecosistema-MyGelato"
+
+\end_inset
+
+.
  Alla base troviamo un backend basato sul framework Ruby on Rails che implementa
  le funzionalità di creazione, gestione e fruizione di contenuti multimediali
  affiancate da un sistema e-commerce per la compravendita di coupon digitali.
@@ -99,6 +106,54 @@ MyGelato
 \emph default
 , disponibile per i sistemi operativi mobile Apple iOS e Google Android;
  quest'ultima argomento di questa tesi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/ECOSISTEMA.png
+	lyxscale 60
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ecosistema-MyGelato"
+
+\end_inset
+
+Ecosistema MyGelato
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -118,7 +173,7 @@ to il lavoro e tutte quelle date dalla necessità di far cooperare l'applicazion
  e per questo devono essere valutati prima di iniziare qualsiasi tipo di
  sviluppo: serve considerare le interazioni tra i flussi logici e valutare
  come mantenere coerente il design all'interno di tutta l'interfaccia utente.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -154,7 +209,15 @@ Cambio Tema
  e delle relative promozioni; e quello di e-commerce che permette l'acquisto
  online, la gestione, il regalo e l'utilizzo dei coupon gelato resi disponibili
  dalle gelaterie del circuito MyGelato.
-\begin_inset VSpace bigskip
+ La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Struttura-Applicazione"
+
+\end_inset
+
+ esplica brevemente questi concetti.
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -165,13 +228,56 @@ Si valutano infine le specifiche tecnologiche richieste sia dall'azienda
  che dalla necessaria cooperazione con gli altri elementi del progetto.
  Vi deve essere la possibilità di avere un'applicazione multilingua, con
  autenticazione tramite social network e compatibile con la maggior parte
- dei device Android attualmente sul mercato.
+ dei dispositivi Android attualmente sul mercato.
  Sono di forte impatto anche alcune scelte a livello di comunicazione con
  il backend che indirizza lo sviluppo in una comunicazione bidirezionale
  tra applicazione e server tramite API REST e notifiche push.
  Essenziale poi mantenere la coerenza tra le due applicazioni mobile sviluppate
  per le piattaforme iOS e Android, rispettando in ognuna i propri pattern
  tipici.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/APP-ANDROID-S.png
+	lyxscale 60
+	scale 24
+	BoundingBox 0bp 0bp 1600bp 720bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Struttura-Applicazione"
+
+\end_inset
+
+Struttura Applicazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -216,7 +322,7 @@ Questo tipo di ricerca permette all'utente di esplorare la zona attorno
 carte promozionali
 \emph default
 .
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -234,6 +340,10 @@ to coupon.
  utilizzabile da qualsiasi utente, dove sia possibile passare dalla visualizzazi
 one a mappa a quella a lista e dove siano già visibili le principali informazion
 i riguardo a ogni gelateria.
+\begin_inset VSpace medskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -246,10 +356,6 @@ reference "fig:Mockup-Mappa"
 
  un mockup esplicativo per la schermata della ricerca tramite mappa con
  dettaglio sulla selezione di un marker informativo.
-\begin_inset VSpace bigskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -264,7 +370,7 @@ status open
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
 	lyxscale 60
-	scale 25
+	scale 18
 
 \end_inset
 

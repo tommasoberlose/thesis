@@ -130,46 +130,6 @@ Application Economy
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/app_economy.png
-	lyxscale 40
-	width 100line%
-	BoundingBox 0bp 0bp 1520bp 655bp
-
-\end_inset
-
- 
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:appEconomy1"
-
-\end_inset
-
- Application Economy
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Non vi è forse modo di descrivere la società attuale e questo periodo storico
  senza valutare l'importanza dello sviluppo tecnologico che ci ha portato
  in quella che viene definita l'

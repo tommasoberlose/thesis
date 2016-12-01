@@ -89,10 +89,67 @@ Progettazione e Implementazione
 \begin_layout Standard
 Per la fase di progettazione e implementazione si è scelto di suddividere
  lo sviluppo dell'applicazione in alcune fasi principali che seguono logicamente
- i workflow presentati nel dettaglio all'interno del capitolo 2.
+ i workflow presentati nel dettaglio all'interno del capitolo 2 (visibili
+ in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Componenti-Applicazione"
+
+\end_inset
+
+).
  Questo ha permesso di dedicare maggiore attenzione a ogni componente fino
  a un livello di dettaglio molto alto, in modo da poter anche ottenere una
  buona valutazione sulle prestazioni dei nodi più critici dell'applicativo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/app_struct.png
+	lyxscale 60
+	scale 24
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Componenti-Applicazione"
+
+\end_inset
+
+Componenti Applicazione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace medskip
 \end_inset
 
@@ -150,7 +207,7 @@ Si sono poi realizzati alcuni modelli dei dati presenti nel database, ad
 Shop
 \emph default
 , sia all'interno del frontend sia sul backend, che incapsula tutte le informazi
-oni disponibili, essenziali per la fruizione dei contenuti all'interno del
+oni disponibili; essenziali per la fruizione dei contenuti all'interno del
  sistema di marketing digitale e per la selezione dell'esercizio all'interno
  di quello di e-commerce.
  In questo caso il salvataggio in locale è stato inoltre necessario poichè
@@ -172,6 +229,67 @@ Ragionando ulteriormente dal generale al dettaglio si è scelto di sviluppare
 nticazione di un utente poichè facente parte sia del sistema di marketing
  sia di quello di e-commerce, ultimi componenti implementati durante la
  fase di sviluppo.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Flussi-Logici"
+
+\end_inset
+
+ sono visualizzati nel dettaglio i flussi logici dell'applicativo, mostrando
+ da sinistra verso destra quali siano i passaggi necessari per effettuare
+ ogni azione.
+ Si tratta quindi di uno schema che descrive pienamente i componenti su
+ cui si è lavorato durante la fase di progettazione e implementazione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/FLUSSI.png
+	lyxscale 60
+	scale 24
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Flussi-Logici"
+
+\end_inset
+
+Flussi Logici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset VSpace medskip
 \end_inset
 
@@ -183,53 +301,7 @@ A conclusione dell'implementazione si sono effettuati dei test per valutare
  le prestazioni dell'applicazione, in particolar modo sui nodi centrali
  che avrebbero potuto inficiare l'esperienza utente se affetti da basse
  prestazioni, come ad esempio la mappa di ricerca.
- In figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Struttura"
-
-\end_inset
-
- è infine visualizzato come si è suddiviso lo sviluppo in macro argomenti
- così da rispettare l'architettura modulare della piattaforma sia durante
- la progettazione che durante l'implementazione.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Struttura"
-
-\end_inset
-
-Struttura
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Section
@@ -848,280 +920,6 @@ AsyncTask
 \end_layout
 
 \begin_layout Section
-Autenticazione
-\end_layout
-
-\begin_layout Standard
-Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
- di un modello, definito all'interno della classe 
-\emph on
-User
-\emph default
-, che racchiude tutte le informazioni legate ad un account (mostrate nel
- codice 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "lis:User-Model"
-
-\end_inset
-
- per come sono implementate all'interno del modello).
- Utilizzando Realm è stato possibile definire una tabella nel database che
- descrive gli account collegati, mantiene in locale sul dispositivo tutti
- i dati inseriti e mette a disposizione un insieme di funzioni utili per
- la gestione delle richieste.
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-@PrimaryKey
-\end_layout
-
-\begin_layout Plain Layout
-
-public String uuid;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-public String firstName;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String lastName;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String email;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String avatar;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String client;
-\end_layout
-
-\begin_layout Plain Layout
-
-public String token;
-\end_layout
-
-\begin_layout Plain Layout
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "lis:User-Model"
-
-\end_inset
-
-User Model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La sezione per la gestione del proprio account e delle funzioni di autenticazion
-e sono inserite in una parte del menù laterale (
-\emph on
-NavigationDrawer
-\emph default
-) della pagina principale dell'applicazione, permettendo di verificare se
- si è effettuato o meno l'accesso rapidamente.
- Si è inserito un header in cui sono visibili un'immagine circolare, un
- messaggio di benvenuto e un bottone per eseguire l'accesso e una volta
- che l'utente sarà autenticato saranno invece visibili l'avatar, il nome,
- un'icona per accedere alla schermata di modifica dell'account e il bottone
- per eseguire il logout.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si è poi implementata un'unica schermata dalla quale si può accedere al
- login tramite credenziali personali (
-\emph on
-EmailLogin
-\emph default
-), al login tramite social network (
-\emph on
-FacebookLogin
-\emph default
-), alla registrazione di un nuovo account (
-\emph on
-SignUp
-\emph default
-) e si verrà reindirizzati a questa sezione ogni volta che l'utente tenterà
- di eseguire delle azioni in cui è necessario aver eseguito l'accesso senza
- essere autenticato.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ogni azione che si vuole compiere, come per esempio l'accesso tramite credenzial
-i, deve essere gestito all'interno dell'applicazione in modo molto accurato:
- ogni campo di input è stato controllato in modo da attuare una validazione
- anche lato client informando in maniera diretta l'utente nel caso in cui
- i dati inseriti non siano corretti.
- A seguito dell'invio di ogni form viene eseguita una chiamata alle API
- del backend tramite l'interfaccia di supporto 
-\emph on
-Network
-\emph default
- implementata in modo che restituisca eventuali messaggi di errore in maniera
- standardizzata.
-\end_layout
-
-\begin_layout Standard
-Tutte le schermate facenti parte della sezione del Login sono state create
- con un tema differente da quelli disponibili volendo creare una separazione
- anche visiva tra i sistemi di marketing ed e-commerce e le funzionalità
- legate all'utente che sono concettualmente parallele ai flussi logici dell'appl
-icazione e a un livello maggiore di generalità.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nel momento in cui l'utente esegue il login vengono aggiornate sul dispositivo
- le informazioni legate all'account, creando un oggetto Realm partendo dal
- modello, incapsulando ogni informazione scaricata dal server così che ogni
- sezione dell'applicativo possa accedervi localmente.
- L'autenticazione e il logout sono funzioni gestite in maniera centralizzata
- grazie a un 
-\emph on
-helper
-\emph default
- che incapsula tutte le operazioni per far si che nessun dato sensibile
- rimanga salvato in locale a seguito della disconnessione dell'account e
- non vi siano casi di inconsistenza tra le informazioni presenti in locale
- e sul server.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
- che altrimenti non si potrebbero utilizzare poichè ogni chiamata alle API
- deve essere corredata delle informazioni legate all'utente che esegue una
- determinata azione.
- Per questo motivo nel menù laterale della navigazione principale dell'applicazi
-one alcuni elementi sono disabilitati finchè l'utente non esegue l'autenticazion
-e, come mostrato anche in figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sezione-Utente"
-
-\end_inset
-
- insieme agli elementi presentati in questo capitolo.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/user.png
-	lyxscale 20
-	scale 6
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Sezione-Utente"
-
-\end_inset
-
-Sezione Utente
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Shop
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-È stato quindi creato un modello per l'oggetto Shop sempre derivante da
- un oggetto Realm così da sfruttare tutta la potenza della libreria per
- il salvataggio e la gestione dei dati in database.
- Il download delle informazioni sul dispositivo avviene all'interno della
- schermata della Ricerca ed è eseguita in background poichè avviata in maniera
- asincrona, a causa della grossa mole di dati da dover scaricare.
- A ogni ricerca infatti le gelaterie vengono nuovamente scaricate così da
- avere sempre tutte le informazioni aggiornate, creando però un collo di
- bottiglia in termini di prestazioni che verrà spiegato e gestito nel dettaglio
- nel capitolo successivo.
-\end_layout
-
-\begin_layout Section
 Ricerca
 \end_layout
 
@@ -1683,6 +1481,256 @@ Ricerca
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Autenticazione
+\end_layout
+
+\begin_layout Standard
+Lo sviluppo della sezione legata all'utente è iniziata con la realizzazione
+ di un modello, definito all'interno della classe 
+\emph on
+User
+\emph default
+, che racchiude tutte le informazioni legate ad un account (mostrate nel
+ codice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:User-Model"
+
+\end_inset
+
+ per come sono implementate all'interno del modello).
+ Utilizzando Realm è stato possibile definire una tabella nel database che
+ descrive gli account collegati, mantiene in locale sul dispositivo tutti
+ i dati inseriti e mette a disposizione un insieme di funzioni utili per
+ la gestione delle richieste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@PrimaryKey
+\end_layout
+
+\begin_layout Plain Layout
+
+public String uuid;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public String firstName;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String lastName;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String email;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String avatar;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String client;
+\end_layout
+
+\begin_layout Plain Layout
+
+public String token;
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:User-Model"
+
+\end_inset
+
+User Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sezione per la gestione del proprio account e delle funzioni di autenticazion
+e sono inserite in una parte del menù laterale (
+\emph on
+NavigationDrawer
+\emph default
+) della pagina principale dell'applicazione, permettendo di verificare se
+ si è effettuato o meno l'accesso rapidamente.
+ Si è inserito un header in cui sono visibili un'immagine circolare, un
+ messaggio di benvenuto e un bottone per eseguire l'accesso e una volta
+ che l'utente sarà autenticato saranno invece visibili l'avatar, il nome,
+ un'icona per accedere alla schermata di modifica dell'account e il bottone
+ per eseguire il logout.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si è poi implementata un'unica schermata dalla quale si può accedere al
+ login tramite credenziali personali (
+\emph on
+EmailLogin
+\emph default
+), al login tramite social network (
+\emph on
+FacebookLogin
+\emph default
+), alla registrazione di un nuovo account (
+\emph on
+SignUp
+\emph default
+) e si verrà reindirizzati a questa sezione ogni volta che l'utente tenterà
+ di eseguire delle azioni in cui è necessario aver eseguito l'accesso senza
+ essere autenticato.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ogni azione che si vuole compiere, come per esempio l'accesso tramite credenzial
+i, deve essere gestito all'interno dell'applicazione in modo molto accurato:
+ ogni campo di input è stato controllato in modo da attuare una validazione
+ anche lato client informando in maniera diretta l'utente nel caso in cui
+ i dati inseriti non siano corretti.
+ A seguito dell'invio di ogni form viene eseguita una chiamata alle API
+ del backend tramite l'interfaccia di supporto 
+\emph on
+Network
+\emph default
+ implementata in modo che restituisca eventuali messaggi di errore in maniera
+ standardizzata.
+\end_layout
+
+\begin_layout Standard
+Tutte le schermate facenti parte della sezione del Login sono state create
+ con un tema differente da quelli disponibili volendo creare una separazione
+ anche visiva tra i sistemi di marketing ed e-commerce e le funzionalità
+ legate all'utente che sono concettualmente parallele ai flussi logici dell'appl
+icazione e a un livello maggiore di generalità.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nel momento in cui l'utente esegue il login vengono aggiornate sul dispositivo
+ le informazioni legate all'account, creando un oggetto Realm partendo dal
+ modello, incapsulando ogni informazione scaricata dal server così che ogni
+ sezione dell'applicativo possa accedervi localmente.
+ L'autenticazione e il logout sono funzioni gestite in maniera centralizzata
+ grazie a un 
+\emph on
+helper
+\emph default
+ che incapsula tutte le operazioni per far si che nessun dato sensibile
+ rimanga salvato in locale a seguito della disconnessione dell'account e
+ non vi siano casi di inconsistenza tra le informazioni presenti in locale
+ e sul server.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'accesso permette inoltre di accedere ad alcune sezioni dell'applicazione
+ che altrimenti non si potrebbero utilizzare poichè ogni chiamata alle API
+ deve essere corredata delle informazioni legate all'utente che esegue una
+ determinata azione.
+ Per questo motivo nel menù laterale della navigazione principale dell'applicazi
+one alcuni elementi sono disabilitati finchè l'utente non esegue l'autenticazion
+e, come mostrato anche in figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sezione-Utente"
+
+\end_inset
+
+ insieme agli elementi presentati in questo capitolo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/tommaso/Documents/Tesi/thesis/images/user.png
+	lyxscale 20
+	scale 6
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sezione-Utente"
+
+\end_inset
+
+Sezione Utente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 

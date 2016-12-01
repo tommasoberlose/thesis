@@ -190,7 +190,7 @@ status open
 
 
 \backslash
-oddsidemargin=0.46cm
+oddsidemargin=-0.46cm
 \end_layout
 
 \end_inset
@@ -337,7 +337,7 @@ Mobile di Marketing ed E-Commerce
 <column alignment="left" valignment="top" width="35col%">
 <column alignment="right" valignment="top" width="55col%">
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -369,7 +369,7 @@ Relatore
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -408,7 +408,7 @@ Cesare Stefanelli
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -428,7 +428,7 @@ Cesare Stefanelli
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -448,7 +448,7 @@ Cesare Stefanelli
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -472,7 +472,7 @@ Correlatore
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -948,20 +948,6 @@ filename "bibliografia.lyx"
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
-
-\end_inset
-
-
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "chapters/ringraziamenti.lyx"
 
 \end_inset
 

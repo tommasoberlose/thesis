@@ -167,7 +167,7 @@ key "HTMLIT:PROG_NATIVA"
  su altre piattaforme, si è preferito sviluppare tramite programmazione
  nativa; potendo quindi sfruttare pienamente l'architettura del sistema
  operativo sottostante e gli strumenti di sviluppo forniti ufficialmente.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -189,7 +189,7 @@ key "ANDROIDDEVELOPERS:FIRSTAPP"
 \end_inset
 
 
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -198,9 +198,9 @@ key "ANDROIDDEVELOPERS:FIRSTAPP"
 \begin_layout Standard
 Durante lo sviluppo del progetto si è utilizzato come sistema di versioning
  il software 
-\series bold
+\emph on
 Git
-\series default
+\emph default
 , così da poter mantenere uno storico del lavoro svolto e ottenendo tutti
  i vantaggi dell'utilizzo di un Sistema per il Controllo di Versione (
 \shape italic
@@ -561,7 +561,7 @@ Information Technology
  Git sfrutta alcuni algoritmi avanzati per calcolare le differenze riga
  per riga tra i file di diverse versioni così da verificare la presenza
  di errori o conflitti.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -578,7 +578,7 @@ branching and merging
  È veloce e scalabile nella gestione di grandi progetti ed è molto utile
  nello sviluppo in team, specialmente se affiancato dal modello GitFlow
  che permette di gestire rami specifici per il developing o per le release.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
