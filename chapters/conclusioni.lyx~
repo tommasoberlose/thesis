@@ -89,7 +89,7 @@ Il lavoro esposto all'interno di questa tesi ha portato alla progettazione
  sia testando ad ogni step le funzionalità implementate che includessero
  il collegamento con il sistema di backend sia studiando i pattern strutturali
  utilizzati nello sviluppo della rispettiva applicazione per sistema iOS.
-\begin_inset VSpace defskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -102,7 +102,7 @@ ma che si è andati a creare, così da presentare sia le funzionalità maggiorme
  legate al progetto MyGelato sia le funzionalità che formano invece un pattern
  più generale adottabile anche da altre aziende che desiderino avviare lo
  sviluppo di un sistema con finalità simili.
-\begin_inset VSpace defskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -117,10 +117,7 @@ Si è descritta quindi la situazione tipo in cui si sono trovate o si verranno
  i servizi resi disponibili dalle aziende parallelamente ai loro core business,
  specialmente se si tratta come in questo caso di un mercato in cui non
  vi è ancora un'ingerenza tecnologica così profonda.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -149,7 +146,7 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
  affiancata alla corretta comunicazione con i gelatieri in modo da garantire
  al progetto una diffusione capillare nel territorio e aprire la strada
  per un’espansione di livello mondiale.
-\begin_inset VSpace defskip
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -158,11 +155,11 @@ Tutte le specifiche progettuali richieste sia in ambito di marketing digitale
 \begin_layout Standard
 L'elaborato, grazie all'architettura modulare con cui è stato sviluppato,
  permette l'implementazione di nuove funzionalità con il minimo sforzo,
- senza dover riprogettare l’attuale struttura dell'applicazione e si pone
- ad esempio per progetti simili che abbiano specifiche progettuali simili
- anche solo parzialmente potendo estrapolare da ogni flusso logico le scelte
- implementative fatte.
-\begin_inset VSpace defskip
+ senza dover riprogettare l’attuale struttura dell'applicazione e si propone
+ ad esempio per progetti che abbiano specifiche progettuali simili anche
+ solo parzialmente potendo estrapolare da ogni flusso logico le scelte implement
+ative fatte.
+\begin_inset VSpace bigskip
 \end_inset
 
 
@@ -177,7 +174,13 @@ ione mobile Android, avendo integrato componenti e funzionalità che hanno
  grosse mole di dati ha inoltre richiesto lo studio e la progettazione di
  un sistema a più processi che sfruttasse la piattaforma sottostante e non
  si limitasse all'uso basilare dei pattern strutturali standard.
- Si è quindi trattato di un progetto completo che mi ha dato la possibilità
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+Si è quindi trattato di un progetto completo che mi ha dato la possibilità
  di intervenire e fare esperienza in ogni singola fase dello sviluppo, dalla
  valutazione delle specifiche iniziali fino alla realizzazione e alla pubblicazi
 one dell'applicazione MyGelato.

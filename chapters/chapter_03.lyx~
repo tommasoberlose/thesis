@@ -92,7 +92,7 @@ Definiti gli obiettivi progettuali dell'applicazione si sono valutati gli
  come parametri si é tenuto conto di tempistiche di aggiornamento, adeguamento
  alle linee guida del sistema operativo in oggetto, documentazione disponibile
  e modernità delle tecnologie utilizzate.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -115,7 +115,7 @@ key "ANDROIDSTUDIO:DASHBOARD"
  utilizzate, avendo scelto di supportare fino alla versione 16 del SDK di
  Android (versione 4.1 Jelly Bean), e la possibilità di utilizzare l'applicazione
  anche su dispositivi con schermi e hardware differenti.
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -592,13 +592,6 @@ Infine grazie all'utilizzo di piccoli accorgimenti come il file gitignore
  drasticamente avvantaggiato.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace vfill
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Database
 \end_layout
@@ -707,6 +700,10 @@ reference "lis:Model-Realm"
  la chiave primaria denotata dalla keyword 
 \emph on
 PrimaryKey.
+\begin_inset VSpace bigskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

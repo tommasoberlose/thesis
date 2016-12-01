@@ -360,7 +360,7 @@ reference "fig:Mockup-Mappa"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -368,9 +368,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map.png
+	filename /home/tommaso/Documents/Tesi/thesis/images/mockup_map_2.png
 	lyxscale 60
-	scale 18
+	scale 22
 
 \end_inset
 

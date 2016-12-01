@@ -105,6 +105,7 @@ reference "fig:Componenti-Applicazione"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -251,6 +252,7 @@ reference "fig:Flussi-Logici"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -260,7 +262,7 @@ status open
 \begin_inset Graphics
 	filename /home/tommaso/Documents/Tesi/thesis/images/FLUSSI.png
 	lyxscale 60
-	scale 24
+	scale 25
 
 \end_inset
 
@@ -533,6 +535,13 @@ layout
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -603,6 +612,10 @@ Flavors
 \emph default
 , aggiornando in maniera automatica oltre agli elementi dichiarati anche
  la toolbar e la statusbar di sistema.
+\begin_inset VSpace vfill
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -674,7 +687,7 @@ FlavorActivity
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -699,10 +712,8 @@ ViewPager
 \emph default
  che permette lo scorrimento laterale da un tema al successivo, sia tramite
  slide sullo schermo sia tramite le icone laterali mostrate anche in figura.
- Per permettere la visualizzazione di elementi personalizzati in ogni dettaglio
- si sono rese dinamiche la maggior parte delle immagini, come quella in
- background e quella a rappresentazione del gelato in modo che si aggiornassero
- a partire dal Flavor selezionato durante lo scorrimento.
+ Si sono rese dinamiche la maggior parte delle immagini in modo che si aggiornas
+sero a partire dal Flavor selezionato durante lo scorrimento.
 \end_layout
 
 \begin_layout Standard
@@ -814,6 +825,13 @@ durante la dichiarazione del tipo delle variabili ha permesso di utilizzare
  dell'applicazione potevano essere replicate e adeguate facilmente al contesto
  senza dover riscrivere ogni volta il codice necessario al funzionamento
  di una particolare sezione.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -977,24 +995,6 @@ te una mappa, inserita grazie all'utilizzo delle API di Google Maps, e una
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nel primo caso, che è inoltre l'opzione di default, verrà visualizzata una
- mappa vuota e si tenterà di posizionare il centro della mappa sull'attuale
- posizione dell'utente.
- Per eseguire questa operazione verrà richiesto all'utente il permesso di
- accedere ai dati relativi alla localizzazione e, nel caso venga concessa,
- si salverà in un oggetto locale l'attuale posizione, altrimenti si utilizzerà
- la lingua impostata sul dispositivo per centrare la mappa sullo stato corrispon
-dente.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1028,6 +1028,24 @@ Struttura Mappa
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nel primo caso, che è inoltre l'opzione di default, verrà visualizzata una
+ mappa vuota e si tenterà di posizionare il centro della mappa sull'attuale
+ posizione dell'utente.
+ Per eseguire questa operazione verrà richiesto all'utente il permesso di
+ accedere ai dati relativi alla localizzazione e, nel caso venga concessa,
+ si salverà in un oggetto locale l'attuale posizione, altrimenti si utilizzerà
+ la lingua impostata sul dispositivo per centrare la mappa sullo stato corrispon
+dente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
 \end_inset
 
 
@@ -1212,7 +1230,7 @@ LoadShopAtAsyncTask
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1228,7 +1246,7 @@ Questo è stato il primo punto critico in termini di prestazioni che si è
  essere mostrati all'utente e in ultimo dovrà essere anche calcolata la
  distanza del singolo esercizio dall'utente, così da poter ordinare la lista
  rispetto a questo parametro.
-\begin_inset VSpace bigskip
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1247,7 +1265,7 @@ In questo modo si è risolto il problema del download delle informazioni,
  che spesso rappresentano comunque una grossa mole di dati, la loro rielaborazio
 ne ai fini delle operazioni rese disponibili sulla schermata per l'utente
  e l'aggiornamento delle view di conseguenza al cambio della base di dati.
-\begin_inset VSpace bigskip
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1264,26 +1282,6 @@ Il meccanismo appena descritto però gestisce il fatto di visualizzare solo
  Se logicamente il sistema ha risolto immediatamente il problema che si
  era creato ci si è trovati di fronte al secondo punto critico in termiti
  di prestazioni.
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Il movimento della mappa e il listener che solleva la callback a ogni fine
- spostamento della mappa verrebbe sollevato troppe volte, portando a un
- rallentamento significativo dell'applicazione.
- Per risolvere questo problema si è utilizzato uno scheduler, definito dal'ogget
-to 
-\emph on
-ScheduledExecutorService
-\emph default
-, che avvia l'esecuzione del processo di aggiornamento solo dopo 500 millisecond
-i che l'utente ha smesso di muoversi sulla mappa.
- Si è valutato questo intervallo di tempo per non dover gestire istruzioni
- che verrebbero lanciate anche ogni dieci millisecondi mantenendo però una
- forte reattività agli occhi dell'utente.
 \end_layout
 
 \begin_layout Standard
@@ -1323,7 +1321,23 @@ Processi
 \end_inset
 
 
-\begin_inset VSpace bigskip
+\end_layout
+
+\begin_layout Standard
+Il movimento della mappa e il listener che solleva la callback a ogni fine
+ spostamento della mappa verrebbe sollevato troppe volte, portando a un
+ rallentamento significativo dell'applicazione.
+ Per risolvere questo problema si è utilizzato uno scheduler, definito dal'ogget
+to 
+\emph on
+ScheduledExecutorService
+\emph default
+, che avvia l'esecuzione del processo di aggiornamento solo dopo 500 millisecond
+i che l'utente ha smesso di muoversi sulla mappa.
+ Si è valutato questo intervallo di tempo per non dover gestire istruzioni
+ che verrebbero lanciate anche ogni dieci millisecondi mantenendo però una
+ forte reattività agli occhi dell'utente.
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1819,7 +1833,7 @@ Una volta che una gelateria viene aggiunta ai preferiti, nel caso l'utente
  si sia autenticato verrà eseguita una chiamata al server che attiverà la
  ricezione di notifiche push e in automatico verrà anche aggiunto un controllo
  per il geofencing sul dispositivo, entrambe le funzionalità sono spiegate
- in dettaglio nel capitolo 4.6.2.
+ in dettaglio nel capitolo 4.5.2.
 \end_layout
 
 \begin_layout Subsection
@@ -2343,7 +2357,7 @@ reference "fig:Coupon"
 , ogni coupon visualizza alcune informazioni di base e sono presenti i collegame
 nti diretti per l'utilizzo e lo share tramite altri canali di comunicazione.
  Selezionando la parte sinistra del buono si verrà reindirizzati all'interfaccia
- di utilizzo presentata nel dettaglio al capitolo 4.7.4 mentre cliccando sulla
+ di utilizzo presentata nel dettaglio al capitolo 4.6.4 mentre cliccando sulla
  parte destra si verrà invitati a chiedere il metodo di condivisione da
  utilizzare.
 \begin_inset VSpace bigskip
