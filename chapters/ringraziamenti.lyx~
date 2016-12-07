@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language italian
 \language_package none
-\inputencoding auto
+\inputencoding utf8
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -73,6 +73,123 @@
 
 \begin_layout Chapter*
 Ringraziamenti
+\end_layout
+
+\begin_layout Standard
+La stesura di questa tesi segna la conclusione del mio percorso di studi
+ universitario, che racchiude al momento il mio periodo di maggiore crescita
+ e cambiamento personale.
+ Indubbiamente rappresenta anche l’anello di giunzione tra l’università
+ e il mio ingresso nel mondo del lavoro; mondo che si presenta ancora come
+ una strada non del tutto delineata ma che ha come punto di partenza il
+ raggiungimento della laurea magistrale.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Questo obiettivo è stato reso possibile prima di tutto dal professore Cesare
+ Stefanelli, che mi ha dato la possibilità di svolgere questo lavoro in
+ totale libertà e autonomia.
+ Non posso, inoltre, non cogliere l’occasione per ringraziare Elisa Gulmini,
+ per la sua professionalità, gentilezza e disponibilità.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il ringraziamento più grande però va ovviamente ai ragazzi di Fancy Pixel,
+ che mi hanno accolto incoraggiandomi e aiutandomi in ogni singola occasione,
+ consentendomi soprattutto di trovare stimolo e soddisfazione nel lavoro
+ svolto.
+ Alcune considerazioni a parte sono da dedicare al mio correlatore Andrea,
+ che mi ha guidato e insegnato durante lo sviluppo di questo progetto, correggen
+do pazientemente ogni d eufonica inserita in questa tesi e trovando il tempo
+ e la forza di capire le mie idee e opinioni più strampalate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ringrazio poi tutta la mia famiglia, i miei nonni, i miei zii e mia cugina,
+ per avermi sempre aiutato e incoraggiato in tutti i miei progetti; ma in
+ particolar modo ringrazio mio papà, per aver fatto nascere in me la curiosità
+ e la passione per l’informatica, mia mamma, per avermi aiutato a superare
+ anche gli ostacoli più insormontabili e ovviamente mia sorella, per essere
+ stata al mio fianco rendendomi sempre fiero di lei.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sempre parlando di famiglia ringrazio Elly, Fabio, Fede, Fre, Miky e Ricci
+ (in doveroso ordine alfabetico) che da ormai tantissimo tempo mi supportano
+ e sopportano (sia per i miei gusti in fatto di cibo che per la mia competitivit
+à nei giochi di società), i quali mi hanno visto crescere e sono stati (e
+ sempre saranno) un pezzo fondamentale della mia vita.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+Un doveroso grazie va a Leo, che oltre ad avermi aiutato a superare qualche
+ problema con l’italiano durante la stesura di questa tesi, mi ha aiutato
+ ad affrontare con maggiore vigore gli ostacoli che si sono presentati durante
+ questi ultimi anni.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Infine durante questi anni di università ho avuto la fortuna di incontrare
+ e confrontarmi con tantissime persone, ognuna delle quali sarebbe da ringraziar
+e per aver condiviso con me esperienze diverse.
+ Ho passato forse fin troppi mercoledì in piazza, ho perso le più clamorose
+ partite a trionfo, ho avuto la possibilità di sviluppare i più disparati
+ progetti (a volte mangiando anche i ravioli al vapore), ho giocato alcune
+ delle partite di pallavolo più emozionanti, ho viaggiato, ho discusso e
+ alla fine sono riuscito a raggiungere il mio obiettivo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In altre parole grazie a tutti, a chi ho citato e a chi no, ovviamente per
+ motivi di spazio.
+ Il vostro supporto è stato fondamentale per completare il mio percorso.
+ Grazie di cuore.
+ 
 \end_layout
 
 \begin_layout Standard

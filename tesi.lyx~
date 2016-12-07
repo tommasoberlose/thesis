@@ -165,375 +165,6 @@ status open
 
 
 \backslash
-pagenumbering{gobble}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-oddsidemargin=0.46cm
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-evensidemargin=0cm
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-
-\lang english
-\begin_inset Graphics
-	filename ../../../Desktop/Tesi/png/unife.png
-	lyxscale 40
-	scale 20
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\size larger
-UNIVERSITÀ DEGLI STUDI DI FERRARA
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size larger
-\lang english
-DIPARTIMENTO DI INGEGNERIA
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset VSpace 0.3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing other 0.75
-\align center
-
-\size large
-\lang english
- 
-\size larger
-Corso di Laurea Magistrale in Ingegneria
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing other 0.75
-\align center
-
-\size larger
-\lang english
-Informatica e 
-\lang italian
-dell'Automazione
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset VSpace 1cm
-\end_inset
-
-
-\series bold
-\size largest
-\lang italian
-Progettazione
-\lang english
- e 
-\lang italian
-Sviluppo
-\lang english
- di un'Applicazione
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\series bold
-\size largest
-\lang english
-Mobile di Marketing ed E-Commerce
-\series default
-\size default
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset VSpace 1.2cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
-<features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="40col%">
-<column alignment="right" valignment="top" width="55col%">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size large
-\emph on
-Tesi
-\lang english
- di laurea 
-\lang italian
-di
-\lang english
-:
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size large
-\emph on
-Relatore
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size large
-Dott.
- Tommaso
-\lang english
- Berlose
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size large
-\lang english
-Chiar.mo Prof.
- Ing.
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-\size large
-\lang english
-Cesare Stefanelli
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size large
-\emph on
-\lang english
-Correlatore
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size large
-\lang english
-Dott.
- Ing.
- Andrea Mazzini
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\lang english
-\begin_inset VSpace 1.8cm
-\end_inset
-
-Anno Accademico 2015-2016
-\end_layout
-
-\begin_layout Standard
-
-\lang english
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\size large
-\lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 thispagestyle{empty}
 \end_layout
 
@@ -571,6 +202,23 @@ status open
 
 \backslash
 evensidemargin=-0.46cm
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage
 \end_layout
 
 \end_inset
@@ -750,6 +398,13 @@ null
 
 
 \backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 newpage
 \end_layout
 
@@ -786,6 +441,13 @@ null
 
 
 \backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 newpage
 \end_layout
 
@@ -816,6 +478,13 @@ status open
 
 \backslash
 null
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
 \end_layout
 
 \begin_layout Plain Layout
@@ -871,6 +540,13 @@ null
 
 
 \backslash
+thispagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 newpage
 \end_layout
 
@@ -920,6 +596,17 @@ filename "bibliografia.lyx"
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapters/ringraziamenti.lyx"
 
 \end_inset
 

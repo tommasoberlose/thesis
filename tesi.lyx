@@ -231,7 +231,7 @@ status open
 
 \lang english
 \begin_inset Graphics
-	filename ../../../Desktop/Tesi/png/unife.png
+	filename images/unife.png
 	lyxscale 40
 	scale 20
 
@@ -948,6 +948,17 @@ filename "bibliografia.lyx"
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapters/ringraziamenti.lyx"
 
 \end_inset
 
